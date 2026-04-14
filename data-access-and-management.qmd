@@ -1,0 +1,131 @@
+---
+title: "Data Access and Management"
+---
+
+## Treat data as infrastructure
+
+Datasets are not just files. They come with:
+
+- access controls,
+- provenance,
+- update schedules,
+- variable definitions,
+- and rules about what can leave the secure environment.
+
+The lab workflow should make all of that visible.
+
+## Prefer canonical locations over duplicate copies
+
+The NSAPH handbook recommends symlinking shared analytic datasets instead of making new copies.[^nsaph-data] That is a strong general rule for lab work:
+
+- keep the canonical dataset in an approved shared location,
+- point to it from the project when possible,
+- and only create project-owned copies when the analysis truly requires them.
+
+## A simple data lifecycle
+
+```{mermaid}
+flowchart LR
+  A[Raw source data] --> B[Document source and restrictions]
+  B --> C[Create project pointers or symlinks]
+  C --> D[Build analytic data reproducibly]
+  D --> E[Generate figures, tables, and models]
+  E --> F[Archive documentation and outputs]
+```
+
+## Data categories to think about
+
+| Category | Typical handling |
+|---|---|
+| Public data | Can often be downloaded or scripted directly inside the project |
+| Shared internal data | Reference canonical lab locations and document ownership |
+| Restricted data | Keep in approved secure storage; never push to public Git hosting |
+| Derived analytic data | Rebuild from code when possible; document version and inputs |
+
+## Minimum metadata for each dataset
+
+For each important input, record:
+
+1. dataset name,
+2. canonical path or URL,
+3. data owner or steward,
+4. update cadence,
+5. key identifiers,
+6. units and missing-value conventions,
+7. access restrictions,
+8. and the script that creates downstream analytic tables.
+
+## Data dictionaries and process diagrams
+
+The NSAPH workflow documentation explicitly recommends data diagrams and data dictionaries.[^nsaph-docs] Both are worth standardizing in the lab:
+
+- use a data dictionary when many variables need explanation,
+- use a flow diagram when multiple sources are joined or filtered,
+- and store both close to the repository rather than in private notes.
+
+## Raw data should stay raw
+
+Do not edit raw data files in place. Instead:
+
+- leave the original input untouched,
+- write cleaning or harmonization code in `code/`,
+- save documented derived outputs to approved locations,
+- and make sure the transformation path is reproducible.
+
+## Pins, manifests, and lightweight registries
+
+For small derived artifacts, shared models, parameter tables, or published outputs, use a lightweight registry pattern:
+
+- `pins` for R objects or shareable artifacts,
+- CSV or YAML manifests for file inventories,
+- and README-based tables for canonical paths and ownership.
+
+This gives you traceability without treating every dataset like application code.
+
+## Git rules for data
+
+Commit:
+
+- schemas,
+- dictionaries,
+- manifests,
+- scripts,
+- notebooks,
+- and small example data when policy allows it.
+
+Do not commit:
+
+- restricted raw data,
+- large transient intermediates,
+- files in scratch,
+- or anything that violates the DUA or institutional policy.
+
+## A `.gitignore` pattern worth keeping
+
+```gitignore
+data/
+*.csv
+*.parquet
+*.fst
+*.rds
+```
+
+Refine this by project, but start from the assumption that code and documentation belong in Git while sensitive or bulky data usually do not.
+
+## Data access requests should answer these questions
+
+- What dataset do you need?
+- Where is the canonical source?
+- What approvals or training are required?
+- What environment are you allowed to use?
+- Can the data be shared, or only the code?
+- Who should maintain the access instructions when the project ends?
+
+## Further reading
+
+- [NSAPH Handbook: How to work on FASSE](https://nsaph.github.io/handbook/fasse.html)
+- [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+- [NSAPH Handbook: Data Sharing using Harvard Dataverse](https://nsaph.github.io/handbook/dataverse.html)
+
+[^nsaph-data]: NSAPH Handbook, [*How to work on FASSE*](https://nsaph.github.io/handbook/fasse.html).
+[^nsaph-docs]: NSAPH Handbook, [*Workflow Documentation*](https://nsaph.github.io/handbook/docs.html).

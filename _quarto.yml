@@ -1,22 +1,82 @@
 project:
   type: website
   output-dir: docs
+  render:
+    - index.qmd
+    - start-here.qmd
+    - workflow-roadmap.qmd
+    - hpc-infrastructure.qmd
+    - projects-and-reproducibility.qmd
+    - data-access-and-management.qmd
+    - collaboration-and-support.qmd
+    - resources.qmd
+    - about.qmd
 
 website:
-  title: "Data Science at The Golden Lab"
+  title: Golden Lab Data Science Handbook
+  description: Reproducible, collaborative, HPC-native data science guidance for students and researchers.
+  page-navigation: true
+  reader-mode: true
+  open-graph: true
+  search:
+    location: navbar
+    type: textbox
   navbar:
-    left:
+    pinned: true
+    background: light
+    foreground: dark
+    right:
+      - href: start-here.qmd
+        text: Start Here
+      - href: workflow-roadmap.qmd
+        text: Workflow
+      - href: resources.qmd
+        text: Resources
+      - href: about.qmd
+        text: About
+  sidebar:
+    style: floating
+    collapse-level: 1
+    contents:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - section: Orientation
+        contents:
+          - href: start-here.qmd
+            text: Start Here
+          - href: workflow-roadmap.qmd
+            text: Workflow Roadmap
+      - section: Guides
+        contents:
+          - href: hpc-infrastructure.qmd
+            text: HPC and Infrastructure
+          - href: projects-and-reproducibility.qmd
+            text: Projects and Reproducibility
+          - href: data-access-and-management.qmd
+            text: Data Access and Management
+          - href: collaboration-and-support.qmd
+            text: Collaboration and Support
+          - href: resources.qmd
+            text: Reference Library
+      - href: about.qmd
+        text: About This Site
+  page-footer:
+    left: Golden Lab data workflows handbook
+    right: Built with [Quarto](https://quarto.org)
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
-    css: styles.css
+    title-block-banner: true
+    date-format: "MMMM D, YYYY"
+    smooth-scroll: true
+    code-copy: true
+    link-external-newwindow: true
+    link-external-icon: true
     toc: true
-
-
-
+    toc-depth: 3
+    theme:
+      light:
+        - journal
+        - css/custom.scss
+    css:
+      - css/custom_style.css

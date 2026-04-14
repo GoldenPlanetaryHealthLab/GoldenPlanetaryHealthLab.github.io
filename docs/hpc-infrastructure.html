@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Golden Lab Data Workflows – Golden Lab Data Science Handbook</title>
+<title>HPC and Infrastructure – Golden Lab Data Workflows</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,7 +67,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./start-here.html" rel="next">
+<link href="./projects-and-reproducibility.html" rel="next">
+<link href="./workflow-roadmap.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c01663bd5040c5d7aea61770ef96c7e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2473ab3b010787d4525b314871ccdabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -73,9 +109,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="css/custom_style.css">
-<meta property="og:title" content="Golden Lab Data Workflows – Golden Lab Data Science Handbook">
+<meta property="og:title" content="HPC and Infrastructure – Golden Lab Data Workflows">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
-<meta property="og:site_name" content="Golden Lab Data Science Handbook">
+<meta property="og:site_name" content="Golden Lab Data Workflows">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -86,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Golden Lab Data Science Handbook</span>
+    <span class="navbar-title">Golden Lab Data Workflows</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,21 +163,37 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hpc-infrastructure.html">Guides</a></li><li class="breadcrumb-item"><a href="./hpc-infrastructure.html">HPC and Infrastructure</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Golden Lab Data Workflows</h1></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./hpc-infrastructure.html">Guides</a></li><li class="breadcrumb-item"><a href="./hpc-infrastructure.html">HPC and Infrastructure</a></li></ol></nav>
+      <h1 class="title">HPC and Infrastructure</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -170,16 +222,16 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Guides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
+  <a href="./hpc-infrastructure.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HPC and Infrastructure</span></a>
   </div>
 </li>
@@ -220,92 +272,182 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#why-hpc-is-the-lab-default" id="toc-why-hpc-is-the-lab-default" class="nav-link active" data-scroll-target="#why-hpc-is-the-lab-default">Why HPC is the lab default</a></li>
+  <li><a href="#choose-the-right-access-path" id="toc-choose-the-right-access-path" class="nav-link" data-scroll-target="#choose-the-right-access-path">Choose the right access path</a></li>
+  <li><a href="#cannon-versus-fasse" id="toc-cannon-versus-fasse" class="nav-link" data-scroll-target="#cannon-versus-fasse">Cannon versus FASSE</a></li>
+  <li><a href="#recommended-pattern-for-students" id="toc-recommended-pattern-for-students" class="nav-link" data-scroll-target="#recommended-pattern-for-students">Recommended pattern for students</a></li>
+  <li><a href="#storage-tiers-and-what-they-are-for" id="toc-storage-tiers-and-what-they-are-for" class="nav-link" data-scroll-target="#storage-tiers-and-what-they-are-for">Storage tiers and what they are for</a></li>
+  <li><a href="#fasrc-tips-that-save-time" id="toc-fasrc-tips-that-save-time" class="nav-link" data-scroll-target="#fasrc-tips-that-save-time">FASRC tips that save time</a></li>
+  <li><a href="#practical-examples" id="toc-practical-examples" class="nav-link" data-scroll-target="#practical-examples">Practical examples</a>
+  <ul class="collapse">
+  <li><a href="#start-a-shell-session" id="toc-start-a-shell-session" class="nav-link" data-scroll-target="#start-a-shell-session">Start a shell session</a></li>
+  <li><a href="#use-scratch-for-temporary-intermediates" id="toc-use-scratch-for-temporary-intermediates" class="nav-link" data-scroll-target="#use-scratch-for-temporary-intermediates">Use scratch for temporary intermediates</a></li>
+  <li><a href="#if-fasse-r-package-installs-need-a-proxy" id="toc-if-fasse-r-package-installs-need-a-proxy" class="nav-link" data-scroll-target="#if-fasse-r-package-installs-need-a-proxy">If FASSE R package installs need a proxy</a></li>
+  </ul></li>
+  <li><a href="#decision-rule" id="toc-decision-rule" class="nav-link" data-scroll-target="#decision-rule">Decision rule</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
-
-<header id="title-block-header">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</header>
 
 
-<div class="hero">
-<div class="eyebrow">
-Golden Lab handbook
-</div>
-<section id="data-science-workflows-for-research-that-lasts" class="level1">
-<h1>Data science workflows for research that lasts</h1>
-<p>This site turns the ideas from <code>presentation.qmd</code> into a lab handbook: work on the cluster, keep code as the source of truth, document decisions close to the analysis, and build projects that other people can run.</p>
-<p><a href="./start-here.html" class="hero-button">Start Here</a> <a href="./workflow-roadmap.html" class="hero-button secondary">See the Workflow Roadmap</a></p>
+
+<section id="why-hpc-is-the-lab-default" class="level2">
+<h2 class="anchored" data-anchor-id="why-hpc-is-the-lab-default">Why HPC is the lab default</h2>
+<p>The presentation starts from a practical point: do the science on infrastructure designed for the science. That usually means remote compute, durable storage, and workflows that can survive browser crashes, laptop failures, or long runtimes.</p>
+<p>FASRC’s current recommendation is consistent with that framing: for R users, the recommended starting point is RStudio Server on Open OnDemand.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 </section>
-</div>
-<div class="card-grid">
-<section id="start-on-the-right-machine" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="start-on-the-right-machine">Start on the right machine</h3>
-<p>Treat HPC as the default, not the backup plan. Use FASRC interactive apps for exploration and scheduled jobs for scale.</p>
-<p><a href="./hpc-infrastructure.html">Open the infrastructure guide</a></p>
+<section id="choose-the-right-access-path" class="level2">
+<h2 class="anchored" data-anchor-id="choose-the-right-access-path">Choose the right access path</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Need</th>
+<th>Best starting point</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interactive R work</td>
+<td>Open OnDemand RStudio Server</td>
+<td>Fast setup, browser-based, simplest package installation</td>
+</tr>
+<tr class="even">
+<td>Interactive shell work</td>
+<td>SSH or OOD shell access</td>
+<td>Best for CLI tools, Git, file inspection, and job submission</td>
+</tr>
+<tr class="odd">
+<td>Long or heavy compute</td>
+<td>Slurm batch jobs</td>
+<td>Reproducible, schedulable, and not tied to your browser session</td>
+</tr>
+<tr class="even">
+<td>Secure interactive work</td>
+<td>FASSE OOD</td>
+<td>Required when data restrictions demand the secure environment</td>
+</tr>
+</tbody>
+</table>
+<p>According to the FASRC OOD documentation, the dashboard gives you file browsing, job status, job submission, remote desktops, and interactive apps such as RStudio, Matlab, and Jupyter.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
-<section id="build-projects-that-survive-handoff" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="build-projects-that-survive-handoff">Build projects that survive handoff</h3>
-<p>Use one project per analysis, relative paths, environment management, and documented folder structure.</p>
-<p><a href="./projects-and-reproducibility.html">Open the reproducibility guide</a></p>
+<section id="cannon-versus-fasse" class="level2">
+<h2 class="anchored" data-anchor-id="cannon-versus-fasse">Cannon versus FASSE</h2>
+<p>Use the environment that matches the data and policy requirements:</p>
+<ul>
+<li>Cannon is the standard FASRC cluster for general research computing.</li>
+<li>FASSE is the secure environment for work that requires stronger data protection.</li>
+</ul>
+<p>The NSAPH handbook explicitly distinguishes Cannon from FASSE this way and uses FASSE for regulated data workflows.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 </section>
-<section id="handle-data-like-shared-lab-infrastructure" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="handle-data-like-shared-lab-infrastructure">Handle data like shared lab infrastructure</h3>
-<p>Track provenance, avoid duplicate copies, document variables, and separate raw, analytic, and derived data.</p>
-<p><a href="./data-access-and-management.html">Open the data guide</a></p>
-</section>
-<section id="collaborate-without-chaos" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="collaborate-without-chaos">Collaborate without chaos</h3>
-<p>Use GitHub, lightweight review, and reproducible help requests so other people can support your work quickly.</p>
-<p><a href="./collaboration-and-support.html">Open the collaboration guide</a></p>
-</section>
-</div>
-<section id="lab-defaults" class="level2">
-<h2 class="anchored" data-anchor-id="lab-defaults">Lab defaults</h2>
-<div class="principle-grid">
-<section id="remote-reproducible-beats-local-manual" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="remote-reproducible-beats-local-manual">1. Remote + reproducible beats local + manual</h3>
-<p>If work matters, it should run on supported infrastructure and be re-runnable from code.</p>
-</section>
-<section id="code-is-the-source-of-truth" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="code-is-the-source-of-truth">2. Code is the source of truth</h3>
-<p>Results, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.</p>
-</section>
-<section id="analysis-should-be-narrated" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="analysis-should-be-narrated">3. Analysis should be narrated</h3>
-<p>Use notebooks and reports to explain what you did, why you did it, and what should happen next.</p>
-</section>
-<section id="robust-habits-compound" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="robust-habits-compound">4. Robust habits compound</h3>
-<p>Version control, clean project structure, and minimal documentation reduce technical debt for everyone.</p>
-</section>
-</div>
-</section>
-<section id="what-students-should-be-able-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-students-should-be-able-to-do">What students should be able to do</h2>
-<p>By the end of onboarding, a student should be able to:</p>
+<section id="recommended-pattern-for-students" class="level2">
+<h2 class="anchored" data-anchor-id="recommended-pattern-for-students">Recommended pattern for students</h2>
 <ol type="1">
-<li>Start a project on the correct FASRC system and choose an appropriate storage location.</li>
-<li>Create a reproducible project structure with notebooks, scripts, and dependency tracking.</li>
-<li>Read shared datasets without making unnecessary copies.</li>
-<li>Push analysis code and documentation to GitHub without exposing restricted data.</li>
-<li>Ask for help with enough context that someone else can reproduce the problem.</li>
+<li>Connect to the correct VPN realm.</li>
+<li>Start an interactive session for exploration.</li>
+<li>Prototype a small slice of the analysis.</li>
+<li>Move stable steps into scripts.</li>
+<li>Schedule heavier work through Slurm or another batch mechanism.</li>
+<li>Keep code and documentation in GitHub; keep restricted data on approved storage.</li>
 </ol>
 </section>
-<section id="suggested-reading-path" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reading-path">Suggested reading path</h2>
-<ol type="1">
-<li>Read <a href="./start-here.html">Start Here</a> for the workflow philosophy and first-week checklist.</li>
-<li>Read <a href="./workflow-roadmap.html">Workflow Roadmap</a> for the full research lifecycle.</li>
-<li>Use the guide pages as reference while you are actively working on a project.</li>
-<li>Keep <a href="./resources.html">Reference Library</a> open when you need the official docs.</li>
-</ol>
+<section id="storage-tiers-and-what-they-are-for" class="level2">
+<h2 class="anchored" data-anchor-id="storage-tiers-and-what-they-are-for">Storage tiers and what they are for</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Storage</th>
+<th>Use it for</th>
+<th>Do not use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Home directory</td>
+<td>Small personal config and lightweight project files</td>
+<td>Large shared analysis outputs</td>
+</tr>
+<tr class="even">
+<td>Shared lab/project storage</td>
+<td>Canonical project code and approved shared data access</td>
+<td>Personal scratch or duplicate copies</td>
+</tr>
+<tr class="odd">
+<td><code>/n/netscratch</code></td>
+<td>High-I/O temporary intermediates</td>
+<td>Permanent storage or anything that is not reproducible</td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td>Code, docs, templates, issues, and small text-based metadata</td>
+<td>Raw data, large binaries, or restricted files</td>
+</tr>
+</tbody>
+</table>
+<p>FASRC documents <code>/n/netscratch</code> as temporary, high-performance, not backed up, and subject to a 90-day retention policy.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
 </section>
-<section id="this-website-is-itself-part-of-the-recommendation" class="level2">
-<h2 class="anchored" data-anchor-id="this-website-is-itself-part-of-the-recommendation">This website is itself part of the recommendation</h2>
-<p>R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="fasrc-tips-that-save-time" class="level2">
+<h2 class="anchored" data-anchor-id="fasrc-tips-that-save-time">FASRC tips that save time</h2>
+<ul>
+<li>Use Open OnDemand when you want the simplest path into interactive compute.</li>
+<li>Use the “My Interactive Sessions” area to reconnect to running browser-based sessions.</li>
+<li>Use Chrome or Firefox for OOD; FASRC warns that Safari may not behave well for some apps.</li>
+<li>If package installation fails in FASSE RStudio Server, check whether you need to set the FASRC proxy variables first.</li>
+<li>Remember that RStudio Server on OOD is convenient, but FASRC notes that <code>module load</code> and <code>sbatch</code> are not available inside that app.</li>
+</ul>
+</section>
+<section id="practical-examples" class="level2">
+<h2 class="anchored" data-anchor-id="practical-examples">Practical examples</h2>
+<section id="start-a-shell-session" class="level3">
+<h3 class="anchored" data-anchor-id="start-a-shell-session">Start a shell session</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@login.rc.fas.harvard.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For FASSE, use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@fasselogin.rc.fas.harvard.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="use-scratch-for-temporary-intermediates" class="level3">
+<h3 class="anchored" data-anchor-id="use-scratch-for-temporary-intermediates">Use scratch for temporary intermediates</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /n/netscratch/<span class="op">&lt;</span>lab-or-project<span class="op">&gt;</span>/<span class="op">&lt;</span>project-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then point temporary outputs there from your scripts instead of filling the repository or home directory.</p>
+</section>
+<section id="if-fasse-r-package-installs-need-a-proxy" class="level3">
+<h3 class="anchored" data-anchor-id="if-fasse-r-package-installs-need-a-proxy">If FASSE R package installs need a proxy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">http_proxy =</span> <span class="st">"http://rcproxy.rc.fas.harvard.edu:3128"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">https_proxy =</span> <span class="st">"http://rcproxy.rc.fas.harvard.edu:3128"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="decision-rule" class="level2">
+<h2 class="anchored" data-anchor-id="decision-rule">Decision rule</h2>
+<p>If the job is slow, large, shared, scheduled, or security-sensitive, it belongs on HPC infrastructure by default.</p>
+</section>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/virtual-desktop/">FASRC Docs: Open OnDemand Dashboard and Remote Desktop</a></li>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/r-and-rstudio/">FASRC Docs: R and RStudio</a></li>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/policy-scratch/">FASRC Docs: Scratch</a></li>
+<li><a href="https://nsaph.github.io/handbook/fasse.html">NSAPH Handbook: How to work on FASSE</a></li>
+<li><a href="https://nsaph.github.io/handbook/cannon.html">NSAPH Handbook: Getting started on CANNON</a></li>
+</ul>
 
 
 </section>
@@ -314,7 +456,10 @@ Golden Lab handbook
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>FASRC Docs, <a href="https://docs.rc.fas.harvard.edu/kb/r-and-rstudio/"><em>R and RStudio</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>FASRC Docs, <a href="https://docs.rc.fas.harvard.edu/kb/virtual-desktop/"><em>Open OnDemand (OOD) Dashboard and Remote Desktop</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>NSAPH Handbook, <a href="https://nsaph.github.io/handbook/cannon.html"><em>Getting started on CANNON</em></a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>FASRC Docs, <a href="https://docs.rc.fas.harvard.edu/kb/policy-scratch/"><em>Scratch</em></a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -724,12 +869,15 @@ Golden Lab handbook
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./workflow-roadmap.html" class="pagination-link" aria-label="Workflow Roadmap">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Workflow Roadmap</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./start-here.html" class="pagination-link" aria-label="Start Here">
-        <span class="nav-page-text">Start Here</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./projects-and-reproducibility.html" class="pagination-link" aria-label="Projects and Reproducibility">
+        <span class="nav-page-text">Projects and Reproducibility</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

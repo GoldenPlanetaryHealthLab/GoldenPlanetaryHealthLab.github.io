@@ -1,0 +1,90 @@
+---
+title: "Start Here"
+---
+
+## Why this documentation exists
+
+Most graduate students do not struggle because the science is impossible. They struggle because the workflow is fragile: files live on laptops, results are copied by hand, folders drift out of sync, and the explanation for a key decision is trapped in somebody's memory.
+
+The goal of this site is to make the robust path the normal path.
+
+## The working philosophy
+
+The original presentation reduces to a few durable defaults:
+
+- prefer remote and reproducible workflows over local and manual ones,
+- keep code, not outputs, as the source of truth,
+- narrate analysis with notebooks and reports,
+- track change with Git and GitHub,
+- and invest early in structure so later work gets cheaper.
+
+R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.[^r4ds-projects]
+
+## Fragile versus robust workflows
+
+| Fragile workflow | Robust workflow |
+|---|---|
+| Lives on one machine | Lives on supported infrastructure and in version control |
+| Depends on clicking and memory | Depends on scripts, notebooks, and documented steps |
+| Stores only outputs | Stores the method that creates outputs |
+| Breaks when paths, packages, or people change | Survives new machines, new users, and reruns |
+
+## What "source of truth" means in practice
+
+Treat these artifacts as the core record of a project:
+
+1. A `README` that says what the project is and how to run it.
+2. Scripts or notebooks that recreate the analysis.
+3. A lockfile or environment spec such as `renv.lock`, `environment.yml`, or `requirements.txt`.
+4. Data documentation that explains inputs, keys, units, and restrictions.
+5. Git history that shows what changed and why.
+
+Treat these as derived products:
+
+- figures,
+- rendered reports,
+- slides,
+- manuscripts,
+- and intermediate outputs that can be regenerated.
+
+## First-week checklist
+
+1. Get cluster access and confirm you can log in through the correct FASRC pathway.
+2. Create a repository for your project before the analysis becomes messy.
+3. Create a minimal project scaffold with directories for code, data documentation, figures, reports, and results.
+4. Build one small end-to-end example that reads data, runs one analysis step, and renders one output.
+5. Write down where the authoritative data lives and what restrictions apply.
+6. Push code and documentation to GitHub before asking for help.
+
+## What the RSE is helping you do
+
+The RSE role is not just "fix code when it breaks." It is also to help students:
+
+- choose the correct compute environment,
+- avoid avoidable copies of large or regulated data,
+- standardize project layout,
+- move from ad hoc scripts to reusable workflows,
+- and lower the cost of collaboration across the lab.
+
+## Common failure modes to avoid early
+
+- Running long jobs on a laptop because it feels faster to start.
+- Hard-coding absolute paths that only work for one person.
+- Saving important objects only in the interactive environment.
+- Renaming scripts to `final_v2_really_final`.
+- Pushing data to GitHub because the `.gitignore` was never set up.
+- Waiting to document the project until after the analysis is already confusing.
+
+## Next pages
+
+- Go to [Workflow Roadmap](workflow-roadmap.qmd) for the full lifecycle.
+- Go to [HPC and Infrastructure](hpc-infrastructure.qmd) if you need help deciding where work should run.
+- Go to [Projects and Reproducibility](projects-and-reproducibility.qmd) if you are setting up a new analysis repo.
+
+## Further reading
+
+- [R for Data Science (2e): Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts)
+- [R for Data Science (2e): Communicate](https://r4ds.hadley.nz/communicate)
+- [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+
+[^r4ds-projects]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: scripts and projects*](https://r4ds.hadley.nz/workflow-scripts).

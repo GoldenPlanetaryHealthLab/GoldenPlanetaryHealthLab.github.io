@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Golden Lab Data Workflows – Golden Lab Data Science Handbook</title>
+<title>Workflow Roadmap – Golden Lab Data Workflows</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -32,7 +32,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./start-here.html" rel="next">
+<link href="./hpc-infrastructure.html" rel="next">
+<link href="./start-here.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -42,7 +43,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c01663bd5040c5d7aea61770ef96c7e9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2473ab3b010787d4525b314871ccdabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,12 +71,15 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="css/custom_style.css">
-<meta property="og:title" content="Golden Lab Data Workflows – Golden Lab Data Science Handbook">
+<meta property="og:title" content="Workflow Roadmap – Golden Lab Data Workflows">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
-<meta property="og:site_name" content="Golden Lab Data Science Handbook">
+<meta property="og:site_name" content="Golden Lab Data Workflows">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -86,7 +90,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Golden Lab Data Science Handbook</span>
+    <span class="navbar-title">Golden Lab Data Workflows</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -127,33 +131,49 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Home</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./start-here.html">Orientation</a></li><li class="breadcrumb-item"><a href="./workflow-roadmap.html">Workflow Roadmap</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
   </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block"><h1 class="title display-7">Golden Lab Data Workflows</h1></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./start-here.html">Orientation</a></li><li class="breadcrumb-item"><a href="./workflow-roadmap.html">Workflow Roadmap</a></li></ol></nav>
+      <h1 class="title">Workflow Roadmap</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Orientation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./start-here.html" class="sidebar-item-text sidebar-link">
@@ -162,7 +182,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./workflow-roadmap.html" class="sidebar-item-text sidebar-link">
+  <a href="./workflow-roadmap.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Workflow Roadmap</span></a>
   </div>
 </li>
@@ -220,92 +240,169 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-end-to-end-workflow" id="toc-the-end-to-end-workflow" class="nav-link active" data-scroll-target="#the-end-to-end-workflow">The end-to-end workflow</a></li>
+  <li><a href="#question-and-scope" id="toc-question-and-scope" class="nav-link" data-scroll-target="#question-and-scope">1. Question and scope</a></li>
+  <li><a href="#access-and-infrastructure" id="toc-access-and-infrastructure" class="nav-link" data-scroll-target="#access-and-infrastructure">2. Access and infrastructure</a></li>
+  <li><a href="#project-scaffold" id="toc-project-scaffold" class="nav-link" data-scroll-target="#project-scaffold">3. Project scaffold</a></li>
+  <li><a href="#data-intake-and-documentation" id="toc-data-intake-and-documentation" class="nav-link" data-scroll-target="#data-intake-and-documentation">4. Data intake and documentation</a></li>
+  <li><a href="#exploration-and-notebooks" id="toc-exploration-and-notebooks" class="nav-link" data-scroll-target="#exploration-and-notebooks">5. Exploration and notebooks</a></li>
+  <li><a href="#reusable-scripts-or-pipeline" id="toc-reusable-scripts-or-pipeline" class="nav-link" data-scroll-target="#reusable-scripts-or-pipeline">6. Reusable scripts or pipeline</a></li>
+  <li><a href="#review-and-communication" id="toc-review-and-communication" class="nav-link" data-scroll-target="#review-and-communication">7. Review and communication</a></li>
+  <li><a href="#archive-and-handoff" id="toc-archive-and-handoff" class="nav-link" data-scroll-target="#archive-and-handoff">8. Archive and handoff</a></li>
+  <li><a href="#minimal-viable-workflow" id="toc-minimal-viable-workflow" class="nav-link" data-scroll-target="#minimal-viable-workflow">Minimal viable workflow</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
-
-<header id="title-block-header">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
-</header>
 
 
-<div class="hero">
-<div class="eyebrow">
-Golden Lab handbook
+
+<section id="the-end-to-end-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="the-end-to-end-workflow">The end-to-end workflow</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A[Question and scope] --&gt; B[Access and infrastructure]
+  B --&gt; C[Project scaffold]
+  C --&gt; D[Data intake and documentation]
+  D --&gt; E[Exploration and notebooks]
+  E --&gt; F[Reusable scripts or pipeline]
+  F --&gt; G[Review and communication]
+  G --&gt; H[Archive and handoff]
+</pre>
 </div>
-<section id="data-science-workflows-for-research-that-lasts" class="level1">
-<h1>Data science workflows for research that lasts</h1>
-<p>This site turns the ideas from <code>presentation.qmd</code> into a lab handbook: work on the cluster, keep code as the source of truth, document decisions close to the analysis, and build projects that other people can run.</p>
-<p><a href="./start-here.html" class="hero-button">Start Here</a> <a href="./workflow-roadmap.html" class="hero-button secondary">See the Workflow Roadmap</a></p>
-</section>
+<p></p></figure><p></p>
 </div>
-<div class="card-grid">
-<section id="start-on-the-right-machine" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="start-on-the-right-machine">Start on the right machine</h3>
-<p>Treat HPC as the default, not the backup plan. Use FASRC interactive apps for exploration and scheduled jobs for scale.</p>
-<p><a href="./hpc-infrastructure.html">Open the infrastructure guide</a></p>
-</section>
-<section id="build-projects-that-survive-handoff" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="build-projects-that-survive-handoff">Build projects that survive handoff</h3>
-<p>Use one project per analysis, relative paths, environment management, and documented folder structure.</p>
-<p><a href="./projects-and-reproducibility.html">Open the reproducibility guide</a></p>
-</section>
-<section id="handle-data-like-shared-lab-infrastructure" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="handle-data-like-shared-lab-infrastructure">Handle data like shared lab infrastructure</h3>
-<p>Track provenance, avoid duplicate copies, document variables, and separate raw, analytic, and derived data.</p>
-<p><a href="./data-access-and-management.html">Open the data guide</a></p>
-</section>
-<section id="collaborate-without-chaos" class="level3 info-card">
-<h3 class="anchored" data-anchor-id="collaborate-without-chaos">Collaborate without chaos</h3>
-<p>Use GitHub, lightweight review, and reproducible help requests so other people can support your work quickly.</p>
-<p><a href="./collaboration-and-support.html">Open the collaboration guide</a></p>
-</section>
 </div>
-<section id="lab-defaults" class="level2">
-<h2 class="anchored" data-anchor-id="lab-defaults">Lab defaults</h2>
-<div class="principle-grid">
-<section id="remote-reproducible-beats-local-manual" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="remote-reproducible-beats-local-manual">1. Remote + reproducible beats local + manual</h3>
-<p>If work matters, it should run on supported infrastructure and be re-runnable from code.</p>
-</section>
-<section id="code-is-the-source-of-truth" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="code-is-the-source-of-truth">2. Code is the source of truth</h3>
-<p>Results, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.</p>
-</section>
-<section id="analysis-should-be-narrated" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="analysis-should-be-narrated">3. Analysis should be narrated</h3>
-<p>Use notebooks and reports to explain what you did, why you did it, and what should happen next.</p>
-</section>
-<section id="robust-habits-compound" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="robust-habits-compound">4. Robust habits compound</h3>
-<p>Version control, clean project structure, and minimal documentation reduce technical debt for everyone.</p>
-</section>
 </div>
+<p>The point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.</p>
 </section>
-<section id="what-students-should-be-able-to-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-students-should-be-able-to-do">What students should be able to do</h2>
-<p>By the end of onboarding, a student should be able to:</p>
+<section id="question-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="question-and-scope">1. Question and scope</h2>
+<p>Start by writing down:</p>
+<ul>
+<li>the scientific question,</li>
+<li>the unit of analysis,</li>
+<li>the key inputs,</li>
+<li>the expected outputs,</li>
+<li>and the likely compute or security constraints.</li>
+</ul>
+<p>If this is not written down, folder structure and code quality will not save the project.</p>
+</section>
+<section id="access-and-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="access-and-infrastructure">2. Access and infrastructure</h2>
+<p>Decide where the work belongs before coding heavily:</p>
+<ul>
+<li>public or low-risk exploratory work may fit on Cannon or another standard environment,</li>
+<li>regulated or contract-restricted work may require FASSE or another secure environment,</li>
+<li>and heavy preprocessing or simulation should be designed for scheduled compute, not a laptop session.</li>
+</ul>
+<p>Create the project in the environment where it will actually live.</p>
+</section>
+<section id="project-scaffold" class="level2">
+<h2 class="anchored" data-anchor-id="project-scaffold">3. Project scaffold</h2>
+<p>Set up the repository immediately. A good starting point is:</p>
+<pre class="text"><code>project-name/
+├── README.md
+├── .gitignore
+├── data/
+├── data-raw/
+├── code/
+├── notebooks/
+├── reports/
+├── figures/
+├── results/
+└── renv.lock or environment.yml</code></pre>
+<p>The NSAPH handbook recommends a very similar repository layout because it separates code, figures, reports, results, and data from the start.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="data-intake-and-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="data-intake-and-documentation">4. Data intake and documentation</h2>
+<p>Before analysis scales up, document:</p>
+<ul>
+<li>where the authoritative data lives,</li>
+<li>who controls access,</li>
+<li>whether you should symlink instead of copy,</li>
+<li>the update cadence,</li>
+<li>key identifiers,</li>
+<li>and what cannot leave the secure environment.</li>
+</ul>
+<p>If a dataset deserves an analysis, it deserves a data dictionary.</p>
+</section>
+<section id="exploration-and-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="exploration-and-notebooks">5. Exploration and notebooks</h2>
+<p>Do early exploration in notebooks or scripts that explain:</p>
+<ul>
+<li>what you are testing,</li>
+<li>what assumptions you are making,</li>
+<li>what looks wrong,</li>
+<li>and what should happen next.</li>
+</ul>
+<p>R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</section>
+<section id="reusable-scripts-or-pipeline" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-scripts-or-pipeline">6. Reusable scripts or pipeline</h2>
+<p>Once a workflow stabilizes, move repeated logic out of exploratory notebooks and into:</p>
+<ul>
+<li>scripts,</li>
+<li>functions,</li>
+<li>parameterized reports,</li>
+<li>or a pipeline tool such as <code>targets</code>, <code>make</code>, or <code>snakemake</code>.</li>
+</ul>
+<p>The trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.</p>
+</section>
+<section id="review-and-communication" class="level2">
+<h2 class="anchored" data-anchor-id="review-and-communication">7. Review and communication</h2>
+<p>Every project should be able to produce:</p>
 <ol type="1">
-<li>Start a project on the correct FASRC system and choose an appropriate storage location.</li>
-<li>Create a reproducible project structure with notebooks, scripts, and dependency tracking.</li>
-<li>Read shared datasets without making unnecessary copies.</li>
-<li>Push analysis code and documentation to GitHub without exposing restricted data.</li>
-<li>Ask for help with enough context that someone else can reproduce the problem.</li>
+<li>a short <code>README</code>,</li>
+<li>one current notebook or report that explains the analysis status,</li>
+<li>a reproducible path from data inputs to results,</li>
+<li>and a Git history that reflects real milestones.</li>
+</ol>
+<p>This makes supervisor meetings, methods review, and cross-training materially easier.</p>
+</section>
+<section id="archive-and-handoff" class="level2">
+<h2 class="anchored" data-anchor-id="archive-and-handoff">8. Archive and handoff</h2>
+<p>Before a paper, graduation, or staff transition:</p>
+<ul>
+<li>confirm the repo can be cloned and run from scratch,</li>
+<li>confirm restricted data are not in Git,</li>
+<li>confirm documentation identifies canonical data locations,</li>
+<li>render a final report or project website,</li>
+<li>and record ownership for future maintenance.</li>
+</ul>
+</section>
+<section id="minimal-viable-workflow" class="level2">
+<h2 class="anchored" data-anchor-id="minimal-viable-workflow">Minimal viable workflow</h2>
+<p>If you are overwhelmed, do these five things first:</p>
+<ol type="1">
+<li>Work on the correct cluster.</li>
+<li>Put the analysis in Git.</li>
+<li>Use relative paths.</li>
+<li>Keep one notebook or report up to date.</li>
+<li>Write enough documentation that another lab member could restart the project next week.</li>
 </ol>
 </section>
-<section id="suggested-reading-path" class="level2">
-<h2 class="anchored" data-anchor-id="suggested-reading-path">Suggested reading path</h2>
-<ol type="1">
-<li>Read <a href="./start-here.html">Start Here</a> for the workflow philosophy and first-week checklist.</li>
-<li>Read <a href="./workflow-roadmap.html">Workflow Roadmap</a> for the full research lifecycle.</li>
-<li>Use the guide pages as reference while you are actively working on a project.</li>
-<li>Keep <a href="./resources.html">Reference Library</a> open when you need the official docs.</li>
-</ol>
-</section>
-<section id="this-website-is-itself-part-of-the-recommendation" class="level2">
-<h2 class="anchored" data-anchor-id="this-website-is-itself-part-of-the-recommendation">This website is itself part of the recommendation</h2>
-<p>R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<section id="further-reading" class="level2">
+<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<ul>
+<li><a href="https://r4ds.hadley.nz/workflow-scripts">R for Data Science (2e): Workflow: scripts and projects</a></li>
+<li><a href="https://r4ds.hadley.nz/communicate">R for Data Science (2e): Communicate</a></li>
+<li><a href="https://nsaph.github.io/handbook/fasse.html">NSAPH Handbook: How to work on FASSE</a></li>
+<li><a href="https://nsaph.github.io/handbook/docs.html">NSAPH Handbook: Workflow Documentation</a></li>
+</ul>
 
 
 </section>
@@ -314,7 +411,8 @@ Golden Lab handbook
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>NSAPH Handbook, <a href="https://nsaph.github.io/handbook/fasse.html"><em>How to work on FASSE</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -724,12 +822,15 @@ Golden Lab handbook
     }
   });
   </script>
-<nav class="page-navigation column-page-right">
+<nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./start-here.html" class="pagination-link" aria-label="Start Here">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Start Here</span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./start-here.html" class="pagination-link" aria-label="Start Here">
-        <span class="nav-page-text">Start Here</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./hpc-infrastructure.html" class="pagination-link" aria-label="HPC and Infrastructure">
+        <span class="nav-page-text">HPC and Infrastructure</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

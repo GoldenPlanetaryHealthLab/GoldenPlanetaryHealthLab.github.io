@@ -1,0 +1,129 @@
+---
+title: "Projects and Reproducibility"
+---
+
+## One project, one analysis
+
+R for Data Science recommends one project per analysis and treating the project directory as the analysis home.[^r4ds-projects] That is the cleanest default for lab work too.
+
+A project should contain everything required to understand and rerun the code except restricted data that must stay in approved shared locations.
+
+## Scripts are the source of truth
+
+The most important R4DS workflow recommendation is simple: for larger projects and collaboration, the source of truth should be the scripts, because scripts plus data recreate the environment.[^r4ds-source]
+
+That generalizes beyond R:
+
+- in R, keep the workflow in scripts, Quarto notebooks, and package lockfiles,
+- in Python, keep it in scripts, notebooks, `pyproject.toml`, `requirements.txt`, or `environment.yml`,
+- and in either language, avoid workflows that depend on an IDE's memory of prior objects.
+
+## Relative paths only
+
+R4DS is explicit here: once you are inside a project, use relative paths, not absolute paths, because absolute paths hinder sharing.[^r4ds-paths]
+
+Good:
+
+```r
+readr::read_csv(here::here("data", "analytic", "cohort.csv"))
+```
+
+Bad:
+
+```r
+readr::read_csv("/Users/alice/Desktop/final_data/cohort.csv")
+```
+
+## A practical project layout
+
+```text
+project-name/
+├── README.md
+├── .gitignore
+├── data/
+├── data-raw/
+├── code/
+├── notebooks/
+├── reports/
+├── figures/
+├── results/
+├── scratch/
+└── renv.lock
+```
+
+Suggested meanings:
+
+- `data/`: pointers, symlinks, small metadata, and lightweight project-owned data
+- `data-raw/`: import receipts, extraction scripts, or manifests for original inputs
+- `code/`: reusable scripts and functions
+- `notebooks/`: exploratory and explanatory Quarto notebooks
+- `reports/`: rendered outputs for meetings, manuscripts, or handoff
+- `results/`: small derived artifacts worth keeping
+- `scratch/`: local pointers to transient compute outputs when appropriate
+
+## Notebook versus script versus function
+
+Use a notebook when you need to explain reasoning.  
+Use a script when you need to run a stable step repeatedly.  
+Use a function when logic is reused in more than one place.  
+Use a pipeline when many steps depend on each other and reruns are expensive.
+
+## Environment management
+
+The presentation already points to `renv` and `conda`, and that is still the right baseline.
+
+For R:
+
+```r
+install.packages("renv")
+renv::init()
+```
+
+For Python, commit an `environment.yml` or `pyproject.toml` and keep it current.
+
+The goal is not perfection. The goal is that another person, or future you, can reconstruct the environment without guesswork.
+
+## Configuration, not hard-coded infrastructure
+
+If a project depends on shared paths outside the repository, put those paths in configuration.
+
+```yaml
+default:
+  analytic_root: "/n/shared/project-data"
+  scratch_root: "/n/netscratch/project-name"
+```
+
+Then use that configuration in code instead of repeating infrastructure paths throughout the analysis.
+
+## Save outputs from code, not with the mouse
+
+If a figure matters, it should be saved from the script or notebook that created it. R4DS makes this point for figures, but the same logic applies to tables, model objects, and reports: reproducible export beats manual copy-paste every time.
+
+## When to move beyond notebooks
+
+Move to a pipeline or more modular structure when:
+
+- the same notebook is rerun many times with small edits,
+- multiple students touch the same workflow,
+- the compute cost makes reruns expensive,
+- or you can no longer tell which cells are still authoritative.
+
+## A strong minimum standard
+
+Every active project should have:
+
+1. a readable `README`,
+2. a committed `.gitignore`,
+3. a current notebook or report,
+4. relative paths,
+5. and an environment specification.
+
+## Further reading
+
+- [R for Data Science (2e): Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts)
+- [R for Data Science (2e): Communicate](https://r4ds.hadley.nz/communicate)
+- [NSAPH Handbook: How to work on FASSE](https://nsaph.github.io/handbook/fasse.html)
+
+[^r4ds-projects]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: scripts and projects*](https://r4ds.hadley.nz/workflow-scripts).
+[^r4ds-source]: R4DS, [section 6.2.1 on source of truth](https://r4ds.hadley.nz/workflow-scripts).
+[^r4ds-paths]: R4DS, [section 6.2.4 on relative and absolute paths](https://r4ds.hadley.nz/workflow-scripts).

@@ -1,0 +1,136 @@
+---
+title: "Workflow Roadmap"
+---
+
+## The end-to-end workflow
+
+```{mermaid}
+flowchart LR
+  A[Question and scope] --> B[Access and infrastructure]
+  B --> C[Project scaffold]
+  C --> D[Data intake and documentation]
+  D --> E[Exploration and notebooks]
+  E --> F[Reusable scripts or pipeline]
+  F --> G[Review and communication]
+  G --> H[Archive and handoff]
+```
+
+The point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.
+
+## 1. Question and scope
+
+Start by writing down:
+
+- the scientific question,
+- the unit of analysis,
+- the key inputs,
+- the expected outputs,
+- and the likely compute or security constraints.
+
+If this is not written down, folder structure and code quality will not save the project.
+
+## 2. Access and infrastructure
+
+Decide where the work belongs before coding heavily:
+
+- public or low-risk exploratory work may fit on Cannon or another standard environment,
+- regulated or contract-restricted work may require FASSE or another secure environment,
+- and heavy preprocessing or simulation should be designed for scheduled compute, not a laptop session.
+
+Create the project in the environment where it will actually live.
+
+## 3. Project scaffold
+
+Set up the repository immediately. A good starting point is:
+
+```text
+project-name/
+├── README.md
+├── .gitignore
+├── data/
+├── data-raw/
+├── code/
+├── notebooks/
+├── reports/
+├── figures/
+├── results/
+└── renv.lock or environment.yml
+```
+
+The NSAPH handbook recommends a very similar repository layout because it separates code, figures, reports, results, and data from the start.[^nsaph-fasse]
+
+## 4. Data intake and documentation
+
+Before analysis scales up, document:
+
+- where the authoritative data lives,
+- who controls access,
+- whether you should symlink instead of copy,
+- the update cadence,
+- key identifiers,
+- and what cannot leave the secure environment.
+
+If a dataset deserves an analysis, it deserves a data dictionary.
+
+## 5. Exploration and notebooks
+
+Do early exploration in notebooks or scripts that explain:
+
+- what you are testing,
+- what assumptions you are making,
+- what looks wrong,
+- and what should happen next.
+
+R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of "real" analysis. That is the right model for lab work too.[^r4ds-communicate]
+
+## 6. Reusable scripts or pipeline
+
+Once a workflow stabilizes, move repeated logic out of exploratory notebooks and into:
+
+- scripts,
+- functions,
+- parameterized reports,
+- or a pipeline tool such as `targets`, `make`, or `snakemake`.
+
+The trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.
+
+## 7. Review and communication
+
+Every project should be able to produce:
+
+1. a short `README`,
+2. one current notebook or report that explains the analysis status,
+3. a reproducible path from data inputs to results,
+4. and a Git history that reflects real milestones.
+
+This makes supervisor meetings, methods review, and cross-training materially easier.
+
+## 8. Archive and handoff
+
+Before a paper, graduation, or staff transition:
+
+- confirm the repo can be cloned and run from scratch,
+- confirm restricted data are not in Git,
+- confirm documentation identifies canonical data locations,
+- render a final report or project website,
+- and record ownership for future maintenance.
+
+## Minimal viable workflow
+
+If you are overwhelmed, do these five things first:
+
+1. Work on the correct cluster.
+2. Put the analysis in Git.
+3. Use relative paths.
+4. Keep one notebook or report up to date.
+5. Write enough documentation that another lab member could restart the project next week.
+
+## Further reading
+
+- [R for Data Science (2e): Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts)
+- [R for Data Science (2e): Communicate](https://r4ds.hadley.nz/communicate)
+- [NSAPH Handbook: How to work on FASSE](https://nsaph.github.io/handbook/fasse.html)
+- [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+
+[^nsaph-fasse]: NSAPH Handbook, [*How to work on FASSE*](https://nsaph.github.io/handbook/fasse.html).
+[^r4ds-communicate]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Communicate*](https://r4ds.hadley.nz/communicate).

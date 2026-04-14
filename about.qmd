@@ -1,5 +1,32 @@
 ---
-title: "About"
+title: "About This Site"
 ---
 
-About this site
+This website is a working handbook for data science in the Golden Lab. It is designed for students and collaborators who need practical guidance on:
+
+- getting started on FASRC,
+- working with shared and regulated datasets,
+- organizing projects for reproducibility,
+- collaborating through Git and GitHub,
+- and preparing analyses for review, reporting, and handoff.
+
+The site was expanded from the ideas in `presentation.qmd`, then reorganized into documentation pages so that the material is easier to revisit after onboarding.
+
+## What this site is for
+
+Use this handbook when you need a lab default, a project scaffold, a pointer to the right infrastructure, or a concise explanation of why a workflow recommendation exists.
+
+## What this site is not
+
+This is not a substitute for official FASRC policy, study-specific data use agreements, or project-specific SOPs. When those sources disagree with a local habit, the official requirement wins.
+
+## How to contribute
+
+The best contributions are:
+
+- corrections to outdated instructions,
+- clearer examples,
+- additions to the data and workflow guides,
+- and links to lab-specific templates that save other people time.
+
+When in doubt, prefer small improvements and clear examples over long policy text.

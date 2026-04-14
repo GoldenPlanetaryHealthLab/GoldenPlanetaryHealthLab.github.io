@@ -1,16 +1,102 @@
 ---
-title: "Data Science at CSPH"
+title: "Golden Lab Data Workflows"
+page-layout: full
+toc: false
+title-block-style: none
 ---
 
-Welcome to the CSPH Data Science Documentation! This website is your go-to resource for learning about data science practices, tools, and projects with the Climate Smart Public Health group. Here you'll find guides, tutorials, and documentation to help you get started and stay informed.
+::: {.hero}
+<div class="eyebrow">Golden Lab handbook</div>
 
-This website is built on Quarto, which is a handy open-source scientific and technical publishing system. Quarto makes it easy to create beautiful, interactive, and reproducible documents and websites using Markdown, code, and visualizations. To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Data science workflows for research that lasts
 
+This site turns the ideas from `presentation.qmd` into a lab handbook: work on the cluster, keep code as the source of truth, document decisions close to the analysis, and build projects that other people can run.
 
-Contributions to this website were made by the folks you see below:
+[Start Here](start-here.qmd){.hero-button}
+[See the Workflow Roadmap](workflow-roadmap.qmd){.hero-button .secondary}
+:::
 
-🚧 🚧 🚧 Section Under Construction 🚧 🚧 🚧
+::: {.card-grid}
+::: {.info-card}
+### Start on the right machine
 
-To add your own contributions, see our ([🚧 contribution guide under construction 🚧]())!
+Treat HPC as the default, not the backup plan. Use FASRC interactive apps for exploration and scheduled jobs for scale.
 
-In the meantime first resource, the Data Science Workflows Presentation, is available [here](https://climate-smart-public-health.github.io/data-science-workflows-presentation/)!
+[Open the infrastructure guide](hpc-infrastructure.qmd)
+:::
+
+::: {.info-card}
+### Build projects that survive handoff
+
+Use one project per analysis, relative paths, environment management, and documented folder structure.
+
+[Open the reproducibility guide](projects-and-reproducibility.qmd)
+:::
+
+::: {.info-card}
+### Handle data like shared lab infrastructure
+
+Track provenance, avoid duplicate copies, document variables, and separate raw, analytic, and derived data.
+
+[Open the data guide](data-access-and-management.qmd)
+:::
+
+::: {.info-card}
+### Collaborate without chaos
+
+Use GitHub, lightweight review, and reproducible help requests so other people can support your work quickly.
+
+[Open the collaboration guide](collaboration-and-support.qmd)
+:::
+:::
+
+## Lab defaults
+
+::: {.principle-grid}
+::: {.principle-card}
+### 1. Remote + reproducible beats local + manual
+
+If work matters, it should run on supported infrastructure and be re-runnable from code.
+:::
+
+::: {.principle-card}
+### 2. Code is the source of truth
+
+Results, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.
+:::
+
+::: {.principle-card}
+### 3. Analysis should be narrated
+
+Use notebooks and reports to explain what you did, why you did it, and what should happen next.
+:::
+
+::: {.principle-card}
+### 4. Robust habits compound
+
+Version control, clean project structure, and minimal documentation reduce technical debt for everyone.
+:::
+:::
+
+## What students should be able to do
+
+By the end of onboarding, a student should be able to:
+
+1. Start a project on the correct FASRC system and choose an appropriate storage location.
+2. Create a reproducible project structure with notebooks, scripts, and dependency tracking.
+3. Read shared datasets without making unnecessary copies.
+4. Push analysis code and documentation to GitHub without exposing restricted data.
+5. Ask for help with enough context that someone else can reproduce the problem.
+
+## Suggested reading path
+
+1. Read [Start Here](start-here.qmd) for the workflow philosophy and first-week checklist.
+2. Read [Workflow Roadmap](workflow-roadmap.qmd) for the full research lifecycle.
+3. Use the guide pages as reference while you are actively working on a project.
+4. Keep [Reference Library](resources.qmd) open when you need the official docs.
+
+## This website is itself part of the recommendation
+
+R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.[^r4ds-communicate]
+
+[^r4ds-communicate]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Communicate*](https://r4ds.hadley.nz/communicate).
