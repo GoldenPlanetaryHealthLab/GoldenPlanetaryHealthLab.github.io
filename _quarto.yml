@@ -63,6 +63,16 @@ website:
   page-footer:
     left: Golden Lab data workflows handbook
     right: Built with [Quarto](https://quarto.org)
+  comments:
+    giscus:
+      repo: "GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io"
+      repo-id: "R_kgDOR4BFuw"
+      category: "General"
+      category-id: "DIC_kwDOR4BFu84C6zHg"
+      mapping: "pathname"
+      theme: "preferred_color_scheme"
+      reactions-enabled: true
+      input-position: "top"
 
 format:
   html:
