@@ -1,0 +1,10 @@
+---
+title: "Active Projects"
+format: html
+---
+
+This page lists the ongoing projects in the Golden Lab. If you are 
+interested in contributing to any of these projects, please reach 
+out to us!
+
+
