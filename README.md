@@ -1,9 +1,8 @@
-# README
+# Golden Lab Data Science Handbook
+
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-[![All Contributors](https://img.shields.io/github/all-contributors/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io?color=ee8449&style=flat-square)](#contributors)
 
 This repository contains the source code for the Golden Lab Data Science Handbook, a collection of reproducible, collaborative, HPC-native data science guidance for students and researchers. The handbook is built using Quarto, which allows us to integrate prose, code, and results in a single document.
 
