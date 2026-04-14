@@ -80,3 +80,5 @@ format:
         - css/custom.scss
     css:
       - css/custom_style.css
+    include-in-header: _includes/read-time-head.html
+    include-after-body: _includes/read-time.html

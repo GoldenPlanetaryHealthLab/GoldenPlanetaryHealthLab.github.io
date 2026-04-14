@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Projects and Reproducibility – Golden Lab Data Workflows</title>
+<title>Projects and Reproducibility – Golden Lab Data Science Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -106,12 +106,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<style>
+.quarto-read-time {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+</style>
 
 
 <link rel="stylesheet" href="css/custom_style.css">
-<meta property="og:title" content="Projects and Reproducibility – Golden Lab Data Workflows">
+<meta property="og:title" content="Projects and Reproducibility – Golden Lab Data Science Handbook">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
-<meta property="og:site_name" content="Golden Lab Data Workflows">
+<meta property="og:site_name" content="Golden Lab Data Science Handbook">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -122,7 +129,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Golden Lab Data Workflows</span>
+    <span class="navbar-title">Golden Lab Data Science Handbook</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -415,6 +422,41 @@ Use a pipeline when many steps depend on each other and reruns are expensive.</p
 <li id="fn3"><p>R4DS, <a href="https://r4ds.hadley.nz/workflow-scripts">section 6.2.4 on relative and absolute paths</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
+<div id="read-time-container"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const article =
+    document.querySelector("main.content") ||
+    document.querySelector("article") ||
+    document.querySelector("main");
+
+  if (!article) return;
+
+  // Remove code, nav, TOC, and other non-reading content from the count
+  const clone = article.cloneNode(true);
+  clone.querySelectorAll("pre, code, nav, .sidebar, .toc, .quarto-title-meta, script, style")
+       .forEach(el => el.remove());
+
+  const text = clone.innerText.replace(/\s+/g, " ").trim();
+  const words = text ? text.split(" ").length : 0;
+
+  // Typical reading speed
+  const wpm = 200;
+  const minutes = Math.max(1, Math.ceil(words / wpm));
+
+  const target =
+    document.querySelector(".quarto-title-meta") ||
+    document.querySelector("#title-block-header") ||
+    document.getElementById("read-time-container");
+
+  const readTime = document.createElement("div");
+  readTime.className = "quarto-read-time";
+  readTime.textContent = `${minutes} min read`;
+
+  target.appendChild(readTime);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

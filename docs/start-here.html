@@ -71,6 +71,13 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <style>html{ scroll-behavior: smooth; }</style>
+<style>
+.quarto-read-time {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+</style>
 
 
 <link rel="stylesheet" href="css/custom_style.css">
@@ -389,6 +396,41 @@ ul.task-list li input[type="checkbox"] {
 <li id="fn1"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/workflow-scripts"><em>R for Data Science (2e): Workflow: scripts and projects</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
+<div id="read-time-container"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const article =
+    document.querySelector("main.content") ||
+    document.querySelector("article") ||
+    document.querySelector("main");
+
+  if (!article) return;
+
+  // Remove code, nav, TOC, and other non-reading content from the count
+  const clone = article.cloneNode(true);
+  clone.querySelectorAll("pre, code, nav, .sidebar, .toc, .quarto-title-meta, script, style")
+       .forEach(el => el.remove());
+
+  const text = clone.innerText.replace(/\s+/g, " ").trim();
+  const words = text ? text.split(" ").length : 0;
+
+  // Typical reading speed
+  const wpm = 200;
+  const minutes = Math.max(1, Math.ceil(words / wpm));
+
+  const target =
+    document.querySelector(".quarto-title-meta") ||
+    document.querySelector("#title-block-header") ||
+    document.getElementById("read-time-container");
+
+  const readTime = document.createElement("div");
+  readTime.className = "quarto-read-time";
+  readTime.textContent = `${minutes} min read`;
+
+  target.appendChild(readTime);
+});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
