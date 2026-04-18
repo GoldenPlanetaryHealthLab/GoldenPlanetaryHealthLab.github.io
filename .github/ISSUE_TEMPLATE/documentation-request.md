@@ -1,7 +1,7 @@
 ---
-name: 🧪 New Data Science Workflow or Tutorial
-about: Propose a new tutorial or document a common data science workflow
-title: "[Tutorial/Workflow] <Short descriptive title>"
+name: 🧪 New Data Science Tutorial or Documentation
+about: Propose new tutorials or documentation for our data science workflows
+title: "[Tutorial/Workflow/Doc] <Short descriptive title>"
 labels: [workflow, tutorial, documentation]
 assignees: ''
 
@@ -9,7 +9,7 @@ assignees: ''
 
 ## 🧾 Summary
 
-Briefly describe what the tutorial or workflow will cover and why it's needed.
+Briefly describe what the tutorial, documentation, or workflow will cover and why it's needed.
 
 ## 🎯 Learning Goals / Outcomes
 
