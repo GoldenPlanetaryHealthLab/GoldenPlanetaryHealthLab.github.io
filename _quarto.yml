@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: docs
   render:
+    - CONTRIBUTING.qmd
     - index.qmd
     - start-here.qmd
     - workflow-roadmap.qmd
@@ -11,6 +12,7 @@ project:
     - collaboration-and-support.qmd
     - resources.qmd
     - about.qmd
+
 
 website:
   title: Golden Lab Data Science Handbook
@@ -60,6 +62,8 @@ website:
             text: Reference Library
       - href: about.qmd
         text: About This Site
+      - href: CONTRIBUTING.qmd
+        text: Contribution Guide
   page-footer:
     left: Golden Lab data workflows handbook
     right: Built with [Quarto](https://quarto.org)
