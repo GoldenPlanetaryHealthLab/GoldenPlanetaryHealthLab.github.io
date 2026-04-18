@@ -1,0 +1,1073 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Site",
+    "section": "",
+    "text": "This website is a working handbook for data science in the Golden Lab. It is designed for students and collaborators who need practical guidance on:\nThe site was expanded from the ideas in presentation.qmd, then reorganized into documentation pages so that the material is easier to revisit after onboarding.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#what-this-site-is-for",
+    "href": "about.html#what-this-site-is-for",
+    "title": "About This Site",
+    "section": "What this site is for",
+    "text": "What this site is for\nUse this handbook when you need a lab default, a project scaffold, a pointer to the right infrastructure, or a concise explanation of why a workflow recommendation exists.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#what-this-site-is-not",
+    "href": "about.html#what-this-site-is-not",
+    "title": "About This Site",
+    "section": "What this site is not",
+    "text": "What this site is not\nThis is not a substitute for official FASRC policy, study-specific data use agreements, or project-specific SOPs. When those sources disagree with a local habit, the official requirement wins.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#how-to-contribute",
+    "href": "about.html#how-to-contribute",
+    "title": "About This Site",
+    "section": "How to contribute",
+    "text": "How to contribute\nThe best contributions are:\n\ncorrections to outdated instructions,\nclearer examples,\nadditions to the data and workflow guides,\nand links to lab-specific templates that save other people time.\n\nWhen in doubt, prefer small improvements and clear examples over long policy text.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html",
+    "href": "collaboration-and-support.html",
+    "title": "Collaboration and Support",
+    "section": "",
+    "text": "Version control is not only for backup. It is how the lab understands change, reviews methods, and avoids conflicting local copies of the same project.\nThe presentation frames Git and GitHub as the tool for traceability, and that is exactly right: commit history should explain what changed, when, and why.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#collaboration-is-part-of-reproducibility",
+    "href": "collaboration-and-support.html#collaboration-is-part-of-reproducibility",
+    "title": "Collaboration and Support",
+    "section": "",
+    "text": "Version control is not only for backup. It is how the lab understands change, reviews methods, and avoids conflicting local copies of the same project.\nThe presentation frames Git and GitHub as the tool for traceability, and that is exactly right: commit history should explain what changed, when, and why.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#daily-git-habits",
+    "href": "collaboration-and-support.html#daily-git-habits",
+    "title": "Collaboration and Support",
+    "section": "Daily Git habits",
+    "text": "Daily Git habits\nUse Git for active work, not just for milestone dumps.\n\nCreate the repository early.\nCommit small, coherent changes.\nUse commit messages that describe the decision or milestone.\nPush regularly so the work is visible and recoverable.\nKeep data out of Git unless policy clearly allows it.\n\nThe NSAPH handbook also recommends pushing code regularly, especially before asking for help or presenting work.1",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#branches-and-pull-requests",
+    "href": "collaboration-and-support.html#branches-and-pull-requests",
+    "title": "Collaboration and Support",
+    "section": "Branches and pull requests",
+    "text": "Branches and pull requests\nFor solo projects, a lightweight branch workflow is still useful:\n\nMake a branch for risky or substantial work.\nOpen a pull request when the method or output changes meaningfully.\nUse review comments to discuss code, assumptions, and documentation gaps.\nMerge only when the branch leaves the repository in a reproducible state.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#what-a-good-commit-message-looks-like",
+    "href": "collaboration-and-support.html#what-a-good-commit-message-looks-like",
+    "title": "Collaboration and Support",
+    "section": "What a good commit message looks like",
+    "text": "What a good commit message looks like\nBetter:\n\nadd first pass of temperature exposure merge\ndocument MCBS variable cleaning assumptions\nmove repeated model code into helper function\n\nWorse:\n\nupdates\nstuff\nfinal final version",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#how-to-ask-for-help-effectively",
+    "href": "collaboration-and-support.html#how-to-ask-for-help-effectively",
+    "title": "Collaboration and Support",
+    "section": "How to ask for help effectively",
+    "text": "How to ask for help effectively\nR for Data Science recommends preparing a minimal reproducible example when you are stuck.2 That is one of the highest-leverage habits students can learn.\nWhen asking the RSE or another lab member for help, include:\n\nthe repo or branch,\nthe exact script or notebook,\nthe command you ran,\nthe full error message,\nthe smallest reproducible example you can produce,\nand any data access constraints that prevent direct debugging.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#what-to-send-before-a-meeting",
+    "href": "collaboration-and-support.html#what-to-send-before-a-meeting",
+    "title": "Collaboration and Support",
+    "section": "What to send before a meeting",
+    "text": "What to send before a meeting\nFor technical meetings, send:\n\nthe current notebook or report,\na short status note,\nopen questions,\nand links to the relevant code or pull request.\n\nThis shifts meetings away from “what happened?” and toward “what decision do we need to make?”",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#code-review-checklist",
+    "href": "collaboration-and-support.html#code-review-checklist",
+    "title": "Collaboration and Support",
+    "section": "Code review checklist",
+    "text": "Code review checklist\nReview for:\n\nreproducibility,\npath portability,\ndata leakage risk,\nhidden assumptions,\nduplicated code,\nand missing documentation.\n\nDo not review only for style.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#support-ladder",
+    "href": "collaboration-and-support.html#support-ladder",
+    "title": "Collaboration and Support",
+    "section": "Support ladder",
+    "text": "Support ladder\nUse this order when possible:\n\nCheck the project README and this site.\nSearch the official docs for the tool you are using.\nReduce the problem to a minimal example.\nOpen an issue or send a focused help request.\nEscalate to synchronous help when the blocker persists.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#the-real-goal",
+    "href": "collaboration-and-support.html#the-real-goal",
+    "title": "Collaboration and Support",
+    "section": "The real goal",
+    "text": "The real goal\nThe goal is not to make every student a Git expert. The goal is to make the lab’s work inspectable, shareable, and recoverable.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#further-reading",
+    "href": "collaboration-and-support.html#further-reading",
+    "title": "Collaboration and Support",
+    "section": "Further reading",
+    "text": "Further reading\n\nR for Data Science (2e): Workflow: getting help\nNSAPH Handbook: Introduction to NSAPH GitHub\nNSAPH Handbook: Workflow Documentation",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "collaboration-and-support.html#footnotes",
+    "href": "collaboration-and-support.html#footnotes",
+    "title": "Collaboration and Support",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNSAPH Handbook, Introduction to NSAPH GitHub.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Workflow: getting help.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html",
+    "href": "projects-and-reproducibility.html",
+    "title": "Projects and Reproducibility",
+    "section": "",
+    "text": "R for Data Science recommends one project per analysis and treating the project directory as the analysis home.1 That is the cleanest default for lab work too.\nA project should contain everything required to understand and rerun the code except restricted data that must stay in approved shared locations.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#one-project-one-analysis",
+    "href": "projects-and-reproducibility.html#one-project-one-analysis",
+    "title": "Projects and Reproducibility",
+    "section": "",
+    "text": "R for Data Science recommends one project per analysis and treating the project directory as the analysis home.1 That is the cleanest default for lab work too.\nA project should contain everything required to understand and rerun the code except restricted data that must stay in approved shared locations.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#scripts-are-the-source-of-truth",
+    "href": "projects-and-reproducibility.html#scripts-are-the-source-of-truth",
+    "title": "Projects and Reproducibility",
+    "section": "Scripts are the source of truth",
+    "text": "Scripts are the source of truth\nThe most important R4DS workflow recommendation is simple: for larger projects and collaboration, the source of truth should be the scripts, because scripts plus data recreate the environment.2\nThat generalizes beyond R:\n\nin R, keep the workflow in scripts, Quarto notebooks, and package lockfiles,\nin Python, keep it in scripts, notebooks, pyproject.toml, requirements.txt, or environment.yml,\nand in either language, avoid workflows that depend on an IDE’s memory of prior objects.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#relative-paths-only",
+    "href": "projects-and-reproducibility.html#relative-paths-only",
+    "title": "Projects and Reproducibility",
+    "section": "Relative paths only",
+    "text": "Relative paths only\nR4DS is explicit here: once you are inside a project, use relative paths, not absolute paths, because absolute paths hinder sharing.3\nGood:\nreadr::read_csv(here::here(\"data\", \"analytic\", \"cohort.csv\"))\nBad:\nreadr::read_csv(\"/Users/alice/Desktop/final_data/cohort.csv\")",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#a-practical-project-layout",
+    "href": "projects-and-reproducibility.html#a-practical-project-layout",
+    "title": "Projects and Reproducibility",
+    "section": "A practical project layout",
+    "text": "A practical project layout\nproject-name/\n├── README.md\n├── .gitignore\n├── data/\n├── data-raw/\n├── code/\n├── notebooks/\n├── reports/\n├── figures/\n├── results/\n├── scratch/\n└── renv.lock\nSuggested meanings:\n\ndata/: pointers, symlinks, small metadata, and lightweight project-owned data\ndata-raw/: import receipts, extraction scripts, or manifests for original inputs\ncode/: reusable scripts and functions\nnotebooks/: exploratory and explanatory Quarto notebooks\nreports/: rendered outputs for meetings, manuscripts, or handoff\nresults/: small derived artifacts worth keeping\nscratch/: local pointers to transient compute outputs when appropriate",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#notebook-versus-script-versus-function",
+    "href": "projects-and-reproducibility.html#notebook-versus-script-versus-function",
+    "title": "Projects and Reproducibility",
+    "section": "Notebook versus script versus function",
+    "text": "Notebook versus script versus function\nUse a notebook when you need to explain reasoning.\nUse a script when you need to run a stable step repeatedly.\nUse a function when logic is reused in more than one place.\nUse a pipeline when many steps depend on each other and reruns are expensive.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#environment-management",
+    "href": "projects-and-reproducibility.html#environment-management",
+    "title": "Projects and Reproducibility",
+    "section": "Environment management",
+    "text": "Environment management\nThe presentation already points to renv and conda, and that is still the right baseline.\nFor R:\ninstall.packages(\"renv\")\nrenv::init()\nFor Python, commit an environment.yml or pyproject.toml and keep it current.\nThe goal is not perfection. The goal is that another person, or future you, can reconstruct the environment without guesswork.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#configuration-not-hard-coded-infrastructure",
+    "href": "projects-and-reproducibility.html#configuration-not-hard-coded-infrastructure",
+    "title": "Projects and Reproducibility",
+    "section": "Configuration, not hard-coded infrastructure",
+    "text": "Configuration, not hard-coded infrastructure\nIf a project depends on shared paths outside the repository, put those paths in configuration.\ndefault:\n  analytic_root: \"/n/shared/project-data\"\n  scratch_root: \"/n/netscratch/project-name\"\nThen use that configuration in code instead of repeating infrastructure paths throughout the analysis.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#save-outputs-from-code-not-with-the-mouse",
+    "href": "projects-and-reproducibility.html#save-outputs-from-code-not-with-the-mouse",
+    "title": "Projects and Reproducibility",
+    "section": "Save outputs from code, not with the mouse",
+    "text": "Save outputs from code, not with the mouse\nIf a figure matters, it should be saved from the script or notebook that created it. R4DS makes this point for figures, but the same logic applies to tables, model objects, and reports: reproducible export beats manual copy-paste every time.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#when-to-move-beyond-notebooks",
+    "href": "projects-and-reproducibility.html#when-to-move-beyond-notebooks",
+    "title": "Projects and Reproducibility",
+    "section": "When to move beyond notebooks",
+    "text": "When to move beyond notebooks\nMove to a pipeline or more modular structure when:\n\nthe same notebook is rerun many times with small edits,\nmultiple students touch the same workflow,\nthe compute cost makes reruns expensive,\nor you can no longer tell which cells are still authoritative.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#a-strong-minimum-standard",
+    "href": "projects-and-reproducibility.html#a-strong-minimum-standard",
+    "title": "Projects and Reproducibility",
+    "section": "A strong minimum standard",
+    "text": "A strong minimum standard\nEvery active project should have:\n\na readable README,\na committed .gitignore,\na current notebook or report,\nrelative paths,\nand an environment specification.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#further-reading",
+    "href": "projects-and-reproducibility.html#further-reading",
+    "title": "Projects and Reproducibility",
+    "section": "Further reading",
+    "text": "Further reading\n\nR for Data Science (2e): Workflow: scripts and projects\nR for Data Science (2e): Communicate\nNSAPH Handbook: How to work on FASSE",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "projects-and-reproducibility.html#footnotes",
+    "href": "projects-and-reproducibility.html#footnotes",
+    "title": "Projects and Reproducibility",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Workflow: scripts and projects.↩︎\nR4DS, section 6.2.1 on source of truth.↩︎\nR4DS, section 6.2.4 on relative and absolute paths.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html",
+    "href": "workflow-roadmap.html",
+    "title": "Workflow Roadmap",
+    "section": "",
+    "text": "flowchart LR\n  A[Question and scope] --&gt; B[Access and infrastructure]\n  B --&gt; C[Project scaffold]\n  C --&gt; D[Data intake and documentation]\n  D --&gt; E[Exploration and notebooks]\n  E --&gt; F[Reusable scripts or pipeline]\n  F --&gt; G[Review and communication]\n  G --&gt; H[Archive and handoff]\n\n\n\n\n\n\nThe point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#the-end-to-end-workflow",
+    "href": "workflow-roadmap.html#the-end-to-end-workflow",
+    "title": "Workflow Roadmap",
+    "section": "",
+    "text": "flowchart LR\n  A[Question and scope] --&gt; B[Access and infrastructure]\n  B --&gt; C[Project scaffold]\n  C --&gt; D[Data intake and documentation]\n  D --&gt; E[Exploration and notebooks]\n  E --&gt; F[Reusable scripts or pipeline]\n  F --&gt; G[Review and communication]\n  G --&gt; H[Archive and handoff]\n\n\n\n\n\n\nThe point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#question-and-scope",
+    "href": "workflow-roadmap.html#question-and-scope",
+    "title": "Workflow Roadmap",
+    "section": "1. Question and scope",
+    "text": "1. Question and scope\nStart by writing down:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nIf this is not written down, folder structure and code quality will not save the project.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#access-and-infrastructure",
+    "href": "workflow-roadmap.html#access-and-infrastructure",
+    "title": "Workflow Roadmap",
+    "section": "2. Access and infrastructure",
+    "text": "2. Access and infrastructure\nDecide where the work belongs before coding heavily:\n\npublic or low-risk exploratory work may fit on Cannon or another standard environment,\nregulated or contract-restricted work may require FASSE or another secure environment,\nand heavy preprocessing or simulation should be designed for scheduled compute, not a laptop session.\n\nCreate the project in the environment where it will actually live.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#project-scaffold",
+    "href": "workflow-roadmap.html#project-scaffold",
+    "title": "Workflow Roadmap",
+    "section": "3. Project scaffold",
+    "text": "3. Project scaffold\nSet up the repository immediately. A good starting point is:\nproject-name/\n├── README.md\n├── .gitignore\n├── data/\n├── data-raw/\n├── code/\n├── notebooks/\n├── reports/\n├── figures/\n├── results/\n└── renv.lock or environment.yml\nThe NSAPH handbook recommends a very similar repository layout because it separates code, figures, reports, results, and data from the start.1",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#data-intake-and-documentation",
+    "href": "workflow-roadmap.html#data-intake-and-documentation",
+    "title": "Workflow Roadmap",
+    "section": "4. Data intake and documentation",
+    "text": "4. Data intake and documentation\nBefore analysis scales up, document:\n\nwhere the authoritative data lives,\nwho controls access,\nwhether you should symlink instead of copy,\nthe update cadence,\nkey identifiers,\nand what cannot leave the secure environment.\n\nIf a dataset deserves an analysis, it deserves a data dictionary.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#exploration-and-notebooks",
+    "href": "workflow-roadmap.html#exploration-and-notebooks",
+    "title": "Workflow Roadmap",
+    "section": "5. Exploration and notebooks",
+    "text": "5. Exploration and notebooks\nDo early exploration in notebooks or scripts that explain:\n\nwhat you are testing,\nwhat assumptions you are making,\nwhat looks wrong,\nand what should happen next.\n\nR for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.2",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#reusable-scripts-or-pipeline",
+    "href": "workflow-roadmap.html#reusable-scripts-or-pipeline",
+    "title": "Workflow Roadmap",
+    "section": "6. Reusable scripts or pipeline",
+    "text": "6. Reusable scripts or pipeline\nOnce a workflow stabilizes, move repeated logic out of exploratory notebooks and into:\n\nscripts,\nfunctions,\nparameterized reports,\nor a pipeline tool such as targets, make, or snakemake.\n\nThe trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#review-and-communication",
+    "href": "workflow-roadmap.html#review-and-communication",
+    "title": "Workflow Roadmap",
+    "section": "7. Review and communication",
+    "text": "7. Review and communication\nEvery project should be able to produce:\n\na short README,\none current notebook or report that explains the analysis status,\na reproducible path from data inputs to results,\nand a Git history that reflects real milestones.\n\nThis makes supervisor meetings, methods review, and cross-training materially easier.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#archive-and-handoff",
+    "href": "workflow-roadmap.html#archive-and-handoff",
+    "title": "Workflow Roadmap",
+    "section": "8. Archive and handoff",
+    "text": "8. Archive and handoff\nBefore a paper, graduation, or staff transition:\n\nconfirm the repo can be cloned and run from scratch,\nconfirm restricted data are not in Git,\nconfirm documentation identifies canonical data locations,\nrender a final report or project website,\nand record ownership for future maintenance.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#minimal-viable-workflow",
+    "href": "workflow-roadmap.html#minimal-viable-workflow",
+    "title": "Workflow Roadmap",
+    "section": "Minimal viable workflow",
+    "text": "Minimal viable workflow\nIf you are overwhelmed, do these five things first:\n\nWork on the correct cluster.\nPut the analysis in Git.\nUse relative paths.\nKeep one notebook or report up to date.\nWrite enough documentation that another lab member could restart the project next week.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#further-reading",
+    "href": "workflow-roadmap.html#further-reading",
+    "title": "Workflow Roadmap",
+    "section": "Further reading",
+    "text": "Further reading\n\nR for Data Science (2e): Workflow: scripts and projects\nR for Data Science (2e): Communicate\nNSAPH Handbook: How to work on FASSE\nNSAPH Handbook: Workflow Documentation",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "workflow-roadmap.html#footnotes",
+    "href": "workflow-roadmap.html#footnotes",
+    "title": "Workflow Roadmap",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNSAPH Handbook, How to work on FASSE.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Communicate.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "index.html#lab-defaults",
+    "href": "index.html#lab-defaults",
+    "title": "Golden Lab Data Workflows",
+    "section": "Lab defaults",
+    "text": "Lab defaults\n\n\n1. Remote + reproducible beats local + manual\nIf work matters, it should run on supported infrastructure and be re-runnable from code.\n\n\n2. Code is the source of truth\nResults, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.\n\n\n3. Analysis should be narrated\nUse notebooks and reports to explain what you did, why you did it, and what should happen next.\n\n\n4. Robust habits compound\nVersion control, clean project structure, and minimal documentation reduce technical debt for everyone.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#what-students-should-be-able-to-do",
+    "href": "index.html#what-students-should-be-able-to-do",
+    "title": "Golden Lab Data Workflows",
+    "section": "What students should be able to do",
+    "text": "What students should be able to do\nBy the end of onboarding, a student should be able to:\n\nStart a project on the correct FASRC system and choose an appropriate storage location.\nCreate a reproducible project structure with notebooks, scripts, and dependency tracking.\nRead shared datasets without making unnecessary copies.\nPush analysis code and documentation to GitHub without exposing restricted data.\nAsk for help with enough context that someone else can reproduce the problem.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#suggested-reading-path",
+    "href": "index.html#suggested-reading-path",
+    "title": "Golden Lab Data Workflows",
+    "section": "Suggested reading path",
+    "text": "Suggested reading path\n\nRead Start Here for the workflow philosophy and first-week checklist.\nRead Workflow Roadmap for the full research lifecycle.\nUse the guide pages as reference while you are actively working on a project.\nKeep Reference Library open when you need the official docs.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#this-website-is-itself-part-of-the-recommendation",
+    "href": "index.html#this-website-is-itself-part-of-the-recommendation",
+    "title": "Golden Lab Data Workflows",
+    "section": "This website is itself part of the recommendation",
+    "text": "This website is itself part of the recommendation\nR for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.2",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Golden Lab Data Workflows",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you were looking for the Golden Lab Google Public Site, click here(#TODO FIND THE OLD SITE).↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Communicate.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "start-here.html",
+    "href": "start-here.html",
+    "title": "Start Here",
+    "section": "",
+    "text": "Most graduate students do not struggle because the science is impossible. They struggle because the workflow is fragile: files live on laptops, results are copied by hand, folders drift out of sync, and the explanation for a key decision is trapped in somebody’s memory.\nThe goal of this site is to make the robust path the normal path.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#why-this-documentation-exists",
+    "href": "start-here.html#why-this-documentation-exists",
+    "title": "Start Here",
+    "section": "",
+    "text": "Most graduate students do not struggle because the science is impossible. They struggle because the workflow is fragile: files live on laptops, results are copied by hand, folders drift out of sync, and the explanation for a key decision is trapped in somebody’s memory.\nThe goal of this site is to make the robust path the normal path.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#the-working-philosophy",
+    "href": "start-here.html#the-working-philosophy",
+    "title": "Start Here",
+    "section": "The working philosophy",
+    "text": "The working philosophy\nThe original presentation reduces to a few durable defaults:\n\nprefer remote and reproducible workflows over local and manual ones,\nkeep code, not outputs, as the source of truth,\nnarrate analysis with notebooks and reports,\ntrack change with Git and GitHub,\nand invest early in structure so later work gets cheaper.\n\nR for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.1",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#fragile-versus-robust-workflows",
+    "href": "start-here.html#fragile-versus-robust-workflows",
+    "title": "Start Here",
+    "section": "Fragile versus robust workflows",
+    "text": "Fragile versus robust workflows\n\n\n\n\n\n\n\nFragile workflow\nRobust workflow\n\n\n\n\nLives on one machine\nLives on supported infrastructure and in version control\n\n\nDepends on clicking and memory\nDepends on scripts, notebooks, and documented steps\n\n\nStores only outputs\nStores the method that creates outputs\n\n\nBreaks when paths, packages, or people change\nSurvives new machines, new users, and reruns",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#what-source-of-truth-means-in-practice",
+    "href": "start-here.html#what-source-of-truth-means-in-practice",
+    "title": "Start Here",
+    "section": "What “source of truth” means in practice",
+    "text": "What “source of truth” means in practice\nTreat these artifacts as the core record of a project:\n\nA README that says what the project is and how to run it.\nScripts or notebooks that recreate the analysis.\nA lockfile or environment spec such as renv.lock, environment.yml, or requirements.txt.\nData documentation that explains inputs, keys, units, and restrictions.\nGit history that shows what changed and why.\n\nTreat these as derived products:\n\nfigures,\nrendered reports,\nslides,\nmanuscripts,\nand intermediate outputs that can be regenerated.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#first-week-checklist",
+    "href": "start-here.html#first-week-checklist",
+    "title": "Start Here",
+    "section": "First-week checklist",
+    "text": "First-week checklist\n\nGet cluster access and confirm you can log in through the correct FASRC pathway.\nCreate a repository for your project before the analysis becomes messy.\nCreate a minimal project scaffold with directories for code, data documentation, figures, reports, and results.\nBuild one small end-to-end example that reads data, runs one analysis step, and renders one output.\nWrite down where the authoritative data lives and what restrictions apply.\nPush code and documentation to GitHub before asking for help.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#what-the-rse-is-helping-you-do",
+    "href": "start-here.html#what-the-rse-is-helping-you-do",
+    "title": "Start Here",
+    "section": "What the RSE is helping you do",
+    "text": "What the RSE is helping you do\nThe RSE role is not just “fix code when it breaks.” It is also to help students:\n\nchoose the correct compute environment,\navoid avoidable copies of large or regulated data,\nstandardize project layout,\nmove from ad hoc scripts to reusable workflows,\nand lower the cost of collaboration across the lab.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#common-failure-modes-to-avoid-early",
+    "href": "start-here.html#common-failure-modes-to-avoid-early",
+    "title": "Start Here",
+    "section": "Common failure modes to avoid early",
+    "text": "Common failure modes to avoid early\n\nRunning long jobs on a laptop because it feels faster to start.\nHard-coding absolute paths that only work for one person.\nSaving important objects only in the interactive environment.\nRenaming scripts to final_v2_really_final.\nPushing data to GitHub because the .gitignore was never set up.\nWaiting to document the project until after the analysis is already confusing.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#next-pages",
+    "href": "start-here.html#next-pages",
+    "title": "Start Here",
+    "section": "Next pages",
+    "text": "Next pages\n\nGo to Workflow Roadmap for the full lifecycle.\nGo to HPC and Infrastructure if you need help deciding where work should run.\nGo to Projects and Reproducibility if you are setting up a new analysis repo.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#further-reading",
+    "href": "start-here.html#further-reading",
+    "title": "Start Here",
+    "section": "Further reading",
+    "text": "Further reading\n\nR for Data Science (2e): Workflow: scripts and projects\nR for Data Science (2e): Communicate\nNSAPH Handbook: Workflow Documentation",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "start-here.html#footnotes",
+    "href": "start-here.html#footnotes",
+    "title": "Start Here",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Workflow: scripts and projects.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html",
+    "href": "hpc-infrastructure.html",
+    "title": "HPC and Infrastructure",
+    "section": "",
+    "text": "The presentation starts from a practical point: do the science on infrastructure designed for the science. That usually means remote compute, durable storage, and workflows that can survive browser crashes, laptop failures, or long runtimes.\nFASRC’s current recommendation is consistent with that framing: for R users, the recommended starting point is RStudio Server on Open OnDemand.1",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#why-hpc-is-the-lab-default",
+    "href": "hpc-infrastructure.html#why-hpc-is-the-lab-default",
+    "title": "HPC and Infrastructure",
+    "section": "",
+    "text": "The presentation starts from a practical point: do the science on infrastructure designed for the science. That usually means remote compute, durable storage, and workflows that can survive browser crashes, laptop failures, or long runtimes.\nFASRC’s current recommendation is consistent with that framing: for R users, the recommended starting point is RStudio Server on Open OnDemand.1",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#choose-the-right-access-path",
+    "href": "hpc-infrastructure.html#choose-the-right-access-path",
+    "title": "HPC and Infrastructure",
+    "section": "Choose the right access path",
+    "text": "Choose the right access path\n\n\n\n\n\n\n\n\nNeed\nBest starting point\nWhy\n\n\n\n\nInteractive R work\nOpen OnDemand RStudio Server\nFast setup, browser-based, simplest package installation\n\n\nInteractive shell work\nSSH or OOD shell access\nBest for CLI tools, Git, file inspection, and job submission\n\n\nLong or heavy compute\nSlurm batch jobs\nReproducible, schedulable, and not tied to your browser session\n\n\nSecure interactive work\nFASSE OOD\nRequired when data restrictions demand the secure environment\n\n\n\nAccording to the FASRC OOD documentation, the dashboard gives you file browsing, job status, job submission, remote desktops, and interactive apps such as RStudio, Matlab, and Jupyter.2",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#cannon-versus-fasse",
+    "href": "hpc-infrastructure.html#cannon-versus-fasse",
+    "title": "HPC and Infrastructure",
+    "section": "Cannon versus FASSE",
+    "text": "Cannon versus FASSE\nUse the environment that matches the data and policy requirements:\n\nCannon is the standard FASRC cluster for general research computing.\nFASSE is the secure environment for work that requires stronger data protection.\n\nThe NSAPH handbook explicitly distinguishes Cannon from FASSE this way and uses FASSE for regulated data workflows.3",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#recommended-pattern-for-students",
+    "href": "hpc-infrastructure.html#recommended-pattern-for-students",
+    "title": "HPC and Infrastructure",
+    "section": "Recommended pattern for students",
+    "text": "Recommended pattern for students\n\nConnect to the correct VPN realm.\nStart an interactive session for exploration.\nPrototype a small slice of the analysis.\nMove stable steps into scripts.\nSchedule heavier work through Slurm or another batch mechanism.\nKeep code and documentation in GitHub; keep restricted data on approved storage.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#storage-tiers-and-what-they-are-for",
+    "href": "hpc-infrastructure.html#storage-tiers-and-what-they-are-for",
+    "title": "HPC and Infrastructure",
+    "section": "Storage tiers and what they are for",
+    "text": "Storage tiers and what they are for\n\n\n\n\n\n\n\n\nStorage\nUse it for\nDo not use it for\n\n\n\n\nHome directory\nSmall personal config and lightweight project files\nLarge shared analysis outputs\n\n\nShared lab/project storage\nCanonical project code and approved shared data access\nPersonal scratch or duplicate copies\n\n\n/n/netscratch\nHigh-I/O temporary intermediates\nPermanent storage or anything that is not reproducible\n\n\nGitHub\nCode, docs, templates, issues, and small text-based metadata\nRaw data, large binaries, or restricted files\n\n\n\nFASRC documents /n/netscratch as temporary, high-performance, not backed up, and subject to a 90-day retention policy.4",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#fasrc-tips-that-save-time",
+    "href": "hpc-infrastructure.html#fasrc-tips-that-save-time",
+    "title": "HPC and Infrastructure",
+    "section": "FASRC tips that save time",
+    "text": "FASRC tips that save time\n\nUse Open OnDemand when you want the simplest path into interactive compute.\nUse the “My Interactive Sessions” area to reconnect to running browser-based sessions.\nUse Chrome or Firefox for OOD; FASRC warns that Safari may not behave well for some apps.\nIf package installation fails in FASSE RStudio Server, check whether you need to set the FASRC proxy variables first.\nRemember that RStudio Server on OOD is convenient, but FASRC notes that module load and sbatch are not available inside that app.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#practical-examples",
+    "href": "hpc-infrastructure.html#practical-examples",
+    "title": "HPC and Infrastructure",
+    "section": "Practical examples",
+    "text": "Practical examples\n\nStart a shell session\nssh username@login.rc.fas.harvard.edu\nFor FASSE, use:\nssh username@fasselogin.rc.fas.harvard.edu\n\n\nUse scratch for temporary intermediates\nmkdir -p /n/netscratch/&lt;lab-or-project&gt;/&lt;project-name&gt;\nThen point temporary outputs there from your scripts instead of filling the repository or home directory.\n\n\nIf FASSE R package installs need a proxy\nSys.setenv(http_proxy = \"http://rcproxy.rc.fas.harvard.edu:3128\")\nSys.setenv(https_proxy = \"http://rcproxy.rc.fas.harvard.edu:3128\")",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#decision-rule",
+    "href": "hpc-infrastructure.html#decision-rule",
+    "title": "HPC and Infrastructure",
+    "section": "Decision rule",
+    "text": "Decision rule\nIf the job is slow, large, shared, scheduled, or security-sensitive, it belongs on HPC infrastructure by default.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#further-reading",
+    "href": "hpc-infrastructure.html#further-reading",
+    "title": "HPC and Infrastructure",
+    "section": "Further reading",
+    "text": "Further reading\n\nFASRC Docs: Open OnDemand Dashboard and Remote Desktop\nFASRC Docs: R and RStudio\nFASRC Docs: Scratch\nNSAPH Handbook: How to work on FASSE\nNSAPH Handbook: Getting started on CANNON",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "hpc-infrastructure.html#footnotes",
+    "href": "hpc-infrastructure.html#footnotes",
+    "title": "HPC and Infrastructure",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFASRC Docs, R and RStudio.↩︎\nFASRC Docs, Open OnDemand (OOD) Dashboard and Remote Desktop.↩︎\nNSAPH Handbook, Getting started on CANNON.↩︎\nFASRC Docs, Scratch.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html",
+    "href": "data-access-and-management.html",
+    "title": "Data Access and Management",
+    "section": "",
+    "text": "Datasets are not just files. They come with:\n\naccess controls,\nprovenance,\nupdate schedules,\nvariable definitions,\nand rules about what can leave the secure environment.\n\nThe lab workflow should make all of that visible.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#treat-data-as-infrastructure",
+    "href": "data-access-and-management.html#treat-data-as-infrastructure",
+    "title": "Data Access and Management",
+    "section": "",
+    "text": "Datasets are not just files. They come with:\n\naccess controls,\nprovenance,\nupdate schedules,\nvariable definitions,\nand rules about what can leave the secure environment.\n\nThe lab workflow should make all of that visible.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#prefer-canonical-locations-over-duplicate-copies",
+    "href": "data-access-and-management.html#prefer-canonical-locations-over-duplicate-copies",
+    "title": "Data Access and Management",
+    "section": "Prefer canonical locations over duplicate copies",
+    "text": "Prefer canonical locations over duplicate copies\nThe NSAPH handbook recommends symlinking shared analytic datasets instead of making new copies.1 That is a strong general rule for lab work:\n\nkeep the canonical dataset in an approved shared location,\npoint to it from the project when possible,\nand only create project-owned copies when the analysis truly requires them.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#a-simple-data-lifecycle",
+    "href": "data-access-and-management.html#a-simple-data-lifecycle",
+    "title": "Data Access and Management",
+    "section": "A simple data lifecycle",
+    "text": "A simple data lifecycle\n\n\n\n\n\nflowchart LR\n  A[Raw source data] --&gt; B[Document source and restrictions]\n  B --&gt; C[Create project pointers or symlinks]\n  C --&gt; D[Build analytic data reproducibly]\n  D --&gt; E[Generate figures, tables, and models]\n  E --&gt; F[Archive documentation and outputs]",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#data-categories-to-think-about",
+    "href": "data-access-and-management.html#data-categories-to-think-about",
+    "title": "Data Access and Management",
+    "section": "Data categories to think about",
+    "text": "Data categories to think about\n\n\n\n\n\n\n\nCategory\nTypical handling\n\n\n\n\nPublic data\nCan often be downloaded or scripted directly inside the project\n\n\nShared internal data\nReference canonical lab locations and document ownership\n\n\nRestricted data\nKeep in approved secure storage; never push to public Git hosting\n\n\nDerived analytic data\nRebuild from code when possible; document version and inputs",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#minimum-metadata-for-each-dataset",
+    "href": "data-access-and-management.html#minimum-metadata-for-each-dataset",
+    "title": "Data Access and Management",
+    "section": "Minimum metadata for each dataset",
+    "text": "Minimum metadata for each dataset\nFor each important input, record:\n\ndataset name,\ncanonical path or URL,\ndata owner or steward,\nupdate cadence,\nkey identifiers,\nunits and missing-value conventions,\naccess restrictions,\nand the script that creates downstream analytic tables.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#data-dictionaries-and-process-diagrams",
+    "href": "data-access-and-management.html#data-dictionaries-and-process-diagrams",
+    "title": "Data Access and Management",
+    "section": "Data dictionaries and process diagrams",
+    "text": "Data dictionaries and process diagrams\nThe NSAPH workflow documentation explicitly recommends data diagrams and data dictionaries.2 Both are worth standardizing in the lab:\n\nuse a data dictionary when many variables need explanation,\nuse a flow diagram when multiple sources are joined or filtered,\nand store both close to the repository rather than in private notes.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#raw-data-should-stay-raw",
+    "href": "data-access-and-management.html#raw-data-should-stay-raw",
+    "title": "Data Access and Management",
+    "section": "Raw data should stay raw",
+    "text": "Raw data should stay raw\nDo not edit raw data files in place. Instead:\n\nleave the original input untouched,\nwrite cleaning or harmonization code in code/,\nsave documented derived outputs to approved locations,\nand make sure the transformation path is reproducible.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#pins-manifests-and-lightweight-registries",
+    "href": "data-access-and-management.html#pins-manifests-and-lightweight-registries",
+    "title": "Data Access and Management",
+    "section": "Pins, manifests, and lightweight registries",
+    "text": "Pins, manifests, and lightweight registries\nFor small derived artifacts, shared models, parameter tables, or published outputs, use a lightweight registry pattern:\n\npins for R objects or shareable artifacts,\nCSV or YAML manifests for file inventories,\nand README-based tables for canonical paths and ownership.\n\nThis gives you traceability without treating every dataset like application code.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#git-rules-for-data",
+    "href": "data-access-and-management.html#git-rules-for-data",
+    "title": "Data Access and Management",
+    "section": "Git rules for data",
+    "text": "Git rules for data\nCommit:\n\nschemas,\ndictionaries,\nmanifests,\nscripts,\nnotebooks,\nand small example data when policy allows it.\n\nDo not commit:\n\nrestricted raw data,\nlarge transient intermediates,\nfiles in scratch,\nor anything that violates the DUA or institutional policy.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#a-.gitignore-pattern-worth-keeping",
+    "href": "data-access-and-management.html#a-.gitignore-pattern-worth-keeping",
+    "title": "Data Access and Management",
+    "section": "A .gitignore pattern worth keeping",
+    "text": "A .gitignore pattern worth keeping\ndata/\n*.csv\n*.parquet\n*.fst\n*.rds\nRefine this by project, but start from the assumption that code and documentation belong in Git while sensitive or bulky data usually do not.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#data-access-requests-should-answer-these-questions",
+    "href": "data-access-and-management.html#data-access-requests-should-answer-these-questions",
+    "title": "Data Access and Management",
+    "section": "Data access requests should answer these questions",
+    "text": "Data access requests should answer these questions\n\nWhat dataset do you need?\nWhere is the canonical source?\nWhat approvals or training are required?\nWhat environment are you allowed to use?\nCan the data be shared, or only the code?\nWho should maintain the access instructions when the project ends?",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#further-reading",
+    "href": "data-access-and-management.html#further-reading",
+    "title": "Data Access and Management",
+    "section": "Further reading",
+    "text": "Further reading\n\nNSAPH Handbook: How to work on FASSE\nNSAPH Handbook: Workflow Documentation\nNSAPH Handbook: Data Sharing using Harvard Dataverse",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "data-access-and-management.html#footnotes",
+    "href": "data-access-and-management.html#footnotes",
+    "title": "Data Access and Management",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nNSAPH Handbook, How to work on FASSE.↩︎\nNSAPH Handbook, Workflow Documentation.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Reference Library",
+    "section": "",
+    "text": "Resource\nUse it for\n\n\n\n\nR for Data Science (2e)\nEnd-to-end R workflow habits, especially projects, communication, and getting help\n\n\nR4DS: Workflow: scripts and projects\nSource of truth, project structure, and relative paths\n\n\nR4DS: Communicate\nWhy Quarto, reports, and communication are part of the workflow\n\n\nR4DS: Workflow: getting help\nReprexes and better support requests",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#core-workflow-references",
+    "href": "resources.html#core-workflow-references",
+    "title": "Reference Library",
+    "section": "",
+    "text": "Resource\nUse it for\n\n\n\n\nR for Data Science (2e)\nEnd-to-end R workflow habits, especially projects, communication, and getting help\n\n\nR4DS: Workflow: scripts and projects\nSource of truth, project structure, and relative paths\n\n\nR4DS: Communicate\nWhy Quarto, reports, and communication are part of the workflow\n\n\nR4DS: Workflow: getting help\nReprexes and better support requests",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#fasrc-and-harvard-infrastructure",
+    "href": "resources.html#fasrc-and-harvard-infrastructure",
+    "title": "Reference Library",
+    "section": "FASRC and Harvard infrastructure",
+    "text": "FASRC and Harvard infrastructure\n\n\n\nResource\nUse it for\n\n\n\n\nFASRC Docs: Open OnDemand Dashboard and Remote Desktop\nBrowser-based access, interactive apps, and session management\n\n\nFASRC Docs: R and RStudio\nCurrent guidance on RStudio Server, package installs, and app limitations\n\n\nFASRC Docs: Scratch\nCurrent retention and usage policy for /n/netscratch",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#nsaph-handbook-pages-worth-copying-from",
+    "href": "resources.html#nsaph-handbook-pages-worth-copying-from",
+    "title": "Reference Library",
+    "section": "NSAPH handbook pages worth copying from",
+    "text": "NSAPH handbook pages worth copying from\nEven if your lab is not NSAPH, these pages are useful models for practical documentation:\n\n\n\nResource\nUse it for\n\n\n\n\nNSAPH Handbook: How to work on FASSE\nSecure-environment onboarding, project setup, shared data, scratch, and GitHub habits\n\n\nNSAPH Handbook: Getting started on CANNON\nStandard-cluster onboarding\n\n\nNSAPH Handbook: Introduction to NSAPH GitHub\nGitHub defaults for shared lab work\n\n\nNSAPH Handbook: Workflow Documentation\nData dictionaries, diagrams, and README expectations\n\n\nNSAPH Handbook: Data Sharing using Harvard Dataverse\nSharing and publishing data products when policy allows",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#publishing-and-documentation-tooling",
+    "href": "resources.html#publishing-and-documentation-tooling",
+    "title": "Reference Library",
+    "section": "Publishing and documentation tooling",
+    "text": "Publishing and documentation tooling\n\n\n\nResource\nUse it for\n\n\n\n\nQuarto websites documentation\nBuilding lab websites and internal handbooks\n\n\nQuarto notebooks documentation\nR-based notebooks and executable reporting\n\n\nMermaid documentation\nInline process and data-flow diagrams",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#suggested-order-for-new-students",
+    "href": "resources.html#suggested-order-for-new-students",
+    "title": "Reference Library",
+    "section": "Suggested order for new students",
+    "text": "Suggested order for new students\n\nRead Start Here.\nRead the R4DS workflow chapters.\nRead the FASRC docs page for the environment you will actually use.\nRead the relevant NSAPH handbook page that matches your project type.\nReturn to this site when you need a lab-default answer instead of a generic answer.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "resources.html#if-you-only-bookmark-five-links",
+    "href": "resources.html#if-you-only-bookmark-five-links",
+    "title": "Reference Library",
+    "section": "If you only bookmark five links",
+    "text": "If you only bookmark five links\n\nR4DS: Workflow: scripts and projects\nFASRC Docs: Open OnDemand Dashboard and Remote Desktop\nFASRC Docs: R and RStudio\nNSAPH Handbook: How to work on FASSE\nNSAPH Handbook: Workflow Documentation",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Reference Library"
+    ]
+  }
+]
