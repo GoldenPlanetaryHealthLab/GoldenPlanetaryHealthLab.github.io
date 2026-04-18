@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Start Here – Golden Lab Data Science Handbook</title>
+<title>Contribution Guide – Golden Lab Data Science Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,8 +67,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./workflow-roadmap.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./about.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -81,9 +115,12 @@ ul.task-list li input[type="checkbox"] {
 
 
 <link rel="stylesheet" href="css/custom_style.css">
-<meta property="og:title" content="Start Here – Golden Lab Data Science Handbook">
+<meta property="og:title" content="Contribution Guide – Golden Lab Data Science Handbook">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
+<meta property="og:image" content="https://GoldenPlanetaryHealthLab.github.io/assets/img/closing_an_issue.png">
 <meta property="og:site_name" content="Golden Lab Data Science Handbook">
+<meta property="og:image:height" content="1308">
+<meta property="og:image:width" content="1338">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -135,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./start-here.html">Orientation</a></li><li class="breadcrumb-item"><a href="./start-here.html">Start Here</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./CONTRIBUTING.html">Contribution Guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,8 +181,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./start-here.html">Orientation</a></li><li class="breadcrumb-item"><a href="./start-here.html">Start Here</a></li></ol></nav>
-      <h1 class="title">Start Here</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">Contribution Guide</h1>
                       </div>
   </div>
     
@@ -171,16 +208,16 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Orientation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./start-here.html" class="sidebar-item-text sidebar-link active">
+  <a href="./start-here.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Start Here</span></a>
   </div>
 </li>
@@ -241,7 +278,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+  <a href="./CONTRIBUTING.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Contribution Guide</span></a>
   </div>
 </li>
@@ -255,15 +292,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-this-documentation-exists" id="toc-why-this-documentation-exists" class="nav-link active" data-scroll-target="#why-this-documentation-exists">Why this documentation exists</a></li>
-  <li><a href="#the-working-philosophy" id="toc-the-working-philosophy" class="nav-link" data-scroll-target="#the-working-philosophy">The working philosophy</a></li>
-  <li><a href="#fragile-versus-robust-workflows" id="toc-fragile-versus-robust-workflows" class="nav-link" data-scroll-target="#fragile-versus-robust-workflows">Fragile versus robust workflows</a></li>
-  <li><a href="#what-source-of-truth-means-in-practice" id="toc-what-source-of-truth-means-in-practice" class="nav-link" data-scroll-target="#what-source-of-truth-means-in-practice">What “source of truth” means in practice</a></li>
-  <li><a href="#first-week-checklist" id="toc-first-week-checklist" class="nav-link" data-scroll-target="#first-week-checklist">First-week checklist</a></li>
-  <li><a href="#what-the-rse-is-helping-you-do" id="toc-what-the-rse-is-helping-you-do" class="nav-link" data-scroll-target="#what-the-rse-is-helping-you-do">What the RSE is helping you do</a></li>
-  <li><a href="#common-failure-modes-to-avoid-early" id="toc-common-failure-modes-to-avoid-early" class="nav-link" data-scroll-target="#common-failure-modes-to-avoid-early">Common failure modes to avoid early</a></li>
-  <li><a href="#next-pages" id="toc-next-pages" class="nav-link" data-scroll-target="#next-pages">Next pages</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link active" data-scroll-target="#how-to-contribute">How to Contribute</a></li>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#closing-the-issue-and-submitting-a-pull-request" id="toc-closing-the-issue-and-submitting-a-pull-request" class="nav-link" data-scroll-target="#closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</a></li>
+  <li><a href="#all-contributors-specification-advanced-users-only" id="toc-all-contributors-specification-advanced-users-only" class="nav-link" data-scroll-target="#all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</a></li>
   </ul>
 </nav>
     </div>
@@ -274,123 +306,91 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="why-this-documentation-exists" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-documentation-exists">Why this documentation exists</h2>
-<p>Most graduate students do not struggle because the science is impossible. They struggle because the workflow is fragile: files live on laptops, results are copied by hand, folders drift out of sync, and the explanation for a key decision is trapped in somebody’s memory.</p>
-<p>The goal of this site is to make the robust path the normal path.</p>
+<p>We welcome contributions to the Golden Lab Data Science Handbook! If you have suggestions for improvements, additional content, or corrections, please feel free to submit a pull request or open an issue on our GitHub repository.</p>
+<section id="how-to-contribute" class="level2">
+<h2 class="anchored" data-anchor-id="how-to-contribute">How to Contribute</h2>
+<p>This site is built using <a href="https://quarto.org/">Quarto</a>, which is a powerful publishing and technical writing tool that allows us to create a static website from markdown files that can easily integrate prose, code, and visualizations. If you want to contribute, you will primarily be doing so by editing the markdown files in the repository.</p>
 </section>
-<section id="the-working-philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="the-working-philosophy">The working philosophy</h2>
-<p>The original presentation reduces to a few durable defaults:</p>
-<ul>
-<li>prefer remote and reproducible workflows over local and manual ones,</li>
-<li>keep code, not outputs, as the source of truth,</li>
-<li>narrate analysis with notebooks and reports,</li>
-<li>track change with Git and GitHub,</li>
-<li>and invest early in structure so later work gets cheaper.</li>
-</ul>
-<p>R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-</section>
-<section id="fragile-versus-robust-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="fragile-versus-robust-workflows">Fragile versus robust workflows</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fragile workflow</th>
-<th>Robust workflow</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Lives on one machine</td>
-<td>Lives on supported infrastructure and in version control</td>
-</tr>
-<tr class="even">
-<td>Depends on clicking and memory</td>
-<td>Depends on scripts, notebooks, and documented steps</td>
-</tr>
-<tr class="odd">
-<td>Stores only outputs</td>
-<td>Stores the method that creates outputs</td>
-</tr>
-<tr class="even">
-<td>Breaks when paths, packages, or people change</td>
-<td>Survives new machines, new users, and reruns</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="what-source-of-truth-means-in-practice" class="level2">
-<h2 class="anchored" data-anchor-id="what-source-of-truth-means-in-practice">What “source of truth” means in practice</h2>
-<p>Treat these artifacts as the core record of a project:</p>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>There are three ways to contribue to this documentation:</p>
 <ol type="1">
-<li>A <code>README</code> that says what the project is and how to run it.</li>
-<li>Scripts or notebooks that recreate the analysis.</li>
-<li>A lockfile or environment spec such as <code>renv.lock</code>, <code>environment.yml</code>, or <code>requirements.txt</code>.</li>
-<li>Data documentation that explains inputs, keys, units, and restrictions.</li>
-<li>Git history that shows what changed and why.</li>
+<li><p><strong>Directly on GitHub</strong>: You can edit the markdown files directly on GitHub by navigating to the file you want to edit and clicking the pencil icon. This is a quick and easy way to make small changes or corrections.</p></li>
+<li><p><strong>Locally in Your Own Environment</strong>: For larger contributions, you may want to clone the repository to your local environment, make your changes, and then push them back to GitHub. This allows you to test your changes locally before submitting a pull request.</p></li>
 </ol>
-<p>Treat these as derived products:</p>
-<ul>
-<li>figures,</li>
-<li>rendered reports,</li>
-<li>slides,</li>
-<li>manuscripts,</li>
-<li>and intermediate outputs that can be regenerated.</li>
-</ul>
-</section>
-<section id="first-week-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="first-week-checklist">First-week checklist</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Editing on GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Editing Locally</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Editing on GitHub is straightforward. Simply navigate to the file you want to edit, click the pencil icon, make your changes, and then commit them directly to the repository. This method is ideal for small edits, such as fixing typos or updating links. However, even for small contributions, it’s best to provide a clear paper trail for what you changed and why, and so we require that <em>all</em> contributions — even small ones — be made through GitHub Issues and Pull Requests<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. If this is your first time contributing to an open-source project, this as great low-stakes opportunity to try out this workflow!</p>
 <ol type="1">
-<li>Get cluster access and confirm you can log in through the correct FASRC pathway.</li>
-<li>Create a repository for your project before the analysis becomes messy.</li>
-<li>Create a minimal project scaffold with directories for code, data documentation, figures, reports, and results.</li>
-<li>Build one small end-to-end example that reads data, runs one analysis step, and renders one output.</li>
-<li>Write down where the authoritative data lives and what restrictions apply.</li>
-<li>Push code and documentation to GitHub before asking for help.</li>
+<li><p><strong>Navigate to GitHub.</strong> In your browser of choice, go to the GitHub repository: <a href="https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io">https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io</a></p></li>
+<li><p><strong>Find “Issues”</strong>: Click the Issues tab second from the left.</p></li>
+<li><p><strong>Open an Issue</strong>: Click the green “New Issue” button on the right.</p></li>
+<li><p><strong>Pick the Documentation Template</strong>: Click “🧪 New Data Science Tutorial or Documentation”</p></li>
+<li><p><strong>Fill Out the Template</strong>: A template will appear for you to fill out. Please provide a clear title and description of your contribution, however small, and any relevant links or references. For irrelevant fields, simply write “N/A”.</p></li>
+<li><p><strong>Assign Yourself</strong>: Assign yourself to the issue using the “Assignees” section on the right. This is what will enable us to award your contribution to you in the <code>all-contributors</code> table and give you credit for your work.</p></li>
+<li><p><strong>Edit the File</strong>: Navigate to the file you want to edit, click the pencil icon, and make your proposed changes using <a href="https://www.markdownguide.org/getting-started/">markdown</a>, <a href="https://quarto.org/docs/guide/">Quarto features</a>, and/or <a href="https://quarto.org/docs/get-started/computations/text-editor.html">code chunks</a> as needed. You can preview your changes using the “Preview changes” tab to make sure everything looks good.</p></li>
+<li><p><strong>Commit Your Work</strong>: Commit your changes using the dialogue box to the repository. In the commit message, please use the GitHub Issues <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">linking syntax</a> to reference the issue number (e.g., “Fixes #123”) to link your changes to the issue you created. Importantly, make sure to <strong>select the option to commit your changes to a new branch</strong> and create a pull request. This will automatically open a pull request for your changes, which will be reviewed by the maintainers of the repository.</p></li>
 </ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/img/closing_an_issue.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub Issue Template</figcaption>
+</figure>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>Working locally<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is more involved and requires familiarity with <code>git</code> and the command line. However, this is a useful skill to have and is the standard workflow for contributing to open-source scientific projects. Strap in, and let’s get you set up to contribute like a pro!</p>
+<ol type="1">
+<li><p><strong>Create the Issue on GitHub to Work On</strong>: Before you start working on your contribution, it’s important to create an issue on GitHub to track your work. This allows the maintainers to review your proposed changes and provides a clear record of your contribution. Navigate to <a href="https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io">the GitHub repository</a>, click on the “Issues” tab, and create a new issue using the “🧪 New Data Science Tutorial or Documentation” template.</p></li>
+<li><p><strong>Set up your local environment for <code>git</code></strong>: On FASRC, <code>git</code> comes pre-installed, but in case you can’t find it, type <code>which git</code>. If you get a path back, you’re good to go. If not, load the <code>git</code> module with <code>module load git</code>.</p></li>
+<li><p><strong>Set Up Your Local Environment for GitHub</strong>: GitHub has a handy CLI tool called <code>gh</code> that makes it easy to interact with GitHub from the command line, including creating issues, making Pull Requests, and managing your authentication. To install <code>gh</code> on FASRC, see the instructions <a href="">here #TODO</a>, and return to this tutorial.</p></li>
+</ol>
+<p>You might be aware that FASRC also has some guidance on working with GitHub <a href="https://docs.rc.fas.harvard.edu/kb/git-and-github-on-odyssey/">here</a>. Frankly, their instructions are a bit dated and their recommendations are less user friendly than just using the <code>gh</code> CLI tool, so we recommend following the instructions above instead of those on FASRC’s website.</p>
+<ol start="4" type="1">
+<li><strong>Clone the Repository</strong>: Find an appropriate directory to work in (since this repository will likely have many individuals contributing to it and very little data or computation, it’s safe to do in your home directory) and run <code>gh clone</code> command to clone the repository to your local environment:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># activate the environment for the repository if applicable</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># source .venv/bin/activate # if you have a virtual environment set up for this repository</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="5" type="1">
+<li><strong>Create a Local Issue Branch</strong>: It’s best practice to create a new branch for your changes, so using the <code>gh</code> CLI tool, create a new branch based on the issue you created in step 1:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue develop [ISSUE NUMBER] <span class="at">--checkout</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="6" type="1">
+<li><p><strong>Make Your Changes</strong>: Now that you have your local environment set up and a new branch created, you can make your changes to the markdown files using your preferred <a href="#TODO%20editors%20and%20IDEs">text editor or IDE</a>. Be sure to save your and commit your changes frequently, and test them locally if necessary.</p></li>
+<li><p><strong>Preview Your Changes</strong>: If you want to preview your changes locally before submitting a pull request, you can use the <code>quarto preview</code> command. This will start a local server where you can view your changes in a web browser.</p></li>
+<li><p><strong>Create a Pull Request</strong>: Once you’re happy with your changes, you can create a pull request using the <code>gh</code> CLI tool:</p></li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> pr create</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/img/gh_pr_create.png" class="img-fluid figure-img"></p>
+<figcaption>GitHub Pull Request In Action</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="what-the-rse-is-helping-you-do" class="level2">
-<h2 class="anchored" data-anchor-id="what-the-rse-is-helping-you-do">What the RSE is helping you do</h2>
-<p>The RSE role is not just “fix code when it breaks.” It is also to help students:</p>
-<ul>
-<li>choose the correct compute environment,</li>
-<li>avoid avoidable copies of large or regulated data,</li>
-<li>standardize project layout,</li>
-<li>move from ad hoc scripts to reusable workflows,</li>
-<li>and lower the cost of collaboration across the lab.</li>
-</ul>
+<section id="closing-the-issue-and-submitting-a-pull-request" class="level2">
+<h2 class="anchored" data-anchor-id="closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</h2>
+<p>To complete the process, review the Pull Request, adding relevant information to the Pull Request description, and then submit it for review. The maintainers will review your changes and may provide feedback or request changes before merging your contribution into the main branch.</p>
 </section>
-<section id="common-failure-modes-to-avoid-early" class="level2">
-<h2 class="anchored" data-anchor-id="common-failure-modes-to-avoid-early">Common failure modes to avoid early</h2>
-<ul>
-<li>Running long jobs on a laptop because it feels faster to start.</li>
-<li>Hard-coding absolute paths that only work for one person.</li>
-<li>Saving important objects only in the interactive environment.</li>
-<li>Renaming scripts to <code>final_v2_really_final</code>.</li>
-<li>Pushing data to GitHub because the <code>.gitignore</code> was never set up.</li>
-<li>Waiting to document the project until after the analysis is already confusing.</li>
-</ul>
-</section>
-<section id="next-pages" class="level2">
-<h2 class="anchored" data-anchor-id="next-pages">Next pages</h2>
-<ul>
-<li>Go to <a href="./workflow-roadmap.html">Workflow Roadmap</a> for the full lifecycle.</li>
-<li>Go to <a href="./hpc-infrastructure.html">HPC and Infrastructure</a> if you need help deciding where work should run.</li>
-<li>Go to <a href="./projects-and-reproducibility.html">Projects and Reproducibility</a> if you are setting up a new analysis repo.</li>
-</ul>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<ul>
-<li><a href="https://r4ds.hadley.nz/workflow-scripts">R for Data Science (2e): Workflow: scripts and projects</a></li>
-<li><a href="https://r4ds.hadley.nz/communicate">R for Data Science (2e): Communicate</a></li>
-<li><a href="https://nsaph.github.io/handbook/docs.html">NSAPH Handbook: Workflow Documentation</a></li>
-</ul>
+<section id="all-contributors-specification-advanced-users-only" class="level2">
+<h2 class="anchored" data-anchor-id="all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</h2>
+<p>We use the <code>all-contributors</code> specification to recognize and celebrate the contributions of everyone who has helped with this project. This includes not only code contributions but also documentation, design, and other forms of support e.g.&nbsp;feedback, issue submission and conversation, etc.</p>
+<p>You can automate the process of adding contributors by using the <code>all-contributors</code> CLI tool. On Mac, install <code>npm</code> first:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install npm node</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then, use the following command to add a contributor:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install all-contributors-cli</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The project is already initialized with <code>all-contributors</code>, so you can start adding contributors right away. You can add contributors from the command line. For example, to add a contributor with the username <code>octocat</code> who has contributed code and documentation, you would run:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> all-contributors add octocat code,doc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>And then create the contribution table with:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> all-contributors generate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This will update the <code>README.md</code> file with the new contributor and their contributions. Commit and push this file to GitHub to see the changes reflected in the repository’s README.</p>
 
 
 </section>
@@ -399,7 +399,8 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/workflow-scripts"><em>R for Data Science (2e): Workflow: scripts and projects</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>This is a common practice in open-source projects to ensure that all contributions are reviewed and documented properly. And, to your benefit, if you make changes using <code>git</code> your contributions will be automatically tracked and attributed to you, which is important for recognizing your work and giving you credit for your contributions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>While we use the word, “locally,” here, what we really mean is, “not on GitHub or on the cloud.” Locally <em>can</em> refer to your personal computer, or FASRC (which is what we expect you to use). The key point is that, “locally,” means, “you are directly interfacing with the machine where you will be making the edits.”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <div id="read-time-container"></div>
@@ -875,14 +876,11 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Home">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Home</span>
+      <a href="./about.html" class="pagination-link" aria-label="About This Site">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">About This Site</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./workflow-roadmap.html" class="pagination-link" aria-label="Workflow Roadmap">
-        <span class="nav-page-text">Workflow Roadmap</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
