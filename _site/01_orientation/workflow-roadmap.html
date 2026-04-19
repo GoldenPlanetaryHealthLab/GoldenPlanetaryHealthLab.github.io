@@ -44,6 +44,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-2473ab3b010787d4525b314871ccdabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +89,9 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../css/custom_style.css">
 <meta property="og:title" content="Workflow Roadmap – Golden Lab Data Science Handbook">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
+<meta property="og:image" content="../assets/img/gdrive_projects.png">
 <meta property="og:site_name" content="Golden Lab Data Science Handbook">
+<meta property="og:image:alt" content="GDrive Projects">
 </head>
 
 <body class="nav-sidebar floating nav-fixed quarto-light">
@@ -113,14 +118,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="../01_orientation/workflow-roadmap.html"> 
 <span class="menu-text">Workflow</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html"> 
-<span class="menu-text">About</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -258,19 +255,16 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#the-end-to-end-workflow" id="toc-the-end-to-end-workflow" class="nav-link active" data-scroll-target="#the-end-to-end-workflow">The end-to-end workflow</a>
-  <ul class="collapse">
-  <li><a href="#question-and-scope" id="toc-question-and-scope" class="nav-link" data-scroll-target="#question-and-scope">1. Question and scope</a></li>
-  <li><a href="#access-and-infrastructure" id="toc-access-and-infrastructure" class="nav-link" data-scroll-target="#access-and-infrastructure">2. Access and infrastructure</a></li>
-  </ul></li>
-  <li><a href="#project-scaffold" id="toc-project-scaffold" class="nav-link" data-scroll-target="#project-scaffold">3. Project scaffold</a></li>
-  <li><a href="#data-intake-and-documentation" id="toc-data-intake-and-documentation" class="nav-link" data-scroll-target="#data-intake-and-documentation">4. Data intake and documentation</a></li>
-  <li><a href="#exploration-and-notebooks" id="toc-exploration-and-notebooks" class="nav-link" data-scroll-target="#exploration-and-notebooks">5. Exploration and notebooks</a></li>
-  <li><a href="#reusable-scripts-or-pipeline" id="toc-reusable-scripts-or-pipeline" class="nav-link" data-scroll-target="#reusable-scripts-or-pipeline">6. Reusable scripts or pipeline</a></li>
-  <li><a href="#review-and-communication" id="toc-review-and-communication" class="nav-link" data-scroll-target="#review-and-communication">7. Review and communication</a></li>
-  <li><a href="#archive-and-handoff" id="toc-archive-and-handoff" class="nav-link" data-scroll-target="#archive-and-handoff">8. Archive and handoff</a></li>
-  <li><a href="#minimal-viable-workflow" id="toc-minimal-viable-workflow" class="nav-link" data-scroll-target="#minimal-viable-workflow">Minimal viable workflow</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#the-end-to-end-workflow" id="toc-the-end-to-end-workflow" class="nav-link active" data-scroll-target="#the-end-to-end-workflow">The end-to-end workflow 🧠</a></li>
+  <li><a href="#question-and-scope" id="toc-question-and-scope" class="nav-link" data-scroll-target="#question-and-scope">1. Question and Scope ⛰️</a></li>
+  <li><a href="#preliminary-infrastructure" id="toc-preliminary-infrastructure" class="nav-link" data-scroll-target="#preliminary-infrastructure">2. Preliminary Infrastructure 🚧</a></li>
+  <li><a href="#individual-project-scaffold" id="toc-individual-project-scaffold" class="nav-link" data-scroll-target="#individual-project-scaffold">3. Individual Project Scaffold 🏗️</a></li>
+  <li><a href="#data-lake-access" id="toc-data-lake-access" class="nav-link" data-scroll-target="#data-lake-access">4. Data Lake Access 🌊</a></li>
+  <li><a href="#data-analysis-and-notebooks" id="toc-data-analysis-and-notebooks" class="nav-link" data-scroll-target="#data-analysis-and-notebooks">5. Data Analysis and Notebooks 🔬</a></li>
+  <li><a href="#reusable-scripts-and-pipelines" id="toc-reusable-scripts-and-pipelines" class="nav-link" data-scroll-target="#reusable-scripts-and-pipelines">6. Reusable scripts and Pipelines 🗜️</a></li>
+  <li><a href="#review-and-communication" id="toc-review-and-communication" class="nav-link" data-scroll-target="#review-and-communication">7. Review and communication 📊</a></li>
+  <li><a href="#publish-and-archive" id="toc-publish-and-archive" class="nav-link" data-scroll-target="#publish-and-archive">8. Publish and Archive 🗃️</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -282,22 +276,22 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="the-end-to-end-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="the-end-to-end-workflow">The end-to-end workflow</h2>
+<h2 class="anchored" data-anchor-id="the-end-to-end-workflow">The end-to-end workflow 🧠</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
 <p></p><figure class="figure"><p></p>
 <div>
 <pre class="mermaid mermaid-js">flowchart TD
-  A[Question and scope] --&gt; B[Access and infrastructure]
-  B --&gt; C[Project scaffold]
-  C --&gt; D[Data intake and documentation]
-  D --&gt; E[Reusable scripts or pipeline]
-  E --&gt; F[Exploration and notebooks]
-  F --&gt; G[Review and communication]
+  A[Question and scope ⛰️] --&gt; B[Preliminary infrastructure 🚧]
+  B --&gt; C[Individual Project scaffold 🏗️]
+  C --&gt; D[Data Lake Access 🌊]
+  D --&gt; E[Data Analysis and Notebooks 🔬]
+  E --&gt; F[Reusable Scripts and Pipelines 🗜️]
+  F --&gt; G[Review and communication 📊]
   F --&gt; E
   G --&gt; F
-  G --&gt; H[Archive and handoff]
+  G --&gt; H[Publish and Archive 🗃️]
 
 </pre>
 </div>
@@ -305,10 +299,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>The point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.</p>
-<section id="question-and-scope" class="level3">
-<h3 class="anchored" data-anchor-id="question-and-scope">1. Question and scope</h3>
-<p>These are the foundational elements that you may discuss with your PI, your colleagues, and your collaborators. You may start by simply writing down things like:</p>
+<p>Let’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll talk actual implementation in a later section. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.</p>
+</section>
+<section id="question-and-scope" class="level2">
+<h2 class="anchored" data-anchor-id="question-and-scope">1. Question and Scope ⛰️</h2>
+<p>These are the foundational elements of your science that you may discuss with your PI, your colleagues, your collaborators, etc. You may start by simply writing down things like:</p>
 <ul>
 <li>the scientific question,</li>
 <li>the unit of analysis,</li>
@@ -316,10 +311,10 @@ ul.task-list li input[type="checkbox"] {
 <li>the expected outputs,</li>
 <li>and the likely compute or security constraints.</li>
 </ul>
-<p>Much of this work will exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.</p>
+<p>Much of this work can exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.</p>
 </section>
-<section id="access-and-infrastructure" class="level3">
-<h3 class="anchored" data-anchor-id="access-and-infrastructure">2. Access and infrastructure</h3>
+<section id="preliminary-infrastructure" class="level2">
+<h2 class="anchored" data-anchor-id="preliminary-infrastructure">2. Preliminary Infrastructure 🚧</h2>
 <p>Before writing any code, decide where the work belongs:</p>
 <ul>
 <li>publicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;</li>
@@ -327,99 +322,170 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Additionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.</p>
 </section>
-</section>
-<section id="project-scaffold" class="level2">
-<h2 class="anchored" data-anchor-id="project-scaffold">3. Project scaffold</h2>
-<p>#todo create template repo and link here Set up the repository immediately. A good starting point is:</p>
+<section id="individual-project-scaffold" class="level2">
+<h2 class="anchored" data-anchor-id="individual-project-scaffold">3. Individual Project Scaffold 🏗️</h2>
+<!-- #todo create template repo and link here -->
+<p>An individual project has three components: the Google Drive Data Lake, the local project repository, and GitHub repository.</p>
+<p>On Google Drive, we maintain a strict folder structure for each Golden Lab research project.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/img/gdrive_projects.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="GDrive Projects"><img src="../assets/img/gdrive_projects.png" class="img-fluid figure-img" alt="GDrive Projects"></a></p>
+<figcaption>GDrive Projects</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/img/gdrive_project_structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="GDrive Project Folder Structure"><img src="../assets/img/gdrive_project_structure.png" class="img-fluid figure-img" alt="GDrive Project Folder Structure"></a></p>
+<figcaption>GDrive Project Folder Structure</figcaption>
+</figure>
+</div>
+<p>You’ll use these GDrive projects as information hubs for your <em>individual</em> research projects, which will be implemented on FASRC. For example, while the Golden Lab is broadly studying “Climate-Smart Public Health in Madagascar,” your individual project may be particularly interested in the relationship between heat stress and hospitalizations in Northeast Madagascar.</p>
+<p>It’s important to maintain this structure so that there is a clear <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">separation of concerns</a> between high-level project management, the day-to-day work of data analysis, and the tools that each of those tasks require. Google Drive is a great place for taking notes with Docs, storing PDF files, and collaborating on office files manuscripts and presentations. FASRC is a great place for writing code, running analyses, and storing data and outputs. You wouldn’t want to write and store code files in Google Drive, and you wouldn’t want to maintain Google Docs files notes on FASRC — hence the clear separation of these environments<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>Even if you don’t have the dataset or specific hypotheses yet, now is the time to set up the local project repository. A good starting point might look like this:</p>
 <pre class="text"><code>project-name/
-├── README.md
-├── .gitignore
-├── data/
-├── data-raw/
-├── code/
-├── notebooks/
-├── reports/
-├── figures/
-├── results/
-└── renv.lock or environment.yml</code></pre>
-<p>The NSAPH handbook recommends a very similar repository layout because it separates code, figures, reports, results, and data from the start.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+├── README.md       &lt;- a clear project description and instructions for how to run the code
+├── .gitignore      &lt;- to exclude data, results, and other large files from `git`
+├── data-outputs/   &lt;- for intermediate and final data outputs  
+├── data-raw/       &lt;- for linking your project to the data lake
+├── code/           &lt;- for plain code scripts, functions, and pipeline code
+├── notebooks/      &lt;- for exploratory notebooks and reports
+├── manuscript/     &lt;- for manuscript drafts, figures, and tables
+└── lockfile        &lt;- for package management and reproducibility</code></pre>
+<p>In addition, you should set up a GitHub repository for your project, and link it to your local repository.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/img/github_example.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="GitHub Repository"><img src="../assets/img/github_example.png" class="img-fluid figure-img" alt="GitHub Repository"></a></p>
+<figcaption>GitHub Repository</figcaption>
+</figure>
+</div>
+<p>For each language, this may look slightly different, but the principle is the same. The sooner you set up the project scaffold, the more likely you are to to adhere to its conventions. If you wait until after you have a dataset, have written a few scripts, etc., you may find yourself copying and pasting code and data, missing <code>git</code> commits, or setting up inconsistent file paths, which is harder to maintain and reuse in future. Setting this up might feel like a chore, but we’ve gone ahead and done the work for you. Using our <a href="https://github.com/GoldenPlanetaryHealthLab/template-repo">GitHub templates</a>, you can easily create a new repository with the correct structure and fill in the blanks.</p>
 </section>
-<section id="data-intake-and-documentation" class="level2">
-<h2 class="anchored" data-anchor-id="data-intake-and-documentation">4. Data intake and documentation</h2>
-<p>Before analysis scales up, document:</p>
+<section id="data-lake-access" class="level2">
+<h2 class="anchored" data-anchor-id="data-lake-access">4. Data Lake Access 🌊</h2>
+<p>Most of our lab data exists on FASRC, and is specially curated to be accessible and secure. Recall the Golden Lab project folder structure on Google Drive:</p>
+<p><a href="../assets/img/gdrive_project_structure.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="../assets/img/gdrive_project_structure.png" class="img-fluid"></a></p>
+<p>You’ll notice a locked folder called <code>4. Datasets</code>. This is the raw data that Chris has been collecting over the years, and it is the starting point for all of our analyses. In order to interact with this data on FASRC, we set up a mirroring system that periodically syncs the raw data from Google Drive to FASRC using the <a href="https://rclone.org/"><code>rclone</code></a> utility. We call this the <a href="https://www.databricks.com/discover/data-lakes"><code>data_lake</code></a>, and it underlies how you can access the data on FASRC without having to download it from Google Drive, so you can be assured that it is up to date and secure<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>.</p>
+<!-- #TODO: change nomenclature from data freeze to data lake -->
+<p>For any local individual project, the first step will be to symlink the project area’s raw data to your project repository. Fortunately, most data sources will come with an accompanying data distribution package that provides a function to do this for you. If it does not yet exist, <a href="#TODO:%20set%20up%20triage">let Tinashe know</a>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Why Do We Symlink Datasets?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>“Symlinking” means to create a <a href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> to the original data file, rather than copying it. This has several advantages:</p>
 <ul>
-<li>where the authoritative data lives,</li>
-<li>who controls access,</li>
-<li>whether you should symlink instead of copy,</li>
-<li>the update cadence,</li>
-<li>key identifiers,</li>
-<li>and what cannot leave the secure environment.</li>
+<li>It saves disk space, since you are not creating duplicate copies of the data.</li>
+<li>It ensures that you are always working with the most up-to-date version of the data, since the symlink “points” to the original file that is being synced from Google Drive.</li>
+<li>It maintains the security and integrity of the data, since you are not creating additional copies that could be accidentally modified or shared.</li>
+<li>It encourages you to create intermediate outputs and final results in your project repository without affecting the data lake.</li>
 </ul>
-<p>If a dataset deserves an analysis, it deserves a data dictionary.</p>
+<p>By symlinking raw datasets, you can safely interact with raw data without being concerned about any data management tasks, allowing you to focus on the analysis and scientific questions at hand.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/img/nepal_climate_health_data_lake.png" class="lightbox" data-gallery="data-lake" title="Nepal Climate Health Folder of the Data Lake on GDrive"><img src="../assets/img/nepal_climate_health_data_lake.png" class="img-fluid figure-img" alt="Nepal Climate Health Folder of the Data Lake on GDrive"></a></p>
+<figcaption>Nepal Climate Health Folder of the Data Lake on GDrive</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="../assets/img/symlinking_project_data_locally.png" class="lightbox" data-gallery="data-lake" title="Nepal Climate Health Folder of the Data Lake in a Local Individual Project on FASRC"><img src="../assets/img/symlinking_project_data_locally.png" class="img-fluid figure-img" alt="Nepal Climate Health Folder of the Data Lake in a Local Individual Project on FASRC"></a></p>
+<figcaption>Nepal Climate Health Folder of the Data Lake in a Local Individual Project on FASRC</figcaption>
+</figure>
+</div>
 </section>
-<section id="exploration-and-notebooks" class="level2">
-<h2 class="anchored" data-anchor-id="exploration-and-notebooks">5. Exploration and notebooks</h2>
-<p>Do early exploration in notebooks or scripts that explain:</p>
+<section id="data-analysis-and-notebooks" class="level2">
+<h2 class="anchored" data-anchor-id="data-analysis-and-notebooks">5. Data Analysis and Notebooks 🔬</h2>
+<p>Once you’ve symlinked the raw data, you can start doing the fun science. Notebooks are a great tool for this stage, since they allow you to write code, run it, and see the results all in one place. They also allow you to write markdown text to explain your thinking and document your process. I’ve heard it said that, “writing is thinking,”<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> and writing code should be no different. As you write code, you should simultaneously be writing down:</p>
 <ul>
 <li>what you are testing,</li>
 <li>what assumptions you are making,</li>
-<li>what looks wrong,</li>
+<li>what looks right, and what looks wrong,</li>
 <li>and what should happen next.</li>
 </ul>
-<p>R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>For example, R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<p>We recommend using Quarto for your notebooks, since it allows you to write in R, Python, or both in the same document, and it has great support for rendering and sharing your work. You can also use Jupyter Notebooks or R Markdown Notebooks if you prefer. The important thing is to choose a tool that allows you to document your thinking and share your work with others.</p>
 </section>
-<section id="reusable-scripts-or-pipeline" class="level2">
-<h2 class="anchored" data-anchor-id="reusable-scripts-or-pipeline">6. Reusable scripts or pipeline</h2>
+<section id="reusable-scripts-and-pipelines" class="level2">
+<h2 class="anchored" data-anchor-id="reusable-scripts-and-pipelines">6. Reusable scripts and Pipelines 🗜️</h2>
+<p>Most scientific papers aren’t a once-off analysis. As you dig into the data, you’ll raise new questions that’ll require you to wrangle it in numerous ways — mutating variables, joining tables, and creating intermediate objects and visualizations that are used in different ways. You may also need to rerun analyses with different parameters, or on different subsets of the data. If you are doing this work in a single exploratory notebook or script, it can quickly become messy and hard to maintain.</p>
+<p>We recommend starting off your project with a pipeline tool that allows you to record the progression of your data manipulations. Ideally, at the end of the project, a single pipeline should be able to take the raw data as input and produce all of the final results, including tables, figures, and manuscript drafts.</p>
+<p>Coding pipelines are sometimes called DAGs, or Directed Acyclic Graphs, because they are a series of steps that are connected in a directed way (i.e., one decision leads to the next). This is a great way to structure your code, since it allows you to see the flow of your analysis and how each investigation (notebook) uncovered new challenges or ideas that led to the final result. It also allows you to easily rerun parts of the analysis if you need to make changes or update the data.</p>
 <p>Once a workflow stabilizes, move repeated logic out of exploratory notebooks and into:</p>
 <ul>
 <li>scripts,</li>
 <li>functions,</li>
 <li>parameterized reports,</li>
-<li>or a pipeline tool such as <code>targets</code>, <code>make</code>, or <code>snakemake</code>.</li>
+<li>all managed by a <a href="https://www.databricks.com/blog/what-is-orchestration">pipeline orchestration tool</a> such as <code>targets</code>, <code>pytask</code>, or <code>snakemake</code>.</li>
 </ul>
 <p>The trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Is A Pipeline Orchestration Tool Overkill?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We get it, you’re not trying to be a data engineer — you just want to publish papers. But the reality is that if you are doing data science, you are doing data engineering. If you are writing code that manipulates data, even in just a handful of lines, you are engineering a solution to a problem. The question is not whether you should use a pipeline orchestration tool, but rather when you should start using one.</p>
+<p>The sooner you do this, the better. If your project were to scale (which it almost certainly will), you’ll have a hard time retroactively moving code around into a pipeline, and you’ll likely end up with a messy codebase that may not be reproducible. Adding a pipeline orchestrator early on costs very little, and it allows you to focus on the science without worrying about the engineering later.</p>
+</div>
+</div>
 </section>
 <section id="review-and-communication" class="level2">
-<h2 class="anchored" data-anchor-id="review-and-communication">7. Review and communication</h2>
-<p>Every project should be able to produce:</p>
+<h2 class="anchored" data-anchor-id="review-and-communication">7. Review and communication 📊</h2>
+<p>As you go through the exploratory data analysis phase, you’ll likely be meeting with your PI and collaborators to discuss analysis results and brainstorm ideas. It wouldn’t be very wise to show up to a meeting with half a dozen arbitrarily named Python scripts or R scripts, and expect everyone in the meeting to understand your work. Instead, you should collect and export digestible findings that can be presented in meetings<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
+<p>If you’ve structured your project correctly, each time you meet with your collaborators your project should have:</p>
 <ol type="1">
-<li>a short <code>README</code>,</li>
-<li>one current notebook or report that explains the analysis status,</li>
-<li>a reproducible path from data inputs to results,</li>
+<li>a short <code>README</code> at the base of the repository that explains the project and how to run the code,</li>
+<li>one or more current notebooks or reports that explain the current analysis status,</li>
+<li>a reproducible path from data inputs to results in a pipeline,</li>
 <li>and a Git history that reflects real milestones.</li>
 </ol>
 <p>This makes supervisor meetings, methods review, and cross-training materially easier.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The Data Science Loop
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You may notice that the roadmap has cyclical edges. This Data Science Loop is a continuous cycle of data analysis, interpretation, and communication. As you analyze your data, you’ll likely uncover new questions and insights that will lead to new analyses. This is a normal part of the scientific process, and it’s important to embrace it. By structuring your project in a way that allows for easy communication and collaboration, you can make the most of this iterative process and produce high-quality science.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="R4DS Data Science Loop"><img src="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="img-fluid figure-img" alt="R4DS Data Science Loop"></a></p>
+<figcaption><a href="https://r4ds.hadley.nz/whole-game.html">R4DS Data Science Loop</a></figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="archive-and-handoff" class="level2">
-<h2 class="anchored" data-anchor-id="archive-and-handoff">8. Archive and handoff</h2>
-<p>Before a paper, graduation, or staff transition:</p>
+<section id="publish-and-archive" class="level2">
+<h2 class="anchored" data-anchor-id="publish-and-archive">8. Publish and Archive 🗃️</h2>
+<p>When you and your collaborators are ready to publish or transition ensure that your project is in a state that can be easily shared and maintained. This includes:</p>
 <ul>
-<li>confirm the repo can be cloned and run from scratch,</li>
-<li>confirm restricted data are not in Git,</li>
-<li>confirm documentation identifies canonical data locations,</li>
-<li>render a final report or project website,</li>
-<li>and record ownership for future maintenance.</li>
+<li>confirming the repository can be cloned from GitHub and run from scratch,</li>
+<li>confirming restricted data are not in Git,</li>
+<li>confirming documentation identifies canonical data locations,</li>
+<li>rendering a final report or project website,</li>
+<li>and recording ownership for future maintenance.</li>
 </ul>
+<p>Depending on your publication venue, you may also want to archive your code and data in a more permanent repository, such as Dataverse or Zenodo, and link it to your publication. Additionally, you may want to add credential badges to your GitHub repository to communicate the quality of your work, such as <a href="https://github.com/fair-software/howfairis-github-action">FAIR software</a>, a Zenodo DOI badge, or a GitHub Actions CI/CD badge that shows the status of your pipeline.</p>
 </section>
-<section id="minimal-viable-workflow" class="level2">
-<h2 class="anchored" data-anchor-id="minimal-viable-workflow">Minimal viable workflow</h2>
-<p>If you are overwhelmed, do these five things first:</p>
-<ol type="1">
-<li>Work on the correct cluster.</li>
-<li>Put the analysis in Git.</li>
-<li>Use relative paths.</li>
-<li>Keep one notebook or report up to date.</li>
-<li>Write enough documentation that another lab member could restart the project next week.</li>
-</ol>
-</section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
-<ul>
-<li><a href="https://r4ds.hadley.nz/workflow-scripts">R for Data Science (2e): Workflow: scripts and projects</a></li>
-<li><a href="https://r4ds.hadley.nz/communicate">R for Data Science (2e): Communicate</a></li>
-<li><a href="https://nsaph.github.io/handbook/fasse.html">NSAPH Handbook: How to work on FASSE</a></li>
-<li><a href="https://nsaph.github.io/handbook/docs.html">NSAPH Handbook: Workflow Documentation</a></li>
-</ul>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>While this workflow may seem daunting at first, it gets easier with practice. The key is to start early and be consistent. By following this roadmap, you can ensure that your work is reproducible, maintainable, and scalable.</p>
 
 
 </section>
@@ -428,8 +494,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>NSAPH Handbook, <a href="https://nsaph.github.io/handbook/fasse.html"><em>How to work on FASSE</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>But just because they are separate, doesn’t mean they are not connected. We will learn how these entities are linked together in following sections.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>You can see the status of the last sync by visiting the research data management dashboard at [#TODO: implement RDM dashboard to monitor sync status].<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>“Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” — David McCullough. Also, see: <a href="https://www.nature.com/articles/s44222-025-00323-4">https://www.nature.com/articles/s44222-025-00323-4</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This is how notebooks to add value to your data analysis. If your notebook is structured correctly, you can easily export tables, graphs, and text as a report that weaves together your code, results, and interpretations reproducibly, and share it with your collaborators.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <div id="read-time-container"></div>
@@ -929,6 +998,38 @@ document.addEventListener("DOMContentLoaded", function () {
 </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
 
 
 

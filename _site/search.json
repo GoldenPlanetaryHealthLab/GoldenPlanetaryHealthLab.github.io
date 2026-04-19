@@ -1152,7 +1152,7 @@
     "href": "01_orientation/workflow-roadmap.html",
     "title": "Workflow Roadmap",
     "section": "",
-    "text": "flowchart TD\n  A[Question and scope] --&gt; B[Access and infrastructure]\n  B --&gt; C[Project scaffold]\n  C --&gt; D[Data intake and documentation]\n  D --&gt; E[Reusable scripts or pipeline]\n  E --&gt; F[Exploration and notebooks]\n  F --&gt; G[Review and communication]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Archive and handoff]\n\n\n\n\n\n\n\nThe point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.\n\n\nThese are the foundational elements that you may discuss with your PI, your colleagues, and your collaborators. You may start by simply writing down things like:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nMuch of this work will exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.\n\n\n\nBefore writing any code, decide where the work belongs:\n\npublicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;\nrestricted data at security level 3 or above may require FASSE and a secure compute environment.\n\nAdditionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.",
+    "text": "flowchart TD\n  A[Question and scope ⛰️] --&gt; B[Preliminary infrastructure 🚧]\n  B --&gt; C[Individual Project scaffold 🏗️]\n  C --&gt; D[Data Lake Access 🌊]\n  D --&gt; E[Data Analysis and Notebooks 🔬]\n  E --&gt; F[Reusable Scripts and Pipelines 🗜️]\n  F --&gt; G[Review and communication 📊]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Publish and Archive 🗃️]\n\n\n\n\n\n\n\nLet’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll talk actual implementation in a later section. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1164,7 +1164,7 @@
     "href": "01_orientation/workflow-roadmap.html#the-end-to-end-workflow",
     "title": "Workflow Roadmap",
     "section": "",
-    "text": "flowchart TD\n  A[Question and scope] --&gt; B[Access and infrastructure]\n  B --&gt; C[Project scaffold]\n  C --&gt; D[Data intake and documentation]\n  D --&gt; E[Reusable scripts or pipeline]\n  E --&gt; F[Exploration and notebooks]\n  F --&gt; G[Review and communication]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Archive and handoff]\n\n\n\n\n\n\n\nThe point of the workflow is not bureaucracy. The point is to make a project understandable and rerunnable at every stage.\n\n\nThese are the foundational elements that you may discuss with your PI, your colleagues, and your collaborators. You may start by simply writing down things like:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nMuch of this work will exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.\n\n\n\nBefore writing any code, decide where the work belongs:\n\npublicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;\nrestricted data at security level 3 or above may require FASSE and a secure compute environment.\n\nAdditionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.",
+    "text": "flowchart TD\n  A[Question and scope ⛰️] --&gt; B[Preliminary infrastructure 🚧]\n  B --&gt; C[Individual Project scaffold 🏗️]\n  C --&gt; D[Data Lake Access 🌊]\n  D --&gt; E[Data Analysis and Notebooks 🔬]\n  E --&gt; F[Reusable Scripts and Pipelines 🗜️]\n  F --&gt; G[Review and communication 📊]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Publish and Archive 🗃️]\n\n\n\n\n\n\n\nLet’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll talk actual implementation in a later section. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1175,8 +1175,8 @@
     "objectID": "01_orientation/workflow-roadmap.html#question-and-scope",
     "href": "01_orientation/workflow-roadmap.html#question-and-scope",
     "title": "Workflow Roadmap",
-    "section": "1. Question and scope",
-    "text": "1. Question and scope\nStart by writing down:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nIf this is not written down, folder structure and code quality will not save the project.",
+    "section": "1. Question and Scope ⛰️",
+    "text": "1. Question and Scope ⛰️\nThese are the foundational elements of your science that you may discuss with your PI, your colleagues, your collaborators, etc. You may start by simply writing down things like:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nMuch of this work can exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1188,7 +1188,7 @@
     "href": "01_orientation/workflow-roadmap.html#access-and-infrastructure",
     "title": "Workflow Roadmap",
     "section": "2. Access and infrastructure",
-    "text": "2. Access and infrastructure\nDecide where the work belongs before coding heavily:\n\npublic or low-risk exploratory work may fit on Cannon or another standard environment,\nregulated or contract-restricted work may require FASSE or another secure environment,\nand heavy preprocessing or simulation should be designed for scheduled compute, not a laptop session.\n\nCreate the project in the environment where it will actually live.",
+    "text": "2. Access and infrastructure\nBefore writing any code, decide where the work belongs:\n\npublicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;\nrestricted data at security level 3 or above may require FASSE and a secure compute environment.\n\nAdditionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1212,7 +1212,7 @@
     "href": "01_orientation/workflow-roadmap.html#data-intake-and-documentation",
     "title": "Workflow Roadmap",
     "section": "4. Data intake and documentation",
-    "text": "4. Data intake and documentation\nBefore analysis scales up, document:\n\nwhere the authoritative data lives,\nwho controls access,\nwhether you should symlink instead of copy,\nthe update cadence,\nkey identifiers,\nand what cannot leave the secure environment.\n\nIf a dataset deserves an analysis, it deserves a data dictionary.",
+    "text": "4. Data intake and documentation\nMost of our lab data exists on FASRC, and is specially curated to be accessible and secure. Recall the Golden Lab project folder structure on Google Drive:\n\nYou’ll notice a locked folder called 4. Datasets. This is the raw data that Chris has been collecting over the years, and it is the starting point for all of our analyses. In order to interact with this data on FASRC, we set up a mirroring system that periodically syncs the raw data from Google Drive to FASRC using the rclone utility. We call this the data_lake, and it underlies how you can access the data on FASRC without having to download it from Google Drive, so you can be assured that it is up to date and secure2.\n\nFor any local individual project, the first step will be to symlink the project area’s raw data to your project repository. Fortunately, most data sources will come with an accompanying data distribution package that provides a function to do this for you. If it does not yet exist, let Tinashe know.\n\n\n\n\n\n\nNoteWhy Do We Symlink Datasets?\n\n\n\n“Symlinking” means to create a symbolic link to the original data file, rather than copying it. This has several advantages:\n\nIt saves disk space, since you are not creating duplicate copies of the data.\nIt ensures that you are always working with the most up-to-date version of the data, since the symlink “points” to the original file that is being synced from Google Drive.\nIt maintains the security and integrity of the data, since you are not creating additional copies that could be accidentally modified or shared.\nIt encourages you to create intermediate outputs and final results in your project repository without affecting the original raw data.\n\nBy symlinking raw datasets, you can safely interact with raw data without being concerned about any data management tasks, allowing you to focus on the analysis and scientific questions at hand.\n\n\n\n\n\nNepal Climate Health Data Lake\n\n\n\n\n\nData Lake Symlinked to Local Individual Project",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1223,8 +1223,8 @@
     "objectID": "01_orientation/workflow-roadmap.html#exploration-and-notebooks",
     "href": "01_orientation/workflow-roadmap.html#exploration-and-notebooks",
     "title": "Workflow Roadmap",
-    "section": "5. Exploration and notebooks",
-    "text": "5. Exploration and notebooks\nDo early exploration in notebooks or scripts that explain:\n\nwhat you are testing,\nwhat assumptions you are making,\nwhat looks wrong,\nand what should happen next.\n\nR for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.2",
+    "section": "5. Exploration and notebooks 🔬",
+    "text": "5. Exploration and notebooks 🔬\nOnce you’ve symlinked the raw data, you can start doing the fun science. Notebooks are a great tool for this stage, since they allow you to write code, run it, and see the results all in one place. They also allow you to write markdown text to explain your thinking and document your process. I’ve heard it said that, “writing is thinking,”3 and writing code should be no different. As you write code, you should simultaneously be writing down:\n\nwhat you are testing,\nwhat assumptions you are making,\nwhat looks right, and what looks wrong,\nand what should happen next.\n\nFor example, R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.4\nWe recommend using Quarto for your notebooks, since it allows you to write in R, Python, or both in the same document, and it has great support for rendering and sharing your work. You can also use Jupyter Notebooks or R Markdown Notebooks if you prefer. The important thing is to choose a tool that allows you to document your thinking and share your work with others.",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1247,8 +1247,8 @@
     "objectID": "01_orientation/workflow-roadmap.html#review-and-communication",
     "href": "01_orientation/workflow-roadmap.html#review-and-communication",
     "title": "Workflow Roadmap",
-    "section": "7. Review and communication",
-    "text": "7. Review and communication\nEvery project should be able to produce:\n\na short README,\none current notebook or report that explains the analysis status,\na reproducible path from data inputs to results,\nand a Git history that reflects real milestones.\n\nThis makes supervisor meetings, methods review, and cross-training materially easier.",
+    "section": "7. Review and communication 📊",
+    "text": "7. Review and communication 📊\nAs you go through the exploratory data analysis phase, you’ll likely be meeting with your PI and collaborators to discuss analysis results and brainstorm ideas. It wouldn’t be very wise to show up to a meeting with half a dozen arbitrarily named Python scripts or R scripts, and expect everyone in the meeting to understand your work. Instead, you should collect and export digestible findings that can be presented in meetings5.\nIf you’ve structured your project correctly, each time you meet with your collaborators your project should have:\n\na short README at the base of the repository that explains the project and how to run the code,\none or more current notebooks or reports that explain the current analysis status,\na reproducible path from data inputs to results in a pipeline,\nand a Git history that reflects real milestones.\n\nThis makes supervisor meetings, methods review, and cross-training materially easier.\n\n\n\n\n\n\nNoteThe Data Science Loop\n\n\n\nYou may notice that the roadmap has cyclical edges. This Data Science Loop is a continuous cycle of data analysis, interpretation, and communication. As you analyze your data, you’ll likely uncover new questions and insights that will lead to new analyses. This is a normal part of the scientific process, and it’s important to embrace it. By structuring your project in a way that allows for easy communication and collaboration, you can make the most of this iterative process and produce high-quality science.\n\n\n\nR4DS Data Science Loop",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1296,7 +1296,7 @@
     "href": "01_orientation/workflow-roadmap.html#footnotes",
     "title": "Workflow Roadmap",
     "section": "Footnotes",
-    "text": "Footnotes\n\n\nNSAPH Handbook, How to work on FASSE.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Communicate.↩︎",
+    "text": "Footnotes\n\n\nBut just because they are separate, doesn’t mean they are not connected. We will learn how these entities are linked together in following sections.↩︎\nYou can see the status of the last sync by visiting the research data management dashboard at [#TODO: implement RDM dashboard to monitor sync status].↩︎\n“Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” — David McCullough. Also, see: https://www.nature.com/articles/s44222-025-00323-4.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Communicate.↩︎\nThis is how notebooks to add value to your data analysis. If your notebook is structured correctly, you can easily export tables, graphs, and text as a report that weaves together your code, results, and interpretations reproducibly, and share it with your collaborators.↩︎",
     "crumbs": [
       "Start Here",
       "Orientation",
@@ -1481,6 +1481,90 @@
       "Start Here",
       "Orientation",
       "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#individual-project-scaffold",
+    "href": "01_orientation/workflow-roadmap.html#individual-project-scaffold",
+    "title": "Workflow Roadmap",
+    "section": "3. Individual Project Scaffold 🏗️",
+    "text": "3. Individual Project Scaffold 🏗️\n\nAn individual project has three components: the Google Drive Data Lake, the local project repository, and GitHub repository.\nOn Google Drive, we maintain a strict folder structure for each Golden Lab research project.\n\n\n\nGDrive Projects\n\n\n\n\n\nGDrive Project Folder Structure\n\n\nYou’ll use these GDrive projects as information hubs for your individual research projects, which will be implemented on FASRC. For example, while the Golden Lab is broadly studying “Climate-Smart Public Health in Madagascar,” your individual project may be particularly interested in the relationship between heat stress and hospitalizations in Northeast Madagascar.\nIt’s important to maintain this structure so that there is a clear separation of concerns between high-level project management, the day-to-day work of data analysis, and the tools that each of those tasks require. Google Drive is a great place for taking notes with Docs, storing PDF files, and collaborating on office files manuscripts and presentations. FASRC is a great place for writing code, running analyses, and storing data and outputs. You wouldn’t want to write and store code files in Google Drive, and you wouldn’t want to maintain Google Docs files notes on FASRC — hence the clear separation of these environments1.\nEven if you don’t have the dataset or specific hypotheses yet, now is the time to set up the local project repository. A good starting point might look like this:\nproject-name/\n├── README.md       &lt;- a clear project description and instructions for how to run the code\n├── .gitignore      &lt;- to exclude data, results, and other large files from `git`\n├── data-outputs/   &lt;- for intermediate and final data outputs  \n├── data-raw/       &lt;- for linking your project to the data lake\n├── code/           &lt;- for plain code scripts, functions, and pipeline code\n├── notebooks/      &lt;- for exploratory notebooks and reports\n├── manuscript/     &lt;- for manuscript drafts, figures, and tables\n└── lockfile        &lt;- for package management and reproducibility\nIn addition, you should set up a GitHub repository for your project, and link it to your local repository.\n\n\n\nGitHub Repository\n\n\nFor each language, this may look slightly different, but the principle is the same. The sooner you set up the project scaffold, the more likely you are to to adhere to its conventions. If you wait until after you have a dataset, have written a few scripts, etc., you may find yourself copying and pasting code and data, missing git commits, or setting up inconsistent file paths, which is harder to maintain and reuse in future. Setting this up might feel like a chore, but we’ve gone ahead and done the work for you. Using our GitHub templates, you can easily create a new repository with the correct structure and fill in the blanks.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#preliminary-infrastructure",
+    "href": "01_orientation/workflow-roadmap.html#preliminary-infrastructure",
+    "title": "Workflow Roadmap",
+    "section": "2. Preliminary Infrastructure 🚧",
+    "text": "2. Preliminary Infrastructure 🚧\nBefore writing any code, decide where the work belongs:\n\npublicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;\nrestricted data at security level 3 or above may require FASSE and a secure compute environment.\n\nAdditionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#data-lake-access",
+    "href": "01_orientation/workflow-roadmap.html#data-lake-access",
+    "title": "Workflow Roadmap",
+    "section": "4. Data Lake Access 🌊",
+    "text": "4. Data Lake Access 🌊\nMost of our lab data exists on FASRC, and is specially curated to be accessible and secure. Recall the Golden Lab project folder structure on Google Drive:\n\nYou’ll notice a locked folder called 4. Datasets. This is the raw data that Chris has been collecting over the years, and it is the starting point for all of our analyses. In order to interact with this data on FASRC, we set up a mirroring system that periodically syncs the raw data from Google Drive to FASRC using the rclone utility. We call this the data_lake, and it underlies how you can access the data on FASRC without having to download it from Google Drive, so you can be assured that it is up to date and secure2.\n\nFor any local individual project, the first step will be to symlink the project area’s raw data to your project repository. Fortunately, most data sources will come with an accompanying data distribution package that provides a function to do this for you. If it does not yet exist, let Tinashe know.\n\n\n\n\n\n\nNoteWhy Do We Symlink Datasets?\n\n\n\n“Symlinking” means to create a symbolic link to the original data file, rather than copying it. This has several advantages:\n\nIt saves disk space, since you are not creating duplicate copies of the data.\nIt ensures that you are always working with the most up-to-date version of the data, since the symlink “points” to the original file that is being synced from Google Drive.\nIt maintains the security and integrity of the data, since you are not creating additional copies that could be accidentally modified or shared.\nIt encourages you to create intermediate outputs and final results in your project repository without affecting the data lake.\n\nBy symlinking raw datasets, you can safely interact with raw data without being concerned about any data management tasks, allowing you to focus on the analysis and scientific questions at hand.\n\n\n\n\n\nNepal Climate Health Folder of the Data Lake on GDrive\n\n\n\n\n\nNepal Climate Health Folder of the Data Lake in a Local Individual Project on FASRC",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#reusable-scripts-and-pipelines",
+    "href": "01_orientation/workflow-roadmap.html#reusable-scripts-and-pipelines",
+    "title": "Workflow Roadmap",
+    "section": "6. Reusable scripts and Pipelines 🗜️",
+    "text": "6. Reusable scripts and Pipelines 🗜️\nMost scientific papers aren’t a once-off analysis. As you dig into the data, you’ll raise new questions that’ll require you to wrangle it in numerous ways — mutating variables, joining tables, and creating intermediate objects and visualizations that are used in different ways. You may also need to rerun analyses with different parameters, or on different subsets of the data. If you are doing this work in a single exploratory notebook or script, it can quickly become messy and hard to maintain.\nWe recommend starting off your project with a pipeline tool that allows you to record the progression of your data manipulations. Ideally, at the end of the project, a single pipeline should be able to take the raw data as input and produce all of the final results, including tables, figures, and manuscript drafts.\nCoding pipelines are sometimes called DAGs, or Directed Acyclic Graphs, because they are a series of steps that are connected in a directed way (i.e., one decision leads to the next). This is a great way to structure your code, since it allows you to see the flow of your analysis and how each investigation (notebook) uncovered new challenges or ideas that led to the final result. It also allows you to easily rerun parts of the analysis if you need to make changes or update the data.\nOnce a workflow stabilizes, move repeated logic out of exploratory notebooks and into:\n\nscripts,\nfunctions,\nparameterized reports,\nall managed by a pipeline orchestration tool such as targets, pytask, or snakemake.\n\nThe trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.\n\n\n\n\n\n\nNoteIs A Pipeline Orchestration Tool Overkill?\n\n\n\nWe get it, you’re not trying to be a data engineer — you just want to publish papers. But the reality is that if you are doing data science, you are doing data engineering. If you are writing code that manipulates data, even in just a handful of lines, you are engineering a solution to a problem. The question is not whether you should use a pipeline orchestration tool, but rather when you should start using one.\nThe sooner you do this, the better. If your project were to scale (which it almost certainly will), you’ll have a hard time retroactively moving code around into a pipeline, and you’ll likely end up with a messy codebase that may not be reproducible. Adding a pipeline orchestrator early on costs very little, and it allows you to focus on the science without worrying about the engineering later.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#publish-and-archive",
+    "href": "01_orientation/workflow-roadmap.html#publish-and-archive",
+    "title": "Workflow Roadmap",
+    "section": "8. Publish and Archive 🗃️",
+    "text": "8. Publish and Archive 🗃️\nWhen you and your collaborators are ready to publish or transition ensure that your project is in a state that can be easily shared and maintained. This includes:\n\nconfirming the repository can be cloned from GitHub and run from scratch,\nconfirming restricted data are not in Git,\nconfirming documentation identifies canonical data locations,\nrendering a final report or project website,\nand recording ownership for future maintenance.\n\nDepending on your publication venue, you may also want to archive your code and data in a more permanent repository, such as Dataverse or Zenodo, and link it to your publication. Additionally, you may want to add credential badges to your GitHub repository to communicate the quality of your work, such as FAIR software, a Zenodo DOI badge, or a GitHub Actions CI/CD badge that shows the status of your pipeline.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#data-analysis-and-notebooks",
+    "href": "01_orientation/workflow-roadmap.html#data-analysis-and-notebooks",
+    "title": "Workflow Roadmap",
+    "section": "5. Data Analysis and Notebooks 🔬",
+    "text": "5. Data Analysis and Notebooks 🔬\nOnce you’ve symlinked the raw data, you can start doing the fun science. Notebooks are a great tool for this stage, since they allow you to write code, run it, and see the results all in one place. They also allow you to write markdown text to explain your thinking and document your process. I’ve heard it said that, “writing is thinking,”3 and writing code should be no different. As you write code, you should simultaneously be writing down:\n\nwhat you are testing,\nwhat assumptions you are making,\nwhat looks right, and what looks wrong,\nand what should happen next.\n\nFor example, R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.4\nWe recommend using Quarto for your notebooks, since it allows you to write in R, Python, or both in the same document, and it has great support for rendering and sharing your work. You can also use Jupyter Notebooks or R Markdown Notebooks if you prefer. The important thing is to choose a tool that allows you to document your thinking and share your work with others.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#conclusion",
+    "href": "01_orientation/workflow-roadmap.html#conclusion",
+    "title": "Workflow Roadmap",
+    "section": "Conclusion",
+    "text": "Conclusion\nWhile this workflow may seem daunting at first, it gets easier with practice. The key is to start early and be consistent. By following this roadmap, you can ensure that your work is reproducible, maintainable, and scalable.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
     ]
   }
 ]

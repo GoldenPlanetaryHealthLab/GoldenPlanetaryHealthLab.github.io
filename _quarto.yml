@@ -32,10 +32,10 @@ website:
         text: Start Here
       - href: "01_orientation/workflow-roadmap.qmd"
         text: Workflow
-      - href: resources.qmd
-        text: Resources
-      - href: about.qmd
-        text: About
+      # - href: resources.qmd
+      #   text: Resources
+      # - href: about.qmd
+      #   text: About
   sidebar:
     style: floating
     collapse-level: 1
