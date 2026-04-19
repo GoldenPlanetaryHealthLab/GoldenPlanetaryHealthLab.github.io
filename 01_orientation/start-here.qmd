@@ -1,0 +1,159 @@
+---
+title: "Start Here"
+---
+
+## Why this documentation exists
+
+Most graduate students do not struggle to manage their research because the 
+science is impossible. They struggle because their workflows are 
+fragile: important files live on personal laptops, results of analyses are 
+copied by hand, versions of scripts are scattered, and the explanation for a 
+key decision is trapped in the memory of someone who has long left the lab.
+
+The goal of this site is to make the robust path the easy path.
+
+## The working philosophy
+
+I believe[^1] that effective computational academic research should adhere
+to a few core principles:
+
+- _Always_ prefer _remote and reproducible_ workflows over local and manual ones;
+- _The code_ that produces outputs — not the outputs themselves — are the source of scientific truth;
+- Scientific communication is hard; you can make it easy by narrating your analyses with notebooks;
+- _Always_ track changes to code with `git` and GitHub; and
+- Invest _early_ in structure so that later work gets easier to manage as your project grows.
+
+R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.[^r4ds-projects]
+
+[^1]: [Tinashe](https://tinashemtapera.com), your RSE, who has seen too many projects break because of fragile workflows.
+
+## Fragile versus robust workflows
+
+| Fragile workflow | Robust workflow |
+|---|---|
+| Lives on one machine | Lives on supported infrastructure and in version control |
+| Depends on clicking and memory | Depends on scripts, notebooks, and documented steps |
+| Stores only outputs | Stores the method that creates outputs |
+| Breaks when paths, packages, or people change | Survives new machines, new users, and reruns |
+
+## What "source of truth" means in practice
+
+If I handed you a scientific paper — any paper — and asked you where the real
+core of the scientific finding was, where would you point me to? The conclusion?
+No, the conclusion is an interpretation. The figures? Again, no — they are a product of
+a particular analysis. The reasoning in the introduction? Not really — it is just a
+motivating narrative. The real core of the scientific finding is that the authors told
+you HOW to get from the data to the conclusion. This is found in the methods section,
+and more specifically the exact procedure that creates the result, repeatably, from the data.
+It is the repeatability of the method producing the same result that makes it science,
+in the first place after all. If I cannot repeat your experiment, then I cannot verify your
+claim, and your conclusion is therefore not scientific.
+
+:::{.callout-important}
+#### In the modern data science era, **the methods section is the code, and code is the source of truth**. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.
+:::
+
+Ask yourself: _if someone stole your laptop today and tossed it into the Charles River, Google went
+under and your Scholar ID disappeared, and Dr. Strange erased everyone's memory of you, would
+your contribution to science survive?_ If the answer is "no," then you have a fragile workflow. If the 
+answer is "yes," then you have a robust workflow.
+
+To ensure you would survive this totally plausible catastrophe, treat these basic artifacts as
+invaluable:
+
+1. A `README` that clearly describes **what** the project is and how to run it.
+2. Scripts and/or notebooks that describe **how** the analysis is conducted.
+3. A lockfile or environment specification such as `rv.lock`, `environment.yml`, or `requirements.txt` that tell us **which** tools and versions of those tools are needed.
+4. Data provenance that explains **where** the data came from.
+5. `git` history that clearly shows **what changed and why**, each step of the way.
+
+On the other hand, derived products such as:
+
+- figures,
+- rendered reports,
+- slides,
+- manuscripts,
+- and intermediate outputs 
+
+Should all be treated as ephemeral details that can be regenerated whenever asked You should
+never lose sleep over these things because your code should be able to regenerate them
+at a moment's notice.
+
+## Start-Here Checklist
+
+So now that we know our end goal and working philosophy, what prerequisites
+do we need to be able to achieve them? Here is a checklist of the most important things to
+have done:
+
+1. **Complete the [Harvard CITI training](https://about.citiprogram.org/en/homepage/) and share your 
+completion certificate with Chris.** This is _required_ for you to have access to the data we work with, and 
+to be able to contribute to the research. There are two modules:
+
+- Social and Behavioral/Biomedical Human Subject Training
+- Internet Privacy and Security (IPS) Training
+
+If you've never registered for CITI training before, you will need to create an account and affiliate with 
+Harvard University. When you are asked to select a course, select "Social and Behavioral/Biomedical Human 
+Subject Training," and then select the modules listed above. If you have already completed CITI training 
+for another institution, you can log in with your existing account, affiliate with Harvard University, and 
+then add the two modules listed above to your existing training. If your training is still valid, send
+Chris a copy of your completion certificate. If you've never taken them or your training has expired, you 
+will need to retake the modules and share the new certificate with Chris.
+
+2. **Officially be inducted into the Golden Lab by filling out the [new member form](https://forms.gle/6zcWHGMeNtfFCj7g6)** — we use this to grant you access to:
+- Google Drive, for managing shared documents and non-code, office-oriented work 📁 
+- GitHub, for managing and collaborating on code 🔌
+- Slack, for work-related communication about projects, sharing information, and questions 💬
+- WhatsApp, for non-work-related communication and socializing 🎭
+
+3. **Set up your FASRC account** by following the instructions available [here](https://docs.rc.fas.harvard.edu/kb/how-do-i-get-a-research-computing-account/):
+
+- Carefully read the instructions; you'll use the Account Request Tool to request an account using your
+HarvardKey, and when you are asked to specify the PI, select "Christopher Golden," and "Nutrition," as the 
+department. Chris will receive a notification and approve your request as soon as possible, but don't 
+hesitate to send him an email letting him know you have submitted the request and are excited to get 
+started.
+
+![](/assets/img/fasrc_account_request.png)
+
+4. Follow the workflow lifecycle guide on the next page to set up your first project and learn how to do 
+reproducible data science.
+
+## Why Can't I Just Do This On My Laptop By Myself?
+
+Following this guide will help students:
+
+- adhere to [security, privacy, and ethical standards](https://privsec.harvard.edu/classify-risk) for working with human subjects data at Harvard,
+- set up the optimal compute environment to speed up their work,
+- avoid making critical mistakes that duplicate, mismanage, expose, or worse, lose sensitive data,
+- eliminate future [technical debt](https://en.wikipedia.org/wiki/Technical_debt) of maintaining your projects by adhering to best practices early,
+- lower the cost of collaboration across and outside of the lab, and
+- focus on the science instead of wrestle with technical issues
+
+## Example of Common Failures You'll Avoid by Following This Guide
+
+- Waiting all day for a piece of code to run on your laptop that could have run in 10 minutes on the cluster,
+- Losing your work due to inadequate backup strategies,
+- Writing hardcoded scripts that only work for one person,
+- Saving important objects only in the interactive environment, only to lose them when the session ends,
+- Infinitely renaming scripts `final_v2_really_final` every time you receive feedback from your collaborators,
+- Accidentally pushing sensitive data to GitHub because the `.gitignore` was never set up,
+- Waiting to document the project until after you've already forgotten what you did and why,
+- Struggling to get help because you don't have a reproducible example of the problem,
+- Using the wrong version of a package and getting different results than your collaborators...
+
+And much, much more.
+
+## Next pages
+
+- Go through the [Workflow Roadmap](workflow-roadmap.qmd) to practice a full data science project lifecycle.
+- Review the [HPC Infrastructure & Software Guide](hpc-infrastructure.qmd) to get help deciding where work should run and what tools to use.
+- Go to [Projects & Reproducibility Guide](projects-and-reproducibility.qmd) to learn about best practices for managing and sharing your work.
+
+## Further reading
+
+- [R for Data Science (2e): Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts)
+- [R for Data Science (2e): Communicate](https://r4ds.hadley.nz/communicate)
+- [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+
+[^r4ds-projects]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: scripts and projects*](https://r4ds.hadley.nz/workflow-scripts).

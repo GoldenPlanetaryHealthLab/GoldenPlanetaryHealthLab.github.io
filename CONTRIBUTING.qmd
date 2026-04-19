@@ -18,7 +18,7 @@ markdown files in the repository.
 
 ## Getting Started
 
-There are three ways to contribute to this documentation:
+There are two ways to contribute to this documentation:
 
 1. **Directly on GitHub**: You can edit the markdown files directly 
 on GitHub by navigating to the file you want to edit and clicking the 

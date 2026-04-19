@@ -4,8 +4,8 @@ project:
   render:
     - CONTRIBUTING.qmd
     - index.qmd
-    - start-here.qmd
-    - workflow-roadmap.qmd
+    - "01_orientation/start-here.qmd"
+    - "01_orientation/workflow-roadmap.qmd"
     - hpc-infrastructure.qmd
     - projects-and-reproducibility.qmd
     - data-access-and-management.qmd
@@ -28,9 +28,9 @@ website:
     background: light
     foreground: dark
     right:
-      - href: start-here.qmd
+      - href: "01_orientation/start-here.qmd"
         text: Start Here
-      - href: workflow-roadmap.qmd
+      - href: "01_orientation/workflow-roadmap.qmd"
         text: Workflow
       - href: resources.qmd
         text: Resources
@@ -44,9 +44,9 @@ website:
         text: Home
       - section: Orientation
         contents:
-          - href: start-here.qmd
+          - href: "01_orientation/start-here.qmd"
             text: Start Here
-          - href: workflow-roadmap.qmd
+          - href: "01_orientation/workflow-roadmap.qmd"
             text: Workflow Roadmap
       - section: Guides
         contents:
@@ -58,12 +58,12 @@ website:
             text: Data Access and Management
           - href: collaboration-and-support.qmd
             text: Collaboration and Support
-          - href: resources.qmd
-            text: Reference Library
-      - href: about.qmd
-        text: About This Site
+      - href: resources.qmd
+        text: Reference Library
       - href: CONTRIBUTING.qmd
         text: Contribution Guide
+      - href: about.qmd
+        text: About This Site
   page-footer:
     left: Golden Lab data workflows handbook
     right: Built with [Quarto](https://quarto.org)

@@ -1,5 +1,5 @@
 ---
-title: "Golden Lab Data Workflows"
+title: "Golden Lab Data Science Workflows"
 page-layout: full
 toc: false
 title-block-style: none
@@ -10,53 +10,61 @@ title-block-style: none
 
 # Data science workflows for research that lasts
 
-This site turns the ideas from `presentation.qmd` into a lab handbook: work on the cluster, keep code as the source of truth, document decisions close to the analysis, and build projects that other people can run.
+This handbook aims to teach you everything you need to know about 
+carrying out data science in the Golden Lab: working on the cluster, 
+maintaining code as the source of truth, documenting decisions close to 
+the analysis, and building projects that other people can reproduce.
 
-[Start Here](start-here.qmd){.hero-button}
-[See the Workflow Roadmap](workflow-roadmap.qmd){.hero-button .secondary}
+[Start Here](01_orientation/start-here.qmd){.hero-button}
+[See the Workflow Roadmap](01_orientation/workflow-roadmap.qmd){.hero-button .secondary}
 :::
 
 ::: {.card-grid}
 ::: {.info-card}
-### Start on the right machine
+### 🚀 Supercomputing, simplified
 
-Treat HPC as the default, not the backup plan. Use FASRC interactive apps for exploration and scheduled jobs for scale.
+Treat HPC as the default, not the backup plan. Use FASRC's interactive 
+apps for exploration and experimentation, and scale your analyses with SLURM jobs.
 
 [Open the infrastructure guide](hpc-infrastructure.qmd)
 :::
 
 ::: {.info-card}
-### Build projects that survive handoff
+### 🏗️ Build projects that survive handoff
 
-Use one project per analysis, relative paths, environment management, and documented folder structure.
+Make your science reproducible by using organized project structures, robust relative
+paths, and fully specified software environments, to create research that runs _anywhere._
 
 [Open the reproducibility guide](projects-and-reproducibility.qmd)
 :::
 
 ::: {.info-card}
-### Handle data like shared lab infrastructure
+### 📊 Handle data like shared lab infrastructure
 
-Track provenance, avoid duplicate copies, document variables, and separate raw, analytic, and derived data.
+Track data provenance, avoid duplication, document variables, and separate raw, 
+analytic, and derived data.
 
 [Open the data guide](data-access-and-management.qmd)
 :::
 
 ::: {.info-card}
-### Collaborate without chaos
+### 🤝 Collaborate without chaos
 
-Use GitHub, lightweight review, and reproducible help requests so other people can support your work quickly.
+Record your experiments with `git`, collaborate on code on GitHub, and 
+document your work beautifully so others can support your work and build upon it.
 
 [Open the collaboration guide](collaboration-and-support.qmd)
 :::
 :::
 
-## Lab defaults
+## Lab Principles
 
 ::: {.principle-grid}
 ::: {.principle-card}
-### 1. Remote + reproducible beats local + manual
+### 1. Remote & reproducible beats local & manual
 
-If work matters, it should run on supported infrastructure and be re-runnable from code.
+If your work matters, it should run on any infrastructure, and be re-runnable from
+code — not clicks.
 :::
 
 ::: {.principle-card}
@@ -74,7 +82,8 @@ Use notebooks and reports to explain what you did, why you did it, and what shou
 ::: {.principle-card}
 ### 4. Robust habits compound
 
-Version control, clean project structure, and minimal documentation reduce technical debt for everyone.
+Version control, clean project structure, and clear documentation reduces technical 
+debt for you and your colleagues — and your future self.
 :::
 :::
 
@@ -90,15 +99,15 @@ By the end of onboarding, a student should be able to:
 
 ## Suggested reading path
 
-1. Read [Start Here](start-here.qmd) for the workflow philosophy and first-week checklist.
-2. Read [Workflow Roadmap](workflow-roadmap.qmd) for the full research lifecycle.
+1. Read [Start Here](01_orientation/start-here.qmd) for the workflow philosophy and first-week checklist.
+2. Read [Workflow Roadmap](01_orientation/workflow-roadmap.qmd) for the full research lifecycle.
 3. Use the guide pages as reference while you are actively working on a project.
 4. Keep [Reference Library](resources.qmd) open when you need the official docs.
 
-## This website is itself part of the recommendation
+<!-- ## This website is itself part of the recommendation
 
-R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.[^r4ds-communicate]
+R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.[^r4ds-communicate] -->
 
 [^1]: If you were looking for the Golden Lab Google Public Site, click [here(#TODO FIND THE OLD SITE)]().
 
-[^r4ds-communicate]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Communicate*](https://r4ds.hadley.nz/communicate).
+<!-- [^r4ds-communicate]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Communicate*](https://r4ds.hadley.nz/communicate). -->

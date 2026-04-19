@@ -4,21 +4,28 @@ title: "Start Here"
 
 ## Why this documentation exists
 
-Most graduate students do not struggle because the science is impossible. They struggle because the workflow is fragile: files live on laptops, results are copied by hand, folders drift out of sync, and the explanation for a key decision is trapped in somebody's memory.
+Most graduate students do not struggle to manage their research because the 
+science is impossible. They struggle because their workflows are 
+fragile: important files live on personal laptops, results of analyses are 
+copied by hand, versions of scripts are scattered, and the explanation for a 
+key decision is trapped in the memory of someone who has long left the lab.
 
-The goal of this site is to make the robust path the normal path.
+The goal of this site is to make the robust path the easy path.
 
 ## The working philosophy
 
-The original presentation reduces to a few durable defaults:
+I believe[^1] that effective computational academic research should adhere
+to a few core principles:
 
-- prefer remote and reproducible workflows over local and manual ones,
-- keep code, not outputs, as the source of truth,
-- narrate analysis with notebooks and reports,
-- track change with Git and GitHub,
-- and invest early in structure so later work gets cheaper.
+- _Always_ prefer _remote and reproducible_ workflows over local and manual ones;
+- _The code_ that produces outputs — not the outputs themselves — are the source of scientific truth;
+- Scientific communication is hard; you can make it easy by narrating your analyses with notebooks;
+- _Always_ track changes to code with `git` and GitHub; and
+- Invest _early_ in structure so that later work gets easier to manage as your project grows.
 
 R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.[^r4ds-projects]
+
+[^1]: [Tinashe](https://tinashemtapera.com), your RSE, who has seen too many projects break because of fragile workflows.
 
 ## Fragile versus robust workflows
 
@@ -30,6 +37,21 @@ R for Data Science makes the same argument in a more general form: for larger pr
 | Breaks when paths, packages, or people change | Survives new machines, new users, and reruns |
 
 ## What "source of truth" means in practice
+
+If I handed you a scientific paper — any paper — and asked you where the real
+core of the scientific finding was, where would you point me to? The conclusion?
+No, the conclusion is an interpretation. The figures? Again, no — they are a product of
+a particular analysis. The reasoning in the introduction? Not really — it is just a
+motivating narrative. The real core of the scientific finding is that the authors told
+you HOW to get from the data to the conclusion. This is found in the methods section,
+and more specifically the exact procedure that creates the result, repeatably, from the data.
+It is the repeatability of the method producing the same result that makes it science,
+in the first place after all. If I cannot repeat your experiment, then I cannot verify your
+claim, and your conclusion is therefore not scientific.
+
+:::{.callout-important}
+#### In the modern data science era, the method is the code. The code is the source of truth. The code is the core record of an experiment. The code is at the heart of what you should be writing, sharing, and documenting as a scientist. It is without question your most valuable asset.
+:::
 
 Treat these artifacts as the core record of a project:
 
