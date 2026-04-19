@@ -18,7 +18,7 @@ markdown files in the repository.
 
 ## Getting Started
 
-There are three ways to contribue to this documentation:
+There are three ways to contribute to this documentation:
 
 1. **Directly on GitHub**: You can edit the markdown files directly 
 on GitHub by navigating to the file you want to edit and clicking the 
@@ -53,7 +53,7 @@ to you, which is important for recognizing your work
 and giving you credit for your contributions.
 
 1. **Navigate to GitHub.** In your browser of choice, go to the
-GitHub repository: [https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io](https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io)
+GitHub repository: [GoldenPlanetaryHealthLab.github.io](https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io)
 
 2. **Find "Issues"**: Click the Issues tab second from the left.
 

@@ -1,0 +1,44 @@
+name: Quarto PR Preview Build
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-preview:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+    #   Keep these only if your site executes code
+    #   - name: Set up Python
+    #     uses: actions/setup-python@v5
+    #     with:
+    #       python-version: "3.11"
+
+    #   - name: Set up R
+    #     uses: r-lib/actions/setup-r@v2
+
+    #   Install project dependencies here if needed
+    #   - run: pip install -r requirements.txt
+    #   - run: Rscript -e 'install.packages(c("quarto","knitr"))'
+
+      - name: Render site
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          to: html
+
+      - name: Upload preview artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: quarto-site-preview
+          path: _site
