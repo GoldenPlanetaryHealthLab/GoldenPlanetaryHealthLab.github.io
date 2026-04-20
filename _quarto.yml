@@ -56,7 +56,7 @@ website:
       - section: Guides
         href: "guides.qmd"
         contents:
-          - href: "02_guides/hpc-infrastructure.qmd"
+          - href: "02_guides/01_hpc-infrastructure.qmd"
             text: HPC and Infrastructure
           - href: "02_guides/projects-and-reproducibility.qmd"
             text: Projects and Reproducibility

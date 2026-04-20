@@ -107,7 +107,7 @@ step by step, making our work more transparent, reproducible, and less prone to 
 
 > Why invest in engineering as a scientist?
 
-Technical debt is a term that software engineers use to describe the cost of maintaining and 
+[technical debt](https://en.wikipedia.org/wiki/Technical_debt) is a term that software engineers use to describe the cost of maintaining and 
 updating code that was written in a way that is not scalable or maintainable. Because 
 scientists are often less motivated to invest in robust software design patterns, 
 they can end up with a lot of technical debt in their code, which can make it difficult to 
@@ -118,14 +118,15 @@ and clear documentation, you can reduce technical debt and make your
 work easier to manage as your project grows. These habits compound over time, making it easier 
 to maintain and extend your work in the future.
 
-## Start-Here Checklist 📋
+## Start-Here Checklist
 
 So now that we know our end goal and working philosophy, what prerequisites
 do we need to be able to achieve them? Here is a checklist of the most important things to
 have done:
 
-1. **Complete the [Harvard CITI training](https://about.citiprogram.org/en/homepage/) and share your 
-completion certificate with Chris.** This is _required_ for you to have access to the data we work with, and 
+---------------
+
+1. **Complete the [Harvard CITI training](https://about.citiprogram.org/en/homepage/) and share your completion certificate with Chris.** This is _required_ for you to have access to the data we work with, and 
 to be able to contribute to the research. There are two modules:
 
 - Social and Behavioral/Biomedical Human Subject Training
@@ -139,11 +140,15 @@ then add the two modules listed above to your existing training. If your trainin
 Chris a copy of your completion certificate. If you've never taken them or your training has expired, you 
 will need to retake the modules and share the new certificate with Chris.
 
+--------------------
+
 2. **Officially be inducted into the Golden Lab by filling out the [new member form](https://forms.gle/6zcWHGMeNtfFCj7g6)** — we use this to grant you access to:
 - **Google Drive**, for managing shared documents and non-code, office-oriented work 📁 
 - **GitHub**, for managing and collaborating on code 🔌
 - **Slack**, for work-related communication about projects, sharing information, and questions 💬
 - **WhatsApp**, for non-work-related communication and socializing 🎭
+
+-------------------
 
 3. **Set up your FASRC account** by following the instructions available [here](https://docs.rc.fas.harvard.edu/kb/how-do-i-get-a-research-computing-account/):
 
@@ -155,8 +160,12 @@ started.
 
 ![](/assets/img/fasrc_account_request.png)
 
-4. Follow the workflow lifecycle guide on the next page to set up your first project and learn how to do 
+---------------
+
+4. Follow the [workflow roadmap guide](workflow-roadmap.qmd) on the next page to set up your first project and learn how to do 
 reproducible data science.
+
+----------------
 
 ## Why Can't I Just Do This On My Laptop By Myself?
 
