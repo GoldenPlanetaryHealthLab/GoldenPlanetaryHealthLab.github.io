@@ -286,7 +286,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link active" data-scroll-target="#how-to-contribute">How to Contribute</a></li>
   <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
   <li><a href="#closing-the-issue-and-submitting-a-pull-request" id="toc-closing-the-issue-and-submitting-a-pull-request" class="nav-link" data-scroll-target="#closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</a></li>
-  <li><a href="#how-the-website-is-actually-built" id="toc-how-the-website-is-actually-built" class="nav-link" data-scroll-target="#how-the-website-is-actually-built">How the Website is Actually Built</a></li>
   <li><a href="#all-contributors-specification-advanced-users-only" id="toc-all-contributors-specification-advanced-users-only" class="nav-link" data-scroll-target="#all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</a></li>
   </ul>
 </nav>
@@ -371,14 +370,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</h2>
 <p>To complete the process, review the Pull Request, adding relevant information to the Pull Request description, and then submit it for review. The maintainers will review your changes and may provide feedback or request changes before merging your contribution into the main branch.</p>
 <details>
-</details></section>
-<section id="how-the-website-is-actually-built" class="level2">
-<h2 class="anchored" data-anchor-id="how-the-website-is-actually-built">How the Website is Actually Built</h2>
 <p><a href="https://quarto.org/">Quarto</a> is a scientific and technical publishing system built on top of Pandoc, and driven by Markdown. Quarto Markdown files (.qmd) can contain prose, code, and visualizations, and are incrementally rendered into a static website by first evaluating the YAML front matter, running code chunks, and then rendering the markdown into HTML. All of this is wrapped up in the command <code>quarto render</code>.</p>
 <p>To build the website locally, you must of course have Quarto installed on your machine/environment. Once you have Quarto and the repo, run the command <code>quarto preview</code> in the terminal while in the root directory of the repository, and Quarto will run <code>quarto render</code> and start a local server where you can view the website in your browser.</p>
 <p>On GitHub, we have set up a GitHub Action that automatically runs <code>quarto render</code> and <em>deploys</em> the website’s HTML files to GitHub Pages whenever a commit is added to the <code>main</code> branch. This is why we enforce that all contributions go through GitHub Issues and Pull Requests, even small ones: it ensures that there is a clear record of what changed and why, and allows us to review changes before they are merged and deployed to the live website.</p>
 <p>So the next time you want to add new information to the site, and feel like learning something about CI/CD, take a closer look at the GitHub Action that runs on this repository in <code>.github/workflows/publish.yml</code>, and the accompanying set up in the Repo Settings to learn how this process works! You might even want to set up a similar workflow <a href="https://quarto.org/docs/websites/">for your own project or personal website</a>.</p>
-
+</details>
 </section>
 <section id="all-contributors-specification-advanced-users-only" class="level2">
 <h2 class="anchored" data-anchor-id="all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</h2>

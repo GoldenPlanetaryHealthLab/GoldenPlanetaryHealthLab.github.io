@@ -171,8 +171,6 @@ main branch.
 
 <details>
 
-## How the Website is Actually Built
-
 [Quarto](https://quarto.org/) is a scientific and technical publishing system built
 on top of Pandoc, and driven by Markdown. Quarto Markdown files
 (.qmd) can contain prose, code, and visualizations, 
