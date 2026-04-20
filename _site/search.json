@@ -2457,5 +2457,16 @@
     "title": "HPC and Infrastructure",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nThere is technically a third interface, which is the command-line shell accessed via SSH. However, we recommend using OOD or VSCode for most interactive work, as they provide a more user-friendly experience and better support for code editing and project management. Doing so purely via SSH is possible, but requires strong familiarity with the command-line, and doesn’t really provide any advantages over the other two options for most use cases.↩︎"
+  },
+  {
+    "objectID": "CONTRIBUTING.html#how-the-website-is-actually-built",
+    "href": "CONTRIBUTING.html#how-the-website-is-actually-built",
+    "title": "Contribution Guide",
+    "section": "How the Website is Actually Built",
+    "text": "How the Website is Actually Built\nQuarto is a scientific and technical publishing system built on top of Pandoc, and driven by Markdown. Quarto Markdown files (.qmd) can contain prose, code, and visualizations, and are incrementally rendered into a static website by first evaluating the YAML front matter, running code chunks, and then rendering the markdown into HTML. All of this is wrapped up in the command quarto render.\nTo build the website locally, you must of course have Quarto installed on your machine/environment. Once you have Quarto and the repo, run the command quarto preview in the terminal while in the root directory of the repository, and Quarto will run quarto render and start a local server where you can view the website in your browser.\nOn GitHub, we have set up a GitHub Action that automatically runs quarto render and deploys the website’s HTML files to GitHub Pages whenever a commit is added to the main branch. This is why we enforce that all contributions go through GitHub Issues and Pull Requests, even small ones: it ensures that there is a clear record of what changed and why, and allows us to review changes before they are merged and deployed to the live website.\nSo the next time you want to add new information to the site, and feel like learning something about CI/CD, take a closer look at the GitHub Action that runs on this repository in .github/workflows/publish.yml, and the accompanying set up in the Repo Settings to learn how this process works! You might even want to set up a similar workflow for your own project or personal website.",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
   }
 ]
