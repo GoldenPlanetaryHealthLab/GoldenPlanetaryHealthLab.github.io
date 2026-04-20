@@ -2,16 +2,21 @@ project:
   type: website
   output-dir: _site
   render:
-    - CONTRIBUTING.qmd
-    - index.qmd
-    - "01_orientation/start-here.qmd"
-    - "01_orientation/workflow-roadmap.qmd"
-    - hpc-infrastructure.qmd
-    - projects-and-reproducibility.qmd
-    - data-access-and-management.qmd
-    - collaboration-and-support.qmd
-    - resources.qmd
-    - about.qmd
+    - index.qmd                                     # home
+    # orientation drop down
+    - "01_orientation/start-here.qmd"               # start-here prerequisites
+    - "01_orientation/workflow-roadmap.qmd"         # workflow roadmap
+    # guides drop down; has its own landing page
+    - guides.qmd                                    # guides landing page
+    - "02_guides/01_hpc-infrastructure.qmd"
+    - "02_guides/projects-and-reproducibility.qmd"
+    - "02_guides/data-access-and-management.qmd"
+    - "02_guides/collaboration-and-support.qmd"
+    # reference pages
+    - "resources.qmd"                               # resources listing
+    # other pages
+    - CONTRIBUTING.qmd                              # contribution guide
+    - "about.qmd"                                   # about page           
 
 
 website:
@@ -49,14 +54,15 @@ website:
           - href: "01_orientation/workflow-roadmap.qmd"
             text: Workflow Roadmap
       - section: Guides
+        href: "guides.qmd"
         contents:
-          - href: hpc-infrastructure.qmd
+          - href: "02_guides/hpc-infrastructure.qmd"
             text: HPC and Infrastructure
-          - href: projects-and-reproducibility.qmd
+          - href: "02_guides/projects-and-reproducibility.qmd"
             text: Projects and Reproducibility
-          - href: data-access-and-management.qmd
+          - href: "02_guides/data-access-and-management.qmd"
             text: Data Access and Management
-          - href: collaboration-and-support.qmd
+          - href: "02_guides/collaboration-and-support.qmd"
             text: Collaboration and Support
       - href: resources.qmd
         text: Reference Library

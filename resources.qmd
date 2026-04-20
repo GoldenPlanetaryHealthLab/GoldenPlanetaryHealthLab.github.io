@@ -2,55 +2,30 @@
 title: "Reference Library"
 ---
 
+The reference library is a collection of resources that we have found useful 
+for doing science. This is not an exhaustive list, but it is a good starting 
+point for anyone who is new to the lab or wants to learn more about our 
+workflow.
+
+We encourage readers to explore these resources and add to this list as they
+find new ones!
+
+🚦🚧 This section is under construction 🚧🚦
+
+<!-- 
 ## Core workflow references
 
-| Resource | Use it for |
-|---|---|
-| [R for Data Science (2e)](https://r4ds.hadley.nz/) | End-to-end R workflow habits, especially projects, communication, and getting help |
-| [R4DS: Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts) | Source of truth, project structure, and relative paths |
-| [R4DS: Communicate](https://r4ds.hadley.nz/communicate) | Why Quarto, reports, and communication are part of the workflow |
-| [R4DS: Workflow: getting help](https://r4ds.hadley.nz/workflow-help.html) | Reprexes and better support requests |
+{{< include "03_references/core_workflow.md" >}}
 
 ## FASRC and Harvard infrastructure
 
-| Resource | Use it for |
-|---|---|
-| [FASRC Docs: Open OnDemand Dashboard and Remote Desktop](https://docs.rc.fas.harvard.edu/kb/virtual-desktop/) | Browser-based access, interactive apps, and session management |
-| [FASRC Docs: R and RStudio](https://docs.rc.fas.harvard.edu/kb/r-and-rstudio/) | Current guidance on RStudio Server, package installs, and app limitations |
-| [FASRC Docs: Scratch](https://docs.rc.fas.harvard.edu/kb/policy-scratch/) | Current retention and usage policy for `/n/netscratch` |
+{{< include "03_references/fasrc_harvard.md" >}}
 
-## NSAPH handbook pages worth copying from
+## NSAPH Handbook
 
-Even if your lab is not NSAPH, these pages are useful models for practical documentation:
-
-| Resource | Use it for |
-|---|---|
-| [NSAPH Handbook: How to work on FASSE](https://nsaph.github.io/handbook/fasse.html) | Secure-environment onboarding, project setup, shared data, scratch, and GitHub habits |
-| [NSAPH Handbook: Getting started on CANNON](https://nsaph.github.io/handbook/cannon.html) | Standard-cluster onboarding |
-| [NSAPH Handbook: Introduction to NSAPH GitHub](https://nsaph.github.io/handbook/analysis.html) | GitHub defaults for shared lab work |
-| [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html) | Data dictionaries, diagrams, and README expectations |
-| [NSAPH Handbook: Data Sharing using Harvard Dataverse](https://nsaph.github.io/handbook/dataverse.html) | Sharing and publishing data products when policy allows |
+{{< include "03_references/nsaph.md" >}}
 
 ## Publishing and documentation tooling
 
-| Resource | Use it for |
-|---|---|
-| [Quarto websites documentation](https://quarto.org/docs/websites/) | Building lab websites and internal handbooks |
-| [Quarto notebooks documentation](https://quarto.org/docs/computations/r.html) | R-based notebooks and executable reporting |
-| [Mermaid documentation](https://mermaid.js.org/) | Inline process and data-flow diagrams |
-
-## Suggested order for new students
-
-1. Read `Start Here`.
-2. Read the R4DS workflow chapters.
-3. Read the FASRC docs page for the environment you will actually use.
-4. Read the relevant NSAPH handbook page that matches your project type.
-5. Return to this site when you need a lab-default answer instead of a generic answer.
-
-## If you only bookmark five links
-
-1. [R4DS: Workflow: scripts and projects](https://r4ds.hadley.nz/workflow-scripts)
-2. [FASRC Docs: Open OnDemand Dashboard and Remote Desktop](https://docs.rc.fas.harvard.edu/kb/virtual-desktop/)
-3. [FASRC Docs: R and RStudio](https://docs.rc.fas.harvard.edu/kb/r-and-rstudio/)
-4. [NSAPH Handbook: How to work on FASSE](https://nsaph.github.io/handbook/fasse.html)
-5. [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+{{< include "03_references/publishing_and_docs.md" >}}
+ -->

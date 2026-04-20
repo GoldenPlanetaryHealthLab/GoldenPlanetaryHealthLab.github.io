@@ -1,0 +1,46 @@
+---
+title: "Guides to Robust Scientific Workflows"
+format: html
+---
+
+On this page, you'll find comprehensive, hands-on guides to the tools and 
+practices that we use in the Golden Lab to make our scientific workflows 
+more robust. These guides are designed to be practical and actionable, so 
+you can start applying these principles to your work right away.
+
+See the [Orientation Guide](01_orientation/start-here.qmd) for an 
+overview of the philosophy of robust scientific workflows, and the tools 
+we use to achieve them.
+
+::: {.card-grid}
+::: {.info-card}
+### HPC & Infrastructure
+Learn how to use the Harvard Research Computing cluster, set up your
+local environment, and manage your software dependencies.
+
+[Open the HPC guide](02_guides/01_hpc-infrastructure.qmd)
+:::
+
+::: {.info-card}
+### Projects & Reproducibility
+Learn how to structure your projects, manage your code, and create 
+reproducible workflows that can be shared and built upon.
+
+[Open the Project Management guide](02_guides/projects-and-reproducibility.qmd)
+:::
+
+::: {.info-card}
+### Data Access & Management
+Learn how to manage your data, track its provenance, and document it for future use.
+
+[Open the Data Management guide](02_guides/data-access-and-management.qmd)
+:::
+
+::: {.info-card}
+### Collaboration & Version Control
+Learn how to use `git` and GitHub to manage your code, collaborate with 
+others, and keep a history of your work. 
+
+[Open the Collaboration guide](02_guides/collaboration-and-support.qmd)
+:::
+:::

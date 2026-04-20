@@ -1,5 +1,6 @@
 ---
 title: "Start Here"
+number-sections: true
 ---
 
 ## Why this documentation exists
@@ -19,15 +20,16 @@ to a few core principles:
 
 - _Always_ prefer _remote and reproducible_ workflows over local and manual ones;
 - _The code_ that produces outputs — not the outputs themselves — are the source of scientific truth;
-- Scientific communication is hard; you can make it easy by narrating your analyses with notebooks;
-- _Always_ track changes to code with `git` and GitHub; and
-- Invest _early_ in structure so that later work gets easier to manage as your project grows.
+- Scientific communication is hard; you can make it easy by _narrating your analyses_ with notebooks;
+- Invest _early_ in structure and version control so that later work gets easier to manage as your project grows.
 
 R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.[^r4ds-projects]
 
 [^1]: [Tinashe](https://tinashemtapera.com), your RSE, who has seen too many projects break because of fragile workflows.
 
-## Fragile versus robust workflows
+## Principle 1: Remote and Reproducible Workflows 🌐 {#sec-principle1}
+
+> What is the difference between a fragile workflow and a robust workflow? 
 
 | Fragile workflow | Robust workflow |
 |---|---|
@@ -36,12 +38,14 @@ R for Data Science makes the same argument in a more general form: for larger pr
 | Stores only outputs | Stores the method that creates outputs |
 | Breaks when paths, packages, or people change | Survives new machines, new users, and reruns |
 
-## What "source of truth" means in practice
+## Principle 2: Code is The Source of Truth 💎 {#principle-2}
+
+> What does, "source of truth," mean in practice?
 
 If I handed you a scientific paper — any paper — and asked you where the real
-core of the scientific finding was, where would you point me to? The conclusion?
-No, the conclusion is an interpretation. The figures? Again, no — they are a product of
-a particular analysis. The reasoning in the introduction? Not really — it is just a
+core of the scientific finding was, where would you point me to? _The conclusion?_
+No, the conclusion is an interpretation. _The figures?_ Again, no — they are a product of
+a particular analysis. _The reasoning in the introduction?_ Not really — that's just a
 motivating narrative. The real core of the scientific finding is that the authors told
 you HOW to get from the data to the conclusion. This is found in the methods section,
 and more specifically the exact procedure that creates the result, repeatably, from the data.
@@ -50,7 +54,7 @@ in the first place after all. If I cannot repeat your experiment, then I cannot 
 claim, and your conclusion is therefore not scientific.
 
 :::{.callout-important}
-#### In the modern data science era, **the methods section is the code, and code is the source of truth**. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.
+In the modern data science era, **the methods section is the code, and code is the source of truth**. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.
 :::
 
 Ask yourself: _if someone stole your laptop today and tossed it into the Charles River, Google went
@@ -79,7 +83,42 @@ Should all be treated as ephemeral details that can be regenerated whenever aske
 never lose sleep over these things because your code should be able to regenerate them
 at a moment's notice.
 
-## Start-Here Checklist
+## Principle 3: Analysis Should Be Narrated 📇 {#principle-3}
+
+> Why should scientists narrate their thinking?
+
+David McCullough is [credited](https://www.goodreads.com/quotes/320581-writing-is-thinking-to-write-well-is-to-think-clearly) with the quote, "Writing is thinking. To write well is to think 
+clearly. That's why it's so hard." If you've ever found yourself struggling to articulate
+an idea on paper that just moments before felt crystal clear in your head, you know
+exactly what he means. Donald Knuth, the father of algorithm analysis and creator 
+of TeX, felt similarly about programming, and has evangelized literate programming —
+the practice of writing code that is meant to be read by humans, and that tells a story about 
+the analysis — for decades.[^knuth-literate]. Today, we're fortunate to have tools like R 
+Markdown, Jupyter Notebooks, and Quarto that make it easy to write code that is meant to be 
+read by humans, and that tells a story about the analysis. If there is anywhere appropriate
+for literate programming to improve our work, it's in science, where the goal is not just to 
+get the right answer, but to explain how we got there and why it matters. By narrating our 
+analysis with notebooks, we afford our brains the opportunity to think through the analysis 
+step by step, making our work more transparent, reproducible, and less prone to error or bias.
+
+[^knuth-literate]: Donald Knuth, [*Literate Programming*](https://www-cs-faculty.stanford.edu/~knuth/lp.html).
+
+## Principle 4: Robust Habits Compound 🌱 {#principle-4}
+
+> Why invest in engineering as a scientist?
+
+Technical debt is a term that software engineers use to describe the cost of maintaining and 
+updating code that was written in a way that is not scalable or maintainable. Because 
+scientists are often less motivated to invest in robust software design patterns, 
+they can end up with a lot of technical debt in their code, which can make it difficult to 
+understand, reproduce, or extend as the science progresses.
+This can lead to wasted time and effort, or worse, lost insight. 
+By investing early in robust habits such as version control, clean project structure, 
+and clear documentation, you can reduce technical debt and make your 
+work easier to manage as your project grows. These habits compound over time, making it easier 
+to maintain and extend your work in the future.
+
+## Start-Here Checklist 📋
 
 So now that we know our end goal and working philosophy, what prerequisites
 do we need to be able to achieve them? Here is a checklist of the most important things to
@@ -101,10 +140,10 @@ Chris a copy of your completion certificate. If you've never taken them or your 
 will need to retake the modules and share the new certificate with Chris.
 
 2. **Officially be inducted into the Golden Lab by filling out the [new member form](https://forms.gle/6zcWHGMeNtfFCj7g6)** — we use this to grant you access to:
-- Google Drive, for managing shared documents and non-code, office-oriented work 📁 
-- GitHub, for managing and collaborating on code 🔌
-- Slack, for work-related communication about projects, sharing information, and questions 💬
-- WhatsApp, for non-work-related communication and socializing 🎭
+- **Google Drive**, for managing shared documents and non-code, office-oriented work 📁 
+- **GitHub**, for managing and collaborating on code 🔌
+- **Slack**, for work-related communication about projects, sharing information, and questions 💬
+- **WhatsApp**, for non-work-related communication and socializing 🎭
 
 3. **Set up your FASRC account** by following the instructions available [here](https://docs.rc.fas.harvard.edu/kb/how-do-i-get-a-research-computing-account/):
 

@@ -12,7 +12,7 @@ flowchart TD
   C --> D[Data Lake Access 🌊]
   D --> E[Data Analysis and Notebooks 🔬]
   E --> F[Reusable Scripts and Pipelines 🗜️]
-  F --> G[Review and communication 📊]
+  F --> G[Collaborative Review and Communication 📊]
   F --> E
   G --> F
   G --> H[Publish and Archive 🗃️]
@@ -20,7 +20,7 @@ flowchart TD
 ```
 
 Let's take some time to discuss and review an ideal workflow. This is a high-level overview of the 
-lifecycle of a data science project in the lab — we'll talk actual implementation in a later section. 
+lifecycle of a data science project in the lab — we'll discuss actual implementation in the Guides sections. 
 While the lifecycle may not be a strict linear process, it is a good 
 starting point for understanding how to structure and prioritize your work at each stage,
 and what decisions you should be making to make your research reproducible.
@@ -230,7 +230,7 @@ messy codebase that may not be reproducible. Adding a pipeline orchestrator earl
 costs very little, and it allows you to focus on the science without worrying about the engineering later.
 :::
 
-## 7. Review and communication 📊
+## 7. Collaborative Review and Communication 📊
 
 As you go through the exploratory data analysis phase,
 you'll likely be meeting with your PI and collaborators to
@@ -241,31 +241,32 @@ and expect everyone in the meeting to understand your work.
 Instead, you should collect and export digestible findings that can
 be presented in meetings[^notebook-benefits].
 
-[^notebook-benefits]: This is how notebooks to add value to your data analysis.
+[^notebook-benefits]: This is where notebooks can really add value to your data analysis.
 If your notebook is structured correctly, you can easily export tables, graphs, 
 and text as a report that weaves together your code, results, and interpretations reproducibly,
 and share it with your collaborators.
 
-If you've structured your project correctly, each time you meet with your collaborators your project should have:
+If you've structured your project correctly, each time you meet with your supervisor or collaborators, your project should have:
 
-1. a short `README` at the base of the repository that explains the project and how to run the code,
+1. an up to date `README` at the base of the repository that explains the project, how to run the code,
+ and when it was last updated,
 2. one or more current notebooks or reports that explain the current analysis status,
-3. a reproducible path from data inputs to results in a pipeline,
-4. and a Git history that reflects real milestones.
+3. the reproducible path from data inputs to results in a pipeline, and
+4. a `git` history that reflects real milestones.
 
 This makes supervisor meetings, methods review, and cross-training materially easier.
 
 :::{.callout-note}
 #### The Data Science Loop
 
-You may notice that the roadmap has cyclical edges. This Data Science Loop is a continuous 
-cycle of data analysis, interpretation, and communication. As you analyze your data, 
+You may notice that the workflow has cyclical edges between Data Analysis & Notebooks, Reusable Scripts & Pipelines, and Review & Communication. This [Data Science Loop](https://r4ds.hadley.nz/whole-game.html) is a continuous 
+cycle of analysis, interpretation, and communication. As you analyze your data, 
 you'll likely uncover new questions and insights that will lead to new analyses. 
 This is a normal part of the scientific process, and it's important to embrace it. 
 By structuring your project in a way that allows for easy communication and 
 collaboration, you can make the most of this iterative process and produce high-quality science.
 
-![[R4DS Data Science Loop](https://r4ds.hadley.nz/whole-game.html)](https://r4ds.hadley.nz/diagrams/data-science/whole-game.png)
+![R4DS Data Science Loop](https://r4ds.hadley.nz/diagrams/data-science/whole-game.png)
 :::
 
 ## 8. Publish and Archive 🗃️

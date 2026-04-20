@@ -110,14 +110,6 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./01_orientation/workflow-roadmap.html"> 
 <span class="menu-text">Workflow</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./resources.html"> 
-<span class="menu-text">Resources</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
-<span class="menu-text">About</span></a>
-  </li>  
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -177,7 +169,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a href="./guides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guides</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -186,25 +178,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_guides/hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HPC and Infrastructure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_guides/projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects and Reproducibility</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./data-access-and-management.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_guides/data-access-and-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Access and Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./collaboration-and-support.html" class="sidebar-item-text sidebar-link">
+  <a href="./02_guides/collaboration-and-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaboration and Support</span></a>
   </div>
 </li>
@@ -257,42 +249,42 @@ Golden Lab Data Science handbook<a href="#fn1" class="footnote-ref" id="fnref1" 
 <section id="supercomputing-simplified" class="level3 info-card">
 <h3 class="anchored" data-anchor-id="supercomputing-simplified">🚀 Supercomputing, simplified</h3>
 <p>Treat HPC as the default, not the backup plan. Use FASRC’s interactive apps for exploration and experimentation, and scale your analyses with SLURM jobs.</p>
-<p><a href="./hpc-infrastructure.html">Open the infrastructure guide</a></p>
+<p><a href="./02_guides/hpc-infrastructure.html">Open the infrastructure guide</a></p>
 </section>
 <section id="build-projects-that-survive-handoff" class="level3 info-card">
 <h3 class="anchored" data-anchor-id="build-projects-that-survive-handoff">🏗️ Build projects that survive handoff</h3>
 <p>Make your science reproducible by using organized project structures, robust relative paths, and fully specified software environments, to create research that runs <em>anywhere.</em></p>
-<p><a href="./projects-and-reproducibility.html">Open the reproducibility guide</a></p>
+<p><a href="./02_guides/projects-and-reproducibility.html">Open the reproducibility guide</a></p>
 </section>
 <section id="handle-data-like-shared-lab-infrastructure" class="level3 info-card">
 <h3 class="anchored" data-anchor-id="handle-data-like-shared-lab-infrastructure">📊 Handle data like shared lab infrastructure</h3>
 <p>Track data provenance, avoid duplication, document variables, and separate raw, analytic, and derived data.</p>
-<p><a href="./data-access-and-management.html">Open the data guide</a></p>
+<p><a href="./02_guides/data-access-and-management.html">Open the data guide</a></p>
 </section>
 <section id="collaborate-without-chaos" class="level3 info-card">
 <h3 class="anchored" data-anchor-id="collaborate-without-chaos">🤝 Collaborate without chaos</h3>
 <p>Record your experiments with <code>git</code>, collaborate on code on GitHub, and document your work beautifully so others can support your work and build upon it.</p>
-<p><a href="./collaboration-and-support.html">Open the collaboration guide</a></p>
+<p><a href="./02_guides/collaboration-and-support.html">Open the collaboration guide</a></p>
 </section>
 </div>
 <section id="lab-principles" class="level2">
 <h2 class="anchored" data-anchor-id="lab-principles">Lab Principles</h2>
 <div class="principle-grid">
 <section id="remote-reproducible-beats-local-manual" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="remote-reproducible-beats-local-manual">1. Remote &amp; reproducible beats local &amp; manual</h3>
+<h3 class="anchored" data-anchor-id="remote-reproducible-beats-local-manual">1. Remote &amp; reproducible beats local &amp; manual 🌐</h3>
 <p>If your work matters, it should run on any infrastructure, and be re-runnable from code — not clicks.</p>
 </section>
 <section id="code-is-the-source-of-truth" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="code-is-the-source-of-truth">2. Code is the source of truth</h3>
-<p>Results, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.</p>
+<h3 class="anchored" data-anchor-id="code-is-the-source-of-truth">2. Code is the source of truth 💎</h3>
+<p>Results, figures, and tables are merely products of the workflow. The lasting record — and scientific truth underlying them — is in the code and documentation that created them.</p>
 </section>
 <section id="analysis-should-be-narrated" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="analysis-should-be-narrated">3. Analysis should be narrated</h3>
+<h3 class="anchored" data-anchor-id="analysis-should-be-narrated">3. Analysis should be narrated 📇</h3>
 <p>Use notebooks and reports to explain what you did, why you did it, and what should happen next.</p>
 </section>
 <section id="robust-habits-compound" class="level3 principle-card">
-<h3 class="anchored" data-anchor-id="robust-habits-compound">4. Robust habits compound</h3>
-<p>Version control, clean project structure, and clear documentation reduces technical debt for you and your colleagues — and your future self.</p>
+<h3 class="anchored" data-anchor-id="robust-habits-compound">4. Robust habits compound 🌱</h3>
+<p>Version control, clean project structure, and clear documentation reduces technical debt for your colleagues — and your future self.</p>
 </section>
 </div>
 </section>

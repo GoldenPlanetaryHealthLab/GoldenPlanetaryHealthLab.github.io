@@ -2,7 +2,9 @@
 title: "Collaboration and Support"
 ---
 
-## Collaboration is part of reproducibility
+🚦🚧 This section is under construction 🚧🚦
+
+<!-- ## Collaboration is part of reproducibility
 
 Version control is not only for backup. It is how the lab understands change, reviews methods, and avoids conflicting local copies of the same project.
 
@@ -101,4 +103,4 @@ The goal is not to make every student a Git expert. The goal is to make the lab'
 - [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
 
 [^nsaph-github]: NSAPH Handbook, [*Introduction to NSAPH GitHub*](https://nsaph.github.io/handbook/analysis.html).
-[^r4ds-help]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: getting help*](https://r4ds.hadley.nz/workflow-help.html).
+[^r4ds-help]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: getting help*](https://r4ds.hadley.nz/workflow-help.html). -->

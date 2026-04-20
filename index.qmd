@@ -26,7 +26,7 @@ the analysis, and building projects that other people can reproduce.
 Treat HPC as the default, not the backup plan. Use FASRC's interactive 
 apps for exploration and experimentation, and scale your analyses with SLURM jobs.
 
-[Open the infrastructure guide](hpc-infrastructure.qmd)
+[Open the infrastructure guide](02_guides/hpc-infrastructure.qmd)
 :::
 
 ::: {.info-card}
@@ -35,7 +35,7 @@ apps for exploration and experimentation, and scale your analyses with SLURM job
 Make your science reproducible by using organized project structures, robust relative
 paths, and fully specified software environments, to create research that runs _anywhere._
 
-[Open the reproducibility guide](projects-and-reproducibility.qmd)
+[Open the reproducibility guide](02_guides/projects-and-reproducibility.qmd)
 :::
 
 ::: {.info-card}
@@ -44,7 +44,7 @@ paths, and fully specified software environments, to create research that runs _
 Track data provenance, avoid duplication, document variables, and separate raw, 
 analytic, and derived data.
 
-[Open the data guide](data-access-and-management.qmd)
+[Open the data guide](02_guides/data-access-and-management.qmd)
 :::
 
 ::: {.info-card}
@@ -53,7 +53,7 @@ analytic, and derived data.
 Record your experiments with `git`, collaborate on code on GitHub, and 
 document your work beautifully so others can support your work and build upon it.
 
-[Open the collaboration guide](collaboration-and-support.qmd)
+[Open the collaboration guide](02_guides/collaboration-and-support.qmd)
 :::
 :::
 
@@ -61,29 +61,31 @@ document your work beautifully so others can support your work and build upon it
 
 ::: {.principle-grid}
 ::: {.principle-card}
-### 1. Remote & reproducible beats local & manual
+### 1. Remote & reproducible beats local & manual 🌐
 
 If your work matters, it should run on any infrastructure, and be re-runnable from
 code — not clicks.
 :::
 
 ::: {.principle-card}
-### 2. Code is the source of truth
+### 2. Code is the source of truth 💎
 
-Results, figures, and tables are products of the workflow. The lasting record is the code and documentation that created them.
+Results, figures, and tables are merely products of the workflow. The lasting 
+record — and scientific truth underlying them — is in the code and 
+documentation that created them.
 :::
 
 ::: {.principle-card}
-### 3. Analysis should be narrated
+### 3. Analysis should be narrated 📇
 
 Use notebooks and reports to explain what you did, why you did it, and what should happen next.
 :::
 
 ::: {.principle-card}
-### 4. Robust habits compound
+### 4. Robust habits compound 🌱
 
-Version control, clean project structure, and clear documentation reduces technical 
-debt for you and your colleagues — and your future self.
+Version control, clean project structure, and clear documentation 
+reduces technical debt for your colleagues — and your future self.
 :::
 :::
 

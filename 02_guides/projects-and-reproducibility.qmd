@@ -4,7 +4,9 @@ title: "Projects and Reproducibility"
 
 ## One project, one analysis
 
-R for Data Science recommends one project per analysis and treating the project directory as the analysis home.[^r4ds-projects] That is the cleanest default for lab work too.
+🚦🚧 This section is under construction 🚧🚦
+
+<!-- R for Data Science recommends one project per analysis and treating the project directory as the analysis home.[^r4ds-projects] That is the cleanest default for lab work too.
 
 A project should contain everything required to understand and rerun the code except restricted data that must stay in approved shared locations.
 
@@ -126,4 +128,4 @@ Every active project should have:
 
 [^r4ds-projects]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: scripts and projects*](https://r4ds.hadley.nz/workflow-scripts).
 [^r4ds-source]: R4DS, [section 6.2.1 on source of truth](https://r4ds.hadley.nz/workflow-scripts).
-[^r4ds-paths]: R4DS, [section 6.2.4 on relative and absolute paths](https://r4ds.hadley.nz/workflow-scripts).
+[^r4ds-paths]: R4DS, [section 6.2.4 on relative and absolute paths](https://r4ds.hadley.nz/workflow-scripts). -->

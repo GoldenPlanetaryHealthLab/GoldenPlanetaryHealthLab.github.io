@@ -32,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../hpc-infrastructure.html" rel="next">
+<link href="../guides.html" rel="next">
 <link href="../01_orientation/start-here.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -194,7 +194,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a href="../guides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guides</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -203,25 +203,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HPC and Infrastructure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects and Reproducibility</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data-access-and-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/data-access-and-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Access and Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../collaboration-and-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/collaboration-and-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaboration and Support</span></a>
   </div>
 </li>
@@ -262,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#data-lake-access" id="toc-data-lake-access" class="nav-link" data-scroll-target="#data-lake-access">4. Data Lake Access 🌊</a></li>
   <li><a href="#data-analysis-and-notebooks" id="toc-data-analysis-and-notebooks" class="nav-link" data-scroll-target="#data-analysis-and-notebooks">5. Data Analysis and Notebooks 🔬</a></li>
   <li><a href="#reusable-scripts-and-pipelines" id="toc-reusable-scripts-and-pipelines" class="nav-link" data-scroll-target="#reusable-scripts-and-pipelines">6. Reusable scripts and Pipelines 🗜️</a></li>
-  <li><a href="#review-and-communication" id="toc-review-and-communication" class="nav-link" data-scroll-target="#review-and-communication">7. Review and communication 📊</a></li>
+  <li><a href="#collaborative-review-and-communication" id="toc-collaborative-review-and-communication" class="nav-link" data-scroll-target="#collaborative-review-and-communication">7. Collaborative Review and Communication 📊</a></li>
   <li><a href="#publish-and-archive" id="toc-publish-and-archive" class="nav-link" data-scroll-target="#publish-and-archive">8. Publish and Archive 🗃️</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
   </ul>
@@ -288,7 +288,7 @@ ul.task-list li input[type="checkbox"] {
   C --&gt; D[Data Lake Access 🌊]
   D --&gt; E[Data Analysis and Notebooks 🔬]
   E --&gt; F[Reusable Scripts and Pipelines 🗜️]
-  F --&gt; G[Review and communication 📊]
+  F --&gt; G[Collaborative Review and Communication 📊]
   F --&gt; E
   G --&gt; F
   G --&gt; H[Publish and Archive 🗃️]
@@ -299,7 +299,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
-<p>Let’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll talk actual implementation in a later section. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.</p>
+<p>Let’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll discuss actual implementation in the Guides sections. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.</p>
 </section>
 <section id="question-and-scope" class="level2">
 <h2 class="anchored" data-anchor-id="question-and-scope">1. Question and Scope ⛰️</h2>
@@ -440,15 +440,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="review-and-communication" class="level2">
-<h2 class="anchored" data-anchor-id="review-and-communication">7. Review and communication 📊</h2>
+<section id="collaborative-review-and-communication" class="level2">
+<h2 class="anchored" data-anchor-id="collaborative-review-and-communication">7. Collaborative Review and Communication 📊</h2>
 <p>As you go through the exploratory data analysis phase, you’ll likely be meeting with your PI and collaborators to discuss analysis results and brainstorm ideas. It wouldn’t be very wise to show up to a meeting with half a dozen arbitrarily named Python scripts or R scripts, and expect everyone in the meeting to understand your work. Instead, you should collect and export digestible findings that can be presented in meetings<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
-<p>If you’ve structured your project correctly, each time you meet with your collaborators your project should have:</p>
+<p>If you’ve structured your project correctly, each time you meet with your supervisor or collaborators, your project should have:</p>
 <ol type="1">
-<li>a short <code>README</code> at the base of the repository that explains the project and how to run the code,</li>
+<li>an up to date <code>README</code> at the base of the repository that explains the project, how to run the code, and when it was last updated,</li>
 <li>one or more current notebooks or reports that explain the current analysis status,</li>
-<li>a reproducible path from data inputs to results in a pipeline,</li>
-<li>and a Git history that reflects real milestones.</li>
+<li>the reproducible path from data inputs to results in a pipeline, and</li>
+<li>a <code>git</code> history that reflects real milestones.</li>
 </ol>
 <p>This makes supervisor meetings, methods review, and cross-training materially easier.</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -461,11 +461,11 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may notice that the roadmap has cyclical edges. This Data Science Loop is a continuous cycle of data analysis, interpretation, and communication. As you analyze your data, you’ll likely uncover new questions and insights that will lead to new analyses. This is a normal part of the scientific process, and it’s important to embrace it. By structuring your project in a way that allows for easy communication and collaboration, you can make the most of this iterative process and produce high-quality science.</p>
+<p>You may notice that the workflow has cyclical edges between Data Analysis &amp; Notebooks, Reusable Scripts &amp; Pipelines, and Review &amp; Communication. This <a href="https://r4ds.hadley.nz/whole-game.html">Data Science Loop</a> is a continuous cycle of analysis, interpretation, and communication. As you analyze your data, you’ll likely uncover new questions and insights that will lead to new analyses. This is a normal part of the scientific process, and it’s important to embrace it. By structuring your project in a way that allows for easy communication and collaboration, you can make the most of this iterative process and produce high-quality science.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><a href="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="R4DS Data Science Loop"><img src="https://r4ds.hadley.nz/diagrams/data-science/whole-game.png" class="img-fluid figure-img" alt="R4DS Data Science Loop"></a></p>
-<figcaption><a href="https://r4ds.hadley.nz/whole-game.html">R4DS Data Science Loop</a></figcaption>
+<figcaption>R4DS Data Science Loop</figcaption>
 </figure>
 </div>
 </div>
@@ -498,7 +498,7 @@ ul.task-list li input[type="checkbox"] {
 <li id="fn2"><p>You can see the status of the last sync by visiting the research data management dashboard at [#TODO: implement RDM dashboard to monitor sync status].<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>“Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” — David McCullough. Also, see: <a href="https://www.nature.com/articles/s44222-025-00323-4">https://www.nature.com/articles/s44222-025-00323-4</a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/communicate"><em>R for Data Science (2e): Communicate</em></a>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>This is how notebooks to add value to your data analysis. If your notebook is structured correctly, you can easily export tables, graphs, and text as a report that weaves together your code, results, and interpretations reproducibly, and share it with your collaborators.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>This is where notebooks can really add value to your data analysis. If your notebook is structured correctly, you can easily export tables, graphs, and text as a report that weaves together your code, results, and interpretations reproducibly, and share it with your collaborators.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <div id="read-time-container"></div>
@@ -979,8 +979,8 @@ document.addEventListener("DOMContentLoaded", function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../hpc-infrastructure.html" class="pagination-link" aria-label="HPC and Infrastructure">
-        <span class="nav-page-text">HPC and Infrastructure</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../guides.html" class="pagination-link" aria-label="Guides">
+        <span class="nav-page-text">Guides</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

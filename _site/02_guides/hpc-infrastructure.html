@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Contribution Guide – Golden Lab Data Science Handbook</title>
+<title>HPC and Infrastructure – Golden Lab Data Science Handbook</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -61,24 +61,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./about.html" rel="next">
-<link href="./resources.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2473ab3b010787d4525b314871ccdabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../02_guides/projects-and-reproducibility.html" rel="next">
+<link href="../guides.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-2473ab3b010787d4525b314871ccdabe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -115,10 +115,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<link rel="stylesheet" href="css/custom_style.css">
-<meta property="og:title" content="Contribution Guide – Golden Lab Data Science Handbook">
+<link rel="stylesheet" href="../css/custom_style.css">
+<meta property="og:title" content="HPC and Infrastructure – Golden Lab Data Science Handbook">
 <meta property="og:description" content="Reproducible, collaborative, HPC-native data science guidance for students and researchers.">
-<meta property="og:image" content="./assets/img/closing_an_issue.png">
 <meta property="og:site_name" content="Golden Lab Data Science Handbook">
 </head>
 
@@ -129,7 +128,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Golden Lab Data Science Handbook</span>
     </a>
   </div>
@@ -140,11 +139,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./01_orientation/start-here.html" aria-current="page"> 
+    <a class="nav-link active" href="../01_orientation/start-here.html" aria-current="page"> 
 <span class="menu-text">Start Here</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./01_orientation/workflow-roadmap.html"> 
+    <a class="nav-link" href="../01_orientation/workflow-roadmap.html"> 
 <span class="menu-text">Workflow</span></a>
   </li>  
 </ul>
@@ -163,7 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./CONTRIBUTING.html">Contribution Guide</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guides.html">Guides</a></li><li class="breadcrumb-item"><a href="../02_guides/hpc-infrastructure.html">HPC and Infrastructure</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -172,8 +171,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Contribution Guide</h1>
+    <div class="quarto-title column-body"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../guides.html">Guides</a></li><li class="breadcrumb-item"><a href="../02_guides/hpc-infrastructure.html">HPC and Infrastructure</a></li></ol></nav>
+      <h1 class="title">HPC and Infrastructure</h1>
                       </div>
   </div>
     
@@ -193,7 +192,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Home</span></a>
   </div>
 </li>
@@ -208,13 +207,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_orientation/start-here.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_orientation/start-here.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Start Here</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_orientation/workflow-roadmap.html" class="sidebar-item-text sidebar-link">
+  <a href="../01_orientation/workflow-roadmap.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Workflow Roadmap</span></a>
   </div>
 </li>
@@ -222,34 +221,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="./guides.html" class="sidebar-item-text sidebar-link">
+            <a href="../guides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guides</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_guides/hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/hpc-infrastructure.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">HPC and Infrastructure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_guides/projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects and Reproducibility</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_guides/data-access-and-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/data-access-and-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Access and Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./02_guides/collaboration-and-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/collaboration-and-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaboration and Support</span></a>
   </div>
 </li>
@@ -257,19 +256,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Reference Library</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./CONTRIBUTING.html" class="sidebar-item-text sidebar-link active">
+  <a href="../CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Contribution Guide</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./about.html" class="sidebar-item-text sidebar-link">
+  <a href="../about.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">About This Site</span></a>
   </div>
 </li>
@@ -283,10 +282,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#how-to-contribute" id="toc-how-to-contribute" class="nav-link active" data-scroll-target="#how-to-contribute">How to Contribute</a></li>
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started">Getting Started</a></li>
-  <li><a href="#closing-the-issue-and-submitting-a-pull-request" id="toc-closing-the-issue-and-submitting-a-pull-request" class="nav-link" data-scroll-target="#closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</a></li>
-  <li><a href="#all-contributors-specification-advanced-users-only" id="toc-all-contributors-specification-advanced-users-only" class="nav-link" data-scroll-target="#all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</a></li>
+  <li><a href="#why-hpc-is-the-lab-default" id="toc-why-hpc-is-the-lab-default" class="nav-link active" data-scroll-target="#why-hpc-is-the-lab-default"><span class="header-section-number">1</span> Why HPC is the lab default</a></li>
+  <li><a href="#some-lingo" id="toc-some-lingo" class="nav-link" data-scroll-target="#some-lingo"><span class="header-section-number">2</span> Some Lingo</a></li>
+  <li><a href="#interface" id="toc-interface" class="nav-link" data-scroll-target="#interface"><span class="header-section-number">3</span> Interface</a></li>
+  <li><a href="#choose-the-right-access-path" id="toc-choose-the-right-access-path" class="nav-link" data-scroll-target="#choose-the-right-access-path"><span class="header-section-number">4</span> Choose the right access path</a></li>
+  <li><a href="#recommended-pattern-for-students" id="toc-recommended-pattern-for-students" class="nav-link" data-scroll-target="#recommended-pattern-for-students"><span class="header-section-number">5</span> Recommended pattern for students</a></li>
+  <li><a href="#storage-tiers-and-what-they-are-for" id="toc-storage-tiers-and-what-they-are-for" class="nav-link" data-scroll-target="#storage-tiers-and-what-they-are-for"><span class="header-section-number">6</span> Storage tiers and what they are for</a></li>
+  <li><a href="#fasrc-tips-that-save-time" id="toc-fasrc-tips-that-save-time" class="nav-link" data-scroll-target="#fasrc-tips-that-save-time"><span class="header-section-number">7</span> FASRC tips that save time</a></li>
+  <li><a href="#minimum-viable-setup-for-hpc" id="toc-minimum-viable-setup-for-hpc" class="nav-link" data-scroll-target="#minimum-viable-setup-for-hpc"><span class="header-section-number">8</span> Minimum Viable Setup for HPC</a>
+  <ul class="collapse">
+  <li><a href="#start-a-shell-session" id="toc-start-a-shell-session" class="nav-link" data-scroll-target="#start-a-shell-session"><span class="header-section-number">8.1</span> Start a shell session</a></li>
+  <li><a href="#use-scratch-for-temporary-intermediates" id="toc-use-scratch-for-temporary-intermediates" class="nav-link" data-scroll-target="#use-scratch-for-temporary-intermediates"><span class="header-section-number">8.2</span> Use scratch for temporary intermediates</a></li>
+  <li><a href="#if-fasse-r-package-installs-need-a-proxy" id="toc-if-fasse-r-package-installs-need-a-proxy" class="nav-link" data-scroll-target="#if-fasse-r-package-installs-need-a-proxy"><span class="header-section-number">8.3</span> If FASSE R package installs need a proxy</a></li>
+  </ul></li>
+  <li><a href="#decision-rule" id="toc-decision-rule" class="nav-link" data-scroll-target="#decision-rule"><span class="header-section-number">9</span> Decision rule</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">10</span> Further reading</a></li>
   </ul>
 </nav>
     </div>
@@ -297,91 +307,234 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>We welcome contributions to the Golden Lab Data Science Handbook! If you have suggestions for improvements, additional content, or corrections, please feel free to submit a pull request or open an issue on our GitHub repository.</p>
-<section id="how-to-contribute" class="level2">
-<h2 class="anchored" data-anchor-id="how-to-contribute">How to Contribute</h2>
-<p>This site is built using <a href="https://quarto.org/">Quarto</a>, which is a powerful publishing and technical writing tool that allows us to create a static website from markdown files that can easily integrate prose, code, and visualizations. If you want to contribute, you will primarily be doing so by editing the markdown files in the repository.</p>
+<section id="why-hpc-is-the-lab-default" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-hpc-is-the-lab-default"><span class="header-section-number">1</span> Why HPC is the lab default</h2>
+<p>Harvard University’s computing cluster is called FASRC (Faculty of Arts and Sciences Research Computing), and is one of the largest, most powerful compute clusters on the East Coast. It provides scalable computing resources, secure environments for sensitive data, and a shared infrastructure that supports collaboration and reproducibility. As discussed in <a href="../01_orientation/start-here.html#sec-principle1">Principle 1</a>, we treat HPC as the default environment for data science in the lab. If your project works on HPC, it is more likely to be reproducible, shareable, and scalable. If it only works on your local machine, which only has settings and configurations specific to you, it is more likely to break when you or someone else tries to run it again in the future. By working this way, we intentionally introduce a <em>small</em> amount of friction upfront, to save a lot of time and headache in the future.</p>
+<p>But don’t let that intimidate you! The FASRC team has done a great job of making the cluster accessible and user-friendly, and there are many ways to interact with it that require close to zero setup or expertise. The goal of this guide is to help you find the right access path for your needs, and to give you some practical tips and examples for working on HPC.</p>
 </section>
-<section id="getting-started" class="level2">
-<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
-<p>There are two ways to contribute to this documentation:</p>
-<ol type="1">
-<li><p><strong>Directly on GitHub</strong>: You can edit the markdown files directly on GitHub by navigating to the file you want to edit and clicking the pencil icon. This is a quick and easy way to make small changes or corrections.</p></li>
-<li><p><strong>Locally in Your Own Environment</strong>: For larger contributions, you may want to clone the repository to your local environment, make your changes, and then push them back to GitHub. This allows you to test your changes locally before submitting a pull request.</p></li>
-</ol>
+<section id="some-lingo" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="some-lingo"><span class="header-section-number">2</span> Some Lingo</h2>
+<p>Let’s clear the air of some jargon that you might encounter when working with HPC:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 35%">
+<col style="width: 64%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Term</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>HPC</strong></td>
+<td>High Performance Computing. A general term for powerful computing resources that can handle large-scale data analysis and modeling.</td>
+</tr>
+<tr class="even">
+<td><strong>FASRC</strong></td>
+<td>Faculty of Arts and Sciences Research Computing. The computing cluster used at Harvard.</td>
+</tr>
+<tr class="odd">
+<td><strong>Cannon</strong></td>
+<td>The standard FASRC cluster for general research computing. Synonymous with FASRC for all intents and purposes.</td>
+</tr>
+<tr class="even">
+<td><strong>FASSE</strong></td>
+<td>The secure environment for work that requires stronger data protection (L3 and above).</td>
+</tr>
+<tr class="odd">
+<td><strong>Open OnDemand (OOD)</strong></td>
+<td>A web-based interface that provides access to interactive apps, file browsing, and job submission tools on FASRC.</td>
+</tr>
+<tr class="even">
+<td><strong>Shell/SSH (noun)</strong></td>
+<td>A command-line interface used to interact with the operating system and run commands, including managing files and submitting jobs. Common shells include <code>bash</code> (default for FASRC) and <code>zsh</code> (default for macOS).</td>
+</tr>
+<tr class="odd">
+<td><strong>SSH (verb)</strong></td>
+<td>To connect to a remote machine using the SSH protocol (e.g., “SSH into the cluster”).</td>
+</tr>
+<tr class="even">
+<td><strong>Slurm</strong></td>
+<td>A workload manager that allows you to schedule and manage batch jobs on the cluster.</td>
+</tr>
+<tr class="odd">
+<td><strong>Batch Job</strong></td>
+<td>A task given to the system in the form of a script. You submit it to the queue and it runs when resources are available. For example, a Python script that you want to run on the cluster without manual intervention.</td>
+</tr>
+</tbody>
+</table>
+<p>Another confusing collection of jargon is the interchangeable use of environments, software, and modules. Let’s clarify these:</p>
+<ul>
+<li><p><strong>Software</strong>: The actual programs and tools that you use to do your work, such as R, Python, or specific packages. For example, R version 4.2.0 is a piece of software.</p></li>
+<li><p><strong>Modules</strong>: A system for managing software on HPC clusters. Modules allow you to load and unload specific versions of software and their dependencies. For example, you might run <code>module load R/4.2.0</code> to load R version 4.2.0 and its associated libraries into your environment.</p></li>
+<li><p><strong>Computing Environment</strong>: The overall setup of your computing context, including the hardware, operating system, software packages, and modules that are available to you. For example, the Cannon cluster is an environment, and the FASSE cluster is a different environment with different security settings and software availability.</p></li>
+<li><p><strong>Environment <em>variables</em></strong>: These are key-value pairs that are set in your shell and can be accessed by your programs. They often contain configuration settings, such as paths to software or proxy settings. Importantly, environment variables are “set” by the shell when it starts, are specific to the user who starts the shell, and are inherited by any processes that are started from that shell. They are not global settings for the cluster, but rather specific to your session. For example, when I log into the cluster, my shell automatically sets environment variables that point to the R and Python installations, and I can also set my own environment variables for things like proxy settings or custom paths. These settings are made in the file <code>~/.bashrc</code>, which you can modify to create a customized environment. Take a moment to look at your own environment variables by running <code>env</code> in your shell, to see what is set by default, and <code>cat ~/.bashrc</code> to see your customizations.</p></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For your purposes, “Software” refers broadly to the programs and tools you use, “Modules” are the FASRC-managed software packages you load, “Computing Environment” is the overall context of your work on HPC, and “project environment,” is the specific configuration of software and settings that your local project relies on to run successfully.</p>
+</div>
+</div>
+</section>
+<section id="interface" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="interface"><span class="header-section-number">3</span> Interface</h2>
+<p>We recommend two main interfaces for working on FASRC: Open OnDemand (OOD) and SSH. OOD is a web-based interface that provides access to interactive apps like RStudio Server, Jupyter, and Matlab, as well as file browsing and job submission tools. SSH is a command-line interface that allows you to connect to the cluster from your terminal and use the command line to run commands, manage files, and submit jobs.</p>
+</section>
+<section id="choose-the-right-access-path" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="choose-the-right-access-path"><span class="header-section-number">4</span> Choose the right access path</h2>
+<!-- todo: make this a tabset -->
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Editing on GitHub</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Editing Locally</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Tab 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Tab 2</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Editing on GitHub is straightforward. Simply navigate to the file you want to edit, click the pencil icon, make your changes, and then commit them directly to the repository. This method is ideal for small edits, such as fixing typos or updating links. However, even for small contributions, it’s best to provide a clear paper trail for what you changed and why, and so we require that <em>all</em> contributions — even small ones — be made through GitHub Issues and Pull Requests<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. If this is your first time contributing to an open-source project, this as great low-stakes opportunity to try out this workflow!</p>
-<ol type="1">
-<li><p><strong>Navigate to GitHub.</strong> In your browser of choice, go to the GitHub repository: <a href="https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io">GoldenPlanetaryHealthLab.github.io</a></p></li>
-<li><p><strong>Find “Issues”</strong>: Click the Issues tab second from the left.</p></li>
-<li><p><strong>Open an Issue</strong>: Click the green “New Issue” button on the right.</p></li>
-<li><p><strong>Pick the Documentation Template</strong>: Click “🧪 New Data Science Tutorial or Documentation”</p></li>
-<li><p><strong>Fill Out the Template</strong>: A template will appear for you to fill out. Please provide a clear title and description of your contribution, however small, and any relevant links or references. For irrelevant fields, simply write “N/A”.</p></li>
-<li><p><strong>Assign Yourself</strong>: Assign yourself to the issue using the “Assignees” section on the right. This is what will enable us to award your contribution to you in the <code>all-contributors</code> table and give you credit for your work.</p></li>
-<li><p><strong>Edit the File</strong>: Navigate to the file you want to edit, click the pencil icon, and make your proposed changes using <a href="https://www.markdownguide.org/getting-started/">markdown</a>, <a href="https://quarto.org/docs/guide/">Quarto features</a>, and/or <a href="https://quarto.org/docs/get-started/computations/text-editor.html">code chunks</a> as needed. You can preview your changes using the “Preview changes” tab to make sure everything looks good.</p></li>
-<li><p><strong>Commit Your Work</strong>: Commit your changes using the dialogue box to the repository. In the commit message, please use the GitHub Issues <a href="https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue">linking syntax</a> to reference the issue number (e.g., “Fixes #123”) to link your changes to the issue you created. Importantly, make sure to <strong>select the option to commit your changes to a new branch</strong> and create a pull request. This will automatically open a pull request for your changes, which will be reviewed by the maintainers of the repository.</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./assets/img/closing_an_issue.png" class="img-fluid figure-img"></p>
-<figcaption>GitHub Issue Template</figcaption>
-</figure>
-</div>
+<p>content</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Working locally<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> is more involved and requires familiarity with <code>git</code> and the command line. However, this is a useful skill to have and is the standard workflow for contributing to open-source scientific projects. Strap in, and let’s get you set up to contribute like a pro!</p>
+<p>content</p>
+</div>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Need</th>
+<th>Best starting point</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Interactive R work</td>
+<td>Open OnDemand RStudio Server</td>
+<td>Fast setup, browser-based, simplest package installation</td>
+</tr>
+<tr class="even">
+<td>Interactive shell work</td>
+<td>SSH or OOD shell access</td>
+<td>Best for CLI tools, Git, file inspection, and job submission</td>
+</tr>
+<tr class="odd">
+<td>Long or heavy compute</td>
+<td>Slurm batch jobs</td>
+<td>Reproducible, schedulable, and not tied to your browser session</td>
+</tr>
+<tr class="even">
+<td>Secure interactive work</td>
+<td>FASSE OOD</td>
+<td>Required when data restrictions demand the secure environment</td>
+</tr>
+</tbody>
+</table>
+<p>According to the FASRC OOD documentation, the dashboard gives you file browsing, job status, job submission, remote desktops, and interactive apps such as RStudio, Matlab, and Jupyter.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+<section id="recommended-pattern-for-students" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="recommended-pattern-for-students"><span class="header-section-number">5</span> Recommended pattern for students</h2>
 <ol type="1">
-<li><p><strong>Create the Issue on GitHub to Work On</strong>: Before you start working on your contribution, it’s important to create an issue on GitHub to track your work. This allows the maintainers to review your proposed changes and provides a clear record of your contribution. Navigate to <a href="https://github.com/GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io">the GitHub repository</a>, click on the “Issues” tab, and create a new issue using the “🧪 New Data Science Tutorial or Documentation” template.</p></li>
-<li><p><strong>Set up your local environment for <code>git</code></strong>: On FASRC, <code>git</code> comes pre-installed, but in case you can’t find it, type <code>which git</code>. If you get a path back, you’re good to go. If not, load the <code>git</code> module with <code>module load git</code>.</p></li>
-<li><p><strong>Set Up Your Local Environment for GitHub</strong>: GitHub has a handy CLI tool called <code>gh</code> that makes it easy to interact with GitHub from the command line, including creating issues, making Pull Requests, and managing your authentication. To install <code>gh</code> on FASRC, see the instructions <a href="">here #TODO</a>, and return to this tutorial.</p></li>
+<li>Connect to the correct VPN realm.</li>
+<li>Start an interactive session for exploration.</li>
+<li>Prototype a small slice of the analysis.</li>
+<li>Move stable steps into scripts.</li>
+<li>Schedule heavier work through Slurm or another batch mechanism.</li>
+<li>Keep code and documentation in GitHub; keep restricted data on approved storage.</li>
 </ol>
-<p>You might be aware that FASRC also has some guidance on working with GitHub <a href="https://docs.rc.fas.harvard.edu/kb/git-and-github-on-odyssey/">here</a>. Frankly, their instructions are a bit dated and their recommendations are less user friendly than just using the <code>gh</code> CLI tool, so we recommend following the instructions above instead of those on FASRC’s website.</p>
-<ol start="4" type="1">
-<li><strong>Clone the Repository</strong>: Find an appropriate directory to work in (since this repository will likely have many individuals contributing to it and very little data or computation, it’s safe to do in your home directory) and run <code>gh clone</code> command to clone the repository to your local environment:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> repo clone GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># activate the environment for the repository if applicable</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># source .venv/bin/activate # if you have a virtual environment set up for this repository</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li><strong>Create a Local Issue Branch</strong>: It’s best practice to create a new branch for your changes, so using the <code>gh</code> CLI tool, create a new branch based on the issue you created in step 1:</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> issue develop [ISSUE NUMBER] <span class="at">--checkout</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="6" type="1">
-<li><p><strong>Make Your Changes</strong>: Now that you have your local environment set up and a new branch created, you can make your changes to the markdown files using your preferred <a href="#TODO%20editors%20and%20IDEs">text editor or IDE</a>. Be sure to save your and commit your changes frequently, and test them locally if necessary.</p></li>
-<li><p><strong>Preview Your Changes</strong>: If you want to preview your changes locally before submitting a pull request, you can use the <code>quarto preview</code> command. This will start a local server where you can view your changes in a web browser.</p></li>
-<li><p><strong>Create a Pull Request</strong>: Once you’re happy with your changes, you can create a pull request using the <code>gh</code> CLI tool:</p></li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> pr create</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="./assets/img/gh_pr_create.png" class="img-fluid figure-img"></p>
-<figcaption>GitHub Pull Request In Action</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
 </section>
-<section id="closing-the-issue-and-submitting-a-pull-request" class="level2">
-<h2 class="anchored" data-anchor-id="closing-the-issue-and-submitting-a-pull-request">Closing the Issue and Submitting a Pull Request</h2>
-<p>To complete the process, review the Pull Request, adding relevant information to the Pull Request description, and then submit it for review. The maintainers will review your changes and may provide feedback or request changes before merging your contribution into the main branch.</p>
+<section id="storage-tiers-and-what-they-are-for" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="storage-tiers-and-what-they-are-for"><span class="header-section-number">6</span> Storage tiers and what they are for</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Storage</th>
+<th>Use it for</th>
+<th>Do not use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Home directory</td>
+<td>Small personal config and lightweight project files</td>
+<td>Large shared analysis outputs</td>
+</tr>
+<tr class="even">
+<td>Shared lab/project storage</td>
+<td>Canonical project code and approved shared data access</td>
+<td>Personal scratch or duplicate copies</td>
+</tr>
+<tr class="odd">
+<td><code>/n/netscratch</code></td>
+<td>High-I/O temporary intermediates</td>
+<td>Permanent storage or anything that is not reproducible</td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td>Code, docs, templates, issues, and small text-based metadata</td>
+<td>Raw data, large binaries, or restricted files</td>
+</tr>
+</tbody>
+</table>
+<p>FASRC documents <code>/n/netscratch</code> as temporary, high-performance, not backed up, and subject to a 90-day retention policy.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
-<section id="all-contributors-specification-advanced-users-only" class="level2">
-<h2 class="anchored" data-anchor-id="all-contributors-specification-advanced-users-only"><code>all-contributors</code> Specification (Advanced Users Only)</h2>
-<p>We use the <code>all-contributors</code> specification to recognize and celebrate the contributions of everyone who has helped with this project. This includes not only code contributions but also documentation, design, and other forms of support e.g.&nbsp;feedback, issue submission and conversation, etc.</p>
-<p>You can automate the process of adding contributors by using the <code>all-contributors</code> CLI tool. On Mac, install <code>npm</code> first:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">brew</span> install npm node</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Then, use the following command to add a contributor:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install all-contributors-cli</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>The project is already initialized with <code>all-contributors</code>, so you can start adding contributors right away. You can add contributors from the command line. For example, to add a contributor with the username <code>octocat</code> who has contributed code and documentation, you would run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> all-contributors add octocat code,doc</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>And then create the contribution table with:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npx</span> all-contributors generate</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>This will update the <code>README.md</code> file with the new contributor and their contributions. Commit and push this file to GitHub to see the changes reflected in the repository’s README.</p>
+<section id="fasrc-tips-that-save-time" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="fasrc-tips-that-save-time"><span class="header-section-number">7</span> FASRC tips that save time</h2>
+<ul>
+<li>Use Open OnDemand when you want the simplest path into interactive compute.</li>
+<li>Use the “My Interactive Sessions” area to reconnect to running browser-based sessions.</li>
+<li>Use Chrome or Firefox for OOD; FASRC warns that Safari may not behave well for some apps.</li>
+<li>If package installation fails in FASSE RStudio Server, check whether you need to set the FASRC proxy variables first.</li>
+<li>Remember that RStudio Server on OOD is convenient, but FASRC notes that <code>module load</code> and <code>sbatch</code> are not available inside that app.</li>
+</ul>
+</section>
+<section id="minimum-viable-setup-for-hpc" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="minimum-viable-setup-for-hpc"><span class="header-section-number">8</span> Minimum Viable Setup for HPC</h2>
+<section id="start-a-shell-session" class="level3" data-number="8.1">
+<h3 data-number="8.1" class="anchored" data-anchor-id="start-a-shell-session"><span class="header-section-number">8.1</span> Start a shell session</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@login.rc.fas.harvard.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For FASSE, use:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ssh</span> username@fasselogin.rc.fas.harvard.edu</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="use-scratch-for-temporary-intermediates" class="level3" data-number="8.2">
+<h3 data-number="8.2" class="anchored" data-anchor-id="use-scratch-for-temporary-intermediates"><span class="header-section-number">8.2</span> Use scratch for temporary intermediates</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /n/netscratch/<span class="op">&lt;</span>lab-or-project<span class="op">&gt;</span>/<span class="op">&lt;</span>project-name<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then point temporary outputs there from your scripts instead of filling the repository or home directory.</p>
+</section>
+<section id="if-fasse-r-package-installs-need-a-proxy" class="level3" data-number="8.3">
+<h3 data-number="8.3" class="anchored" data-anchor-id="if-fasse-r-package-installs-need-a-proxy"><span class="header-section-number">8.3</span> If FASSE R package installs need a proxy</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">http_proxy =</span> <span class="st">"http://rcproxy.rc.fas.harvard.edu:3128"</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.setenv</span>(<span class="at">https_proxy =</span> <span class="st">"http://rcproxy.rc.fas.harvard.edu:3128"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="decision-rule" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="decision-rule"><span class="header-section-number">9</span> Decision rule</h2>
+<p>If the job is slow, large, shared, scheduled, or security-sensitive, it belongs on HPC infrastructure by default.</p>
+</section>
+<section id="further-reading" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">10</span> Further reading</h2>
+<ul>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/virtual-desktop/">FASRC Docs: Open OnDemand Dashboard and Remote Desktop</a></li>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/r-and-rstudio/">FASRC Docs: R and RStudio</a></li>
+<li><a href="https://docs.rc.fas.harvard.edu/kb/policy-scratch/">FASRC Docs: Scratch</a></li>
+<li><a href="https://nsaph.github.io/handbook/fasse.html">NSAPH Handbook: How to work on FASSE</a></li>
+<li><a href="https://nsaph.github.io/handbook/cannon.html">NSAPH Handbook: Getting started on CANNON</a></li>
+</ul>
 
 
 </section>
@@ -390,8 +543,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>This is a common practice in open-source projects to ensure that all contributions are reviewed and documented properly. And, to your benefit, if you make changes using <code>git</code> your contributions will be automatically tracked and attributed to you, which is important for recognizing your work and giving you credit for your contributions.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>While we use the word, “locally,” here, what we really mean is, “not on GitHub or on the cloud.” Locally <em>can</em> refer to your personal computer, or FASRC (which is what we expect you to use). The key point is that, “locally,” means, “you are directly interfacing with the machine where you will be making the edits.”<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>FASRC Docs, <a href="https://docs.rc.fas.harvard.edu/kb/virtual-desktop/"><em>Open OnDemand (OOD) Dashboard and Remote Desktop</em></a>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>FASRC Docs, <a href="https://docs.rc.fas.harvard.edu/kb/policy-scratch/"><em>Scratch</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <div id="read-time-container"></div>
@@ -867,13 +1020,13 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./resources.html" class="pagination-link" aria-label="Reference Library">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Reference Library</span>
+      <a href="../guides.html" class="pagination-link" aria-label="Guides">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Guides</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./about.html" class="pagination-link" aria-label="About This Site">
-        <span class="nav-page-text">About This Site</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../02_guides/projects-and-reproducibility.html" class="pagination-link" aria-label="Projects and Reproducibility">
+        <span class="nav-page-text">Projects and Reproducibility</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -895,5 +1048,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<script src="site_libs/quarto-html/zenscroll-min.js"></script>
+<script src="../site_libs/quarto-html/zenscroll-min.js"></script>
 </body></html>

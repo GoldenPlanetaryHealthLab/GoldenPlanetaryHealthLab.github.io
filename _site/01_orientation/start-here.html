@@ -187,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a href="../guides.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Guides</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -196,25 +196,25 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/hpc-infrastructure.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HPC and Infrastructure</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/projects-and-reproducibility.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Projects and Reproducibility</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data-access-and-management.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/data-access-and-management.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data Access and Management</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../collaboration-and-support.html" class="sidebar-item-text sidebar-link">
+  <a href="../02_guides/collaboration-and-support.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Collaboration and Support</span></a>
   </div>
 </li>
@@ -248,15 +248,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-this-documentation-exists" id="toc-why-this-documentation-exists" class="nav-link active" data-scroll-target="#why-this-documentation-exists">Why this documentation exists</a></li>
-  <li><a href="#the-working-philosophy" id="toc-the-working-philosophy" class="nav-link" data-scroll-target="#the-working-philosophy">The working philosophy</a></li>
-  <li><a href="#fragile-versus-robust-workflows" id="toc-fragile-versus-robust-workflows" class="nav-link" data-scroll-target="#fragile-versus-robust-workflows">Fragile versus robust workflows</a></li>
-  <li><a href="#what-source-of-truth-means-in-practice" id="toc-what-source-of-truth-means-in-practice" class="nav-link" data-scroll-target="#what-source-of-truth-means-in-practice">What “source of truth” means in practice</a></li>
-  <li><a href="#start-here-checklist" id="toc-start-here-checklist" class="nav-link" data-scroll-target="#start-here-checklist">Start-Here Checklist</a></li>
-  <li><a href="#why-cant-i-just-do-this-on-my-laptop-by-myself" id="toc-why-cant-i-just-do-this-on-my-laptop-by-myself" class="nav-link" data-scroll-target="#why-cant-i-just-do-this-on-my-laptop-by-myself">Why Can’t I Just Do This On My Laptop By Myself?</a></li>
-  <li><a href="#example-of-common-failures-youll-avoid-by-following-this-guide" id="toc-example-of-common-failures-youll-avoid-by-following-this-guide" class="nav-link" data-scroll-target="#example-of-common-failures-youll-avoid-by-following-this-guide">Example of Common Failures You’ll Avoid by Following This Guide</a></li>
-  <li><a href="#next-pages" id="toc-next-pages" class="nav-link" data-scroll-target="#next-pages">Next pages</a></li>
-  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
+  <li><a href="#why-this-documentation-exists" id="toc-why-this-documentation-exists" class="nav-link active" data-scroll-target="#why-this-documentation-exists"><span class="header-section-number">1</span> Why this documentation exists</a></li>
+  <li><a href="#the-working-philosophy" id="toc-the-working-philosophy" class="nav-link" data-scroll-target="#the-working-philosophy"><span class="header-section-number">2</span> The working philosophy</a></li>
+  <li><a href="#sec-principle1" id="toc-sec-principle1" class="nav-link" data-scroll-target="#sec-principle1"><span class="header-section-number">3</span> Principle 1: Remote and Reproducible Workflows 🌐</a></li>
+  <li><a href="#principle-2" id="toc-principle-2" class="nav-link" data-scroll-target="#principle-2"><span class="header-section-number">4</span> Principle 2: Code is The Source of Truth 💎</a></li>
+  <li><a href="#principle-3" id="toc-principle-3" class="nav-link" data-scroll-target="#principle-3"><span class="header-section-number">5</span> Principle 3: Analysis Should Be Narrated 📇</a></li>
+  <li><a href="#principle-4" id="toc-principle-4" class="nav-link" data-scroll-target="#principle-4"><span class="header-section-number">6</span> Principle 4: Robust Habits Compound 🌱</a></li>
+  <li><a href="#start-here-checklist" id="toc-start-here-checklist" class="nav-link" data-scroll-target="#start-here-checklist"><span class="header-section-number">7</span> Start-Here Checklist 📋</a></li>
+  <li><a href="#why-cant-i-just-do-this-on-my-laptop-by-myself" id="toc-why-cant-i-just-do-this-on-my-laptop-by-myself" class="nav-link" data-scroll-target="#why-cant-i-just-do-this-on-my-laptop-by-myself"><span class="header-section-number">8</span> Why Can’t I Just Do This On My Laptop By Myself?</a></li>
+  <li><a href="#example-of-common-failures-youll-avoid-by-following-this-guide" id="toc-example-of-common-failures-youll-avoid-by-following-this-guide" class="nav-link" data-scroll-target="#example-of-common-failures-youll-avoid-by-following-this-guide"><span class="header-section-number">9</span> Example of Common Failures You’ll Avoid by Following This Guide</a></li>
+  <li><a href="#next-pages" id="toc-next-pages" class="nav-link" data-scroll-target="#next-pages"><span class="header-section-number">10</span> Next pages</a></li>
+  <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading"><span class="header-section-number">11</span> Further reading</a></li>
   </ul>
 </nav>
     </div>
@@ -267,25 +269,27 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<section id="why-this-documentation-exists" class="level2">
-<h2 class="anchored" data-anchor-id="why-this-documentation-exists">Why this documentation exists</h2>
+<section id="why-this-documentation-exists" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="why-this-documentation-exists"><span class="header-section-number">1</span> Why this documentation exists</h2>
 <p>Most graduate students do not struggle to manage their research because the science is impossible. They struggle because their workflows are fragile: important files live on personal laptops, results of analyses are copied by hand, versions of scripts are scattered, and the explanation for a key decision is trapped in the memory of someone who has long left the lab.</p>
 <p>The goal of this site is to make the robust path the easy path.</p>
 </section>
-<section id="the-working-philosophy" class="level2">
-<h2 class="anchored" data-anchor-id="the-working-philosophy">The working philosophy</h2>
+<section id="the-working-philosophy" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="the-working-philosophy"><span class="header-section-number">2</span> The working philosophy</h2>
 <p>I believe<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> that effective computational academic research should adhere to a few core principles:</p>
 <ul>
 <li><em>Always</em> prefer <em>remote and reproducible</em> workflows over local and manual ones;</li>
 <li><em>The code</em> that produces outputs — not the outputs themselves — are the source of scientific truth;</li>
-<li>Scientific communication is hard; you can make it easy by narrating your analyses with notebooks;</li>
-<li><em>Always</em> track changes to code with <code>git</code> and GitHub; and</li>
-<li>Invest <em>early</em> in structure so that later work gets easier to manage as your project grows.</li>
+<li>Scientific communication is hard; you can make it easy by <em>narrating your analyses</em> with notebooks;</li>
+<li>Invest <em>early</em> in structure and version control so that later work gets easier to manage as your project grows.</li>
 </ul>
 <p>R for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 </section>
-<section id="fragile-versus-robust-workflows" class="level2">
-<h2 class="anchored" data-anchor-id="fragile-versus-robust-workflows">Fragile versus robust workflows</h2>
+<section id="sec-principle1" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-principle1"><span class="header-section-number">3</span> Principle 1: Remote and Reproducible Workflows 🌐</h2>
+<blockquote class="blockquote">
+<p>What is the difference between a fragile workflow and a robust workflow?</p>
+</blockquote>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 50%">
@@ -317,20 +321,23 @@ ul.task-list li input[type="checkbox"] {
 </tbody>
 </table>
 </section>
-<section id="what-source-of-truth-means-in-practice" class="level2">
-<h2 class="anchored" data-anchor-id="what-source-of-truth-means-in-practice">What “source of truth” means in practice</h2>
-<p>If I handed you a scientific paper — any paper — and asked you where the real core of the scientific finding was, where would you point me to? The conclusion? No, the conclusion is an interpretation. The figures? Again, no — they are a product of a particular analysis. The reasoning in the introduction? Not really — it is just a motivating narrative. The real core of the scientific finding is that the authors told you HOW to get from the data to the conclusion. This is found in the methods section, and more specifically the exact procedure that creates the result, repeatably, from the data. It is the repeatability of the method producing the same result that makes it science, in the first place after all. If I cannot repeat your experiment, then I cannot verify your claim, and your conclusion is therefore not scientific.</p>
-<div class="callout callout-style-default callout-important callout-empty-content callout-titled">
+<section id="principle-2" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="principle-2"><span class="header-section-number">4</span> Principle 2: Code is The Source of Truth 💎</h2>
+<blockquote class="blockquote">
+<p>What does, “source of truth,” mean in practice?</p>
+</blockquote>
+<p>If I handed you a scientific paper — any paper — and asked you where the real core of the scientific finding was, where would you point me to? <em>The conclusion?</em> No, the conclusion is an interpretation. <em>The figures?</em> Again, no — they are a product of a particular analysis. <em>The reasoning in the introduction?</em> Not really — that’s just a motivating narrative. The real core of the scientific finding is that the authors told you HOW to get from the data to the conclusion. This is found in the methods section, and more specifically the exact procedure that creates the result, repeatably, from the data. It is the repeatability of the method producing the same result that makes it science, in the first place after all. If I cannot repeat your experiment, then I cannot verify your claim, and your conclusion is therefore not scientific.</p>
+<div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>In the modern data science era, <strong>the methods section is the code, and code is the source of truth</strong>. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.
+Important
 </div>
 </div>
 <div class="callout-body-container callout-body">
-
+<p>In the modern data science era, <strong>the methods section is the code, and code is the source of truth</strong>. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.</p>
 </div>
 </div>
 <p>Ask yourself: <em>if someone stole your laptop today and tossed it into the Charles River, Google went under and your Scholar ID disappeared, and Dr.&nbsp;Strange erased everyone’s memory of you, would your contribution to science survive?</em> If the answer is “no,” then you have a fragile workflow. If the answer is “yes,” then you have a robust workflow.</p>
@@ -352,8 +359,22 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Should all be treated as ephemeral details that can be regenerated whenever asked You should never lose sleep over these things because your code should be able to regenerate them at a moment’s notice.</p>
 </section>
-<section id="start-here-checklist" class="level2">
-<h2 class="anchored" data-anchor-id="start-here-checklist">Start-Here Checklist</h2>
+<section id="principle-3" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="principle-3"><span class="header-section-number">5</span> Principle 3: Analysis Should Be Narrated 📇</h2>
+<blockquote class="blockquote">
+<p>Why should scientists narrate their thinking?</p>
+</blockquote>
+<p>David McCullough is <a href="https://www.goodreads.com/quotes/320581-writing-is-thinking-to-write-well-is-to-think-clearly">credited</a> with the quote, “Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” If you’ve ever found yourself struggling to articulate an idea on paper that just moments before felt crystal clear in your head, you know exactly what he means. Donald Knuth, the father of algorithm analysis and creator of TeX, felt similarly about programming, and has evangelized literate programming — the practice of writing code that is meant to be read by humans, and that tells a story about the analysis — for decades.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. Today, we’re fortunate to have tools like R Markdown, Jupyter Notebooks, and Quarto that make it easy to write code that is meant to be read by humans, and that tells a story about the analysis. If there is anywhere appropriate for literate programming to improve our work, it’s in science, where the goal is not just to get the right answer, but to explain how we got there and why it matters. By narrating our analysis with notebooks, we afford our brains the opportunity to think through the analysis step by step, making our work more transparent, reproducible, and less prone to error or bias.</p>
+</section>
+<section id="principle-4" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="principle-4"><span class="header-section-number">6</span> Principle 4: Robust Habits Compound 🌱</h2>
+<blockquote class="blockquote">
+<p>Why invest in engineering as a scientist?</p>
+</blockquote>
+<p>Technical debt is a term that software engineers use to describe the cost of maintaining and updating code that was written in a way that is not scalable or maintainable. Because scientists are often less motivated to invest in robust software design patterns, they can end up with a lot of technical debt in their code, which can make it difficult to understand, reproduce, or extend as the science progresses. This can lead to wasted time and effort, or worse, lost insight. By investing early in robust habits such as version control, clean project structure, and clear documentation, you can reduce technical debt and make your work easier to manage as your project grows. These habits compound over time, making it easier to maintain and extend your work in the future.</p>
+</section>
+<section id="start-here-checklist" class="level2" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="start-here-checklist"><span class="header-section-number">7</span> Start-Here Checklist 📋</h2>
 <p>So now that we know our end goal and working philosophy, what prerequisites do we need to be able to achieve them? Here is a checklist of the most important things to have done:</p>
 <ol type="1">
 <li><strong>Complete the <a href="https://about.citiprogram.org/en/homepage/">Harvard CITI training</a> and share your completion certificate with Chris.</strong> This is <em>required</em> for you to have access to the data we work with, and to be able to contribute to the research. There are two modules:</li>
@@ -367,10 +388,10 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Officially be inducted into the Golden Lab by filling out the <a href="https://forms.gle/6zcWHGMeNtfFCj7g6">new member form</a></strong> — we use this to grant you access to:</li>
 </ol>
 <ul>
-<li>Google Drive, for managing shared documents and non-code, office-oriented work 📁</li>
-<li>GitHub, for managing and collaborating on code 🔌</li>
-<li>Slack, for work-related communication about projects, sharing information, and questions 💬</li>
-<li>WhatsApp, for non-work-related communication and socializing 🎭</li>
+<li><strong>Google Drive</strong>, for managing shared documents and non-code, office-oriented work 📁</li>
+<li><strong>GitHub</strong>, for managing and collaborating on code 🔌</li>
+<li><strong>Slack</strong>, for work-related communication about projects, sharing information, and questions 💬</li>
+<li><strong>WhatsApp</strong>, for non-work-related communication and socializing 🎭</li>
 </ul>
 <ol start="3" type="1">
 <li><strong>Set up your FASRC account</strong> by following the instructions available <a href="https://docs.rc.fas.harvard.edu/kb/how-do-i-get-a-research-computing-account/">here</a>:</li>
@@ -383,8 +404,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Follow the workflow lifecycle guide on the next page to set up your first project and learn how to do reproducible data science.</li>
 </ol>
 </section>
-<section id="why-cant-i-just-do-this-on-my-laptop-by-myself" class="level2">
-<h2 class="anchored" data-anchor-id="why-cant-i-just-do-this-on-my-laptop-by-myself">Why Can’t I Just Do This On My Laptop By Myself?</h2>
+<section id="why-cant-i-just-do-this-on-my-laptop-by-myself" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="why-cant-i-just-do-this-on-my-laptop-by-myself"><span class="header-section-number">8</span> Why Can’t I Just Do This On My Laptop By Myself?</h2>
 <p>Following this guide will help students:</p>
 <ul>
 <li>adhere to <a href="https://privsec.harvard.edu/classify-risk">security, privacy, and ethical standards</a> for working with human subjects data at Harvard,</li>
@@ -395,8 +416,8 @@ ul.task-list li input[type="checkbox"] {
 <li>focus on the science instead of wrestle with technical issues</li>
 </ul>
 </section>
-<section id="example-of-common-failures-youll-avoid-by-following-this-guide" class="level2">
-<h2 class="anchored" data-anchor-id="example-of-common-failures-youll-avoid-by-following-this-guide">Example of Common Failures You’ll Avoid by Following This Guide</h2>
+<section id="example-of-common-failures-youll-avoid-by-following-this-guide" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="example-of-common-failures-youll-avoid-by-following-this-guide"><span class="header-section-number">9</span> Example of Common Failures You’ll Avoid by Following This Guide</h2>
 <ul>
 <li>Waiting all day for a piece of code to run on your laptop that could have run in 10 minutes on the cluster,</li>
 <li>Losing your work due to inadequate backup strategies,</li>
@@ -410,16 +431,16 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>And much, much more.</p>
 </section>
-<section id="next-pages" class="level2">
-<h2 class="anchored" data-anchor-id="next-pages">Next pages</h2>
+<section id="next-pages" class="level2" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="next-pages"><span class="header-section-number">10</span> Next pages</h2>
 <ul>
 <li>Go through the <a href="../01_orientation/workflow-roadmap.html">Workflow Roadmap</a> to practice a full data science project lifecycle.</li>
 <li>Review the <a href="hpc-infrastructure.qmd">HPC Infrastructure &amp; Software Guide</a> to get help deciding where work should run and what tools to use.</li>
 <li>Go to <a href="projects-and-reproducibility.qmd">Projects &amp; Reproducibility Guide</a> to learn about best practices for managing and sharing your work.</li>
 </ul>
 </section>
-<section id="further-reading" class="level2">
-<h2 class="anchored" data-anchor-id="further-reading">Further reading</h2>
+<section id="further-reading" class="level2" data-number="11">
+<h2 data-number="11" class="anchored" data-anchor-id="further-reading"><span class="header-section-number">11</span> Further reading</h2>
 <ul>
 <li><a href="https://r4ds.hadley.nz/workflow-scripts">R for Data Science (2e): Workflow: scripts and projects</a></li>
 <li><a href="https://r4ds.hadley.nz/communicate">R for Data Science (2e): Communicate</a></li>
@@ -435,6 +456,7 @@ ul.task-list li input[type="checkbox"] {
 <ol>
 <li id="fn1"><p><a href="https://tinashemtapera.com">Tinashe</a>, your RSE, who has seen too many projects break because of fragile workflows.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn2"><p>Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, <a href="https://r4ds.hadley.nz/workflow-scripts"><em>R for Data Science (2e): Workflow: scripts and projects</em></a>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Donald Knuth, <a href="https://www-cs-faculty.stanford.edu/~knuth/lp.html"><em>Literate Programming</em></a>.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section></div></main> <!-- /main -->
 <div id="read-time-container"></div>
