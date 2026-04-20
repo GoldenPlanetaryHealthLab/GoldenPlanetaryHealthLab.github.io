@@ -2,7 +2,7 @@
 name: 🧪 New Data Science Tutorial or Documentation
 about: Propose new tutorials or documentation for our data science workflows
 title: "[Tutorial/Workflow/Doc] <Short descriptive title>"
-labels: [workflow, tutorial, documentation]
+labels: workflow, tutorial, documentation
 assignees: ''
 
 ---
