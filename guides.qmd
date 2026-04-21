@@ -43,4 +43,13 @@ others, and keep a history of your work.
 
 [Open the Collaboration guide](02_guides/collaboration-and-support.qmd)
 :::
+
+::: {.info-card}
+### Environments & Package Management
+Learn how software is structured across your system, from low-level 
+dependencies to project-specific environments. Understand how to use 
+tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
+
+[Open the Environments guide](02_guides/environments-and-package-management.qmd)
+:::
 :::

@@ -110,6 +110,6 @@ By the end of onboarding, a student should be able to:
 
 R for Data Science frames communication as a core part of the data science process, and specifically points readers to Quarto for integrating prose, code, and results. That is the same pattern used here: documentation is not an afterthought, it is part of the workflow.[^r4ds-communicate] -->
 
-[^1]: If you were looking for the Golden Lab Google Public Site, click [here(#TODO FIND THE OLD SITE)]().
+[^1]: If you were looking for the Climate Smart Public Health Research Site, click [here (https://www.climatesmartpublichealth.com/)](https://www.climatesmartpublichealth.com/).
 
 <!-- [^r4ds-communicate]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Communicate*](https://r4ds.hadley.nz/communicate). -->
