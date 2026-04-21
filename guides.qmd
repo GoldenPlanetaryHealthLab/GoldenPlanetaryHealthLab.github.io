@@ -12,9 +12,9 @@ See the [Orientation Guide](01_orientation/start-here.qmd) for an
 overview of the philosophy of robust scientific workflows, and the tools 
 we use to achieve them.
 
-::: {.card-grid}
-
 ## Basics
+
+::: {.card-grid}
 
 ::: {.info-card}
 ### HPC & Infrastructure
@@ -56,16 +56,43 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 [Open the Environments guide](02_guides/environments-and-package-management.qmd)
 :::
 
+:::
+
 ## Advanced Topics
 
 🚧 Section under development 🚧
+
+
+::: {.card-grid}
+
+:::{.info-card}
+
+:::
+
+:::
+
+
 
 ## Statistics, Modeling, & Visualization
 
 🚧 Section under development 🚧
 
+::: {.card-grid}
+
+:::{.info-card}
+
+:::
+
+:::
+
 ## Programming Tips & Tricks
 
 🚧 Section under development 🚧
+
+::: {.card-grid}
+
+:::{.info-card}
+
+:::
 
 :::
