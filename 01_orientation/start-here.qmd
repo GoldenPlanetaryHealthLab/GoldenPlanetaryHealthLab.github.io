@@ -126,8 +126,8 @@ have done:
 
 ---------------
 
-1. **Complete the [Harvard CITI training](https://about.citiprogram.org/en/homepage/) and share your completion certificate with Chris.** This is _required_ for you to have access to the data we work with, and 
-to be able to contribute to the research. There are two modules:
+1. **Complete the [Harvard CITI training](https://about.citiprogram.org/en/homepage/) and share your completion certificate.** This is _required_ for you to have access to the human participants data we 
+work with, and to be able to contribute to the research. There are two modules:
 
 - Social and Behavioral/Biomedical Human Subject Training
 - Internet Privacy and Security (IPS) Training
@@ -136,17 +136,28 @@ If you've never registered for CITI training before, you will need to create an 
 Harvard University. When you are asked to select a course, select "Social and Behavioral/Biomedical Human 
 Subject Training," and then select the modules listed above. If you have already completed CITI training 
 for another institution, you can log in with your existing account, affiliate with Harvard University, and 
-then add the two modules listed above to your existing training. If your training is still valid, send
-Chris a copy of your completion certificate. If you've never taken them or your training has expired, you 
-will need to retake the modules and share the new certificate with Chris.
+then add the two modules listed above to your existing training.
+
+In the section below, you'll be directed to a lab induction form where you will upload your completion 
+certificate, so make sure to download the certificate from CITI when you finish the training. If you 
+have any questions about the training, please reach out to your [RSE](mailto:ttaper@hsph.harvard.edu) or [PI](mailto:golden@hsph.harvard.edu).
+
+:::{.callout-note}
+### CITI Retraining
+CITI training must be renewed periodically. If you are being asked to retrain, please
+complete the retraining as soon as possible and upload your new certificate to
+the lab using [this retraining form](https://harvard.az1.qualtrics.com/jfe/form/SV_2s4Cl79LCfTG514) 
+:::
 
 --------------------
 
-2. **Officially be inducted into the Golden Lab by filling out the [new member form](https://forms.gle/6zcWHGMeNtfFCj7g6)** — we use this to grant you access to:
+2. **Officially be inducted into the Golden Lab by filling out the [new member intake form](https://harvard.az1.qualtrics.com/jfe/form/SV_38h6UjNm7pyIyzQ)** — we use this to grant you access to:
 - **Google Drive**, for managing shared documents and non-code, office-oriented work 📁 
 - **GitHub**, for managing and collaborating on code 🔌
 - **Slack**, for work-related communication about projects, sharing information, and questions 💬
 - **WhatsApp**, for non-work-related communication and socializing 🎭
+
+...and more!
 
 -------------------
 
