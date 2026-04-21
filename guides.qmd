@@ -13,6 +13,9 @@ overview of the philosophy of robust scientific workflows, and the tools
 we use to achieve them.
 
 ::: {.card-grid}
+
+## Basics
+
 ::: {.info-card}
 ### HPC & Infrastructure
 Learn how to use the Harvard Research Computing cluster, set up your
@@ -52,4 +55,17 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 
 [Open the Environments guide](02_guides/environments-and-package-management.qmd)
 :::
+
+## Advanced Topics
+
+🚧 Section under development 🚧
+
+## Statistics, Modeling, & Visualization
+
+🚧 Section under development 🚧
+
+## Programming Tips & Tricks
+
+🚧 Section under development 🚧
+
 :::
