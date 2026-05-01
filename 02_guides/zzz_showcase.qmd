@@ -29,6 +29,6 @@ efficient, or just more enjoyable.
 :::
 
 Want to add your own? Just create a gist with your tip, trick, or tool, and then 
-add it to the table above by following the [Contribution Guide](CONTRIBUTING.qmd)!
+add it to the table above by following the [Contribution Guide](../CONTRIBUTING.qmd)!
 
 
