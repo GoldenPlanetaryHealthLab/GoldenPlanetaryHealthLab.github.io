@@ -1,0 +1,34 @@
+---
+title: "Showcase"
+number-sections: true
+---
+
+## A Place to Share Your Favorite Tips, Tricks, and Tools
+
+Have something you discovered that you think others would find useful? A neat 
+trick, a useful tool, a clever workflow? This is the place to share it!
+
+It doesn't have to be anything fancy, or groundbreaking, or even
+warrant its own page; put it in a gist and link it here! The goal is to create a 
+space where we can share the little things that make our work easier, more 
+efficient, or just more enjoyable.
+
+
+::: {.list-table}
+
+- - Name
+  - Date
+  - Description
+  - Link
+
+- - Tinashe
+  - 2026-05-01
+  - Parsing a csv of authors
+  - https://gist.github.com/TinasheMTapera/884acbaf90c1900b32d2cae8f8aa41de
+
+:::
+
+Want to add your own? Just create a gist with your tip, trick, or tool, and then 
+add it to the table above by following the [Contribution Guide](CONTRIBUTING.md)!
+
+

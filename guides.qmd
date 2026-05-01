@@ -17,7 +17,7 @@ we use to achieve them.
 ::: {.card-grid}
 
 ::: {.info-card}
-### HPC & Infrastructure
+### HPC & Infrastructure 🏭
 Learn how to use the Harvard Research Computing cluster, set up your
 local environment, and manage your software dependencies.
 
@@ -25,7 +25,7 @@ local environment, and manage your software dependencies.
 :::
 
 ::: {.info-card}
-### Projects & Reproducibility
+### Projects & Reproducibility 🐾
 Learn how to structure your projects, manage your code, and create 
 reproducible workflows that can be shared and built upon.
 
@@ -33,14 +33,14 @@ reproducible workflows that can be shared and built upon.
 :::
 
 ::: {.info-card}
-### Data Access & Management
+### Data Access & Management 🔐
 Learn how to manage your data, track its provenance, and document it for future use.
 
 [Open the Data Management guide](02_guides/data-access-and-management.qmd)
 :::
 
 ::: {.info-card}
-### Collaboration & Version Control
+### Collaboration & Version Control 🪢
 Learn how to use `git` and GitHub to manage your code, collaborate with 
 others, and keep a history of your work. 
 
@@ -48,7 +48,7 @@ others, and keep a history of your work.
 :::
 
 ::: {.info-card}
-### Environments & Package Management
+### Environments & Package Management 📦
 Learn how software is structured across your system, from low-level 
 dependencies to project-specific environments. Understand how to use 
 tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
@@ -87,12 +87,15 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 
 ## Programming Tips & Tricks
 
-🚧 Section under development 🚧
-
 ::: {.card-grid}
 
 :::{.info-card}
+### Showcase ✨
 
+Got something cool that you want to share? A neat trick, a useful tool, a clever 
+workflow? This is the place to share it!
+
+[Open the Showcase](02_guides/showcase.qmd)
 :::
 
 :::
