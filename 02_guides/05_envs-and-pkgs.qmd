@@ -1,0 +1,106 @@
+---
+title: "Environments and Package Management"
+---
+
+🚦🚧 This section is under construction 🚧🚦
+
+<!-- ## Collaboration is part of reproducibility
+
+Version control is not only for backup. It is how the lab understands change, reviews methods, and avoids conflicting local copies of the same project.
+
+The presentation frames Git and GitHub as the tool for traceability, and that is exactly right: commit history should explain what changed, when, and why.
+
+## Daily Git habits
+
+Use Git for active work, not just for milestone dumps.
+
+- Create the repository early.
+- Commit small, coherent changes.
+- Use commit messages that describe the decision or milestone.
+- Push regularly so the work is visible and recoverable.
+- Keep data out of Git unless policy clearly allows it.
+
+The NSAPH handbook also recommends pushing code regularly, especially before asking for help or presenting work.[^nsaph-github]
+
+## Branches and pull requests
+
+For solo projects, a lightweight branch workflow is still useful:
+
+1. Make a branch for risky or substantial work.
+2. Open a pull request when the method or output changes meaningfully.
+3. Use review comments to discuss code, assumptions, and documentation gaps.
+4. Merge only when the branch leaves the repository in a reproducible state.
+
+## What a good commit message looks like
+
+Better:
+
+- `add first pass of temperature exposure merge`
+- `document MCBS variable cleaning assumptions`
+- `move repeated model code into helper function`
+
+Worse:
+
+- `updates`
+- `stuff`
+- `final final version`
+
+## How to ask for help effectively
+
+R for Data Science recommends preparing a minimal reproducible example when you are stuck.[^r4ds-help] That is one of the highest-leverage habits students can learn.
+
+When asking the RSE or another lab member for help, include:
+
+1. the repo or branch,
+2. the exact script or notebook,
+3. the command you ran,
+4. the full error message,
+5. the smallest reproducible example you can produce,
+6. and any data access constraints that prevent direct debugging.
+
+## What to send before a meeting
+
+For technical meetings, send:
+
+- the current notebook or report,
+- a short status note,
+- open questions,
+- and links to the relevant code or pull request.
+
+This shifts meetings away from "what happened?" and toward "what decision do we need to make?"
+
+## Code review checklist
+
+Review for:
+
+- reproducibility,
+- path portability,
+- data leakage risk,
+- hidden assumptions,
+- duplicated code,
+- and missing documentation.
+
+Do not review only for style.
+
+## Support ladder
+
+Use this order when possible:
+
+1. Check the project `README` and this site.
+2. Search the official docs for the tool you are using.
+3. Reduce the problem to a minimal example.
+4. Open an issue or send a focused help request.
+5. Escalate to synchronous help when the blocker persists.
+
+## The real goal
+
+The goal is not to make every student a Git expert. The goal is to make the lab's work inspectable, shareable, and recoverable.
+
+## Further reading
+
+- [R for Data Science (2e): Workflow: getting help](https://r4ds.hadley.nz/workflow-help.html)
+- [NSAPH Handbook: Introduction to NSAPH GitHub](https://nsaph.github.io/handbook/analysis.html)
+- [NSAPH Handbook: Workflow Documentation](https://nsaph.github.io/handbook/docs.html)
+
+[^nsaph-github]: NSAPH Handbook, [*Introduction to NSAPH GitHub*](https://nsaph.github.io/handbook/analysis.html).
+[^r4ds-help]: Hadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, [*R for Data Science (2e): Workflow: getting help*](https://r4ds.hadley.nz/workflow-help.html). -->

@@ -24,11 +24,11 @@ efficient, or just more enjoyable.
 - - Tinashe
   - 2026-05-01
   - Parsing a csv of authors
-  - https://gist.github.com/TinasheMTapera/884acbaf90c1900b32d2cae8f8aa41de
+  - [gist](https://gist.github.com/TinasheMTapera/884acbaf90c1900b32d2cae8f8aa41de)
 
 :::
 
 Want to add your own? Just create a gist with your tip, trick, or tool, and then 
-add it to the table above by following the [Contribution Guide](CONTRIBUTING.md)!
+add it to the table above by following the [Contribution Guide](CONTRIBUTING.qmd)!
 
 

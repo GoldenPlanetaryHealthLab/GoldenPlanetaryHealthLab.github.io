@@ -508,3 +508,5 @@ zsdoc/data
 # End of https://www.toptal.com/developers/gitignore/api/git,node,r,python,zsh,macos,windows,linux,jupyternotebooks
 
 sandbox/
+# we want to force rendering from the GHA, so we ignore the rendered site
+_site/*

@@ -29,14 +29,14 @@ local environment, and manage your software dependencies.
 Learn how to structure your projects, manage your code, and create 
 reproducible workflows that can be shared and built upon.
 
-[Open the Project Management guide](02_guides/projects-and-reproducibility.qmd)
+[Open the Project Management guide](02_guides/02_projects-and-reproducibility.qmd)
 :::
 
 ::: {.info-card}
 ### Data Access & Management 🔐
 Learn how to manage your data, track its provenance, and document it for future use.
 
-[Open the Data Management guide](02_guides/data-access-and-management.qmd)
+[Open the Data Management guide](02_guides/03data-access-and-management.qmd)
 :::
 
 ::: {.info-card}
@@ -44,7 +44,7 @@ Learn how to manage your data, track its provenance, and document it for future 
 Learn how to use `git` and GitHub to manage your code, collaborate with 
 others, and keep a history of your work. 
 
-[Open the Collaboration guide](02_guides/collaboration-and-support.qmd)
+[Open the Collaboration guide](02_guides/04_collaboration-and-support.qmd)
 :::
 
 ::: {.info-card}
@@ -53,7 +53,7 @@ Learn how software is structured across your system, from low-level
 dependencies to project-specific environments. Understand how to use 
 tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 
-[Open the Environments guide](02_guides/environments-and-package-management.qmd)
+[Open the Environments guide](02_guides/05_envs-and-pkgs.qmd)
 :::
 
 :::
@@ -95,7 +95,7 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 Got something cool that you want to share? A neat trick, a useful tool, a clever 
 workflow? This is the place to share it!
 
-[Open the Showcase](02_guides/showcase.qmd)
+[Open the Showcase](02_guides/zzz_showcase.qmd)
 :::
 
 :::

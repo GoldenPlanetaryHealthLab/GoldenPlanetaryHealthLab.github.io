@@ -8,11 +8,7 @@ project:
     - "01_orientation/workflow-roadmap.qmd"         # workflow roadmap
     # guides drop down; has its own landing page
     - guides.qmd                                    # guides landing page
-    - "02_guides/01_hpc-infrastructure.qmd"
-    - "02_guides/projects-and-reproducibility.qmd"
-    - "02_guides/data-access-and-management.qmd"
-    - "02_guides/collaboration-and-support.qmd"
-    - "02_guides/showcase.qmd"
+    - "02_guides/*.qmd"
     # reference pages
     - "resources.qmd"                               # resources listing
     # other pages
@@ -59,12 +55,14 @@ website:
         contents:
           - href: "02_guides/01_hpc-infrastructure.qmd"
             text: HPC and Infrastructure
-          - href: "02_guides/projects-and-reproducibility.qmd"
+          - href: "02_guides/02_projects-and-reproducibility.qmd"
             text: Projects and Reproducibility
-          - href: "02_guides/data-access-and-management.qmd"
+          - href: "02_guides/03_data-access-and-management.qmd"
             text: Data Access and Management
-          - href: "02_guides/collaboration-and-support.qmd"
+          - href: "02_guides/04_collaboration-and-support.qmd"
             text: Collaboration and Support
+          - href: "02_guides/05_environments-and-package-management.qmd"
+            text: Environments and Package Management
       - href: resources.qmd
         text: Reference Library
       - href: CONTRIBUTING.qmd
