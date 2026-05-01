@@ -12,6 +12,7 @@ project:
     - "02_guides/projects-and-reproducibility.qmd"
     - "02_guides/data-access-and-management.qmd"
     - "02_guides/collaboration-and-support.qmd"
+    - "02_guides/showcase.qmd"
     # reference pages
     - "resources.qmd"                               # resources listing
     # other pages
