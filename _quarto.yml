@@ -15,7 +15,6 @@ project:
     - CONTRIBUTING.qmd                              # contribution guide
     - "about.qmd"                                   # about page           
 
-
 website:
   title: Golden Lab Data Science Handbook
   description: Reproducible, collaborative, HPC-native data science guidance for students and researchers.
@@ -38,6 +37,12 @@ website:
       #   text: Resources
       # - href: about.qmd
       #   text: About
+  announcement: 
+    icon: exclamation-square
+    dismissable: true
+    content: "**Alert**  - ☀️ FASRC Will Be Down for Summer Maintenance **June 15th - 18th, 2026** ☀️ Please plan accordingly and reach out to FASRC support if you have any questions or concerns."
+    type: warning
+    position: below-navbar
   sidebar:
     style: floating
     collapse-level: 1
