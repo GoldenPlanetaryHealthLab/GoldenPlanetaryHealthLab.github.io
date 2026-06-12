@@ -1,0 +1,194 @@
+---
+title: "Data Staging with `stagecoach`"
+format: html
+---
+
+Data staging is the process of preparing and 
+organizing data for analysis. In the Golden Lab, we use 
+a tool called `stagecoach` to help with this process. 
+`stagecoach` allows users to request access to datasets
+using a digital manifest. In doing so, it ensures that
+the exact resources you request for your project are
+made available to you in a computationally reproducible
+manner, reducing the risk of errors and missing steps.
+
+::: {.callout-note}
+All across the Frontier, a familiar rumble can be heard 
+and felt through the land. The stagecoach is arriving! 
+Designed specifically to carry precious scientific cargo, 
+the stagecoach is the trusted vehicle to get data from 
+the Gold Mine into your hands. Need to start a new 
+project? Hail the stagecoach, and prepare your data request 
+in the digital manifest. But be warned, the stagecoach is a bit old-fashioned, and requires strict project setups and clearance from the Sheriff before your data can be delivered to you. The Sheriff is a stickler for the rules, and will only allow data to be delivered if you’re registered in the town records.
+:::
+
+## tl;dr Give me the quick steps!
+
+0. Identify the dataset you need from the `gold_mine`;
+if it's a Google Drive folder, it will likely be under
+`/n/holylabs/LABS/cgolden_lab/Lab/frontier/gold_mine/01_ore/golden_googledrive_rclone`.
+
+1. Install `stagecoach` as a project agnostic tool
+for your user account on The Frontier.
+
+2. Run `stagecoach hail` in your project's directory
+and follow the prompts to create a manifest file that declares the 
+datasets you need for your project. The `sheriff` will check
+your records to ensure you're registered to receive the data.
+
+3. Edit the manifest file to include the paths
+to the datasets you need from the `gold_mine` or otherwise
+
+4. Run `stagecoach inspect` to run the manifest checks and make sure 
+your project is in organized for data staging. The error report
+will guide you through the necessary recommended changes
+to create a project structure that is compatible with `stagecoach`.
+
+5. Run `stagecoach stage`; the `stagecoach` will check your manifest, 
+and if everything looks good, it will create symlinks to the datasets 
+you requested in your project directory. If there are any issues with 
+your manifest or project structure, the `stagecoach` will provide an 
+error report with recommendations for how to fix the issues.
+
+## Why Is Data Staging Important?
+
+Let's imagine you've been handed an analysis; it's a notebook
+with some code and a few helpful comments. You've been asked to run
+it and replicate some result, and extend the analysis to add in new data.
+So you fire up the notebook and hit "run all," and immediately get an 
+error:
+
+<!-- path does not exist error -->
+
+We've all seen this error before. Someone sent you code with
+hardcoded paths to a dataset on their computer![^1] Not the worst
+problem in the world, but you do have to fix it. Reading the code, it appears
+that the data came from a file called `data.csv`, but you can't find 
+that file anywhere. You ask your colleague where the data is, and they tell you that it's on 
+their computer, and they forgot to share it with you. Now 
+you have to go back and forth with your colleague to get the data, 
+and then figure out how to update the code to point to the correct location
+of the data on your computer. After all of that, they tell you that an additional
+dataset is necessary — it's a file from the internet that they got with
+a `curl` command. Fine, you have `curl` available and can run it too... but wait...
+The file has multiple versions, and changes every month. Which version of
+input data does this analysis require? This is a common problem in data analysis, and it can be avoided with proper data staging.
+
+## How `stagecoach` Works
+
+The user story for stagecoach is suprisingly simple:
+
+
+
+## Wait, symlinks?
+
+You may notice that if you're on The Frontier and 
+request data from the `gold_mine`, `stagecoach` creates
+odd looking files in your data directory. These files
+are called _symbolic links_, or _symlinks_ for short. 
+In essence, they are shortcuts to the actual data files. 
+So why bother with _symlinks_? Well, in data science, we might
+work with a lot of data — more data than we can responsibly
+manage if there are multiple people who need access to it. Imagine
+if everyone made a copy of 15 years of ERA5 satellite data...
+
+Similarly, data is a shared resource — it would be unwise (and selfish)
+for one individual to scaffold their project _around_ the centrally shared
+data folder, and it would quickly lead to a mess of overlapping paths and files.
+Finally, it would be _unsafe_ to have multiple people working with
+the exact file in a shared folder: if someone inadvertently deletes 
+or modifies their "data" directory with the original data, then
+we're all screwed!
+
+So what is the solution? Well, first of all, we need to consider data
+a _modular_ resource, meaning that it can be treated like a block of
+LEGO — something that can be easily connected to other pieces, 
+but also easily replaced if needed. In doing so, we avoid
+the temptation to do things like hardcode paths that are special to us,
+and instead create relative paths that can be used by anyone.
+
+```{mermaid}
+flowchart TD
+    subgraph goldmine["Gold Mine: shared data storage"]
+        data[(Central dataset<br/>gold_mine/01_ore/data.csv)]
+    end
+
+    subgraph town["Town: individual project workspaces"]
+        alice["Alice's project<br/>data/data.csv"]
+        bob["Bob's project<br/>data/data.csv"]
+        carlos["Carlos's project<br/>data/data.csv"]
+    end
+
+    alice -. "symlink" .-> data
+    bob -. "symlink" .-> data
+    carlos -. "symlink" .-> data
+
+    manifest["stagecoach manifest<br/>declares required data"]
+    stagecoach["stagecoach<br/>stages data safely"]
+
+    manifest --> stagecoach
+    stagecoach --> alice
+    stagecoach --> bob
+    stagecoach --> carlos
+```
+
+In this way, we can maintain a single copy of the data in the 
+`gold_mine`, and each person can have their own symlink to it in their 
+project. If someone needs to update the data, they can do so in the 
+`gold_mine`, and everyone will automatically get the updated data 
+through their symlinks. This is a much more efficient and safer way to 
+manage shared data resources.
+
+[^1]: This is a common problem in data analysis, and it can be avoided with proper data staging.
+
+## The `--outpost` Flag
+
+By now, you may have noticed that we've mentioned
+being "registered in the town records," a few times. 
+To gently encourage compliance with best practices,
+`stagecoach` and other tools on the Frontier only
+work if you are currently 1) working on FASRC, our
+shared HPC cluster, 2) working within a project directory
+in our FASRC shared lab space, and 3) have set a variable
+called `FRONTIER` in your shell profile to the path to the root
+directory of our Frontier workspace[^2]. If you try to run `stagecoach` 
+without being registered, you'll get an error message that looks 
+something like this:  
+
+<!-- insert error message here -->
+
+This sounds like a hassle, and it is — but it is not without
+good reason. You see, by enforcing these rules, we nudge
+lab members to adopt best practices for a project right
+from the start. You can't do anything without access to
+the data, and we won't give you the data until you've put in
+the work to set up your project in a way that guarantees
+reproducible and scalable workflows. Think of it as
+like buying a car: you might know how to drive, but if
+you don't have a valid license, they probably won't
+let you drive the car off the lot. Not because they don't
+believe you know how to drive, but because they can be
+100% certain you _do_ know how to drive _if_ you provide them proof.
+In this way, the `sheriff` is a tool purpose-built to work
+on behalf of other tools to ensure you're doing things the best
+way. This isn't meant to be punitive, but defensive — by adhering
+to the principles that the tools are enforcing today, you're
+saving yourself on invaluable amounts of [technical debt](../../01_orientation/start-here.qmd#principle-4) in the future.
+
+But what if you absolutely need to work on a project
+that is not on FASRC? Or what if you're a collaborator,
+unaffiliated with Harvard, who needs to stage `gold_mine` 
+data for a project? In this case, we've provided a 
+secret `--outpost` flag that will disable the `sheriff`'s
+Frontier checklist when you run `stagecoach hail`. 
+This is intended primarily for our collaborators to use, 
+and we are putting our trust in YOU by documenting it.
+you _could_ technically use `stagecoach` with the `--outpost`
+flag anywhere and anyway you want, and we may never know about
+it. But this is where we hope that your integrity and good
+judgment will come into play. Follow the Frontier principles,
+and use the tools in the way they are intended to be used, and
+you will be doing your part to help us build a culture of
+reproducibility and collaboration in the Golden Planetary Health Lab.
+
+[^2]: To quickly add this variable, you can add the following line to your shell profile (e.g., `~/.bashrc` or `~/.zshrc`): `export FRONTIER=/n/holylabs/LABS/cgolden_lab/Lab/frontier`. After adding this line, make sure to source your shell profile or restart your terminal for the changes to take effect. Don't worry, we'll cover `shell` profiles in more detail in the future!

@@ -9,6 +9,7 @@ project:
     # guides drop down; has its own landing page
     - guides.qmd                                    # guides landing page
     - "02_guides/*.qmd"
+    - "02_guides/02_projects-and-reproducibility/*.qmd"         # projects and reproducibility guide
     # reference pages
     - "resources.qmd"                               # resources listing
     # other pages
