@@ -5,7 +5,7 @@ format: html
 
 Data staging is the process of preparing and 
 organizing data for analysis. In the Golden Lab, we use 
-a tool called `stagecoach` to help with this process. 
+a tool called [`stagecoach`](https://goldenplanetaryhealthlab.github.io/stagecoach/) to help with this process. 
 `stagecoach` allows users to request access to datasets
 using a digital manifest. In doing so, it ensures that
 the exact resources you request for your project are
@@ -28,7 +28,7 @@ in the digital manifest. But be warned, the stagecoach is a bit old-fashioned, a
 if it's a Google Drive folder, it will likely be under
 `/n/holylabs/LABS/cgolden_lab/Lab/frontier/gold_mine/01_ore/golden_googledrive_rclone`.
 
-1. Install `stagecoach` as a project agnostic tool
+1. [Install `stagecoach`](https://goldenplanetaryhealthlab.github.io/stagecoach/) as a project agnostic tool
 for your user account on The Frontier.
 
 2. Run `stagecoach hail` in your project's directory
