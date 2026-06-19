@@ -78,7 +78,7 @@ input data does this analysis require? This is a common problem in data analysis
 
 ## How `stagecoach` Works
 
-The user story for stagecoach is suprisingly simple:
+The user story for stagecoach is surprisingly simple:
 
 
 
