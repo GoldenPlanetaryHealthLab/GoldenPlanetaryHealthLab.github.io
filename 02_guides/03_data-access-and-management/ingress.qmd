@@ -110,10 +110,10 @@ and Prospectors are the actors orchestrating that process.
 
 Our data ingress system is built on a combination of two commercial level tools provided by Harvard:
 
-- [Qualtrics](), for which Harvard has on-prem licenses for storage of survey data, and which 
+- [Qualtrics](https://www.huit.harvard.edu/qualtrics), for which Harvard has on-prem licenses for storage of survey data, and which 
 provides a robust API for data access and management.
 
-- [Globus](), which is a data transfer service that "sits on top of" FASRC's shared file system,
+- [Globus](https://docs.rc.fas.harvard.edu/kb/globus-file-transfer/), which is a data transfer service that "sits on top of" FASRC's shared file system,
 and provides a user-friendly interface for transferring data to and from the cluster, as well as
 a robust API for automating data transfers.
 
