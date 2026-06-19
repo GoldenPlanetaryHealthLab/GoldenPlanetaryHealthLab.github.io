@@ -83,15 +83,15 @@ spreadsheets, survey data, etc.
 
 3. **Scheduled Batch Data:** This is data that is generated in batches but needs to be 
 ingested and processed to some degree on a regular schedule in order to be useful. The definition is 
-certainly more squishy — it's almost _Psuedo-Streaming_/_Pseudo-Batch_ Data — 
+certainly more squishy — it's almost _Pseudo-Streaming_/_Pseudo-Batch_ Data — 
 but the core idea is that if you were to leave this data sitting in collection for too long,
 the [technical debt](https://en.wikipedia.org/wiki/Technical_debt) of having to deal with a large backlog would 
 become unmanageable. Just think of the last time you turned off your email notifications for a week and then came back to 
 find 500 unread emails. The longer you wait to deal with it, the more overwhelming it becomes.
 So while almost all of our data is batch data, we make the active decision to treat some of it
-as psuedo-streaming, pseudo-batch data, and we design our data ingress system to accommodate that. A good
+as pseudo-streaming, pseudo-batch data, and we design our data ingress system to accommodate that. A good
 example is the South West Cohort data, which is updated on a regular schedule and needs to be processed
-in a timely manner for its papers to be published. Treating this as streaming data would be overengineering,
+in a timely manner for its papers to be published. Treating this as streaming data would be over-engineering,
 as the data only comes in once every few months; whatever we build would largely sit idle. On the other hand, 
 treating it as batch would be unwise as well, because it may take an afternoon to process that 
 data, OR — and this very much happened — we may find that the data wrangling process is more 
@@ -140,7 +140,7 @@ the researcher begins a new data ingress survey. The survey includes sections to
     - What does it contain?
     - Who should be contacted for questions about it?
 
-- Once the reseearcher reaches the end of the survey, they will be prompted to upload the dataset
+- Once the researcher reaches the end of the survey, they will be prompted to upload the dataset
 using one of two methods: 
     - if the dataset is small, they can upload it directly through the survey;
     - if the dataset is large, the survey concludes, recording the user's email address. After a brief delay,
@@ -228,7 +228,7 @@ flowchart TD
 It can be tempting to rush into data analysis with whatever dataset
 you can get your hands on, as science can be a messy (and exciting) 
 iterative process. But in order for science to be a cumulative, reliable,
-truth-seeking endeavour, we must act with the end in mind — pre-empt
+truth-seeking endeavour, we must act with the end in mind — preempt
 the rigorous proof that all bold claims will require. Doing so is
 deceptively simple — design working environments that enable us to 
 easily and frictionlessly manage the provenance of
