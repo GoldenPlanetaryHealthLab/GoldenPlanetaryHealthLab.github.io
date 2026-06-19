@@ -1,6 +1,8 @@
 ---
 title: "Data Ingress: Where it All Begins"
 format: html
+mermaid: 
+  theme: neutral
 ---
 
 On the Frontier, we use the term "data ingress," broadly. Rather than 

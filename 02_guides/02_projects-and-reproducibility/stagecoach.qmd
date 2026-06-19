@@ -1,6 +1,8 @@
 ---
 title: "Data Staging with `stagecoach`"
 format: html
+mermaid: 
+  theme: neutral
 ---
 
 Data staging is the process of preparing and 
