@@ -90,9 +90,18 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 ::: {.card-grid}
 
 :::{.info-card}
+### VSCode on a Compute Node 🖥️
+
+Prefer your own editor to the browser? Attach VSCode directly to a Cannon
+compute node over SSH, as an alternative to the Open OnDemand web view.
+
+[Open the Remote-SSH guide](02_guides/vscode-remote-ssh.qmd)
+:::
+
+:::{.info-card}
 ### Showcase ✨
 
-Got something cool that you want to share? A neat trick, a useful tool, a clever 
+Got something cool that you want to share? A neat trick, a useful tool, a clever
 workflow? This is the place to share it!
 
 [Open the Showcase](02_guides/zzz_showcase.qmd)
