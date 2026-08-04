@@ -19,6 +19,15 @@
         "doc",
         "code"
       ]
+    },
+    {
+      "login": "KaiPonel",
+      "name": "kaiponel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/82947121?v=4",
+      "profile": "https://github.com/KaiPonel",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
