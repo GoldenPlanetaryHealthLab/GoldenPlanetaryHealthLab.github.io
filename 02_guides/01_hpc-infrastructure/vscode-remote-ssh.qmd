@@ -1,13 +1,16 @@
 ---
 title: "VSCode on a Compute Node via Remote-SSH"
+
 format: html
 ---
 
 Open OnDemand gives you RStudio or Jupyter in a browser tab, and for a lot of
-work that is the fastest way in. But if you already live in VSCode, with your
+work that is the fastest way in. But if you already live in [VSCode](https://code.visualstudio.com/), with your
 extensions, your keybindings, your terminal layout and your Copilot login, the
 browser is a downgrade. This guide sets up the alternative: your own local
 VSCode, attached over SSH to a real compute node on Cannon.
+
+![VSCode Remote SSH](https://visualstudiomagazine.com/articles/2022/08/31/~/media/ecg/visualstudiomagazine/images/2022/08/vs_code_remote.ashx)
 
 The trick is one block in your SSH config. Once it is there, connecting is two
 commands and a click.
@@ -23,22 +26,22 @@ node is a doorway, not a desk. Everything below is about getting you off it.
 
 1. Add the SSH config block below to `~/.ssh/config` on your **local** machine.
 
-2. Open a terminal and log in:
+2. Open a terminal and log in; the name `cannon-login` is a nickname you have defined in your SSH config:
 
    ```bash
    ssh cannon-login
    ```
 
-3. Ask Slurm for a compute node:
+3. Ask SLURM for a compute node:
 
    ```bash
-   salloc -p test -t 0-08:00 --mem 16G
+   salloc -p test -t 0-02:00 --mem 16G
    ```
 
-   Slurm prints the node it gave you, something like `holy8a24301`.
+   SLURM prints the node it gave you, something like `holy8a24301`.
 
    **Leave this terminal open.** The allocation lives inside it. Close the
-   window and Slurm takes the node back, which kills your VSCode session with
+   window and SLURM takes the node back, which kills your VSCode session with
    it.
 
 4. In VSCode: **Remote-SSH: Connect to Host…** → type that node name → connect.
@@ -49,6 +52,27 @@ That is the whole loop. The rest of this page explains why each piece is there,
 because you will eventually need to change one of them.
 
 ## The SSH config
+
+
+::: {.callout-tip}
+
+### What is `SSH`?
+
+Despite its obscurity and relatively low profile, Secure Shell (SSH) is one of the most powerful inventions in computing,
+allowing users to securely connect to — and most importantly, OPERATE on — remote machines. If you've
+ever been on a Zoom call and desperately wanted to just take complete control of someone else's screen, SSH is a tool that
+allows you to do that with remote machines, but not through Zoom, through a terminal.
+
+![With SSH, your laptop securely sends data, files, and commands to the SSH server on the FASRC cluster. On FASRC, the SSH server is constantly listening for connections from authenticated users, managing login, security, content encryption, and the lifecycle of the connection.](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2017/07/symmetric-encryption-ssh-tutorial.jpg/w=900,fit=scale-down)
+
+Learn more: [what-is-ssh?](https://www.hostinger.com/tutorials/what-is-ssh)
+
+`~/.ssh/config` is a file on your laptop that tells the SSH program how to connect to
+different remote machines, called "hosts".
+Just like your phone has a contact list with names and numbers, your SSH config has hostnames and connection details. 
+At the terminal, you would run `ssh REMOTE_HOST` to launch a bash session on that host.
+:::
+
 
 This goes in `~/.ssh/config` on your laptop, not on the cluster.
 
@@ -75,7 +99,7 @@ your password and your 6-digit OpenAuth code.[^fasrc-terminal]
 **`holy*`** is the part that matters. Compute nodes on Cannon are not reachable
 from the open internet: you have to go through a login node first. `ProxyJump`
 makes SSH do that hop for you, invisibly. Because the pattern is a wildcard, it
-matches *any* node Slurm hands you, so you never have to edit this file again.
+matches *any* node SLURM hands you, so you never have to edit this file again.
 Without it, VSCode simply cannot see the node and you would be stuck with
 either the login node or OOD.
 
@@ -85,7 +109,7 @@ something, and VSCode reconnects noisily.
 
 ::: {.callout-tip}
 Compute nodes on Cannon live in the Holyoke data center, which is where the
-`holy` prefix comes from. If Slurm ever hands you a node whose name does not
+`holy` prefix comes from. If SLURM ever hands you a node whose name does not
 start with `holy`, add a second block with that prefix and the same two lines.
 :::
 
@@ -97,7 +121,7 @@ it. Every flag is you making a promise about what you need.
 | Flag | Meaning | Notes |
 |---|---|---|
 | `-p test` | Which **partition** (queue) to ask | `test` is meant for short interactive work: 12 hour ceiling, 112 cores, 5 jobs per user[^fasrc-jobs] |
-| `-t 0-08:00` | **Time limit**, in `D-HH:MM` | 8 hours here. Must fit inside the partition's ceiling |
+| `-t 0-02:00` | **Time limit**, in `D-HH:MM` | 2 hours here. Must fit inside the partition's ceiling |
 | `--mem 16G` | **Memory** for the whole allocation | Not per core. Ask for what you need, not the maximum |
 | `-c N` | **Cores** (`--cpus-per-task`) | Optional. Defaults to 1. See below before adding it |
 
@@ -117,11 +141,18 @@ worker count yourself. If you cannot name the thing that will use the second
 core, leave the flag off.
 
 ::: {.callout-note}
-`-p test` is the right default while you are figuring things out, but the 12
-hour ceiling makes it unsuitable for a long run. For work that needs to outlive
+`-p test` is the right default while you are still learning how things work, but the 2
+hour ceiling makes it unsuitable for anything substantial. For work that needs to live a little longer throughout
 a working day, look at the general-purpose partitions in the FASRC partition
-table.[^fasrc-jobs] And once a task is stable, it probably wants to be an
-`sbatch` script rather than an interactive session at all.
+table.[^fasrc-jobs] 
+
+Careful readers will notice that there is a partition called `hsph`. This is
+a special queue provisioned especially for all Harvard T.H. Chan School of Public Health researchers, and it comes
+with pretty generous resources. **We strongly recommend that lab members use `hsph` by default.**
+
+And, once a task is stable, it probably wants to be an
+`sbatch` script rather than an interactive session, so that
+you can log out and let it run unattended. See the FASRC Docs on [Running Jobs](https://docs.rc.fas.harvard.edu/kb/running-jobs/) for more information.
 :::
 
 ## Connecting VSCode
@@ -150,7 +181,7 @@ the allocation. After that:
 - the next `salloc` gives you a **different** node name
 - you connect Remote-SSH to that new name
 
-There is no way around the reconnect. Keep the `salloc` terminal open and
+There is **no way around** the reconnect. Keep the `salloc` terminal open and
 somewhere you can see it, so the state of your session is never a mystery.
 
 ::: {.callout-warning}

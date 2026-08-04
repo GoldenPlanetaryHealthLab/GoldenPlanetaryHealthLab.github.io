@@ -21,7 +21,7 @@ we use to achieve them.
 Learn how to use the Harvard Research Computing cluster, set up your
 local environment, and manage your software dependencies.
 
-[Open the HPC guide](02_guides/01_hpc-infrastructure.qmd)
+[Open the HPC guide](02_guides/01_hpc-infrastructure/01_hpc-infrastructure.qmd)
 :::
 
 ::: {.info-card}
@@ -29,14 +29,14 @@ local environment, and manage your software dependencies.
 Learn how to structure your projects, manage your code, and create 
 reproducible workflows that can be shared and built upon.
 
-[Open the Project Management guide](02_guides/02_projects-and-reproducibility.qmd)
+[Open the Project Management guide](02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.qmd)
 :::
 
 ::: {.info-card}
 ### Data Access & Management 🔐
 Learn how to manage your data, track its provenance, and document it for future use.
 
-[Open the Data Management guide](02_guides/03data-access-and-management.qmd)
+[Open the Data Management guide](02_guides/03_data-access-and-management/03_data-access-and-management.qmd)
 :::
 
 ::: {.info-card}
@@ -44,7 +44,8 @@ Learn how to manage your data, track its provenance, and document it for future 
 Learn how to use `git` and GitHub to manage your code, collaborate with 
 others, and keep a history of your work. 
 
-[Open the Collaboration guide](02_guides/04_collaboration-and-support.qmd)
+
+[Open the Collaboration guide](02_guides/04_collaboration-and-support/04_collaboration-and-support.qmd)
 :::
 
 ::: {.info-card}
@@ -53,7 +54,7 @@ Learn how software is structured across your system, from low-level
 dependencies to project-specific environments. Understand how to use 
 tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 
-[Open the Environments guide](02_guides/05_envs-and-pkgs.qmd)
+[Open the Environments guide](02_guides/05_environments-and-package-management/05_envs-and-pkgs.qmd)
 :::
 
 :::
