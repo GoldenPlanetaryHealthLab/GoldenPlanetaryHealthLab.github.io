@@ -1,16 +1,18 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
   render:
     - index.qmd                                     # home
     # orientation drop down
     - "01_orientation/start-here.qmd"               # start-here prerequisites
     - "01_orientation/workflow-roadmap.qmd"         # workflow roadmap
     # guides drop down; has its own landing page
-    - guides.qmd                                    # guides landing page
+    - guides.qmd                                                # guides landing page
     - "02_guides/*.qmd"
+    - "02_guides/01_hpc-infrastructure/*.qmd"                   # hpc and infrastructure guide
     - "02_guides/02_projects-and-reproducibility/*.qmd"         # projects and reproducibility guide
     - "02_guides/03_data-access-and-management/*.qmd"           # data access and management guide
+    - "02_guides/"
     # reference pages
     - "resources.qmd"                               # resources listing
     # other pages
@@ -39,12 +41,12 @@ website:
       #   text: Resources
       # - href: about.qmd
       #   text: About
-  # announcement: 
-  #   icon: exclamation-square
-  #   dismissable: true
-  #   content: "**Alert**  - ☀️ FASRC Will Be Down for Summer Maintenance **June 15th - 18th, 2026** ☀️ Please plan accordingly and reach out to FASRC support if you have any questions or concerns."
-  #   type: warning
-  #   position: below-navbar
+  announcement: 
+    icon: megaphone
+    dismissable: true
+    content: "New guide by @KaiPonel: [VSCode Remote-SSH](02_guides/01_hpc-infrastructure/vscode-remote-ssh.html) for connecting to HPC compute nodes!"
+    type: success
+    position: below-navbar
   sidebar:
     style: floating
     collapse-level: 1
@@ -60,15 +62,15 @@ website:
       - section: Guides
         href: "guides.qmd"
         contents:
-          - href: "02_guides/01_hpc-infrastructure.qmd"
+          - href: "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.qmd"
             text: HPC and Infrastructure
-          - href: "02_guides/02_projects-and-reproducibility.qmd"
+          - href: "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.qmd"
             text: Projects and Reproducibility
-          - href: "02_guides/03_data-access-and-management.qmd"
+          - href: "02_guides/03_data-access-and-management/03_data-access-and-management.qmd"
             text: Data Access and Management
-          - href: "02_guides/04_collaboration-and-support.qmd"
+          - href: "02_guides/04_collaboration-and-support/04_collaboration-and-support.qmd"
             text: Collaboration and Support
-          - href: "02_guides/05_environments-and-package-management.qmd"
+          - href: "02_guides/05_environments-and-package-management/05_envs-and-pkgs.qmd"
             text: Environments and Package Management
       - href: resources.qmd
         text: Reference Library

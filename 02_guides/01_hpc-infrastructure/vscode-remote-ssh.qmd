@@ -1,0 +1,220 @@
+---
+title: "VSCode on a Compute Node via Remote-SSH"
+
+format: html
+---
+
+Open OnDemand gives you RStudio or Jupyter in a browser tab, and for a lot of
+work that is the fastest way in. But if you already live in [VSCode](https://code.visualstudio.com/), with your
+extensions, your keybindings, your terminal layout and your Copilot login, the
+browser is a downgrade. This guide sets up the alternative: your own local
+VSCode, attached over SSH to a real compute node on Cannon.
+
+![VSCode Remote SSH](https://visualstudiomagazine.com/articles/2022/08/31/~/media/ecg/visualstudiomagazine/images/2022/08/vs_code_remote.ashx)
+
+The trick is one block in your SSH config. Once it is there, connecting is two
+commands and a click.
+
+::: {.callout-important}
+Do not point Remote-SSH at the login node and start working there. FASRC limits
+login sessions to 1 core and 8 GB of memory, and asks explicitly that you
+"not run your jobs or heavy applications" on them.[^fasrc-terminal] The login
+node is a doorway, not a desk. Everything below is about getting you off it.
+:::
+
+## tl;dr Give me the quick steps!
+
+1. Add the SSH config block below to `~/.ssh/config` on your **local** machine.
+
+2. Open a terminal and log in; the name `cannon-login` is a nickname you have defined in your SSH config:
+
+   ```bash
+   ssh cannon-login
+   ```
+
+3. Ask SLURM for a compute node:
+
+   ```bash
+   salloc -p test -t 0-02:00 --mem 16G
+   ```
+
+   SLURM prints the node it gave you, something like `holy8a24301`.
+
+   **Leave this terminal open.** The allocation lives inside it. Close the
+   window and SLURM takes the node back, which kills your VSCode session with
+   it.
+
+4. In VSCode: **Remote-SSH: Connect to Host…** → type that node name → connect.
+
+5. Open your project folder and work as normal.
+
+That is the whole loop. The rest of this page explains why each piece is there,
+because you will eventually need to change one of them.
+
+## The SSH config
+
+
+::: {.callout-tip}
+
+### What is `SSH`?
+
+Despite its obscurity and relatively low profile, Secure Shell (SSH) is one of the most powerful inventions in computing,
+allowing users to securely connect to — and most importantly, OPERATE on — remote machines. If you've
+ever been on a Zoom call and desperately wanted to just take complete control of someone else's screen, SSH is a tool that
+allows you to do that with remote machines, but not through Zoom, through a terminal.
+
+![With SSH, your laptop securely sends data, files, and commands to the SSH server on the FASRC cluster. On FASRC, the SSH server is constantly listening for connections from authenticated users, managing login, security, content encryption, and the lifecycle of the connection.](https://imagedelivery.net/LqiWLm-3MGbYHtFuUbcBtA/wp-content/uploads/sites/2/2017/07/symmetric-encryption-ssh-tutorial.jpg/w=900,fit=scale-down)
+
+Learn more: [what-is-ssh?](https://www.hostinger.com/tutorials/what-is-ssh)
+
+`~/.ssh/config` is a file on your laptop that tells the SSH program how to connect to
+different remote machines, called "hosts".
+Just like your phone has a contact list with names and numbers, your SSH config has hostnames and connection details. 
+At the terminal, you would run `ssh REMOTE_HOST` to launch a bash session on that host.
+:::
+
+
+This goes in `~/.ssh/config` on your laptop, not on the cluster.
+
+```{.bash filename="~/.ssh/config"}
+Host cannon-login
+    HostName login.rc.fas.harvard.edu
+    User <your-fasrc-username>
+
+Host holy*
+    User <your-fasrc-username>
+    ProxyJump cannon-login
+
+Host *
+    ServerAliveInterval 60
+    ServerAliveCountMax 10
+```
+
+Three blocks, three jobs:
+
+**`cannon-login`** is just a nickname. It saves you from typing
+`your-username@login.rc.fas.harvard.edu` every time. You still get prompted for
+your password and your 6-digit OpenAuth code.[^fasrc-terminal]
+
+**`holy*`** is the part that matters. Compute nodes on Cannon are not reachable
+from the open internet: you have to go through a login node first. `ProxyJump`
+makes SSH do that hop for you, invisibly. Because the pattern is a wildcard, it
+matches *any* node SLURM hands you, so you never have to edit this file again.
+Without it, VSCode simply cannot see the node and you would be stuck with
+either the login node or OOD.
+
+**`Host *`** sends a keepalive every 60 seconds and tolerates 10 missed
+replies. Without this, an idle connection tends to drop while you are reading
+something, and VSCode reconnects noisily.
+
+::: {.callout-tip}
+Compute nodes on Cannon live in the Holyoke data center, which is where the
+`holy` prefix comes from. If SLURM ever hands you a node whose name does not
+start with `holy`, add a second block with that prefix and the same two lines.
+:::
+
+## What the `salloc` flags actually mean
+
+`salloc` asks the scheduler for a slice of the cluster and hands you a shell on
+it. Every flag is you making a promise about what you need.
+
+| Flag | Meaning | Notes |
+|---|---|---|
+| `-p test` | Which **partition** (queue) to ask | `test` is meant for short interactive work: 12 hour ceiling, 112 cores, 5 jobs per user[^fasrc-jobs] |
+| `-t 0-02:00` | **Time limit**, in `D-HH:MM` | 2 hours here. Must fit inside the partition's ceiling |
+| `--mem 16G` | **Memory** for the whole allocation | Not per core. Ask for what you need, not the maximum |
+| `-c N` | **Cores** (`--cpus-per-task`) | Optional. Defaults to 1. See below before adding it |
+
+Two things worth internalising:
+
+**`-t` is a promise, not a reservation you can extend.** When the clock runs
+out, the allocation is killed and your VSCode connection dies with it. Anything
+unsaved in a terminal is gone. Ask for a bit more than you think you need.
+
+**Only add `-c` if your code is actually threaded.** You will see colleagues
+pass things like `-c 2` or `-c 8`, and it is tempting to copy the line without
+asking why. A plain single-threaded R or Python script uses one core and leaves
+the rest idle, while your job waits longer in the queue for resources it never
+touches. Extra cores pay off when something parallelises underneath you: `dask`
+and `xarray`, BLAS-backed numpy operations, `data.table`, or anywhere you set a
+worker count yourself. If you cannot name the thing that will use the second
+core, leave the flag off.
+
+::: {.callout-note}
+`-p test` is the right default while you are still learning how things work, but the 2
+hour ceiling makes it unsuitable for anything substantial. For work that needs to live a little longer throughout
+a working day, look at the general-purpose partitions in the FASRC partition
+table.[^fasrc-jobs] 
+
+Careful readers will notice that there is a partition called `hsph`. This is
+a special queue provisioned especially for all Harvard T.H. Chan School of Public Health researchers, and it comes
+with pretty generous resources. **We strongly recommend that lab members use `hsph` by default.**
+
+And, once a task is stable, it probably wants to be an
+`sbatch` script rather than an interactive session, so that
+you can log out and let it run unattended. See the FASRC Docs on [Running Jobs](https://docs.rc.fas.harvard.edu/kb/running-jobs/) for more information.
+:::
+
+## Connecting VSCode
+
+You need the **Remote - SSH** extension from Microsoft. Then:
+
+1. `Cmd/Ctrl+Shift+P` → **Remote-SSH: Connect to Host…**
+2. Type the node name from `salloc` (e.g. `holy8a24301`) and hit enter.
+3. A new window opens. First connection to a given node takes a moment while
+   VSCode installs its server component there.
+4. **File → Open Folder** and navigate to your project.
+
+VSCode is now running its server process *inside your allocation*. Terminals you
+open, notebooks you run, and extensions that execute code all consume the cores
+and memory you asked Slurm for. That is exactly what you want, and it is the
+thing OOD does for you automatically.
+
+## The catch: allocations do not survive
+
+This is the honest tradeoff against the web view. The node is yours until one of
+three things happens: the time limit expires, you type `exit` in the `salloc`
+shell, or you close the terminal window that shell is running in. All three end
+the allocation. After that:
+
+- the VSCode window goes dead
+- the next `salloc` gives you a **different** node name
+- you connect Remote-SSH to that new name
+
+There is **no way around** the reconnect. Keep the `salloc` terminal open and
+somewhere you can see it, so the state of your session is never a mystery.
+
+::: {.callout-warning}
+VSCode caches a server directory in your home folder (`~/.vscode-server`, or a
+similarly named one if you use a VSCode fork). It grows, and home directory
+quota on Cannon is small. If connections start failing for no obvious reason,
+check your quota first, then clear it:
+
+```bash
+ssh cannon-login "rm -rf ~/.vscode-server"
+```
+
+VSCode reinstalls it on the next connection.
+:::
+
+## So which should I use?
+
+| Situation | Use |
+|---|---|
+| Interactive R, and you like RStudio | OOD RStudio Server |
+| You want your own editor setup, extensions, and Git integration | Remote-SSH (this guide) |
+| Quick look at a file or a directory listing | `ssh cannon-login`, nothing more |
+| A run that takes hours and needs no supervision | `sbatch`, not an interactive session |
+
+Neither interface is more correct. OOD costs you your editor; Remote-SSH costs
+you a reconnect every time an allocation ends. Pick the friction you mind less.
+
+## Further reading
+
+- [FASRC Docs: Terminal Access](https://docs.rc.fas.harvard.edu/kb/terminal-access/)
+- [FASRC Docs: Running Jobs](https://docs.rc.fas.harvard.edu/kb/running-jobs/) (partition table and Slurm flags)
+- [VSCode Docs: Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh)
+- [OpenSSH `ProxyJump`](https://man.openbsd.org/ssh_config#ProxyJump)
+
+[^fasrc-terminal]: FASRC Docs, [*Terminal Access*](https://docs.rc.fas.harvard.edu/kb/terminal-access/). Login nodes are reachable worldwide and do not need VPN, but off-network access requires two-factor authentication.
+[^fasrc-jobs]: FASRC Docs, [*Running Jobs*](https://docs.rc.fas.harvard.edu/kb/running-jobs/). Partition limits change over time; check the table there rather than trusting this page.
