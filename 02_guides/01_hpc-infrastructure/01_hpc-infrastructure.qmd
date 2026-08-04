@@ -104,16 +104,6 @@ two options unless you're really proficient, and that comes with time and experi
 
 ::: {.panel-tabset}
 
-## Open OnDemand (OOD)
-
-🚦🚧 This section is under construction 🚧🚦
-
-
-<details>
-Ultimately, this is just submitting a job that you interact with through the 
-browser.
-</details>
-
 ## VSCode Remote SSH
 
 ![VSCode Remote SSH](https://visualstudiomagazine.com/articles/2022/08/31/~/media/ecg/visualstudiomagazine/images/2022/08/vs_code_remote.ashx)
@@ -128,6 +118,17 @@ the powerful computing resources of the cluster.
 
 Check out the [Remote-SSH guide](vscode-remote-ssh.qmd) to learn how to set it 
 up and use it effectively!
+
+## Open OnDemand (OOD)
+
+🚦🚧 This section is under construction 🚧🚦
+
+
+<details>
+Ultimately, this is just submitting a job that you interact with through the 
+browser.
+</details>
+
 
 ## Command-Line Only
 
