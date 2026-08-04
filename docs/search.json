@@ -1,0 +1,877 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About This Site",
+    "section": "",
+    "text": "This website is a working handbook for data science in the Golden Lab. It is designed for students and collaborators who need practical guidance on:\nThe site was expanded from the ideas in presentation.qmd, then reorganized into documentation pages so that the material is easier to revisit after onboarding.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#what-this-site-is-for",
+    "href": "about.html#what-this-site-is-for",
+    "title": "About This Site",
+    "section": "What this site is for",
+    "text": "What this site is for\nUse this handbook when you need a lab default, a project scaffold, a pointer to the right infrastructure, or a concise explanation of why a workflow recommendation exists.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#what-this-site-is-not",
+    "href": "about.html#what-this-site-is-not",
+    "title": "About This Site",
+    "section": "What this site is not",
+    "text": "What this site is not\nThis is not a substitute for official FASRC policy, study-specific data use agreements, or project-specific SOPs. When those sources disagree with a local habit, the official requirement wins.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "about.html#how-to-contribute",
+    "href": "about.html#how-to-contribute",
+    "title": "About This Site",
+    "section": "How to contribute",
+    "text": "How to contribute\nThe best contributions are:\n\ncorrections to outdated instructions,\nclearer examples,\nadditions to the data and workflow guides,\nand links to lab-specific templates that save other people time.\n\nWhen in doubt, prefer small improvements and clear examples over long policy text.",
+    "crumbs": [
+      "Start Here",
+      "About This Site"
+    ]
+  },
+  {
+    "objectID": "resources.html",
+    "href": "resources.html",
+    "title": "Reference Library",
+    "section": "",
+    "text": "The reference library is a collection of resources that we have found useful for doing science. This is not an exhaustive list, but it is a good starting point for anyone who is new to the lab or wants to learn more about our workflow.\nWe encourage readers to explore these resources and add to this list as they find new ones!\n🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Reference Library"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/lingo.html",
+    "href": "02_guides/01_hpc-infrastructure/lingo.html",
+    "title": "Golden Lab Data Science Handbook",
+    "section": "",
+    "text": "Term\nDefinition\n\n\n\n\nHPC\nHigh Performance Computing. A general term for powerful computing resources that can handle large-scale data analysis and modeling.\n\n\nFASRC\nFaculty of Arts and Sciences Research Computing. The computing cluster used at Harvard.\n\n\nCannon\nThe standard FASRC cluster for general research computing. Synonymous with FASRC for all intents and purposes.\n\n\nFASSE\nThe high security environment on FASRC dedicated for work that requires stronger data protection (L3 and above).\n\n\nOpen OnDemand (OOD)\nA web-based interface that provides access to interactive apps, file browsing, and job submission tools on FASRC.\n\n\nShell/SSH (noun)\nA command-line interface used to interact with the operating system and run commands, including managing files and submitting jobs. Common shells include bash (default for FASRC) and zsh (default for macOS).\n\n\nSSH (verb)\nTo connect to a remote machine using the SSH protocol (e.g., “SSH into the cluster”).\n\n\nSLURM\nA workload manager that allows you to schedule and manage batch jobs on the cluster.\n\n\nBatch Job\nA task given to the system in the form of a script. You submit it to the queue and it runs when resources are available. For example, a Python script that you want to run on the cluster without manual intervention can be submitted to SLURM as a job.\n\n\nlogin node\nThe part of the cluster where you can run commands, manage files, and submit jobs. It is not meant for heavy computation.\n\n\ncompute node\nThe part of the cluster where more intense computation happens. Usually, you use this to do long-running interactive tasks like RStudio or Jupyter notebooks, and submit batch jobs."
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html",
+    "href": "02_guides/03_data-access-and-management/ingress.html",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "",
+    "text": "On the Frontier, we use the term “data ingress,” broadly. Rather than treating ingestion, registration, cataloging, and discovery as separate systems, we view them as parts of a single process whose goal is to transform incoming data into a managed scientific asset. This stage sets the foundation for the entire data lifecycle, ensuring that data is properly captured, organized, and accessible for future use. In this deep dive, we will explore the architecture of the Golden Lab’s data ingress setup, highlight the tools and technologies that enable efficient data collection and management, and discuss the design decisions and trade-offs involved in designing our system."
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html#some-motivating-thoughts",
+    "href": "02_guides/03_data-access-and-management/ingress.html#some-motivating-thoughts",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "Some Motivating Thoughts",
+    "text": "Some Motivating Thoughts\nWhile it can be tempting to believe that only big analytics companies and tech giants need to worry about the architecture of their data pipelines, the reality is that any organization can benefit from a well-designed data infrastructure, even if the data itself is small. This is because at some point in the future, someone will need to access a recorded paper trail of a dataset, understand the decisions made about it, and potentially reproduce the analysis. Being deliberate about the data ingress process sounds like tedium in the present1, but it pays off in the long run. This aligns with our 4th data science principle, “Good Habits Compound Over Time,” and speaks to an interesting idea about scaling that academia often misses:\n\n\n\n\n\n\nImportant\n\n\n\nscaling technology in an organization is not necessarily about the number of people involved, the execution of fancy tools, or even the physical size of the data.\nScaling technology in an organization is about tackling digital complexity with deliberate design decisions. In other words, scaling is about doing things on purpose, and reducing the number of things that happen by accident.2\n\n\nThe Golden Lab’s decision to build a data ingress system is an example of this idea in action. Instead of hoping we will remember where a dataset came from, we design a system that encourages3 us to record that information at the moment of data collection with as little friction as possible. Instead of hoping we will be able to find a dataset in the future, we design a system that organizes datasets in a way that makes them easy to find and self-organizing. Instead of hoping we will be able to understand the decisions we made about a dataset, we design a system that requires us to document those decisions in a standardized way as they happen and publishes that knowledge for others to review for accuracy.\nPut simply, it’s wishful thinking to hope to recruit the perfect student who remembers every conversation, writes every transformation down, and organizes all of their work perfectly. Instead, we design systems that help us do those things painlessly, and create a culture where that activity is the norm."
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html#the-golden-labs-data-ingress-strategy",
+    "href": "02_guides/03_data-access-and-management/ingress.html#the-golden-labs-data-ingress-strategy",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "The Golden Lab’s Data Ingress Strategy",
+    "text": "The Golden Lab’s Data Ingress Strategy\nOn the Frontier, we have designed our data ingress system to be flexible and scalable, allowing us to handle a wide variety of data sources and formats while maintaining a consistent and organized structure.\nTo design this system, we first have to think about what ways in which we receive different types of data related to our work. While every dataset deserves appropriate stewardship, the mechanisms by which data enters the lab vary considerably. To create a concrete list, I recommend thinking about data ingress in 3 broad categories:\n\nTrue Streaming Data: This is data that is generated in real-time and needs to be ingested continuously. Examples include sensor data, satellite data, or any other data source that produces a constant stream of information. Due to their high frequency, high velocity, and automatic nature, these data usually come from other machines. In Climate-Smart Public Health projects, we stream weather data from sensor APIs, such as AirQO.\nBatch Data: This data is generated and collected in batches, rather than in real-time. In this case, the data collection procedure was time constrained, and so the data generated from it is also time constrained. Examples include surveys and experiments that are conducted at fixed points in time. A data engineer may have automation scripts to deal with this type of data, but importantly there is no need for the engineer to have an “always on” technology, ready to receive data at any moment. Instead, most of the data can safely be staged in some collection area and then processed when it is needed. In the Golden Lab, and in small-to-medium scientific arenas more broadly, this is the most common type of data we deal with — think emails from collaborators, spreadsheets, survey data, etc.\nScheduled Batch Data: This is data that is generated in batches but needs to be ingested and processed to some degree on a regular schedule in order to be useful. The definition is certainly more squishy — it’s almost Pseudo-Streaming/Pseudo-Batch Data — but the core idea is that if you were to leave this data sitting in collection for too long, the technical debt of having to deal with a large backlog would become unmanageable. Just think of the last time you turned off your email notifications for a week and then came back to find 500 unread emails. The longer you wait to deal with it, the more overwhelming it becomes. So while almost all of our data is batch data, we make the active decision to treat some of it as pseudo-streaming, pseudo-batch data, and we design our data ingress system to accommodate that. A good example is the South West Cohort data, which is updated on a regular schedule and needs to be processed in a timely manner for its papers to be published. Treating this as streaming data would be over-engineering, as the data only comes in once every few months; whatever we build would largely sit idle. On the other hand, treating it as batch would be unwise as well, because it may take an afternoon to process that data, OR — and this very much happened — we may find that the data wrangling process is more complicated than we expected, and as a result, we missed an important deadline that depended on it. Having a strategy for dealing with this type of data is greatly beneficial, and as we’ll see below, fits into a larger strategy for data ingress that is designed to be flexible and scalable.\n\nOn The Frontier, Prospectors are the tools responsible for managing data ingress and preprocessing. Different Prospectors may operate continuously, on schedules, or entirely on-demand, depending on the characteristics of the data source. We’ll learn more about Prospectors in another article.4 In sum, data ingress is the process by which new resources cross the Frontier boundary and become known to the Gold Mine, and Prospectors are the actors orchestrating that process."
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html#system-design-and-architecture",
+    "href": "02_guides/03_data-access-and-management/ingress.html#system-design-and-architecture",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "System Design and Architecture",
+    "text": "System Design and Architecture\nOur data ingress system is built on a combination of two commercial level tools provided by Harvard:\n\nQualtrics, for which Harvard has on-prem licenses for storage of survey data, and which provides a robust API for data access and management.\nGlobus, which is a data transfer service that “sits on top of” FASRC’s shared file system, and provides a user-friendly interface for transferring data to and from the cluster, as well as a robust API for automating data transfers.\n\nRegardless of what tools we chose to use, buy, or build, a key design principle of the Frontier is that data should enter the system once. After ingress, all subsequent processing occurs within the Frontier itself. This minimizes duplicated downloads, reduces opportunities for human error, and creates a clear provenance trail showing how data moved from source to scientific result.\nWe also use Google Sheets for additional visibility of the system. The user story looks something like this:\n\nWhen a researcher identifies an interesting dataset, they might want to include it in their project. Because the researcher is a good steward of data and citizen of The Frontier, they will want to make sure that the dataset will be in an accessible location for themselves and for others, and that people know what it is and that it exists. To do this, they need a way to register the dataset for visibility\nThe “Send Us Your Data” Qualtrics survey is purposely designed for this use case. Using this survey link, the researcher begins a new data ingress survey. The survey includes sections to understand a few details like:\n\nWhat is the dataset called?\nWhere did it come from?\nWhat does it contain?\nWho should be contacted for questions about it?\n\nOnce the researcher reaches the end of the survey, they will be prompted to upload the dataset using one of two methods:\n\nif the dataset is small, they can upload it directly through the survey;\nif the dataset is large, the survey concludes, recording the user’s email address. After a brief delay, the user receives an email with instructions on how to use Globus upload their data.\n\nIn the background, Qualtrics adds the dataset metadata to our survey tracking Google Sheet, for redundant visibility and record keeping5.\nOnce the data is uploaded, the Qualtrics Prospector6 dashboard checks the tracking sheet each morning for new entries. If it finds any, it transfers the data from the Qualtrics server or Globus endpoint into the Frontier’s gold_mine, specifically the 01_ore layer located at /n/holylabs/LABS/cgolden_lab/Lab/frontier/gold_mine/01_ore.\nFinally, because the dataset has been automatically registered and cataloged during the ingress process, it is immediately discoverable and available for use. Researchers can request access to the dataset using stagecoach by adding the appropriate gold_mine path to their project’s staging manifest. When stagecoach prepares the project environment, it records exactly which datasets were requested and where they originated from, creating a reproducible audit trail of the data’s provenance. In this way, researchers gain the benefits of rigorous data governance and reproducibility without needing to manually maintain records of every file they use.\n\n\n\n\n\n\n\nTip\n\n\n\nA useful rule of thumb is:\nData enters the Frontier once through a Prospector, lives in the Gold Mine, and reaches projects through the Stagecoach.\n\n\n\n\n\n\n\nflowchart TD\n\n    subgraph User\n        A[Researcher identifies dataset]\n    end\n\n    subgraph Registration\n        B[Qualtrics Data Ingress Survey]\n    end\n\n    subgraph Transfer\n        C[Small Dataset Upload]\n        D[Large Dataset Upload via Globus]\n    end\n\n    subgraph Visibility\n        E[Survey Tracking Google Sheet]\n    end\n\n    subgraph Prospectors\n        F[Qualtrics Prospector]\n    end\n\n    subgraph GoldMine\n        G[gold_mine/01_ore]\n    end\n\n    subgraph Projects\n        H[Stagecoach Manifest]\n        I[Research Project]\n    end\n\n    A --&gt; B\n\n    B --&gt; C\n    B --&gt; D\n\n    B --&gt; E\n\n    C --&gt; F\n    D --&gt; F\n\n    E --&gt; F\n\n    F --&gt; G\n\n    G --&gt; H\n    H --&gt; I"
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html#closing-thoughts",
+    "href": "02_guides/03_data-access-and-management/ingress.html#closing-thoughts",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "Closing Thoughts",
+    "text": "Closing Thoughts\nIt can be tempting to rush into data analysis with whatever dataset you can get your hands on, as science can be a messy (and exciting) iterative process. But in order for science to be a cumulative, reliable, truth-seeking endeavour, we must act with the end in mind — preempt the rigorous proof that all bold claims will require. Doing so is deceptively simple — design working environments that enable us to easily and frictionlessly manage the provenance of our experiments and the data they generate. Recall that the real substance of science isn’t the fancy model, or the impressive figures, or even the journal you send your paper to. It’s in the ability to say, without a shadow of a doubt, “I had a hunch about this unexplained phenomenon, and so I designed an experiment to test it. I collected data, analyzed it, and found that my hunch was correct. Here is exactly how I did it, and here is the data that supports my claim.”\nToday, I encourage you to make the pledge to not wait any longer; you don’t have to be an expert to start using these systems, and you don’t have to wait until a “worthwhile project” before you implement these practices. Embrace wise data stewardship from the very beginning of our projects, and see how it transforms your work and the work of your collaborators. The best time to establish data provenance is the moment data enters the Frontier. Every step after that becomes easier."
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/ingress.html#footnotes",
+    "href": "02_guides/03_data-access-and-management/ingress.html#footnotes",
+    "title": "Data Ingress: Where it All Begins",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAfter all, YOU are special. YOU will definitely remember each and every one of the steps you took, perfectly, and without error, several years from now, right…? Right….? RIGHT…………..?↩︎\nBy thinking of scaling this way, we can better embrace our own capability to scale technology as individuals in our own lives. Ever been frustrated by the fact that you have a hard time finding a certain file on your computer? Maybe it’s time to scale your personal file organization system by using a more deliberate folder structure, naming convention, or search tool. Ever been frustrated by how long it takes you to set up a project? Scale your project setup process by creating a project template that you can reuse. Etc…↩︎\nWe say “encourage” rather than “require” because we want to strike a balance between enforcing best practices and allowing for flexibility and creativity in how we work with data. We want to create a culture of good data management habits, but we also want to avoid being overly rigid or bureaucratic. By designing a system that encourages good habits without being too prescriptive, we hope to foster a sense of ownership and responsibility among lab members while still allowing for individual differences in how people approach their work. It’s part of the social contract in principle 4: “Good Habits Compound Over Time.”↩︎\nProspectors are a family of data ingestion and processing tools on the Frontier. They are responsible for discovering new data sources, validating incoming data, performing transformations, and depositing outputs into the Gold Mine. You may have noticed the growing number of “prospector-something” repositories on GitHub.↩︎\nWhile Qualtrics serves as the system of record, the Google Sheet acts as a lightweight operational dashboard that makes newly submitted datasets visible to the broader team and to automated Prospectors.↩︎\nProspectors are a family of data ingestion and processing tools on the Frontier. They are responsible for discovering new data sources, validating incoming data, performing transformations, and depositing outputs into the Gold Mine. You may have noticed the growing number of “prospector-something” repositories on GitHub.↩︎"
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html",
+    "title": "Data Staging with stagecoach",
+    "section": "",
+    "text": "Data staging is the process of preparing and organizing data for analysis. In the Golden Lab, we use a tool called stagecoach to help with this process. stagecoach allows users to request access to datasets using a digital manifest. In doing so, it ensures that the exact resources you request for your project are made available to you in a computationally reproducible manner, reducing the risk of errors and missing steps."
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#tldr-give-me-the-quick-steps",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#tldr-give-me-the-quick-steps",
+    "title": "Data Staging with stagecoach",
+    "section": "tl;dr Give me the quick steps!",
+    "text": "tl;dr Give me the quick steps!\n\nIdentify the dataset you need from the gold_mine; if it’s a Google Drive folder, it will likely be under /n/holylabs/LABS/cgolden_lab/Lab/frontier/gold_mine/01_ore/golden_googledrive_rclone.\nInstall stagecoach as a project agnostic tool for your user account on The Frontier.\nRun stagecoach hail in your project’s directory and follow the prompts to create a manifest file that declares the datasets you need for your project. The sheriff will check your records to ensure you’re registered to receive the data.\nEdit the manifest file to include the paths to the datasets you need from the gold_mine or otherwise\nRun stagecoach inspect to run the manifest checks and make sure your project is in organized for data staging. The error report will guide you through the necessary recommended changes to create a project structure that is compatible with stagecoach.\nRun stagecoach stage; the stagecoach will check your manifest, and if everything looks good, it will create symlinks to the datasets you requested in your project directory. If there are any issues with your manifest or project structure, the stagecoach will provide an error report with recommendations for how to fix the issues."
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#why-is-data-staging-important",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#why-is-data-staging-important",
+    "title": "Data Staging with stagecoach",
+    "section": "Why Is Data Staging Important?",
+    "text": "Why Is Data Staging Important?\nLet’s imagine you’ve been handed an analysis; it’s a notebook with some code and a few helpful comments. You’ve been asked to run it and replicate some result, and extend the analysis to add in new data. So you fire up the notebook and hit “run all,” and immediately get an error:\n\nWe’ve all seen this error before. Someone sent you code with hardcoded paths to a dataset on their computer!1 Not the worst problem in the world, but you do have to fix it. Reading the code, it appears that the data came from a file called data.csv, but you can’t find that file anywhere. You ask your colleague where the data is, and they tell you that it’s on their computer, and they forgot to share it with you. Now you have to go back and forth with your colleague to get the data, and then figure out how to update the code to point to the correct location of the data on your computer. After all of that, they tell you that an additional dataset is necessary — it’s a file from the internet that they got with a curl command. Fine, you have curl available and can run it too… but wait… The file has multiple versions, and changes every month. Which version of input data does this analysis require? This is a common problem in data analysis, and it can be avoided with proper data staging."
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#how-stagecoach-works",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#how-stagecoach-works",
+    "title": "Data Staging with stagecoach",
+    "section": "How stagecoach Works",
+    "text": "How stagecoach Works\nThe user story for stagecoach is surprisingly simple:"
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#wait-symlinks",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#wait-symlinks",
+    "title": "Data Staging with stagecoach",
+    "section": "Wait, symlinks?",
+    "text": "Wait, symlinks?\nYou may notice that if you’re on The Frontier and request data from the gold_mine, stagecoach creates odd looking files in your data directory. These files are called symbolic links, or symlinks for short. In essence, they are shortcuts to the actual data files. So why bother with symlinks? Well, in data science, we might work with a lot of data — more data than we can responsibly manage if there are multiple people who need access to it. Imagine if everyone made a copy of 15 years of ERA5 satellite data…\nSimilarly, data is a shared resource — it would be unwise (and selfish) for one individual to scaffold their project around the centrally shared data folder, and it would quickly lead to a mess of overlapping paths and files. Finally, it would be unsafe to have multiple people working with the exact file in a shared folder: if someone inadvertently deletes or modifies their “data” directory with the original data, then we’re all screwed!\nSo what is the solution? Well, first of all, we need to consider data a modular resource, meaning that it can be treated like a block of LEGO — something that can be easily connected to other pieces, but also easily replaced if needed. In doing so, we avoid the temptation to do things like hardcode paths that are special to us, and instead create relative paths that can be used by anyone.\n\n\n\n\n\nflowchart TD\n    subgraph goldmine[\"Gold Mine: shared data storage\"]\n        data[(Central dataset&lt;br/&gt;gold_mine/01_ore/data.csv)]\n    end\n\n    subgraph town[\"Town: individual project workspaces\"]\n        alice[\"Alice's project&lt;br/&gt;data/data.csv\"]\n        bob[\"Bob's project&lt;br/&gt;data/data.csv\"]\n        carlos[\"Carlos's project&lt;br/&gt;data/data.csv\"]\n    end\n\n    alice -. \"symlink\" .-&gt; data\n    bob -. \"symlink\" .-&gt; data\n    carlos -. \"symlink\" .-&gt; data\n\n    manifest[\"stagecoach manifest&lt;br/&gt;declares required data\"]\n    stagecoach[\"stagecoach&lt;br/&gt;stages data safely\"]\n\n    manifest --&gt; stagecoach\n    stagecoach --&gt; alice\n    stagecoach --&gt; bob\n    stagecoach --&gt; carlos\n\n\n\n\n\n\nIn this way, we can maintain a single copy of the data in the gold_mine, and each person can have their own symlink to it in their project. If someone needs to update the data, they can do so in the gold_mine, and everyone will automatically get the updated data through their symlinks. This is a much more efficient and safer way to manage shared data resources."
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#the---outpost-flag",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#the---outpost-flag",
+    "title": "Data Staging with stagecoach",
+    "section": "The --outpost Flag",
+    "text": "The --outpost Flag\nBy now, you may have noticed that we’ve mentioned being “registered in the town records,” a few times. To gently encourage compliance with best practices, stagecoach and other tools on the Frontier only work if you are currently 1) working on FASRC, our shared HPC cluster, 2) working within a project directory in our FASRC shared lab space, and 3) have set a variable called FRONTIER in your shell profile to the path to the root directory of our Frontier workspace2. If you try to run stagecoach without being registered, you’ll get an error message that looks something like this:\n\nThis sounds like a hassle, and it is — but it is not without good reason. You see, by enforcing these rules, we nudge lab members to adopt best practices for a project right from the start. You can’t do anything without access to the data, and we won’t give you the data until you’ve put in the work to set up your project in a way that guarantees reproducible and scalable workflows. Think of it as like buying a car: you might know how to drive, but if you don’t have a valid license, they probably won’t let you drive the car off the lot. Not because they don’t believe you know how to drive, but because they can be 100% certain you do know how to drive if you provide them proof. In this way, the sheriff is a tool purpose-built to work on behalf of other tools to ensure you’re doing things the best way. This isn’t meant to be punitive, but defensive — by adhering to the principles that the tools are enforcing today, you’re saving yourself on invaluable amounts of technical debt in the future.\nBut what if you absolutely need to work on a project that is not on FASRC? Or what if you’re a collaborator, unaffiliated with Harvard, who needs to stage gold_mine data for a project? In this case, we’ve provided a secret --outpost flag that will disable the sheriff’s Frontier checklist when you run stagecoach hail. This is intended primarily for our collaborators to use, and we are putting our trust in YOU by documenting it. you could technically use stagecoach with the --outpost flag anywhere and anyway you want, and we may never know about it. But this is where we hope that your integrity and good judgment will come into play. Follow the Frontier principles, and use the tools in the way they are intended to be used, and you will be doing your part to help us build a culture of reproducibility and collaboration in the Golden Planetary Health Lab."
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#footnotes",
+    "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#footnotes",
+    "title": "Data Staging with stagecoach",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a common problem in data analysis, and it can be avoided with proper data staging.↩︎\nTo quickly add this variable, you can add the following line to your shell profile (e.g., ~/.bashrc or ~/.zshrc): export FRONTIER=/n/holylabs/LABS/cgolden_lab/Lab/frontier. After adding this line, make sure to source your shell profile or restart your terminal for the changes to take effect. Don’t worry, we’ll cover shell profiles in more detail in the future!↩︎"
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "",
+    "text": "Open OnDemand gives you RStudio or Jupyter in a browser tab, and for a lot of work that is the fastest way in. But if you already live in VSCode, with your extensions, your keybindings, your terminal layout and your Copilot login, the browser is a downgrade. This guide sets up the alternative: your own local VSCode, attached over SSH to a real compute node on Cannon.\nThe trick is one block in your SSH config. Once it is there, connecting is two commands and a click."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#tldr-give-me-the-quick-steps",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#tldr-give-me-the-quick-steps",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "tl;dr Give me the quick steps!",
+    "text": "tl;dr Give me the quick steps!\n\nAdd the SSH config block below to ~/.ssh/config on your local machine.\nOpen a terminal and log in; the name cannon-login is a nickname you have defined in your SSH config:\nssh cannon-login\nAsk SLURM for a compute node:\nsalloc -p test -t 0-02:00 --mem 16G\nSLURM prints the node it gave you, something like holy8a24301.\nLeave this terminal open. The allocation lives inside it. Close the window and SLURM takes the node back, which kills your VSCode session with it.\nIn VSCode: Remote-SSH: Connect to Host… → type that node name → connect.\nOpen your project folder and work as normal.\n\nThat is the whole loop. The rest of this page explains why each piece is there, because you will eventually need to change one of them."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#the-ssh-config",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#the-ssh-config",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "The SSH config",
+    "text": "The SSH config\n\n\n\n\n\n\nTipWhat is SSH?\n\n\n\nDespite its obscurity and relatively low profile, Secure Shell (SSH) is one of the most powerful inventions in computing, allowing users to securely connect to — and most importantly, OPERATE on — remote machines. If you’ve ever been on a Zoom call and desperately wanted to just take complete control of someone else’s screen, SSH is a tool that allows you to do that with remote machines, but not through Zoom, through a terminal.\n\n\n\nWith SSH, your laptop securely sends data, files, and commands to the SSH server on the FASRC cluster. On FASRC, the SSH server is constantly listening for connections from authenticated users, managing login, security, content encryption, and the lifecycle of the connection.\n\n\nLearn more: what-is-ssh?\n~/.ssh/config is a file on your laptop that tells the SSH program how to connect to different remote machines, called “hosts”. Just like your phone has a contact list with names and numbers, your SSH config has hostnames and connection details. At the terminal, you would run ssh REMOTE_HOST to launch a bash session on that host.\n\n\nThis goes in ~/.ssh/config on your laptop, not on the cluster.\n\n\n~/.ssh/config\n\nHost cannon-login\n    HostName login.rc.fas.harvard.edu\n    User &lt;your-fasrc-username&gt;\n\nHost holy*\n    User &lt;your-fasrc-username&gt;\n    ProxyJump cannon-login\n\nHost *\n    ServerAliveInterval 60\n    ServerAliveCountMax 10\n\nThree blocks, three jobs:\ncannon-login is just a nickname. It saves you from typing your-username@login.rc.fas.harvard.edu every time. You still get prompted for your password and your 6-digit OpenAuth code.2\nholy* is the part that matters. Compute nodes on Cannon are not reachable from the open internet: you have to go through a login node first. ProxyJump makes SSH do that hop for you, invisibly. Because the pattern is a wildcard, it matches any node SLURM hands you, so you never have to edit this file again. Without it, VSCode simply cannot see the node and you would be stuck with either the login node or OOD.\nHost * sends a keepalive every 60 seconds and tolerates 10 missed replies. Without this, an idle connection tends to drop while you are reading something, and VSCode reconnects noisily.\n\n\n\n\n\n\nTip\n\n\n\nCompute nodes on Cannon live in the Holyoke data center, which is where the holy prefix comes from. If SLURM ever hands you a node whose name does not start with holy, add a second block with that prefix and the same two lines."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#what-the-salloc-flags-actually-mean",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#what-the-salloc-flags-actually-mean",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "What the salloc flags actually mean",
+    "text": "What the salloc flags actually mean\nsalloc asks the scheduler for a slice of the cluster and hands you a shell on it. Every flag is you making a promise about what you need.\n\n\n\nFlag\nMeaning\nNotes\n\n\n\n\n-p test\nWhich partition (queue) to ask\ntest is meant for short interactive work: 12 hour ceiling, 112 cores, 5 jobs per user3\n\n\n-t 0-02:00\nTime limit, in D-HH:MM\n2 hours here. Must fit inside the partition’s ceiling\n\n\n--mem 16G\nMemory for the whole allocation\nNot per core. Ask for what you need, not the maximum\n\n\n-c N\nCores (--cpus-per-task)\nOptional. Defaults to 1. See below before adding it\n\n\n\nTwo things worth internalising:\n-t is a promise, not a reservation you can extend. When the clock runs out, the allocation is killed and your VSCode connection dies with it. Anything unsaved in a terminal is gone. Ask for a bit more than you think you need.\nOnly add -c if your code is actually threaded. You will see colleagues pass things like -c 2 or -c 8, and it is tempting to copy the line without asking why. A plain single-threaded R or Python script uses one core and leaves the rest idle, while your job waits longer in the queue for resources it never touches. Extra cores pay off when something parallelises underneath you: dask and xarray, BLAS-backed numpy operations, data.table, or anywhere you set a worker count yourself. If you cannot name the thing that will use the second core, leave the flag off.\n\n\n\n\n\n\nNote\n\n\n\n-p test is the right default while you are still learning how things work, but the 2 hour ceiling makes it unsuitable for anything substantial. For work that needs to live a little longer throughout a working day, look at the general-purpose partitions in the FASRC partition table.4\nCareful readers will notice that there is a partition called hsph. This is a special queue provisioned especially for all Harvard T.H. Chan School of Public Health researchers, and it comes with pretty generous resources. We strongly recommend that lab members use hsph by default.\nAnd, once a task is stable, it probably wants to be an sbatch script rather than an interactive session, so that you can log out and let it run unattended. See the FASRC Docs on Running Jobs for more information."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#connecting-vscode",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#connecting-vscode",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "Connecting VSCode",
+    "text": "Connecting VSCode\nYou need the Remote - SSH extension from Microsoft. Then:\n\nCmd/Ctrl+Shift+P → Remote-SSH: Connect to Host…\nType the node name from salloc (e.g. holy8a24301) and hit enter.\nA new window opens. First connection to a given node takes a moment while VSCode installs its server component there.\nFile → Open Folder and navigate to your project.\n\nVSCode is now running its server process inside your allocation. Terminals you open, notebooks you run, and extensions that execute code all consume the cores and memory you asked Slurm for. That is exactly what you want, and it is the thing OOD does for you automatically."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#the-catch-allocations-do-not-survive",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#the-catch-allocations-do-not-survive",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "The catch: allocations do not survive",
+    "text": "The catch: allocations do not survive\nThis is the honest tradeoff against the web view. The node is yours until one of three things happens: the time limit expires, you type exit in the salloc shell, or you close the terminal window that shell is running in. All three end the allocation. After that:\n\nthe VSCode window goes dead\nthe next salloc gives you a different node name\nyou connect Remote-SSH to that new name\n\nThere is no way around the reconnect. Keep the salloc terminal open and somewhere you can see it, so the state of your session is never a mystery.\n\n\n\n\n\n\nWarning\n\n\n\nVSCode caches a server directory in your home folder (~/.vscode-server, or a similarly named one if you use a VSCode fork). It grows, and home directory quota on Cannon is small. If connections start failing for no obvious reason, check your quota first, then clear it:\nssh cannon-login \"rm -rf ~/.vscode-server\"\nVSCode reinstalls it on the next connection."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#so-which-should-i-use",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#so-which-should-i-use",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "So which should I use?",
+    "text": "So which should I use?\n\n\n\n\n\n\n\nSituation\nUse\n\n\n\n\nInteractive R, and you like RStudio\nOOD RStudio Server\n\n\nYou want your own editor setup, extensions, and Git integration\nRemote-SSH (this guide)\n\n\nQuick look at a file or a directory listing\nssh cannon-login, nothing more\n\n\nA run that takes hours and needs no supervision\nsbatch, not an interactive session\n\n\n\nNeither interface is more correct. OOD costs you your editor; Remote-SSH costs you a reconnect every time an allocation ends. Pick the friction you mind less."
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#further-reading",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#further-reading",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "Further reading",
+    "text": "Further reading\n\nFASRC Docs: Terminal Access\nFASRC Docs: Running Jobs (partition table and Slurm flags)\nVSCode Docs: Remote Development using SSH\nOpenSSH ProxyJump"
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#footnotes",
+    "href": "02_guides/01_hpc-infrastructure/vscode-remote-ssh.html#footnotes",
+    "title": "VSCode on a Compute Node via Remote-SSH",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nFASRC Docs, Terminal Access. Login nodes are reachable worldwide and do not need VPN, but off-network access requires two-factor authentication.↩︎\nFASRC Docs, Terminal Access. Login nodes are reachable worldwide and do not need VPN, but off-network access requires two-factor authentication.↩︎\nFASRC Docs, Running Jobs. Partition limits change over time; check the table there rather than trusting this page.↩︎\nFASRC Docs, Running Jobs. Partition limits change over time; check the table there rather than trusting this page.↩︎"
+  },
+  {
+    "objectID": "02_guides/zzz_showcase.html",
+    "href": "02_guides/zzz_showcase.html",
+    "title": "Showcase",
+    "section": "",
+    "text": "Have something you discovered that you think others would find useful? A neat trick, a useful tool, a clever workflow? This is the place to share it!\nIt doesn’t have to be anything fancy, or groundbreaking, or even warrant its own page; put it in a gist and link it here! The goal is to create a space where we can share the little things that make our work easier, more efficient, or just more enjoyable.\n\n\n\nName\nDate\nDescription\nLink\n\n\n\n\nTinashe\n2026-05-01\nParsing a csv of authors\ngist\n\n\n\nWant to add your own? Just create a gist with your tip, trick, or tool, and then add it to the table above by following the Contribution Guide!"
+  },
+  {
+    "objectID": "02_guides/zzz_showcase.html#a-place-to-share-your-favorite-tips-tricks-and-tools",
+    "href": "02_guides/zzz_showcase.html#a-place-to-share-your-favorite-tips-tricks-and-tools",
+    "title": "Showcase",
+    "section": "",
+    "text": "Have something you discovered that you think others would find useful? A neat trick, a useful tool, a clever workflow? This is the place to share it!\nIt doesn’t have to be anything fancy, or groundbreaking, or even warrant its own page; put it in a gist and link it here! The goal is to create a space where we can share the little things that make our work easier, more efficient, or just more enjoyable.\n\n\n\nName\nDate\nDescription\nLink\n\n\n\n\nTinashe\n2026-05-01\nParsing a csv of authors\ngist\n\n\n\nWant to add your own? Just create a gist with your tip, trick, or tool, and then add it to the table above by following the Contribution Guide!"
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html",
+    "href": "01_orientation/workflow-roadmap.html",
+    "title": "Workflow Roadmap",
+    "section": "",
+    "text": "flowchart TD\n  A[Question and scope ⛰️] --&gt; B[Preliminary infrastructure 🚧]\n  B --&gt; C[Individual Project scaffold 🏗️]\n  C --&gt; D[Data Lake Access 🌊]\n  D --&gt; E[Data Analysis and Notebooks 🔬]\n  E --&gt; F[Reusable Scripts and Pipelines 🗜️]\n  F --&gt; G[Collaborative Review and Communication 📊]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Publish and Archive 🗃️]\n\n\n\n\n\n\n\nLet’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll discuss actual implementation in the Guides sections. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#the-end-to-end-workflow",
+    "href": "01_orientation/workflow-roadmap.html#the-end-to-end-workflow",
+    "title": "Workflow Roadmap",
+    "section": "",
+    "text": "flowchart TD\n  A[Question and scope ⛰️] --&gt; B[Preliminary infrastructure 🚧]\n  B --&gt; C[Individual Project scaffold 🏗️]\n  C --&gt; D[Data Lake Access 🌊]\n  D --&gt; E[Data Analysis and Notebooks 🔬]\n  E --&gt; F[Reusable Scripts and Pipelines 🗜️]\n  F --&gt; G[Collaborative Review and Communication 📊]\n  F --&gt; E\n  G --&gt; F\n  G --&gt; H[Publish and Archive 🗃️]\n\n\n\n\n\n\n\nLet’s take some time to discuss and review an ideal workflow. This is a high-level overview of the lifecycle of a data science project in the lab — we’ll discuss actual implementation in the Guides sections. While the lifecycle may not be a strict linear process, it is a good starting point for understanding how to structure and prioritize your work at each stage, and what decisions you should be making to make your research reproducible.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#question-and-scope",
+    "href": "01_orientation/workflow-roadmap.html#question-and-scope",
+    "title": "Workflow Roadmap",
+    "section": "1. Question and Scope ⛰️",
+    "text": "1. Question and Scope ⛰️\nThese are the foundational elements of your science that you may discuss with your PI, your colleagues, your collaborators, etc. You may start by simply writing down things like:\n\nthe scientific question,\nthe unit of analysis,\nthe key inputs,\nthe expected outputs,\nand the likely compute or security constraints.\n\nMuch of this work can exist in Google Drive as meeting notes, lecture notes, and other communications. This is where you establish your motivation and high-level scientific field of interest.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#preliminary-infrastructure",
+    "href": "01_orientation/workflow-roadmap.html#preliminary-infrastructure",
+    "title": "Workflow Roadmap",
+    "section": "2. Preliminary Infrastructure 🚧",
+    "text": "2. Preliminary Infrastructure 🚧\nBefore writing any code, decide where the work belongs:\n\npublicly available data and identifiable data at or below security level 2 is appropriate for the standard FASRC environment, sometimes called CANNON; the vast majority of our lab work will fit this description;\nrestricted data at security level 3 or above may require FASSE and a secure compute environment.\n\nAdditionally, think about which tools are best for the job. In this lab, we use R and Python, but the workflow principles apply to either and any other language you may use.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#individual-project-scaffold",
+    "href": "01_orientation/workflow-roadmap.html#individual-project-scaffold",
+    "title": "Workflow Roadmap",
+    "section": "3. Individual Project Scaffold 🏗️",
+    "text": "3. Individual Project Scaffold 🏗️\n\nAn individual project has three components: the Google Drive Data Lake, the local project repository, and GitHub repository.\nOn Google Drive, we maintain a strict folder structure for each Golden Lab research project.\n\n\n\nGDrive Projects\n\n\n\n\n\nGDrive Project Folder Structure\n\n\nYou’ll use these GDrive projects as information hubs for your individual research projects, which will be implemented on FASRC. For example, while the Golden Lab is broadly studying “Climate-Smart Public Health in Madagascar,” your individual project may be particularly interested in the relationship between heat stress and hospitalizations in Northeast Madagascar.\nIt’s important to maintain this structure so that there is a clear separation of concerns between high-level project management, the day-to-day work of data analysis, and the tools that each of those tasks require. Google Drive is a great place for taking notes with Docs, storing PDF files, and collaborating on office files manuscripts and presentations. FASRC is a great place for writing code, running analyses, and storing data and outputs. You wouldn’t want to write and store code files in Google Drive, and you wouldn’t want to maintain Google Docs files notes on FASRC — hence the clear separation of these environments1.\nEven if you don’t have the dataset or specific hypotheses yet, now is the time to set up the local project repository. A good starting point might look like this:\nproject-name/\n├── README.md       &lt;- a clear project description and instructions for how to run the code\n├── .gitignore      &lt;- to exclude data, results, and other large files from `git`\n├── data-outputs/   &lt;- for intermediate and final data outputs  \n├── data-raw/       &lt;- for linking your project to the data lake\n├── code/           &lt;- for plain code scripts, functions, and pipeline code\n├── notebooks/      &lt;- for exploratory notebooks and reports\n├── manuscript/     &lt;- for manuscript drafts, figures, and tables\n└── lockfile        &lt;- for package management and reproducibility\nIn addition, you should set up a GitHub repository for your project, and link it to your local repository.\n\n\n\nGitHub Repository\n\n\nFor each language, this may look slightly different, but the principle is the same. The sooner you set up the project scaffold, the more likely you are to to adhere to its conventions. If you wait until after you have a dataset, have written a few scripts, etc., you may find yourself copying and pasting code and data, missing git commits, or setting up inconsistent file paths, which is harder to maintain and reuse in future. Setting this up might feel like a chore, but we’ve gone ahead and done the work for you. Using our GitHub templates, you can easily create a new repository with the correct structure and fill in the blanks.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#data-lake-access",
+    "href": "01_orientation/workflow-roadmap.html#data-lake-access",
+    "title": "Workflow Roadmap",
+    "section": "4. Data Lake Access 🌊",
+    "text": "4. Data Lake Access 🌊\nMost of our lab data exists on FASRC, and is specially curated to be accessible and secure. Recall the Golden Lab project folder structure on Google Drive:\n\nYou’ll notice a locked folder called 4. Datasets. This is the raw data that Chris has been collecting over the years, and it is the starting point for all of our analyses. In order to interact with this data on FASRC, we set up a mirroring system that periodically syncs the raw data from Google Drive to FASRC using the rclone utility. We call this the data_lake, and it underlies how you can access the data on FASRC without having to download it from Google Drive, so you can be assured that it is up to date and secure2.\n\nFor any local individual project, the first step will be to symlink the project area’s raw data to your project repository. Fortunately, most data sources will come with an accompanying data distribution package that provides a function to do this for you. If it does not yet exist, let Tinashe know.\n\n\n\n\n\n\nNoteWhy Do We Symlink Datasets?\n\n\n\n“Symlinking” means to create a symbolic link to the original data file, rather than copying it. This has several advantages:\n\nIt saves disk space, since you are not creating duplicate copies of the data.\nIt ensures that you are always working with the most up-to-date version of the data, since the symlink “points” to the original file that is being synced from Google Drive.\nIt maintains the security and integrity of the data, since you are not creating additional copies that could be accidentally modified or shared.\nIt encourages you to create intermediate outputs and final results in your project repository without affecting the data lake.\n\nBy symlinking raw datasets, you can safely interact with raw data without being concerned about any data management tasks, allowing you to focus on the analysis and scientific questions at hand.\n\n\n\n\n\nNepal Climate Health Folder of the Data Lake on GDrive\n\n\n\n\n\nNepal Climate Health Folder of the Data Lake in a Local Individual Project on FASRC",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#data-analysis-and-notebooks",
+    "href": "01_orientation/workflow-roadmap.html#data-analysis-and-notebooks",
+    "title": "Workflow Roadmap",
+    "section": "5. Data Analysis and Notebooks 🔬",
+    "text": "5. Data Analysis and Notebooks 🔬\nOnce you’ve symlinked the raw data, you can start doing the fun science. Notebooks are a great tool for this stage, since they allow you to write code, run it, and see the results all in one place. They also allow you to write markdown text to explain your thinking and document your process. I’ve heard it said that, “writing is thinking,”3 and writing code should be no different. As you write code, you should simultaneously be writing down:\n\nwhat you are testing,\nwhat assumptions you are making,\nwhat looks right, and what looks wrong,\nand what should happen next.\n\nFor example, R for Data Science treats communication as part of the data science loop, not a final wrapper placed on top of “real” analysis. That is the right model for lab work too.4\nWe recommend using Quarto for your notebooks, since it allows you to write in R, Python, or both in the same document, and it has great support for rendering and sharing your work. You can also use Jupyter Notebooks or R Markdown Notebooks if you prefer. The important thing is to choose a tool that allows you to document your thinking and share your work with others.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#reusable-scripts-and-pipelines",
+    "href": "01_orientation/workflow-roadmap.html#reusable-scripts-and-pipelines",
+    "title": "Workflow Roadmap",
+    "section": "6. Reusable scripts and Pipelines 🗜️",
+    "text": "6. Reusable scripts and Pipelines 🗜️\nMost scientific papers aren’t a once-off analysis. As you dig into the data, you’ll raise new questions that’ll require you to wrangle it in numerous ways — mutating variables, joining tables, and creating intermediate objects and visualizations that are used in different ways. You may also need to rerun analyses with different parameters, or on different subsets of the data. If you are doing this work in a single exploratory notebook or script, it can quickly become messy and hard to maintain.\nWe recommend starting off your project with a pipeline tool that allows you to record the progression of your data manipulations. Ideally, at the end of the project, a single pipeline should be able to take the raw data as input and produce all of the final results, including tables, figures, and manuscript drafts.\nCoding pipelines are sometimes called DAGs, or Directed Acyclic Graphs, because they are a series of steps that are connected in a directed way (i.e., one decision leads to the next). This is a great way to structure your code, since it allows you to see the flow of your analysis and how each investigation (notebook) uncovered new challenges or ideas that led to the final result. It also allows you to easily rerun parts of the analysis if you need to make changes or update the data.\nOnce a workflow stabilizes, move repeated logic out of exploratory notebooks and into:\n\nscripts,\nfunctions,\nparameterized reports,\nall managed by a pipeline orchestration tool such as targets, pytask, or snakemake.\n\nThe trigger is simple: if you expect to rerun it, scale it, or hand it off, it should not live only in an exploratory notebook cell.\n\n\n\n\n\n\nNoteIs A Pipeline Orchestration Tool Overkill?\n\n\n\nWe get it, you’re not trying to be a data engineer — you just want to publish papers. But the reality is that if you are doing data science, you are doing data engineering. If you are writing code that manipulates data, even in just a handful of lines, you are engineering a solution to a problem. The question is not whether you should use a pipeline orchestration tool, but rather when you should start using one.\nThe sooner you do this, the better. If your project were to scale (which it almost certainly will), you’ll have a hard time retroactively moving code around into a pipeline, and you’ll likely end up with a messy codebase that may not be reproducible. Adding a pipeline orchestrator early on costs very little, and it allows you to focus on the science without worrying about the engineering later.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#collaborative-review-and-communication",
+    "href": "01_orientation/workflow-roadmap.html#collaborative-review-and-communication",
+    "title": "Workflow Roadmap",
+    "section": "7. Collaborative Review and Communication 📊",
+    "text": "7. Collaborative Review and Communication 📊\nAs you go through the exploratory data analysis phase, you’ll likely be meeting with your PI and collaborators to discuss analysis results and brainstorm ideas. It wouldn’t be very wise to show up to a meeting with half a dozen arbitrarily named Python scripts or R scripts, and expect everyone in the meeting to understand your work. Instead, you should collect and export digestible findings that can be presented in meetings5.\nIf you’ve structured your project correctly, each time you meet with your supervisor or collaborators, your project should have:\n\nan up to date README at the base of the repository that explains the project, how to run the code, and when it was last updated,\none or more current notebooks or reports that explain the current analysis status,\nthe reproducible path from data inputs to results in a pipeline, and\na git history that reflects real milestones.\n\nThis makes supervisor meetings, methods review, and cross-training materially easier.\n\n\n\n\n\n\nNoteThe Data Science Loop\n\n\n\nYou may notice that the workflow has cyclical edges between Data Analysis & Notebooks, Reusable Scripts & Pipelines, and Review & Communication. This Data Science Loop is a continuous cycle of analysis, interpretation, and communication. As you analyze your data, you’ll likely uncover new questions and insights that will lead to new analyses. This is a normal part of the scientific process, and it’s important to embrace it. By structuring your project in a way that allows for easy communication and collaboration, you can make the most of this iterative process and produce high-quality science.\n\n\n\nR4DS Data Science Loop",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#publish-and-archive",
+    "href": "01_orientation/workflow-roadmap.html#publish-and-archive",
+    "title": "Workflow Roadmap",
+    "section": "8. Publish and Archive 🗃️",
+    "text": "8. Publish and Archive 🗃️\nWhen you and your collaborators are ready to publish or transition ensure that your project is in a state that can be easily shared and maintained. This includes:\n\nconfirming the repository can be cloned from GitHub and run from scratch,\nconfirming restricted data are not in Git,\nconfirming documentation identifies canonical data locations,\nrendering a final report or project website,\nand recording ownership for future maintenance.\n\nDepending on your publication venue, you may also want to archive your code and data in a more permanent repository, such as Dataverse or Zenodo, and link it to your publication. Additionally, you may want to add credential badges to your GitHub repository to communicate the quality of your work, such as FAIR software, a Zenodo DOI badge, or a GitHub Actions CI/CD badge that shows the status of your pipeline.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#conclusion",
+    "href": "01_orientation/workflow-roadmap.html#conclusion",
+    "title": "Workflow Roadmap",
+    "section": "Conclusion",
+    "text": "Conclusion\nWhile this workflow may seem daunting at first, it gets easier with practice. The key is to start early and be consistent. By following this roadmap, you can ensure that your work is reproducible, maintainable, and scalable.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "01_orientation/workflow-roadmap.html#footnotes",
+    "href": "01_orientation/workflow-roadmap.html#footnotes",
+    "title": "Workflow Roadmap",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nBut just because they are separate, doesn’t mean they are not connected. We will learn how these entities are linked together in following sections.↩︎\nYou can see the status of the last sync by visiting the research data management dashboard at [#TODO: implement RDM dashboard to monitor sync status].↩︎\n“Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” — David McCullough. Also, see: https://www.nature.com/articles/s44222-025-00323-4.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Communicate.↩︎\nThis is where notebooks can really add value to your data analysis. If your notebook is structured correctly, you can easily export tables, graphs, and text as a report that weaves together your code, results, and interpretations reproducibly, and share it with your collaborators.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Workflow Roadmap"
+    ]
+  },
+  {
+    "objectID": "index.html#lab-principles",
+    "href": "index.html#lab-principles",
+    "title": "Golden Lab Data Science Workflows",
+    "section": "Lab Principles",
+    "text": "Lab Principles\n\n\n1. Remote & reproducible beats local & manual 🌐\nIf your work matters, it should run on any infrastructure, and be re-runnable from code — not clicks.\n\n\n2. Code is the source of truth 💎\nResults, figures, and tables are merely products of the workflow. The lasting record — and scientific truth underlying them — is in the code and documentation that created them.\n\n\n3. Analysis should be narrated 📇\nUse notebooks and reports to explain what you did, why you did it, and what should happen next.\n\n\n4. Robust habits compound 🌱\nVersion control, clean project structure, and clear documentation reduces technical debt for your colleagues — and your future self.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#what-students-should-be-able-to-do",
+    "href": "index.html#what-students-should-be-able-to-do",
+    "title": "Golden Lab Data Science Workflows",
+    "section": "What students should be able to do",
+    "text": "What students should be able to do\nBy the end of onboarding, a student should be able to:\n\nStart a project on the correct FASRC system and choose an appropriate storage location.\nCreate a reproducible project structure with notebooks, scripts, and dependency tracking.\nRead shared datasets without making unnecessary copies.\nPush analysis code and documentation to GitHub without exposing restricted data.\nAsk for help with enough context that someone else can reproduce the problem.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#suggested-reading-path",
+    "href": "index.html#suggested-reading-path",
+    "title": "Golden Lab Data Science Workflows",
+    "section": "Suggested reading path",
+    "text": "Suggested reading path\n\nRead Start Here for the workflow philosophy and first-week checklist.\nRead Workflow Roadmap for the full research lifecycle.\nUse the guide pages as reference while you are actively working on a project.\nKeep Reference Library open when you need the official docs.",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "index.html#footnotes",
+    "href": "index.html#footnotes",
+    "title": "Golden Lab Data Science Workflows",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nIf you were looking for the Climate Smart Public Health Research Site, click here (https://www.climatesmartpublichealth.com/).↩︎",
+    "crumbs": [
+      "Start Here",
+      "Home"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html",
+    "href": "01_orientation/start-here.html",
+    "title": "Start Here",
+    "section": "",
+    "text": "Most graduate students do not struggle to manage their research because the science is impossible. They struggle because their workflows are fragile: important files live on personal laptops, results of analyses are copied by hand, versions of scripts are scattered, and the explanation for a key decision is trapped in the memory of someone who has long left the lab.\nThe goal of this site is to make the robust path the easy path.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#why-this-documentation-exists",
+    "href": "01_orientation/start-here.html#why-this-documentation-exists",
+    "title": "Start Here",
+    "section": "",
+    "text": "Most graduate students do not struggle to manage their research because the science is impossible. They struggle because their workflows are fragile: important files live on personal laptops, results of analyses are copied by hand, versions of scripts are scattered, and the explanation for a key decision is trapped in the memory of someone who has long left the lab.\nThe goal of this site is to make the robust path the easy path.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#the-working-philosophy",
+    "href": "01_orientation/start-here.html#the-working-philosophy",
+    "title": "Start Here",
+    "section": "2 The working philosophy",
+    "text": "2 The working philosophy\nI believe1 that effective computational academic research should adhere to a few core principles:\n\nAlways prefer remote and reproducible workflows over local and manual ones;\nThe code that produces outputs — not the outputs themselves — are the source of scientific truth;\nScientific communication is hard; you can make it easy by narrating your analyses with notebooks;\nInvest early in structure and version control so that later work gets easier to manage as your project grows.\n\nR for Data Science makes the same argument in a more general form: for larger projects and collaboration, the lasting record of an analysis should be the scripts, because scripts plus data can recreate the environment, while an IDE session alone cannot.2",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#sec-principle1",
+    "href": "01_orientation/start-here.html#sec-principle1",
+    "title": "Start Here",
+    "section": "3 Principle 1: Remote and Reproducible Workflows 🌐",
+    "text": "3 Principle 1: Remote and Reproducible Workflows 🌐\n\nWhat is the difference between a fragile workflow and a robust workflow?\n\n\n\n\n\n\n\n\nFragile workflow\nRobust workflow\n\n\n\n\nLives on one machine\nLives on supported infrastructure and in version control\n\n\nDepends on clicking and memory\nDepends on scripts, notebooks, and documented steps\n\n\nStores only outputs\nStores the method that creates outputs\n\n\nBreaks when paths, packages, or people change\nSurvives new machines, new users, and reruns",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#principle-2",
+    "href": "01_orientation/start-here.html#principle-2",
+    "title": "Start Here",
+    "section": "4 Principle 2: Code is The Source of Truth 💎",
+    "text": "4 Principle 2: Code is The Source of Truth 💎\n\nWhat does, “source of truth,” mean in practice?\n\nIf I handed you a scientific paper — any paper — and asked you where the real core of the scientific finding was, where would you point me to? The conclusion? No, the conclusion is an interpretation. The figures? Again, no — they are a product of a particular analysis. The reasoning in the introduction? Not really — that’s just a motivating narrative. The real core of the scientific finding is that the authors told you HOW to get from the data to the conclusion. This is found in the methods section, and more specifically the exact procedure that creates the result, repeatably, from the data. It is the repeatability of the method producing the same result that makes it science, in the first place after all. If I cannot repeat your experiment, then I cannot verify your claim, and your conclusion is therefore not scientific.\n\n\n\n\n\n\nImportant\n\n\n\nIn the modern data science era, the methods section is the code, and code is the source of truth. The code is the core record of an experiment, which puts it at the heart of what you should be writing, documenting, and sharing as a scientist. It is — without question — your most valuable asset.\n\n\nAsk yourself: if someone stole your laptop today and tossed it into the Charles River, Google went under and your Scholar ID disappeared, and Dr. Strange erased everyone’s memory of you, would your contribution to science survive? If the answer is “no,” then you have a fragile workflow. If the answer is “yes,” then you have a robust workflow.\nTo ensure you would survive this totally plausible catastrophe, treat these basic artifacts as invaluable:\n\nA README that clearly describes what the project is and how to run it.\nScripts and/or notebooks that describe how the analysis is conducted.\nA lockfile or environment specification such as rv.lock, environment.yml, or requirements.txt that tell us which tools and versions of those tools are needed.\nData provenance that explains where the data came from.\ngit history that clearly shows what changed and why, each step of the way.\n\nOn the other hand, derived products such as:\n\nfigures,\nrendered reports,\nslides,\nmanuscripts,\nand intermediate outputs\n\nShould all be treated as ephemeral details that can be regenerated whenever asked You should never lose sleep over these things because your code should be able to regenerate them at a moment’s notice.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#principle-3",
+    "href": "01_orientation/start-here.html#principle-3",
+    "title": "Start Here",
+    "section": "5 Principle 3: Analysis Should Be Narrated 📇",
+    "text": "5 Principle 3: Analysis Should Be Narrated 📇\n\nWhy should scientists narrate their thinking?\n\nDavid McCullough is credited with the quote, “Writing is thinking. To write well is to think clearly. That’s why it’s so hard.” If you’ve ever found yourself struggling to articulate an idea on paper that just moments before felt crystal clear in your head, you know exactly what he means. Donald Knuth, the father of algorithm analysis and creator of TeX, felt similarly about programming, and has evangelized literate programming — the practice of writing code that is meant to be read by humans, and that tells a story about the analysis — for decades.3. Today, we’re fortunate to have tools like R Markdown, Jupyter Notebooks, and Quarto that make it easy to write code that is meant to be read by humans, and that tells a story about the analysis. If there is anywhere appropriate for literate programming to improve our work, it’s in science, where the goal is not just to get the right answer, but to explain how we got there and why it matters. By narrating our analysis with notebooks, we afford our brains the opportunity to think through the analysis step by step, making our work more transparent, reproducible, and less prone to error or bias.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#principle-4",
+    "href": "01_orientation/start-here.html#principle-4",
+    "title": "Start Here",
+    "section": "6 Principle 4: Robust Habits Compound 🌱",
+    "text": "6 Principle 4: Robust Habits Compound 🌱\n\nWhy invest in engineering as a scientist?\n\ntechnical debt is a term that software engineers use to describe the cost of maintaining and updating code that was written in a way that is not scalable or maintainable. Because scientists are often less motivated to invest in robust software design patterns, they can end up with a lot of technical debt in their code, which can make it difficult to understand, reproduce, or extend as the science progresses. This can lead to wasted time and effort, or worse, lost insight. By investing early in robust habits such as version control, clean project structure, and clear documentation, you can reduce technical debt and make your work easier to manage as your project grows. These habits compound over time, making it easier to maintain and extend your work in the future.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#start-here-checklist",
+    "href": "01_orientation/start-here.html#start-here-checklist",
+    "title": "Start Here",
+    "section": "7 Start-Here Checklist",
+    "text": "7 Start-Here Checklist\nSo now that we know our end goal and working philosophy, what prerequisites do we need to be able to achieve them? Here is a checklist of the most important things to have done:\n\n\nComplete the Harvard CITI training and share your completion certificate. This is required for you to have access to the human participants data we work with, and to be able to contribute to the research. There are two modules:\n\n\nSocial and Behavioral/Biomedical Human Subject Training\nInternet Privacy and Security (IPS) Training\n\nIf you’ve never registered for CITI training before, you will need to create an account and affiliate with Harvard University. When you are asked to select a course, select “Social and Behavioral/Biomedical Human Subject Training,” and then select the modules listed above. If you have already completed CITI training for another institution, you can log in with your existing account, affiliate with Harvard University, and then add the two modules listed above to your existing training.\nIn the section below, you’ll be directed to a lab induction form where you will upload your completion certificate, so make sure to download the certificate from CITI when you finish the training. If you have any questions about the training, please reach out to your RSE or PI.\n\n\n\n\n\n\nNoteCITI Retraining\n\n\n\nCITI training must be renewed periodically. If you are being asked to retrain, please complete the retraining as soon as possible and upload your new certificate to the lab using this retraining form\n\n\n\n\nOfficially be inducted into the Golden Lab by filling out the new member intake form — we use this to grant you access to:\n\n\nGoogle Drive, for managing shared documents and non-code, office-oriented work 📁\nGitHub, for managing and collaborating on code 🔌\nSlack, for work-related communication about projects, sharing information, and questions 💬\nWhatsApp, for non-work-related communication and socializing 🎭\n\n…and more!\n\n\nSet up your FASRC account by following the instructions available here:\n\n\nCarefully read the instructions; you’ll use the Account Request Tool to request an account using your HarvardKey, and when you are asked to specify the PI, select “Christopher Golden,” and “Nutrition,” as the department. Chris will receive a notification and approve your request as soon as possible, but don’t hesitate to send him an email letting him know you have submitted the request and are excited to get started.\n\n\n\n\nFollow the workflow roadmap guide on the next page to set up your first project and learn how to do reproducible data science.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#why-cant-i-just-do-this-on-my-laptop-by-myself",
+    "href": "01_orientation/start-here.html#why-cant-i-just-do-this-on-my-laptop-by-myself",
+    "title": "Start Here",
+    "section": "8 Why Can’t I Just Do This On My Laptop By Myself?",
+    "text": "8 Why Can’t I Just Do This On My Laptop By Myself?\nFollowing this guide will help students:\n\nadhere to security, privacy, and ethical standards for working with human subjects data at Harvard,\nset up the optimal compute environment to speed up their work,\navoid making critical mistakes that duplicate, mismanage, expose, or worse, lose sensitive data,\neliminate future technical debt of maintaining your projects by adhering to best practices early,\nlower the cost of collaboration across and outside of the lab, and\nfocus on the science instead of wrestle with technical issues",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#example-of-common-failures-youll-avoid-by-following-this-guide",
+    "href": "01_orientation/start-here.html#example-of-common-failures-youll-avoid-by-following-this-guide",
+    "title": "Start Here",
+    "section": "9 Example of Common Failures You’ll Avoid by Following This Guide",
+    "text": "9 Example of Common Failures You’ll Avoid by Following This Guide\n\nWaiting all day for a piece of code to run on your laptop that could have run in 10 minutes on the cluster,\nLosing your work due to inadequate backup strategies,\nWriting hardcoded scripts that only work for one person,\nSaving important objects only in the interactive environment, only to lose them when the session ends,\nInfinitely renaming scripts final_v2_really_final every time you receive feedback from your collaborators,\nAccidentally pushing sensitive data to GitHub because the .gitignore was never set up,\nWaiting to document the project until after you’ve already forgotten what you did and why,\nStruggling to get help because you don’t have a reproducible example of the problem,\nUsing the wrong version of a package and getting different results than your collaborators…\n\nAnd much, much more.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#next-pages",
+    "href": "01_orientation/start-here.html#next-pages",
+    "title": "Start Here",
+    "section": "10 Next pages",
+    "text": "10 Next pages\n\nGo through the Workflow Roadmap to practice a full data science project lifecycle.\nReview the HPC Infrastructure & Software Guide to get help deciding where work should run and what tools to use.\nGo to Projects & Reproducibility Guide to learn about best practices for managing and sharing your work.",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#further-reading",
+    "href": "01_orientation/start-here.html#further-reading",
+    "title": "Start Here",
+    "section": "11 Further reading",
+    "text": "11 Further reading\n\nR for Data Science (2e): Workflow: scripts and projects\nR for Data Science (2e): Communicate\nNSAPH Handbook: Workflow Documentation",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "01_orientation/start-here.html#footnotes",
+    "href": "01_orientation/start-here.html#footnotes",
+    "title": "Start Here",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nTinashe, your RSE, who has seen too many projects break because of fragile workflows.↩︎\nHadley Wickham, Mine Cetinkaya-Rundel, and Garrett Grolemund, R for Data Science (2e): Workflow: scripts and projects.↩︎\nDonald Knuth, Literate Programming.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Orientation",
+      "Start Here"
+    ]
+  },
+  {
+    "objectID": "guides.html",
+    "href": "guides.html",
+    "title": "Guides to Robust Scientific Workflows",
+    "section": "",
+    "text": "On this page, you’ll find comprehensive, hands-on guides to the tools and practices that we use in the Golden Lab to make our scientific workflows more robust. These guides are designed to be practical and actionable, so you can start applying these principles to your work right away.\nSee the Orientation Guide for an overview of the philosophy of robust scientific workflows, and the tools we use to achieve them.",
+    "crumbs": [
+      "Start Here",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guides.html#basics",
+    "href": "guides.html#basics",
+    "title": "Guides to Robust Scientific Workflows",
+    "section": "Basics",
+    "text": "Basics\n\n\nHPC & Infrastructure 🏭\nLearn how to use the Harvard Research Computing cluster, set up your local environment, and manage your software dependencies.\nOpen the HPC guide\n\n\nProjects & Reproducibility 🐾\nLearn how to structure your projects, manage your code, and create reproducible workflows that can be shared and built upon.\nOpen the Project Management guide\n\n\nData Access & Management 🔐\nLearn how to manage your data, track its provenance, and document it for future use.\nOpen the Data Management guide\n\n\nCollaboration & Version Control 🪢\nLearn how to use git and GitHub to manage your code, collaborate with others, and keep a history of your work.\nOpen the Collaboration guide\n\n\nEnvironments & Package Management 📦\nLearn how software is structured across your system, from low-level dependencies to project-specific environments. Understand how to use tools like brew, cargo, uv, and rv together without conflicts.\nOpen the Environments guide",
+    "crumbs": [
+      "Start Here",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guides.html#advanced-topics",
+    "href": "guides.html#advanced-topics",
+    "title": "Guides to Robust Scientific Workflows",
+    "section": "Advanced Topics",
+    "text": "Advanced Topics\n🚧 Section under development 🚧",
+    "crumbs": [
+      "Start Here",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guides.html#statistics-modeling-visualization",
+    "href": "guides.html#statistics-modeling-visualization",
+    "title": "Guides to Robust Scientific Workflows",
+    "section": "Statistics, Modeling, & Visualization",
+    "text": "Statistics, Modeling, & Visualization\n🚧 Section under development 🚧",
+    "crumbs": [
+      "Start Here",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "guides.html#programming-tips-tricks",
+    "href": "guides.html#programming-tips-tricks",
+    "title": "Guides to Robust Scientific Workflows",
+    "section": "Programming Tips & Tricks",
+    "text": "Programming Tips & Tricks\n\n\nVSCode on a Compute Node 🖥️\nPrefer your own editor to the browser? Attach VSCode directly to a Cannon compute node over SSH, as an alternative to the Open OnDemand web view.\nOpen the Remote-SSH guide\n\n\nShowcase ✨\nGot something cool that you want to share? A neat trick, a useful tool, a clever workflow? This is the place to share it!\nOpen the Showcase",
+    "crumbs": [
+      "Start Here",
+      "Guides"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html",
+    "title": "HPC and Infrastructure",
+    "section": "",
+    "text": "Harvard University’s computing cluster is called FASRC (Faculty of Arts and Sciences Research Computing), and is one of the largest, most powerful compute clusters on the East Coast. It provides scalable computing resources, secure environments for sensitive data, and a shared infrastructure that supports collaboration and reproducibility. As discussed in Principle 1, we treat HPC as the default environment for data science in the lab. If your project works on HPC, it is more likely to be reproducible, shareable, and scalable. If it only works on your local machine, which only has settings and configurations specific to you, it is more likely to break when you or someone else tries to run it again in the future. By working this way, we intentionally introduce a small amount of friction upfront, to save a lot of time and headache in the future.\nBut don’t let that intimidate you! The FASRC team has done a great job of making the cluster accessible and user-friendly, and there are many ways to interact with it that require close to zero setup or expertise. The goal of this guide is to help you find the right access path for your needs, and to give you some practical tips and examples for working on HPC.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#why-hpc-is-the-lab-default",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#why-hpc-is-the-lab-default",
+    "title": "HPC and Infrastructure",
+    "section": "",
+    "text": "Harvard University’s computing cluster is called FASRC (Faculty of Arts and Sciences Research Computing), and is one of the largest, most powerful compute clusters on the East Coast. It provides scalable computing resources, secure environments for sensitive data, and a shared infrastructure that supports collaboration and reproducibility. As discussed in Principle 1, we treat HPC as the default environment for data science in the lab. If your project works on HPC, it is more likely to be reproducible, shareable, and scalable. If it only works on your local machine, which only has settings and configurations specific to you, it is more likely to break when you or someone else tries to run it again in the future. By working this way, we intentionally introduce a small amount of friction upfront, to save a lot of time and headache in the future.\nBut don’t let that intimidate you! The FASRC team has done a great job of making the cluster accessible and user-friendly, and there are many ways to interact with it that require close to zero setup or expertise. The goal of this guide is to help you find the right access path for your needs, and to give you some practical tips and examples for working on HPC.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#some-lingo",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#some-lingo",
+    "title": "HPC and Infrastructure",
+    "section": "2 Some Lingo",
+    "text": "2 Some Lingo\nLet’s clear the air of some jargon that you might encounter when working with HPC:\n\n\n\n\n\n\n\nTerm\nDefinition\n\n\n\n\nHPC\nHigh Performance Computing. A general term for powerful computing resources that can handle large-scale data analysis and modeling.\n\n\nFASRC\nFaculty of Arts and Sciences Research Computing. The computing cluster used at Harvard.\n\n\nCannon\nThe standard FASRC cluster for general research computing. Synonymous with FASRC for all intents and purposes.\n\n\nFASSE\nThe high security environment on FASRC dedicated for work that requires stronger data protection (L3 and above).\n\n\nOpen OnDemand (OOD)\nA web-based interface that provides access to interactive apps, file browsing, and job submission tools on FASRC.\n\n\nShell/SSH (noun)\nA command-line interface used to interact with the operating system and run commands, including managing files and submitting jobs. Common shells include bash (default for FASRC) and zsh (default for macOS).\n\n\nSSH (verb)\nTo connect to a remote machine using the SSH protocol (e.g., “SSH into the cluster”).\n\n\nSLURM\nA workload manager that allows you to schedule and manage batch jobs on the cluster.\n\n\nBatch Job\nA task given to the system in the form of a script. You submit it to the queue and it runs when resources are available. For example, a Python script that you want to run on the cluster without manual intervention can be submitted to SLURM as a job.\n\n\nlogin node\nThe part of the cluster where you can run commands, manage files, and submit jobs. It is not meant for heavy computation.\n\n\ncompute node\nThe part of the cluster where more intense computation happens. Usually, you use this to do long-running interactive tasks like RStudio or Jupyter notebooks, and submit batch jobs.\n\n\n\nAnother confusing collection of jargon is the interchangeable use of environments, software, and modules. Let’s clarify these for this discussion:\n\nSoftware: The actual programs and tools that you use to do your work, such as R, Python, or specific packages. For example, R version 4.2.0 is a piece of software.\nModules: A system for managing software on HPC clusters. Modules allow you to load and unload specific versions of software and their dependencies. For example, you might run module load R/4.2.0 to load R version 4.2.0 and its associated libraries into your environment.\nComputing Environment: The overall setup of your computing context, including the hardware, operating system, software packages, and modules that are available to you. For example, the Cannon cluster is an environment, and the FASSE cluster is a different environment with different security settings and software availability.\nVirtual Environment: A self-contained directory that contains a specific version of (usually) Python and its associated packages. Virtual environments allow you to create miniature, isolated environments for different projects, so that you can manage dependencies and avoid conflicts between packages.\nEnvironment variables: These are key-value pairs that are set in your shell and can be accessed by your programs. They often contain configuration settings, such as paths to software or proxy settings. Importantly, environment variables are “set” by the shell when it starts, are specific to the user who starts the shell, and are inherited by any processes that are started from that shell. They are not global settings for the cluster, but rather specific to you your session. For example, when I log into the cluster, my shell automatically sets environment variables that point to the R and Python installations, and I can also set my own environment variables for things like proxy settings or custom paths. These settings are made in the file ~/.bashrc, which you can modify to create a customized environment. Take a moment to look at your own environment variables by running env in your shell, to see what is set by default, and cat ~/.bashrc to see your customizations. Furthermore, by using a virtual environment, you can create project-specific environment variables which can be different from the global environment variables set by the shell, for example if you need a specific version of Python for a particular project.\n\n\n\n\n\n\n\nTip\n\n\n\nFor your purposes, “Software” refers broadly to the programs and tools you use, “Modules” are the FASRC-managed software packages you load, “Computing Environment” is the overall context of your work on HPC, and “project environment,” is the specific configuration of software and settings that your local project relies on to run successfully.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#interface",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#interface",
+    "title": "HPC and Infrastructure",
+    "section": "3 Interface",
+    "text": "3 Interface\nWe recommend two main interfaces for working on FASRC: Open OnDemand (OOD) and VSCode1. OOD is a web-based interface that provides access to interactive apps like RStudio Server, Jupyter, and Matlab, as well as file browsing and job submission tools. VSCode is a powerful code editor that can connect to the cluster via SSH, allowing you to edit files, run commands, and manage your code directly from your local machine. Both interfaces have their strengths and weaknesses, and the best choice depends on your specific needs and preferences.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#choose-the-right-access-path",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#choose-the-right-access-path",
+    "title": "HPC and Infrastructure",
+    "section": "4 Choose the right access path",
+    "text": "4 Choose the right access path\n\nVSCode Remote SSHOpen OnDemand (OOD)Command-Line Only\n\n\n\n\n\nVSCode Remote SSH\n\n\nHave you ever wanted to have all of the convenience of VSCode on your local machine, but have it actually execute your code on the cluster? This is possible with the Remote - SSH extension for VSCode. It allows you to connect your local VSCode to a remote server (in this case, the FASRC cluster) via SSH, and run your code in that environment. This means that you can edit files, run commands, and manage your code directly from your local machine, while still taking advantage of the powerful computing resources of the cluster.\nCheck out the Remote-SSH guide to learn how to set it up and use it effectively!\n\n\n🚦🚧 This section is under construction 🚧🚦\n\nUltimately, this is just submitting a job that you interact with through the browser.\n\n\n\nIf you prefer to work entirely from the command line, you can connect to the FASRC cluster via SSH and use the command-line interface to navigate, edit files, and submit jobs. Doing so requires familiarity with the command-line, and for beginners is going to feel like a lot of friction. However, as you improve your dexterity and memory, you’ll find a turning point where the command line is actually faster than any GUI or IDE, and you can do things that are actually impossible in VSCode. For example, you can use grep to search through thousands of files in seconds, or use awk to manipulate data on the fly.\nThe command-line interface is also more flexible and customizable, allowing you to create scripts and automate tasks, customize the look, feel, and navigation of your shell, and build or install awesome tools and helpers to make your every day work just that much more efficient.\n\n\n\nSSHing to FASRC with a customized shell\n\n\nInvesting in command-line mastery is a long-term investment that pays off in the end, and is a skill that will serve you well in any computing environment, not just HPC. However, for most users, we recommend using the command-line in conjunction with OOD or VSCode, rather than as the sole interface.\n🚦🚧 This section is under construction 🚧🚦 Open our Command Line guide to start building your command-line skills, and learn how to use the command-line interface effectively on FASRC.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#footnotes",
+    "href": "02_guides/01_hpc-infrastructure/01_hpc-infrastructure.html#footnotes",
+    "title": "HPC and Infrastructure",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThere is technically a third interface, which is barebones command-line access via SSH. This is the most basic way to interact with the cluster. However, we recommend using OOD or VSCode for most interactive work, as they provide a more user-friendly experience and better support for code editing and project management. Doing so purely via SSH is possible, but requires strong familiarity with the command-line, and doesn’t really provide any advantages over the other two options unless you’re really proficient, and that comes with time and experience.↩︎",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "HPC and Infrastructure"
+    ]
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html",
+    "href": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html",
+    "title": "Projects and Reproducibility",
+    "section": "",
+    "text": "In this guide, we’ll discuss best practices for organizing projects and ensuring reproducibility in data analysis. We’ll cover topics such as project structure, workflow management, environment configuration, what tools to use to manage them.\nThe intention behind projects is simple: to make it easier for you to understand, construct, manage, and run your analyses over time. In data science, we often find ourselves in the position of needing to run several different analyses, leveraging different data, code, tools, and conditions. As we add more code to the mix, it can become harder for our squishy human brains to keep track of all of the moving parts. Part of the beauty of programming is that it allows us to automate and abstract the complexity of what we ask the machine to do for us, but that also means we need to be intentional about how we automate and abstract. By making these decisions explicitly and early, we can save ourselves a lot of time and frustration down the line.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#overview",
+    "href": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#overview",
+    "title": "Projects and Reproducibility",
+    "section": "",
+    "text": "In this guide, we’ll discuss best practices for organizing projects and ensuring reproducibility in data analysis. We’ll cover topics such as project structure, workflow management, environment configuration, what tools to use to manage them.\nThe intention behind projects is simple: to make it easier for you to understand, construct, manage, and run your analyses over time. In data science, we often find ourselves in the position of needing to run several different analyses, leveraging different data, code, tools, and conditions. As we add more code to the mix, it can become harder for our squishy human brains to keep track of all of the moving parts. Part of the beauty of programming is that it allows us to automate and abstract the complexity of what we ask the machine to do for us, but that also means we need to be intentional about how we automate and abstract. By making these decisions explicitly and early, we can save ourselves a lot of time and frustration down the line.",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#project-structure",
+    "href": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#project-structure",
+    "title": "Projects and Reproducibility",
+    "section": "Project Structure",
+    "text": "Project Structure\n🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#deep-dives",
+    "href": "02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.html#deep-dives",
+    "title": "Projects and Reproducibility",
+    "section": "Deep Dives",
+    "text": "Deep Dives\nClick on the cards below to explore specific topics in more depth, with practical examples and recommendations for tools and practices to help you build projects that are robust, reproducible, and ready for collaboration.\n\n\n🚂 Staging Your Data with stagecoach\nAll across the Frontier, a familiar rumble can be heard and felt through the land. The stagecoach is arriving…\nOpen the stagecoach guide",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Projects and Reproducibility"
+    ]
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/03_data-access-and-management.html",
+    "href": "02_guides/03_data-access-and-management/03_data-access-and-management.html",
+    "title": "Data Access and Management",
+    "section": "",
+    "text": "🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/03_data-access-and-management.html#data-as-infrastructure",
+    "href": "02_guides/03_data-access-and-management/03_data-access-and-management.html#data-as-infrastructure",
+    "title": "Data Access and Management",
+    "section": "",
+    "text": "🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "02_guides/03_data-access-and-management/03_data-access-and-management.html#deep-dives",
+    "href": "02_guides/03_data-access-and-management/03_data-access-and-management.html#deep-dives",
+    "title": "Data Access and Management",
+    "section": "Deep Dives",
+    "text": "Deep Dives\nClick on the cards below to explore specific topics in more depth, with practical examples and recommendations for tools and practices to help you build projects that are robust, reproducible, and ready for collaboration.\n\n\n📥 Data Ingress: Where It All Begins\nHow do you know where the data “starts” being part of our resources? What does it mean to say that data “came from” somewhere? In this deep dive, we discuss the important first step of the data lifecycle, data ingress, and show how it is implemented on The Frontier.\nOpen the Data Ingress Guide",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Data Access and Management"
+    ]
+  },
+  {
+    "objectID": "02_guides/05_environments-and-package-management/05_envs-and-pkgs.html",
+    "href": "02_guides/05_environments-and-package-management/05_envs-and-pkgs.html",
+    "title": "Environments and Package Management",
+    "section": "",
+    "text": "🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Environments and Package Management"
+    ]
+  },
+  {
+    "objectID": "02_guides/04_collaboration-and-support/04_collaboration-and-support.html",
+    "href": "02_guides/04_collaboration-and-support/04_collaboration-and-support.html",
+    "title": "Collaboration and Support",
+    "section": "",
+    "text": "🚦🚧 This section is under construction 🚧🚦",
+    "crumbs": [
+      "Start Here",
+      "Guides",
+      "Collaboration and Support"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html",
+    "href": "CONTRIBUTING.html",
+    "title": "Contribution Guide",
+    "section": "",
+    "text": "We welcome contributions to the Golden Lab Data Science Handbook! If you have suggestions for improvements, additional content, or corrections, please feel free to submit a pull request or open an issue on our GitHub repository.",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#how-to-contribute",
+    "href": "CONTRIBUTING.html#how-to-contribute",
+    "title": "Contribution Guide",
+    "section": "How to Contribute",
+    "text": "How to Contribute\nThis site is built using Quarto, which is a powerful publishing and technical writing tool that allows us to create a static website from markdown files that can easily integrate prose, code, and visualizations. If you want to contribute, you will primarily be doing so by editing the markdown files in the repository.",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#getting-started",
+    "href": "CONTRIBUTING.html#getting-started",
+    "title": "Contribution Guide",
+    "section": "Getting Started",
+    "text": "Getting Started\nThere are two ways to contribute to this documentation:\n\nDirectly on GitHub: You can edit the markdown files directly on GitHub by navigating to the file you want to edit and clicking the pencil icon. This is a quick and easy way to make small changes or corrections.\nLocally in Your Own Environment: For larger contributions, you may want to clone the repository to your local environment, make your changes, and then push them back to GitHub. This allows you to test your changes locally before submitting a pull request.\n\n\nEditing on GitHubEditing Locally\n\n\nEditing on GitHub is straightforward. Simply navigate to the file you want to edit, click the pencil icon, make your changes, and then commit them directly to the repository. This method is ideal for small edits, such as fixing typos or updating links. However, even for small contributions, it’s best to provide a clear paper trail for what you changed and why, and so we require that all contributions — even small ones — be made through GitHub Issues and Pull Requests1. If this is your first time contributing to an open-source project, this as great low-stakes opportunity to try out this workflow!\n\nNavigate to GitHub. In your browser of choice, go to the GitHub repository: GoldenPlanetaryHealthLab.github.io\nFind “Issues”: Click the Issues tab second from the left.\nOpen an Issue: Click the green “New Issue” button on the right.\nPick the Documentation Template: Click “🧪 New Data Science Tutorial or Documentation”\nFill Out the Template: A template will appear for you to fill out. Please provide a clear title and description of your contribution, however small, and any relevant links or references. For irrelevant fields, simply write “N/A”.\nAssign Yourself: Assign yourself to the issue using the “Assignees” section on the right. This is what will enable us to award your contribution to you in the all-contributors table and give you credit for your work.\nEdit the File: Navigate to the file you want to edit, click the pencil icon, and make your proposed changes using markdown, Quarto features, and/or code chunks as needed. You can preview your changes using the “Preview changes” tab to make sure everything looks good.\nCommit Your Work: Commit your changes using the dialogue box to the repository. In the commit message, please use the GitHub Issues linking syntax to reference the issue number (e.g., “Fixes #123”) to link your changes to the issue you created. Importantly, make sure to select the option to commit your changes to a new branch and create a pull request. This will automatically open a pull request for your changes, which will be reviewed by the maintainers of the repository.\n\n\n\n\nGitHub Issue Template\n\n\n\n\nWorking locally2 is more involved and requires familiarity with git and the command line. However, this is a useful skill to have and is the standard workflow for contributing to open-source scientific projects. Strap in, and let’s get you set up to contribute like a pro!\n\nCreate the Issue on GitHub to Work On: Before you start working on your contribution, it’s important to create an issue on GitHub to track your work. This allows the maintainers to review your proposed changes and provides a clear record of your contribution. Navigate to the GitHub repository, click on the “Issues” tab, and create a new issue using the “🧪 New Data Science Tutorial or Documentation” template.\nSet up your local environment for git: On FASRC, git comes pre-installed, but in case you can’t find it, type which git. If you get a path back, you’re good to go. If not, load the git module with module load git.\nSet Up Your Local Environment for GitHub: GitHub has a handy CLI tool called gh that makes it easy to interact with GitHub from the command line, including creating issues, making Pull Requests, and managing your authentication. To install gh on FASRC, see the instructions here #TODO, and return to this tutorial.\n\nYou might be aware that FASRC also has some guidance on working with GitHub here. Frankly, their instructions are a bit dated and their recommendations are less user friendly than just using the gh CLI tool, so we recommend following the instructions above instead of those on FASRC’s website.\n\nClone the Repository: Find an appropriate directory to work in (since this repository will likely have many individuals contributing to it and very little data or computation, it’s safe to do in your home directory) and run gh clone command to clone the repository to your local environment:\n\ngh repo clone GoldenPlanetaryHealthLab/GoldenPlanetaryHealthLab.github.io\n# activate the environment for the repository if applicable\n\n# source .venv/bin/activate # if you have a virtual environment set up for this repository\n\nCreate a Local Issue Branch: It’s best practice to create a new branch for your changes, so using the gh CLI tool, create a new branch based on the issue you created in step 1:\n\ngh issue develop [ISSUE NUMBER] --checkout\n\nMake Your Changes: Now that you have your local environment set up and a new branch created, you can make your changes to the markdown files using your preferred text editor or IDE. Be sure to save your and commit your changes frequently, and test them locally if necessary.\nPreview Your Changes: If you want to preview your changes locally before submitting a pull request, you can use the quarto preview command. This will start a local server where you can view your changes in a web browser.\nCreate a Pull Request: Once you’re happy with your changes, you can create a pull request using the gh CLI tool:\n\ngh pr create\n\n\n\nGitHub Pull Request In Action",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#closing-the-issue-and-submitting-a-pull-request",
+    "href": "CONTRIBUTING.html#closing-the-issue-and-submitting-a-pull-request",
+    "title": "Contribution Guide",
+    "section": "Closing the Issue and Submitting a Pull Request",
+    "text": "Closing the Issue and Submitting a Pull Request\nTo complete the process, review the Pull Request, adding relevant information to the Pull Request description, and then submit it for review. The maintainers will review your changes and may provide feedback or request changes before merging your contribution into the main branch.\n\nQuarto is a scientific and technical publishing system built on top of Pandoc, and driven by Markdown. Quarto Markdown files (.qmd) can contain prose, code, and visualizations, and are incrementally rendered into a static website by first evaluating the YAML front matter, running code chunks, and then rendering the markdown into HTML. All of this is wrapped up in the command quarto render.\nTo build the website locally, you must of course have Quarto installed on your machine/environment. Once you have Quarto and the repo, run the command quarto preview in the terminal while in the root directory of the repository, and Quarto will run quarto render and start a local server where you can view the website in your browser.\nOn GitHub, we have set up a GitHub Action that automatically runs quarto render and deploys the website’s HTML files to GitHub Pages whenever a commit is added to the main branch. This is why we enforce that all contributions go through GitHub Issues and Pull Requests, even small ones: it ensures that there is a clear record of what changed and why, and allows us to review changes before they are merged and deployed to the live website.\nSo the next time you want to add new information to the site, and feel like learning something about CI/CD, take a closer look at the GitHub Action that runs on this repository in .github/workflows/publish.yml, and the accompanying set up in the Repo Settings to learn how this process works! You might even want to set up a similar workflow for your own project or personal website.",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#all-contributors-specification-advanced-users-only",
+    "href": "CONTRIBUTING.html#all-contributors-specification-advanced-users-only",
+    "title": "Contribution Guide",
+    "section": "all-contributors Specification (Advanced Users Only)",
+    "text": "all-contributors Specification (Advanced Users Only)\nWe use the all-contributors specification to recognize and celebrate the contributions of everyone who has helped with this project. This includes not only code contributions but also documentation, design, and other forms of support e.g. feedback, issue submission and conversation, etc.\nYou can automate the process of adding contributors by using the all-contributors CLI tool. On Mac, install npm first:\nbrew install npm node\nThen, use the following command to add a contributor:\nnpm install all-contributors-cli\nThe project is already initialized with all-contributors, so you can start adding contributors right away. You can add contributors from the command line. For example, to add a contributor with the username octocat who has contributed code and documentation, you would run:\nnpx all-contributors add octocat code,doc\nAnd then create the contribution table with:\nnpx all-contributors generate\nThis will update the README.md file with the new contributor and their contributions. Commit and push this file to GitHub to see the changes reflected in the repository’s README.",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  },
+  {
+    "objectID": "CONTRIBUTING.html#footnotes",
+    "href": "CONTRIBUTING.html#footnotes",
+    "title": "Contribution Guide",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThis is a common practice in open-source projects to ensure that all contributions are reviewed and documented properly. And, to your benefit, if you make changes using git your contributions will be automatically tracked and attributed to you, which is important for recognizing your work and giving you credit for your contributions.↩︎\nWhile we use the word, “locally,” here, what we really mean is, “not on GitHub or on the cloud.” Locally can refer to your personal computer, or FASRC (which is what we expect you to use). The key point is that, “locally,” means, “you are directly interfacing with the machine where you will be making the edits.”↩︎",
+    "crumbs": [
+      "Start Here",
+      "Contribution Guide"
+    ]
+  }
+]
