@@ -164,7 +164,7 @@ All across the Frontier, a familiar rumble can be
 heard and felt through the land. The `stagecoach` is 
 arriving...
 
-[Open the `stagecoach` guide](02_projects-and-reproducibility/stagecoach.qmd)
+[Open the `stagecoach` guide](stagecoach.qmd)
 :::
 
 :::

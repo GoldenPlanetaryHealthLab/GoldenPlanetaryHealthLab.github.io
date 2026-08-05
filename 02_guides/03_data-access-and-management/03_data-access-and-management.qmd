@@ -149,7 +149,7 @@ our resources? What does it mean to say that data
 the important first step of the data lifecycle, data ingress,
 and show how it is implemented on The Frontier.
 
-[Open the Data Ingress Guide](03_data-access-and-management/ingress.qmd)
+[Open the Data Ingress Guide](ingress.qmd)
 :::
 
 :::

@@ -96,7 +96,7 @@ tools like `brew`, `cargo`, `uv`, and `rv` together without conflicts.
 Prefer your own editor to the browser? Attach VSCode directly to a Cannon
 compute node over SSH, as an alternative to the Open OnDemand web view.
 
-[Open the Remote-SSH guide](02_guides/vscode-remote-ssh.qmd)
+[Open the Remote-SSH guide](02_guides/01_hpc-infrastructure/vscode-remote-ssh.qmd)
 :::
 
 :::{.info-card}

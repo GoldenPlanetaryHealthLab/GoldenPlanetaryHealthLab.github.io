@@ -193,7 +193,7 @@ Following this guide will help students:
 
 - Waiting all day for a piece of code to run on your laptop that could have run in 10 minutes on the cluster,
 - Losing your work due to inadequate backup strategies,
-- Writing hardcoded scripts that only work for one person,
+- Sending a friend a script that has `mydata = "PATH_THAT_IS_ONLY_ON_MY_MACHINE/AND_WILL_DEFINITELY_BREAK.csv"` hardcoded in it,
 - Saving important objects only in the interactive environment, only to lose them when the session ends,
 - Infinitely renaming scripts `final_v2_really_final` every time you receive feedback from your collaborators,
 - Accidentally pushing sensitive data to GitHub because the `.gitignore` was never set up,
@@ -206,8 +206,8 @@ And much, much more.
 ## Next pages
 
 - Go through the [Workflow Roadmap](workflow-roadmap.qmd) to practice a full data science project lifecycle.
-- Review the [HPC Infrastructure & Software Guide](hpc-infrastructure.qmd) to get help deciding where work should run and what tools to use.
-- Go to [Projects & Reproducibility Guide](projects-and-reproducibility.qmd) to learn about best practices for managing and sharing your work.
+- Review the [HPC Infrastructure & Software Guide](../02_guides/01_hpc-infrastructure/01_hpc-infrastructure.qmd) to get help deciding where work should run and what tools to use.
+- Go to [Projects & Reproducibility Guide](../02_guides/02_projects-and-reproducibility/02_projects-and-reproducibility.qmd) to learn about best practices for managing and sharing your work.
 
 ## Further reading
 

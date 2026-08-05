@@ -9,7 +9,7 @@ Harvard University's computing cluster is called FASRC (Faculty of Arts
 and Sciences Research Computing), and is one of the largest, most powerful
 compute clusters on the East Coast. It provides scalable computing
 resources, secure environments for sensitive data, and a shared infrastructure that supports collaboration and reproducibility.
-As discussed in [Principle 1](../01_orientation/start-here.qmd#sec-principle1), 
+As discussed in [Principle 1](../../01_orientation/start-here.qmd#principle-1-remote-and-reproducible-workflows-🌐), 
 we treat HPC as the default environment for data science in the lab. If
 your project works on HPC, it is more likely to be reproducible, shareable, 
 and scalable. If it only works on your local machine, which only has
