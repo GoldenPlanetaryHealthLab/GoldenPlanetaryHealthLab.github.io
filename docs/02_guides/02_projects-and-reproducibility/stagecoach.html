@@ -307,6 +307,13 @@ Note
 <section id="how-stagecoach-works" class="level2">
 <h2 class="anchored" data-anchor-id="how-stagecoach-works">How <code>stagecoach</code> Works</h2>
 <p>The user story for stagecoach is surprisingly simple:</p>
+<ol type="1">
+<li>A researcher has a project that requires certain datasets on the Frontier.</li>
+<li>They run <code>stagecoach hail</code> in their project directory to create a manifest file that declares the datasets they need.</li>
+<li>They modify the manifest file that lists the required datasets and their locations.</li>
+<li>They run <code>stagecoach inspect</code> to check that their project is organized correctly and that the manifest is valid. If there are any issues, <code>stagecoach</code> will provide an error report with recommendations for how to fix them.</li>
+<li>They run <code>stagecoach stage</code> to create symlinks to the required datasets in their project directory.</li>
+</ol>
 </section>
 <section id="wait-symlinks" class="level2">
 <h2 class="anchored" data-anchor-id="wait-symlinks">Wait, symlinks?</h2>

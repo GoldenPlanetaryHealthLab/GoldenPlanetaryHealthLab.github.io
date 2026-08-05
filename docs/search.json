@@ -129,7 +129,7 @@
     "href": "02_guides/02_projects-and-reproducibility/stagecoach.html#how-stagecoach-works",
     "title": "Data Staging with stagecoach",
     "section": "How stagecoach Works",
-    "text": "How stagecoach Works\nThe user story for stagecoach is surprisingly simple:"
+    "text": "How stagecoach Works\nThe user story for stagecoach is surprisingly simple:\n\nA researcher has a project that requires certain datasets on the Frontier.\nThey run stagecoach hail in their project directory to create a manifest file that declares the datasets they need.\nThey modify the manifest file that lists the required datasets and their locations.\nThey run stagecoach inspect to check that their project is organized correctly and that the manifest is valid. If there are any issues, stagecoach will provide an error report with recommendations for how to fix them.\nThey run stagecoach stage to create symlinks to the required datasets in their project directory."
   },
   {
     "objectID": "02_guides/02_projects-and-reproducibility/stagecoach.html#wait-symlinks",

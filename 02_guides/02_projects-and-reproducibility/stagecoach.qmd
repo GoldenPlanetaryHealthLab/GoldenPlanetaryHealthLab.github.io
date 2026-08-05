@@ -80,7 +80,11 @@ input data does this analysis require? This is a common problem in data analysis
 
 The user story for stagecoach is surprisingly simple:
 
-
+1. A researcher has a project that requires certain datasets on the Frontier.
+2. They run `stagecoach hail` in their project directory to create a manifest file that declares the datasets they need.
+3. They modify the manifest file that lists the required datasets and their locations.
+4. They run `stagecoach inspect` to check that their project is organized correctly and that the manifest is valid. If there are any issues, `stagecoach` will provide an error report with recommendations for how to fix them.
+5. They run `stagecoach stage` to create symlinks to the required datasets in their project directory.
 
 ## Wait, symlinks?
 
