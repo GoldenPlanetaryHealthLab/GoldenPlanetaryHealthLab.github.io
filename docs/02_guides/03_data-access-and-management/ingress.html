@@ -329,7 +329,7 @@ Important
 </ul></li>
 <li><p>In the background, Qualtrics adds the dataset metadata to our <a href="https://docs.google.com/spreadsheets/d/1nVU0Ycrdzh_M_dDRTvYWx5CynI7cEaqF6XUj5F4doKY/edit?gid=0#gid=0">survey tracking Google Sheet</a>, for redundant visibility and record keeping<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p></li>
 <li><p>Once the data is uploaded, the Qualtrics Prospector<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> dashboard checks the tracking sheet each morning for new entries. If it finds any, it transfers the data from the Qualtrics server or Globus endpoint into the Frontier’s <code>gold_mine</code>, specifically the <code>01_ore</code> layer located at <code>/n/holylabs/LABS/cgolden_lab/Lab/frontier/gold_mine/01_ore</code>.</p></li>
-<li><p>Finally, because the dataset has been automatically registered and cataloged during the ingress process, it is immediately discoverable and available for use. Researchers can request access to the dataset using stagecoach by adding the appropriate gold_mine path to their project’s staging manifest. When stagecoach prepares the project environment, it records exactly which datasets were requested and where they originated from, creating a reproducible audit trail of the data’s provenance. In this way, researchers gain the benefits of rigorous data governance and reproducibility without needing to manually maintain records of every file they use.</p></li>
+<li><p>Finally, because the dataset has been automatically registered and cataloged during the ingress process, it is immediately discoverable and available for use. Researchers can request access to the dataset using <a href="../../02_guides/02_projects-and-reproducibility/stagecoach.html"><code>stagecoach</code></a> by adding the appropriate gold_mine path to their project’s staging manifest. When <a href="../../02_guides/02_projects-and-reproducibility/stagecoach.html"><code>stagecoach</code></a> prepares the project environment, it records exactly which datasets were requested and where they originated from, creating a reproducible audit trail of the data’s provenance. In this way, researchers gain the benefits of rigorous data governance and reproducibility without needing to manually maintain records of every file they use.</p></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -342,7 +342,7 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <p>A useful rule of thumb is:</p>
-<p>Data enters the Frontier once through a Prospector, lives in the Gold Mine, and reaches projects through the Stagecoach.</p>
+<p>Data enters the Frontier once through a Prospector, lives in the Gold Mine, and reaches projects through the <a href="../../02_guides/02_projects-and-reproducibility/stagecoach.html"><code>stagecoach</code></a>.</p>
 </div>
 </div>
 <div class="cell" data-layout-align="default">

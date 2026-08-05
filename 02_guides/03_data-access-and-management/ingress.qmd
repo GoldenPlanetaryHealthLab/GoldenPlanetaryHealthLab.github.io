@@ -156,9 +156,9 @@ data from the Qualtrics server or Globus endpoint into the Frontier’s
 
 - Finally, because the dataset has been automatically registered and cataloged 
 during the ingress process, it is immediately discoverable and available for 
-use. Researchers can request access to the dataset using stagecoach by adding 
+use. Researchers can request access to the dataset using [`stagecoach`](../02_projects-and-reproducibility/stagecoach.qmd) by adding 
 the appropriate gold_mine path to their project’s staging manifest. When 
-stagecoach prepares the project environment, it records exactly which datasets 
+[`stagecoach`](../02_projects-and-reproducibility/stagecoach.qmd) prepares the project environment, it records exactly which datasets 
 were requested and where they originated from, creating a reproducible audit 
 trail of the data’s provenance. In this way, researchers gain the benefits of 
 rigorous data governance and reproducibility without needing to manually 
@@ -169,7 +169,7 @@ A useful rule of thumb is:
 
 Data enters the Frontier once through a Prospector, 
 lives in the Gold Mine, and reaches projects through 
-the Stagecoach.
+the [`stagecoach`](../02_projects-and-reproducibility/stagecoach.qmd).
 :::
 
 ```{mermaid}
